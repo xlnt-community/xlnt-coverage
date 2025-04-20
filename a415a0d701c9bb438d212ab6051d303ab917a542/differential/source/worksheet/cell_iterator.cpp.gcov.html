@@ -1,0 +1,436 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/worksheet/cell_iterator.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory source/worksheet">source/worksheet</a> - cell_iterator.cpp<span style="font-size: 80%;"> (source / <a href="cell_iterator.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">93.2&nbsp;%</td>
+            <td class="headerCovTableEntry">118</td>
+            <td class="headerCovTableEntry">110</td>
+            <td class="headerCovTableEntry"><a href="#L103" title="goto first UBC line">8</a></td>
+            <td class="headerCovTableEntry"><a href="#L32" title="goto first CBC line">110</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-04-20 22:30:17</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">94.7&nbsp;%</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">18</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">50.3&nbsp;%</td>
+            <td class="headerCovTableEntry">296</td>
+            <td class="headerCovTableEntry">149</td>
+            <td class="headerCovTableEntry"><a href="#L43" title="goto first UBC branch">294</a></td>
+            <td class="headerCovTableEntry"><a href="#L41" title="goto first CBC branch">298</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-04-20 22:30:16</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>                 :                : // Copyright (c) 2014-2022 Thomas Fussell</span>
+<span id="L2"><span class="lineNum">       2</span>                 :                : // Copyright (c) 2024-2025 xlnt-community</span>
+<span id="L3"><span class="lineNum">       3</span>                 :                : //</span>
+<span id="L4"><span class="lineNum">       4</span>                 :                : // Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="L5"><span class="lineNum">       5</span>                 :                : // of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span id="L6"><span class="lineNum">       6</span>                 :                : // in the Software without restriction, including without limitation the rights</span>
+<span id="L7"><span class="lineNum">       7</span>                 :                : // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="L8"><span class="lineNum">       8</span>                 :                : // copies of the Software, and to permit persons to whom the Software is</span>
+<span id="L9"><span class="lineNum">       9</span>                 :                : // furnished to do so, subject to the following conditions:</span>
+<span id="L10"><span class="lineNum">      10</span>                 :                : //</span>
+<span id="L11"><span class="lineNum">      11</span>                 :                : // The above copyright notice and this permission notice shall be included in</span>
+<span id="L12"><span class="lineNum">      12</span>                 :                : // all copies or substantial portions of the Software.</span>
+<span id="L13"><span class="lineNum">      13</span>                 :                : //</span>
+<span id="L14"><span class="lineNum">      14</span>                 :                : // THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span id="L15"><span class="lineNum">      15</span>                 :                : // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span id="L16"><span class="lineNum">      16</span>                 :                : // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span id="L17"><span class="lineNum">      17</span>                 :                : // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span id="L18"><span class="lineNum">      18</span>                 :                : // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span id="L19"><span class="lineNum">      19</span>                 :                : // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span id="L20"><span class="lineNum">      20</span>                 :                : // THE SOFTWARE</span>
+<span id="L21"><span class="lineNum">      21</span>                 :                : //</span>
+<span id="L22"><span class="lineNum">      22</span>                 :                : // @license: http://www.opensource.org/licenses/mit-license.php</span>
+<span id="L23"><span class="lineNum">      23</span>                 :                : // @author: see AUTHORS file</span>
+<span id="L24"><span class="lineNum">      24</span>                 :                : </span>
+<span id="L25"><span class="lineNum">      25</span>                 :                : #include &lt;xlnt/cell/cell.hpp&gt;</span>
+<span id="L26"><span class="lineNum">      26</span>                 :                : #include &lt;xlnt/cell/cell_reference.hpp&gt;</span>
+<span id="L27"><span class="lineNum">      27</span>                 :                : #include &lt;xlnt/worksheet/cell_iterator.hpp&gt;</span>
+<span id="L28"><span class="lineNum">      28</span>                 :                : #include &lt;xlnt/worksheet/major_order.hpp&gt;</span>
+<span id="L29"><span class="lineNum">      29</span>                 :                : </span>
+<span id="L30"><span class="lineNum">      30</span>                 :                : namespace xlnt {</span>
+<span id="L31"><span class="lineNum">      31</span>                 :                : </span>
+<span id="L32"><span class="lineNum">      32</span>                 :<a href="#L111" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         446 : cell_iterator::cell_iterator(worksheet ws, const cell_reference &amp;cursor,</span></span>
+<span id="L33"><span class="lineNum">      33</span>                 :<span class="tlaCBC">            446 :     const range_reference &amp;bounds, major_order order, bool skip_null, bool wrap)</span></span>
+<span id="L34"><span class="lineNum">      34</span>                 :<span class="tlaCBC">            446 :     : skip_null_(skip_null),</span></span>
+<span id="L35"><span class="lineNum">      35</span>                 :<span class="tlaCBC">            446 :       wrap_(wrap),</span></span>
+<span id="L36"><span class="lineNum">      36</span>                 :<span class="tlaCBC">            446 :       order_(order),</span></span>
+<span id="L37"><span class="lineNum">      37</span>                 :<span class="tlaCBC">            446 :       ws_(ws),</span></span>
+<span id="L38"><span class="lineNum">      38</span>                 :<span class="tlaCBC">            446 :       cursor_(cursor),</span></span>
+<span id="L39"><span class="lineNum">      39</span>                 :<span class="tlaCBC">            446 :       bounds_(bounds)</span></span>
+<span id="L40"><span class="lineNum">      40</span>                 :                : {</span>
+<span id="L41"><span class="lineNum">      41</span>   [<span class="tlaCBC"> <a href="#L43" title="CBC: Branch 0 was taken 222 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L43" title="CBC: Branch 1 was taken 224 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L43" title="CBC: Branch 2 was taken 148 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L43" title="CBC: Branch 3 was taken 74 times" class="branchTla">+</a> </span> :<span class="tlaCBC">            446 :     if (skip_null &amp;&amp; !ws.has_cell(cursor_))</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L43" title="CBC: Branch 4 was taken 148 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L43" title="CBC: Branch 5 was taken 298 times" class="branchTla">+</a> </span>]
+<span id="L42"><span class="lineNum">      42</span>                 :                :     {</span>
+<span id="L43"><span class="lineNum">      43</span>         [<span class="tlaCBC"> <a href="#L56" title="CBC: Branch 0 was taken 148 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L58" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            148 :         (*this)++; // move to the next non-empty cell or one past the end if none exists</span></span>
+<span id="L44"><span class="lineNum">      44</span>                 :                :     }</span>
+<span id="L45"><span class="lineNum">      45</span>                 :<span class="tlaCBC">            446 : }</span></span>
+<span id="L46"><span class="lineNum">      46</span>                 :                : </span>
+<span id="L47"><span class="lineNum">      47</span>                 :<span class="tlaCBC">            568 : const_cell_iterator::const_cell_iterator(worksheet ws, const cell_reference &amp;cursor,</span></span>
+<span id="L48"><span class="lineNum">      48</span>                 :<span class="tlaCBC">            568 :     const range_reference &amp;bounds, major_order order, bool skip_null, bool wrap)</span></span>
+<span id="L49"><span class="lineNum">      49</span>                 :<span class="tlaCBC">            568 :     : skip_null_(skip_null),</span></span>
+<span id="L50"><span class="lineNum">      50</span>                 :<span class="tlaCBC">            568 :       wrap_(wrap),</span></span>
+<span id="L51"><span class="lineNum">      51</span>                 :<span class="tlaCBC">            568 :       order_(order),</span></span>
+<span id="L52"><span class="lineNum">      52</span>                 :<span class="tlaCBC">            568 :       ws_(ws),</span></span>
+<span id="L53"><span class="lineNum">      53</span>                 :<span class="tlaCBC">            568 :       cursor_(cursor),</span></span>
+<span id="L54"><span class="lineNum">      54</span>                 :<span class="tlaCBC">            568 :       bounds_(bounds)</span></span>
+<span id="L55"><span class="lineNum">      55</span>                 :                : {</span>
+<span id="L56"><span class="lineNum">      56</span>   [<span class="tlaCBC"> <a href="#L58" title="CBC: Branch 0 was taken 564 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L58" title="CBC: Branch 1 was taken 4 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L58" title="CBC: Branch 2 was taken 426 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L58" title="CBC: Branch 3 was taken 138 times" class="branchTla">+</a> </span> :<span class="tlaCBC">            568 :     if (skip_null &amp;&amp; !ws.has_cell(cursor_))</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L58" title="CBC: Branch 4 was taken 426 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L58" title="CBC: Branch 5 was taken 142 times" class="branchTla">+</a> </span>]
+<span id="L57"><span class="lineNum">      57</span>                 :                :     {</span>
+<span id="L58"><span class="lineNum">      58</span>         [<span class="tlaCBC"> <a href="#L65" title="CBC: Branch 0 was taken 426 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L66" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            426 :         (*this)++; // move to the next non-empty cell or one past the end if none exists</span></span>
+<span id="L59"><span class="lineNum">      59</span>                 :                :     }</span>
+<span id="L60"><span class="lineNum">      60</span>                 :<span class="tlaCBC">            568 : }</span></span>
+<span id="L61"><span class="lineNum">      61</span>                 :                : </span>
+<span id="L62"><span class="lineNum">      62</span>                 :<span class="tlaCBC">           1515 : bool cell_iterator::operator==(const cell_iterator &amp;other) const</span></span>
+<span id="L63"><span class="lineNum">      63</span>                 :                : {</span>
+<span id="L64"><span class="lineNum">      64</span>                 :<span class="tlaCBC">           1515 :     return ws_ == other.ws_</span></span>
+<span id="L65"><span class="lineNum">      65</span>         [<span class="tlaCBC"> <a href="#L66" title="CBC: Branch 0 was taken 211 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L66" title="CBC: Branch 1 was taken 1304 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1515 :         &amp;&amp; cursor_ == other.cursor_</span></span>
+<span id="L66"><span class="lineNum">      66</span>         [<span class="tlaCBC"> <a href="#L67" title="CBC: Branch 0 was taken 211 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L67" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            211 :         &amp;&amp; bounds_ == other.bounds_</span></span>
+<span id="L67"><span class="lineNum">      67</span>         [<span class="tlaCBC"> <a href="#L68" title="CBC: Branch 0 was taken 211 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L68" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            211 :         &amp;&amp; order_ == other.order_</span></span>
+<span id="L68"><span class="lineNum">      68</span>         [<span class="tlaCBC"> <a href="#L69" title="CBC: Branch 0 was taken 211 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L69" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            211 :         &amp;&amp; skip_null_ == other.skip_null_</span></span>
+<span id="L69"><span class="lineNum">      69</span>   [<span class="tlaCBC"> <a href="#L75" title="CBC: Branch 0 was taken 1515 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L76" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L75" title="CBC: Branch 2 was taken 211 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L76" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">           3030 :         &amp;&amp; wrap_ == other.wrap_;</span></span>
+<span id="L70"><span class="lineNum">      70</span>                 :                : }</span>
+<span id="L71"><span class="lineNum">      71</span>                 :                : </span>
+<span id="L72"><span class="lineNum">      72</span>                 :<span class="tlaCBC">            297 : bool const_cell_iterator::operator==(const const_cell_iterator &amp;other) const</span></span>
+<span id="L73"><span class="lineNum">      73</span>                 :                : {</span>
+<span id="L74"><span class="lineNum">      74</span>                 :<span class="tlaCBC">            297 :     return ws_ == other.ws_</span></span>
+<span id="L75"><span class="lineNum">      75</span>         [<span class="tlaCBC"> <a href="#L76" title="CBC: Branch 0 was taken 121 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L76" title="CBC: Branch 1 was taken 176 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            297 :         &amp;&amp; cursor_ == other.cursor_</span></span>
+<span id="L76"><span class="lineNum">      76</span>         [<span class="tlaCBC"> <a href="#L77" title="CBC: Branch 0 was taken 121 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L77" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            121 :         &amp;&amp; bounds_ == other.bounds_</span></span>
+<span id="L77"><span class="lineNum">      77</span>         [<span class="tlaCBC"> <a href="#L78" title="CBC: Branch 0 was taken 121 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L78" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            121 :         &amp;&amp; order_ == other.order_</span></span>
+<span id="L78"><span class="lineNum">      78</span>         [<span class="tlaCBC"> <a href="#L79" title="CBC: Branch 0 was taken 121 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L79" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            121 :         &amp;&amp; skip_null_ == other.skip_null_</span></span>
+<span id="L79"><span class="lineNum">      79</span>   [<span class="tlaCBC"> <a href="#L94" title="CBC: Branch 0 was taken 297 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L96" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L94" title="CBC: Branch 2 was taken 121 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L96" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            594 :         &amp;&amp; wrap_ == other.wrap_;</span></span>
+<span id="L80"><span class="lineNum">      80</span>                 :                : }</span>
+<span id="L81"><span class="lineNum">      81</span>                 :                : </span>
+<span id="L82"><span class="lineNum">      82</span>                 :<span class="tlaCBC">           1505 : bool cell_iterator::operator!=(const cell_iterator &amp;other) const</span></span>
+<span id="L83"><span class="lineNum">      83</span>                 :                : {</span>
+<span id="L84"><span class="lineNum">      84</span>                 :<span class="tlaCBC">           1505 :     return !(*this == other);</span></span>
+<span id="L85"><span class="lineNum">      85</span>                 :                : }</span>
+<span id="L86"><span class="lineNum">      86</span>                 :                : </span>
+<span id="L87"><span class="lineNum">      87</span>                 :<span class="tlaCBC">             17 : bool const_cell_iterator::operator!=(const const_cell_iterator &amp;other) const</span></span>
+<span id="L88"><span class="lineNum">      88</span>                 :                : {</span>
+<span id="L89"><span class="lineNum">      89</span>                 :<span class="tlaCBC">             17 :     return !(*this == other);</span></span>
+<span id="L90"><span class="lineNum">      90</span>                 :                : }</span>
+<span id="L91"><span class="lineNum">      91</span>                 :                : </span>
+<span id="L92"><span class="lineNum">      92</span>                 :<span class="tlaCBC">             26 : cell_iterator &amp;cell_iterator::operator--()</span></span>
+<span id="L93"><span class="lineNum">      93</span>                 :                : {</span>
+<span id="L94"><span class="lineNum">      94</span>         [<span class="tlaCBC"> <a href="#L96" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L96" title="CBC: Branch 1 was taken 22 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             26 :     if (order_ == major_order::row)</span></span>
+<span id="L95"><span class="lineNum">      95</span>                 :                :     {</span>
+<span id="L96"><span class="lineNum">      96</span>   [<span class="tlaCBC"> <a href="#L98" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L98" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L98" title="CBC: Branch 2 was taken 4 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L98" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">              4 :         if (cursor_.column() &gt; bounds_.top_left().column())</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L98" title="CBC: Branch 4 was taken 4 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L98" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L98" title="CBC: Branch 6 was taken 4 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L98" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L98" title="CBC: Branch 8 was taken 4 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaUBC"> <a href="#L98" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span>]
+<span id="L97"><span class="lineNum">      97</span>                 :                :         {</span>
+<span id="L98"><span class="lineNum">      98</span>   [<span class="tlaCBC"> <a href="#L101" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L101" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L101" title="CBC: Branch 2 was taken 4 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L101" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">              4 :             cursor_.column_index(cursor_.column_index() - 1);</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L101" title="CBC: Branch 4 was taken 4 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L101" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L99"><span class="lineNum">      99</span>                 :                :         }</span>
+<span id="L100"><span class="lineNum">     100</span>                 :                : </span>
+<span id="L101"><span class="lineNum">     101</span>         [<span class="tlaUBC"> <a href="#L103" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L111" title="CBC: Branch 1 was taken 4 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              4 :         if (skip_null_)</span></span>
+<span id="L102"><span class="lineNum">     102</span>                 :                :         {</span>
+<span id="L103"><span class="lineNum">     103</span>   [<span class="tlaUBC"> <a href="#L105" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 2 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 3 was not executed" class="branchTla">#</a> </span> :<a href="#L120" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :             while (!ws_.has_cell(cursor_) &amp;&amp; cursor_.column() &gt; bounds_.top_left().column())</span></span>
+<span class="lineNum">        </span> <span class="tlaUBC"> <a href="#L105" title="UBC: Branch 4 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 5 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 6 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 7 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 8 was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span> <span class="tlaUBC"> <a href="#L105" title="UBC: Branch 9 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 10 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 11 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 12 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 13 was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>          <span class="tlaUBC"> <a href="#L105" title="UBC: Branch 14 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L105" title="UBC: Branch 15 was not executed" class="branchTla">#</a> </span>]
+<span id="L104"><span class="lineNum">     104</span>                 :                :             {</span>
+<span id="L105"><span class="lineNum">     105</span>   [<span class="tlaUBC"> <a href="#L111" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L111" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L111" title="UBC: Branch 2 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L111" title="UBC: Branch 3 was not executed" class="branchTla">#</a> </span> :<span class="tlaUBC">              0 :                 cursor_.column_index(cursor_.column_index() - 1);</span></span>
+<span class="lineNum">        </span>          <span class="tlaUBC"> <a href="#L111" title="UBC: Branch 4 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L111" title="UBC: Branch 5 was not executed" class="branchTla">#</a> </span>]
+<span id="L106"><span class="lineNum">     106</span>                 :                :             }</span>
+<span id="L107"><span class="lineNum">     107</span>                 :                :         }</span>
+<span id="L108"><span class="lineNum">     108</span>                 :                :     }</span>
+<span id="L109"><span class="lineNum">     109</span>                 :                :     else</span>
+<span id="L110"><span class="lineNum">     110</span>                 :                :     {</span>
+<span id="L111"><span class="lineNum">     111</span>   [<span class="tlaCBC"> <a href="#L116" title="CBC: Branch 0 was taken 22 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L118" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L116" title="CBC: Branch 2 was taken 22 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L118" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<a href="#L125" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          22 :         if (cursor_.row() &gt; bounds_.top_left().row())</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L116" title="CBC: Branch 4 was taken 22 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L118" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L112"><span class="lineNum">     112</span>                 :                :         {</span>
+<span id="L113"><span class="lineNum">     113</span>                 :<span class="tlaCBC">             22 :             cursor_.row(cursor_.row() - 1);</span></span>
+<span id="L114"><span class="lineNum">     114</span>                 :                :         }</span>
+<span id="L115"><span class="lineNum">     115</span>                 :                : </span>
+<span id="L116"><span class="lineNum">     116</span>         [<span class="tlaCBC"> <a href="#L118" title="CBC: Branch 0 was taken 20 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L118" title="CBC: Branch 1 was taken 2 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             22 :         if (skip_null_)</span></span>
+<span id="L117"><span class="lineNum">     117</span>                 :                :         {</span>
+<span id="L118"><span class="lineNum">     118</span>   [<span class="tlaCBC"> <a href="#L130" title="CBC: Branch 0 was taken 20 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L132" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L132" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L130" title="CBC: Branch 3 was taken 20 times" class="branchTla">+</a> </span> :<span class="tlaCBC">             20 :             while (!ws_.has_cell(cursor_) &amp;&amp; cursor_.row() &gt; bounds_.top_left().row())</span></span>
+<span class="lineNum">        </span> <span class="tlaUBC"> <a href="#L132" title="UBC: Branch 4 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L132" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L132" title="UBC: Branch 6 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L132" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L132" title="UBC: Branch 8 was not taken" class="branchTla">-</a> </span> 
+<span class="lineNum">        </span>    <span class="tlaUBC"> <a href="#L132" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L132" title="UBC: Branch 10 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L132" title="UBC: Branch 11 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L132" title="UBC: Branch 12 was not taken" class="branchTla">-</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaCBC"> <a href="#L130" title="CBC: Branch 13 was taken 20 times" class="branchTla">+</a> </span>]
+<span id="L119"><span class="lineNum">     119</span>                 :                :             {</span>
+<span id="L120"><span class="lineNum">     120</span>                 :<a href="#L141" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                 cursor_.row(cursor_.row() - 1);</span></span>
+<span id="L121"><span class="lineNum">     121</span>                 :                :             }</span>
+<span id="L122"><span class="lineNum">     122</span>                 :                :         }</span>
+<span id="L123"><span class="lineNum">     123</span>                 :                :     }</span>
+<span id="L124"><span class="lineNum">     124</span>                 :                : </span>
+<span id="L125"><span class="lineNum">     125</span>                 :<a href="#L147" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          26 :     return *this;</span></span>
+<span id="L126"><span class="lineNum">     126</span>                 :                : }</span>
+<span id="L127"><span class="lineNum">     127</span>                 :                : </span>
+<span id="L128"><span class="lineNum">     128</span>                 :<span class="tlaCBC">             34 : const_cell_iterator &amp;const_cell_iterator::operator--()</span></span>
+<span id="L129"><span class="lineNum">     129</span>                 :                : {</span>
+<span id="L130"><span class="lineNum">     130</span>         [<span class="tlaCBC"> <a href="#L132" title="CBC: Branch 0 was taken 15 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L132" title="CBC: Branch 1 was taken 19 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             34 :     if (order_ == major_order::row)</span></span>
+<span id="L131"><span class="lineNum">     131</span>                 :                :     {</span>
+<span id="L132"><span class="lineNum">     132</span>   [<span class="tlaCBC"> <a href="#L134" title="CBC: Branch 0 was taken 15 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L134" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L134" title="CBC: Branch 2 was taken 15 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L134" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">             15 :         if (cursor_.column() &gt; bounds_.top_left().column())</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L134" title="CBC: Branch 4 was taken 15 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L134" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L134" title="CBC: Branch 6 was taken 15 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L134" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L134" title="CBC: Branch 8 was taken 15 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaUBC"> <a href="#L134" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span>]
+<span id="L133"><span class="lineNum">     133</span>                 :                :         {</span>
+<span id="L134"><span class="lineNum">     134</span>   [<span class="tlaCBC"> <a href="#L137" title="CBC: Branch 0 was taken 15 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L137" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L137" title="CBC: Branch 2 was taken 15 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L137" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">             15 :             cursor_.column_index(cursor_.column_index() - 1);</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L137" title="CBC: Branch 4 was taken 15 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L137" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L135"><span class="lineNum">     135</span>                 :                :         }</span>
+<span id="L136"><span class="lineNum">     136</span>                 :                : </span>
+<span id="L137"><span class="lineNum">     137</span>         [<span class="tlaCBC"> <a href="#L139" title="CBC: Branch 0 was taken 15 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L139" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             15 :         if (skip_null_)</span></span>
+<span id="L138"><span class="lineNum">     138</span>                 :                :         {</span>
+<span id="L139"><span class="lineNum">     139</span>   [<span class="tlaCBC"> <a href="#L147" title="CBC: Branch 0 was taken 15 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L141" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L141" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L147" title="CBC: Branch 3 was taken 15 times" class="branchTla">+</a> </span> :<span class="tlaCBC">             15 :             while (!ws_.has_cell(cursor_) &amp;&amp; cursor_.column() &gt; bounds_.top_left().column())</span></span>
+<span class="lineNum">        </span> <span class="tlaUBC"> <a href="#L141" title="UBC: Branch 4 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L141" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L141" title="UBC: Branch 6 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L141" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L141" title="UBC: Branch 8 was not taken" class="branchTla">-</a> </span> 
+<span class="lineNum">        </span> <span class="tlaUBC"> <a href="#L141" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L141" title="UBC: Branch 10 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L141" title="UBC: Branch 11 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L141" title="UBC: Branch 12 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L141" title="UBC: Branch 13 was not taken" class="branchTla">-</a> </span> 
+<span class="lineNum">        </span>          <span class="tlaUBC"> <a href="#L141" title="UBC: Branch 14 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L147" title="CBC: Branch 15 was taken 15 times" class="branchTla">+</a> </span>]
+<span id="L140"><span class="lineNum">     140</span>                 :                :             {</span>
+<span id="L141"><span class="lineNum">     141</span>   [<span class="tlaUBC"> <a href="#L147" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L147" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L147" title="UBC: Branch 2 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L147" title="UBC: Branch 3 was not executed" class="branchTla">#</a> </span> :<a href="#L156" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                 cursor_.column_index(cursor_.column_index() - 1);</span></span>
+<span class="lineNum">        </span>          <span class="tlaUBC"> <a href="#L147" title="UBC: Branch 4 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L147" title="UBC: Branch 5 was not executed" class="branchTla">#</a> </span>]
+<span id="L142"><span class="lineNum">     142</span>                 :                :             }</span>
+<span id="L143"><span class="lineNum">     143</span>                 :                :         }</span>
+<span id="L144"><span class="lineNum">     144</span>                 :                :     }</span>
+<span id="L145"><span class="lineNum">     145</span>                 :                :     else</span>
+<span id="L146"><span class="lineNum">     146</span>                 :                :     {</span>
+<span id="L147"><span class="lineNum">     147</span>   [<span class="tlaCBC"> <a href="#L152" title="CBC: Branch 0 was taken 19 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L152" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L152" title="CBC: Branch 2 was taken 19 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L152" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<a href="#L161" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          19 :         if (cursor_.row() &gt; bounds_.top_left().row())</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L152" title="CBC: Branch 4 was taken 19 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L152" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L148"><span class="lineNum">     148</span>                 :                :         {</span>
+<span id="L149"><span class="lineNum">     149</span>                 :<span class="tlaCBC">             19 :             cursor_.row(cursor_.row() - 1);</span></span>
+<span id="L150"><span class="lineNum">     150</span>                 :                :         }</span>
+<span id="L151"><span class="lineNum">     151</span>                 :                : </span>
+<span id="L152"><span class="lineNum">     152</span>         [<span class="tlaCBC"> <a href="#L154" title="CBC: Branch 0 was taken 19 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L154" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             19 :         if (skip_null_)</span></span>
+<span id="L153"><span class="lineNum">     153</span>                 :                :         {</span>
+<span id="L154"><span class="lineNum">     154</span>   [<span class="tlaCBC"> <a href="#L182" title="CBC: Branch 0 was taken 19 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L184" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L184" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L182" title="CBC: Branch 3 was taken 19 times" class="branchTla">+</a> </span> :<span class="tlaCBC">             19 :             while (!ws_.has_cell(cursor_) &amp;&amp; cursor_.row() &gt; bounds_.top_left().row())</span></span>
+<span class="lineNum">        </span> <span class="tlaUBC"> <a href="#L184" title="UBC: Branch 4 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L184" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L184" title="UBC: Branch 6 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L184" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L184" title="UBC: Branch 8 was not taken" class="branchTla">-</a> </span> 
+<span class="lineNum">        </span>    <span class="tlaUBC"> <a href="#L184" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L184" title="UBC: Branch 10 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L184" title="UBC: Branch 11 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L184" title="UBC: Branch 12 was not taken" class="branchTla">-</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaCBC"> <a href="#L182" title="CBC: Branch 13 was taken 19 times" class="branchTla">+</a> </span>]
+<span id="L155"><span class="lineNum">     155</span>                 :                :             {</span>
+<span id="L156"><span class="lineNum">     156</span>                 :<a href="#L208" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                 cursor_.row(cursor_.row() - 1);</span></span>
+<span id="L157"><span class="lineNum">     157</span>                 :                :             }</span>
+<span id="L158"><span class="lineNum">     158</span>                 :                :         }</span>
+<span id="L159"><span class="lineNum">     159</span>                 :                :     }</span>
+<span id="L160"><span class="lineNum">     160</span>                 :                : </span>
+<span id="L161"><span class="lineNum">     161</span>                 :<a href="#L213" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          34 :     return *this;</span></span>
+<span id="L162"><span class="lineNum">     162</span>                 :                : }</span>
+<span id="L163"><span class="lineNum">     163</span>                 :                : </span>
+<span id="L164"><span class="lineNum">     164</span>                 :<span class="tlaCBC">              3 : cell_iterator cell_iterator::operator--(int)</span></span>
+<span id="L165"><span class="lineNum">     165</span>                 :                : {</span>
+<span id="L166"><span class="lineNum">     166</span>                 :<span class="tlaCBC">              3 :     cell_iterator old = *this;</span></span>
+<span id="L167"><span class="lineNum">     167</span>                 :<span class="tlaCBC">              3 :     --*this;</span></span>
+<span id="L168"><span class="lineNum">     168</span>                 :                : </span>
+<span id="L169"><span class="lineNum">     169</span>                 :<span class="tlaCBC">              3 :     return old;</span></span>
+<span id="L170"><span class="lineNum">     170</span>                 :                : }</span>
+<span id="L171"><span class="lineNum">     171</span>                 :                : </span>
+<span id="L172"><span class="lineNum">     172</span>                 :<span class="tlaCBC">              2 : const_cell_iterator const_cell_iterator::operator--(int)</span></span>
+<span id="L173"><span class="lineNum">     173</span>                 :                : {</span>
+<span id="L174"><span class="lineNum">     174</span>                 :<span class="tlaCBC">              2 :     const_cell_iterator old = *this;</span></span>
+<span id="L175"><span class="lineNum">     175</span>                 :<span class="tlaCBC">              2 :     --*this;</span></span>
+<span id="L176"><span class="lineNum">     176</span>                 :                : </span>
+<span id="L177"><span class="lineNum">     177</span>                 :<span class="tlaCBC">              2 :     return old;</span></span>
+<span id="L178"><span class="lineNum">     178</span>                 :                : }</span>
+<span id="L179"><span class="lineNum">     179</span>                 :                : </span>
+<span id="L180"><span class="lineNum">     180</span>                 :<span class="tlaCBC">           1450 : cell_iterator &amp;cell_iterator::operator++()</span></span>
+<span id="L181"><span class="lineNum">     181</span>                 :                : {</span>
+<span id="L182"><span class="lineNum">     182</span>         [<span class="tlaCBC"> <a href="#L184" title="CBC: Branch 0 was taken 1432 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L184" title="CBC: Branch 1 was taken 18 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1450 :     if (order_ == major_order::row)</span></span>
+<span id="L183"><span class="lineNum">     183</span>                 :                :     {</span>
+<span id="L184"><span class="lineNum">     184</span>   [<span class="tlaCBC"> <a href="#L186" title="CBC: Branch 0 was taken 1432 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L186" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L186" title="CBC: Branch 2 was taken 1432 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L186" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">           1432 :         if (cursor_.column() &lt;= bounds_.bottom_right().column())</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L186" title="CBC: Branch 4 was taken 1432 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L186" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L186" title="CBC: Branch 6 was taken 1432 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L186" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L186" title="CBC: Branch 8 was taken 1333 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaCBC"> <a href="#L186" title="CBC: Branch 9 was taken 99 times" class="branchTla">+</a> </span>]
+<span id="L185"><span class="lineNum">     185</span>                 :                :         {</span>
+<span id="L186"><span class="lineNum">     186</span>   [<span class="tlaCBC"> <a href="#L189" title="CBC: Branch 0 was taken 1333 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L191" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L189" title="CBC: Branch 2 was taken 1333 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L191" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">           1333 :             cursor_.column_index(cursor_.column_index() + 1);</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L189" title="CBC: Branch 4 was taken 1333 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L191" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L187"><span class="lineNum">     187</span>                 :                :         }</span>
+<span id="L188"><span class="lineNum">     188</span>                 :                : </span>
+<span id="L189"><span class="lineNum">     189</span>         [<span class="tlaCBC"> <a href="#L191" title="CBC: Branch 0 was taken 598 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L191" title="CBC: Branch 1 was taken 834 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1432 :         if (skip_null_)</span></span>
+<span id="L190"><span class="lineNum">     190</span>                 :                :         {</span>
+<span id="L191"><span class="lineNum">     191</span>   [<span class="tlaCBC"> <a href="#L193" title="CBC: Branch 0 was taken 942 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L193" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L193" title="CBC: Branch 2 was taken 542 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L193" title="CBC: Branch 3 was taken 400 times" class="branchTla">+</a> </span> :<span class="tlaCBC">            942 :             while (!ws_.has_cell(cursor_) &amp;&amp; cursor_.column() &lt;= bounds_.bottom_right().column())</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L193" title="CBC: Branch 4 was taken 542 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L193" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L193" title="CBC: Branch 6 was taken 542 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L193" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L193" title="CBC: Branch 8 was taken 542 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span> <span class="tlaUBC"> <a href="#L193" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L193" title="CBC: Branch 10 was taken 542 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L193" title="UBC: Branch 11 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L193" title="CBC: Branch 12 was taken 344 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L193" title="CBC: Branch 13 was taken 198 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L193" title="CBC: Branch 14 was taken 344 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L193" title="CBC: Branch 15 was taken 598 times" class="branchTla">+</a> </span>]
+<span id="L192"><span class="lineNum">     192</span>                 :                :             {</span>
+<span id="L193"><span class="lineNum">     193</span>   [<span class="tlaCBC"> <a href="#L199" title="CBC: Branch 0 was taken 344 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L199" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L199" title="CBC: Branch 2 was taken 344 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L199" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">            344 :                 cursor_.column_index(cursor_.column_index() + 1);</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L199" title="CBC: Branch 4 was taken 344 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L199" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L194"><span class="lineNum">     194</span>                 :                :             }</span>
+<span id="L195"><span class="lineNum">     195</span>                 :                :         }</span>
+<span id="L196"><span class="lineNum">     196</span>                 :                :     }</span>
+<span id="L197"><span class="lineNum">     197</span>                 :                :     else</span>
+<span id="L198"><span class="lineNum">     198</span>                 :                :     {</span>
+<span id="L199"><span class="lineNum">     199</span>   [<span class="tlaCBC"> <a href="#L204" title="CBC: Branch 0 was taken 18 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L204" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L204" title="CBC: Branch 2 was taken 18 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L204" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">             18 :         if (cursor_.row() &lt;= bounds_.bottom_right().row())</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L204" title="CBC: Branch 4 was taken 9 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L204" title="CBC: Branch 5 was taken 9 times" class="branchTla">+</a> </span>]
+<span id="L200"><span class="lineNum">     200</span>                 :                :         {</span>
+<span id="L201"><span class="lineNum">     201</span>                 :<span class="tlaCBC">              9 :             cursor_.row(cursor_.row() + 1);</span></span>
+<span id="L202"><span class="lineNum">     202</span>                 :                :         }</span>
+<span id="L203"><span class="lineNum">     203</span>                 :                : </span>
+<span id="L204"><span class="lineNum">     204</span>         [<span class="tlaCBC"> <a href="#L206" title="CBC: Branch 0 was taken 18 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L206" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             18 :         if (skip_null_)</span></span>
+<span id="L205"><span class="lineNum">     205</span>                 :                :         {</span>
+<span id="L206"><span class="lineNum">     206</span>   [<span class="tlaCBC"> <a href="#L218" title="CBC: Branch 0 was taken 18 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L220" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L218" title="CBC: Branch 2 was taken 13 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L218" title="CBC: Branch 3 was taken 5 times" class="branchTla">+</a> </span> :<span class="tlaCBC">             18 :             while (!ws_.has_cell(cursor_) &amp;&amp; cursor_.row() &lt;= bounds_.bottom_right().row())</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L218" title="CBC: Branch 4 was taken 13 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L220" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L218" title="CBC: Branch 6 was taken 13 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L220" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L218" title="CBC: Branch 8 was taken 13 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>    <span class="tlaUBC"> <a href="#L220" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L220" title="UBC: Branch 10 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L218" title="CBC: Branch 11 was taken 13 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L220" title="UBC: Branch 12 was not taken" class="branchTla">-</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaCBC"> <a href="#L218" title="CBC: Branch 13 was taken 18 times" class="branchTla">+</a> </span>]
+<span id="L207"><span class="lineNum">     207</span>                 :                :             {</span>
+<span id="L208"><span class="lineNum">     208</span>                 :<a href="#L273" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                 cursor_.row(cursor_.row() + 1);</span></span>
+<span id="L209"><span class="lineNum">     209</span>                 :                :             }</span>
+<span id="L210"><span class="lineNum">     210</span>                 :                :         }</span>
+<span id="L211"><span class="lineNum">     211</span>                 :                :     }</span>
+<span id="L212"><span class="lineNum">     212</span>                 :                : </span>
+<span id="L213"><span class="lineNum">     213</span>                 :<a href="#L278" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        1450 :     return *this;</span></span>
+<span id="L214"><span class="lineNum">     214</span>                 :                : }</span>
+<span id="L215"><span class="lineNum">     215</span>                 :                : </span>
+<span id="L216"><span class="lineNum">     216</span>                 :<span class="tlaCBC">            442 : const_cell_iterator &amp;const_cell_iterator::operator++()</span></span>
+<span id="L217"><span class="lineNum">     217</span>                 :                : {</span>
+<span id="L218"><span class="lineNum">     218</span>         [<span class="tlaCBC"> <a href="#L220" title="CBC: Branch 0 was taken 351 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L220" title="CBC: Branch 1 was taken 91 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            442 :     if (order_ == major_order::row)</span></span>
+<span id="L219"><span class="lineNum">     219</span>                 :                :     {</span>
+<span id="L220"><span class="lineNum">     220</span>   [<span class="tlaCBC"> <a href="#L222" title="CBC: Branch 0 was taken 351 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L222" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L222" title="CBC: Branch 2 was taken 351 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L222" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">            351 :         if (cursor_.column() &lt;= bounds_.bottom_right().column())</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L222" title="CBC: Branch 4 was taken 351 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L222" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L222" title="CBC: Branch 6 was taken 351 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L222" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L222" title="CBC: Branch 8 was taken 139 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaCBC"> <a href="#L222" title="CBC: Branch 9 was taken 212 times" class="branchTla">+</a> </span>]
+<span id="L221"><span class="lineNum">     221</span>                 :                :         {</span>
+<span id="L222"><span class="lineNum">     222</span>   [<span class="tlaCBC"> <a href="#L225" title="CBC: Branch 0 was taken 139 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L225" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L225" title="CBC: Branch 2 was taken 139 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L225" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">            139 :             cursor_.column_index(cursor_.column_index() + 1);</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L225" title="CBC: Branch 4 was taken 139 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L225" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L223"><span class="lineNum">     223</span>                 :                :         }</span>
+<span id="L224"><span class="lineNum">     224</span>                 :                : </span>
+<span id="L225"><span class="lineNum">     225</span>         [<span class="tlaCBC"> <a href="#L227" title="CBC: Branch 0 was taken 351 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L227" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            351 :         if (skip_null_)</span></span>
+<span id="L226"><span class="lineNum">     226</span>                 :                :         {</span>
+<span id="L227"><span class="lineNum">     227</span>   [<span class="tlaCBC"> <a href="#L229" title="CBC: Branch 0 was taken 1035 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L229" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L229" title="CBC: Branch 2 was taken 990 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L229" title="CBC: Branch 3 was taken 45 times" class="branchTla">+</a> </span> :<span class="tlaCBC">           1035 :             while (!ws_.has_cell(cursor_) &amp;&amp; cursor_.column() &lt;= bounds_.bottom_right().column())</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L229" title="CBC: Branch 4 was taken 990 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L229" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L229" title="CBC: Branch 6 was taken 990 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L229" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L229" title="CBC: Branch 8 was taken 990 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span> <span class="tlaUBC"> <a href="#L229" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L229" title="CBC: Branch 10 was taken 990 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L229" title="UBC: Branch 11 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L229" title="CBC: Branch 12 was taken 684 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L229" title="CBC: Branch 13 was taken 306 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L229" title="CBC: Branch 14 was taken 684 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L229" title="CBC: Branch 15 was taken 351 times" class="branchTla">+</a> </span>]
+<span id="L228"><span class="lineNum">     228</span>                 :                :             {</span>
+<span id="L229"><span class="lineNum">     229</span>   [<span class="tlaCBC"> <a href="#L235" title="CBC: Branch 0 was taken 684 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L235" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L235" title="CBC: Branch 2 was taken 684 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L235" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">            684 :                 cursor_.column_index(cursor_.column_index() + 1);</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L235" title="CBC: Branch 4 was taken 684 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L235" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L230"><span class="lineNum">     230</span>                 :                :             }</span>
+<span id="L231"><span class="lineNum">     231</span>                 :                :         }</span>
+<span id="L232"><span class="lineNum">     232</span>                 :                :     }</span>
+<span id="L233"><span class="lineNum">     233</span>                 :                :     else</span>
+<span id="L234"><span class="lineNum">     234</span>                 :                :     {</span>
+<span id="L235"><span class="lineNum">     235</span>   [<span class="tlaCBC"> <a href="#L240" title="CBC: Branch 0 was taken 91 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L240" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L240" title="CBC: Branch 2 was taken 91 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L240" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">             91 :         if (cursor_.row() &lt;= bounds_.bottom_right().row())</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L240" title="CBC: Branch 4 was taken 27 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L240" title="CBC: Branch 5 was taken 64 times" class="branchTla">+</a> </span>]
+<span id="L236"><span class="lineNum">     236</span>                 :                :         {</span>
+<span id="L237"><span class="lineNum">     237</span>                 :<span class="tlaCBC">             27 :             cursor_.row(cursor_.row() + 1);</span></span>
+<span id="L238"><span class="lineNum">     238</span>                 :                :         }</span>
+<span id="L239"><span class="lineNum">     239</span>                 :                : </span>
+<span id="L240"><span class="lineNum">     240</span>         [<span class="tlaCBC"> <a href="#L242" title="CBC: Branch 0 was taken 91 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L242" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             91 :         if (skip_null_)</span></span>
+<span id="L241"><span class="lineNum">     241</span>                 :                :         {</span>
+<span id="L242"><span class="lineNum">     242</span>   [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 109 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 2 was taken 104 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 3 was taken 5 times" class="branchTla">+</a> </span> :<span class="tlaCBC">            109 :             while (!ws_.has_cell(cursor_) &amp;&amp; cursor_.row() &lt;= bounds_.bottom_right().row())</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#top" title="CBC: Branch 4 was taken 104 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 6 was taken 104 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 8 was taken 104 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>    <span class="tlaUBC"> <a href="#top" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 10 was taken 18 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 11 was taken 86 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 12 was taken 18 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaCBC"> <a href="#top" title="CBC: Branch 13 was taken 91 times" class="branchTla">+</a> </span>]
+<span id="L243"><span class="lineNum">     243</span>                 :                :             {</span>
+<span id="L244"><span class="lineNum">     244</span>                 :<span class="tlaCBC">             18 :                 cursor_.row(cursor_.row() + 1);</span></span>
+<span id="L245"><span class="lineNum">     245</span>                 :                :             }</span>
+<span id="L246"><span class="lineNum">     246</span>                 :                :         }</span>
+<span id="L247"><span class="lineNum">     247</span>                 :                :     }</span>
+<span id="L248"><span class="lineNum">     248</span>                 :                : </span>
+<span id="L249"><span class="lineNum">     249</span>                 :<span class="tlaCBC">            442 :     return *this;</span></span>
+<span id="L250"><span class="lineNum">     250</span>                 :                : }</span>
+<span id="L251"><span class="lineNum">     251</span>                 :                : </span>
+<span id="L252"><span class="lineNum">     252</span>                 :<span class="tlaCBC">            150 : cell_iterator cell_iterator::operator++(int)</span></span>
+<span id="L253"><span class="lineNum">     253</span>                 :                : {</span>
+<span id="L254"><span class="lineNum">     254</span>                 :<span class="tlaCBC">            150 :     cell_iterator old = *this;</span></span>
+<span id="L255"><span class="lineNum">     255</span>                 :<span class="tlaCBC">            150 :     ++*this;</span></span>
+<span id="L256"><span class="lineNum">     256</span>                 :                : </span>
+<span id="L257"><span class="lineNum">     257</span>                 :<span class="tlaCBC">            150 :     return old;</span></span>
+<span id="L258"><span class="lineNum">     258</span>                 :                : }</span>
+<span id="L259"><span class="lineNum">     259</span>                 :                : </span>
+<span id="L260"><span class="lineNum">     260</span>                 :<span class="tlaCBC">            427 : const_cell_iterator const_cell_iterator::operator++(int)</span></span>
+<span id="L261"><span class="lineNum">     261</span>                 :                : {</span>
+<span id="L262"><span class="lineNum">     262</span>                 :<span class="tlaCBC">            427 :     const_cell_iterator old = *this;</span></span>
+<span id="L263"><span class="lineNum">     263</span>                 :<span class="tlaCBC">            427 :     ++*this;</span></span>
+<span id="L264"><span class="lineNum">     264</span>                 :                : </span>
+<span id="L265"><span class="lineNum">     265</span>                 :<span class="tlaCBC">            427 :     return old;</span></span>
+<span id="L266"><span class="lineNum">     266</span>                 :                : }</span>
+<span id="L267"><span class="lineNum">     267</span>                 :                : </span>
+<span id="L268"><span class="lineNum">     268</span>                 :<span class="tlaCBC">           1330 : cell_iterator::reference cell_iterator::operator*()</span></span>
+<span id="L269"><span class="lineNum">     269</span>                 :                : {</span>
+<span id="L270"><span class="lineNum">     270</span>                 :<span class="tlaCBC">           1330 :     return ws_.cell(cursor_);</span></span>
+<span id="L271"><span class="lineNum">     271</span>                 :                : }</span>
+<span id="L272"><span class="lineNum">     272</span>                 :                : </span>
+<span id="L273"><span class="lineNum">     273</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : const cell_iterator::reference cell_iterator::operator*() const</span></span>
+<span id="L274"><span class="lineNum">     274</span>                 :                : {</span>
+<span id="L275"><span class="lineNum">     275</span>                 :<span class="tlaUBC">              0 :     return ws_.cell(cursor_);</span></span>
+<span id="L276"><span class="lineNum">     276</span>                 :                : }</span>
+<span id="L277"><span class="lineNum">     277</span>                 :                : </span>
+<span id="L278"><span class="lineNum">     278</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          36 : const const_cell_iterator::reference const_cell_iterator::operator*() const</span></span>
+<span id="L279"><span class="lineNum">     279</span>                 :                : {</span>
+<span id="L280"><span class="lineNum">     280</span>                 :<span class="tlaCBC">             36 :     return ws_.cell(cursor_);</span></span>
+<span id="L281"><span class="lineNum">     281</span>                 :                : }</span>
+<span id="L282"><span class="lineNum">     282</span>                 :                : </span>
+<span id="L283"><span class="lineNum">     283</span>                 :<span class="tlaCBC">              4 : bool cell_iterator::has_value() const{</span></span>
+<span id="L284"><span class="lineNum">     284</span>                 :<span class="tlaCBC">              4 :     return ws_.has_cell(cursor_);</span></span>
+<span id="L285"><span class="lineNum">     285</span>                 :                : }</span>
+<span id="L286"><span class="lineNum">     286</span>                 :                : </span>
+<span id="L287"><span class="lineNum">     287</span>                 :<span class="tlaCBC">              4 : bool const_cell_iterator::has_value() const{</span></span>
+<span id="L288"><span class="lineNum">     288</span>                 :<span class="tlaCBC">              4 :     return ws_.has_cell(cursor_);</span></span>
+<span id="L289"><span class="lineNum">     289</span>                 :                : }</span>
+<span id="L290"><span class="lineNum">     290</span>                 :                : } // namespace xlnt</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

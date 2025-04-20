@@ -1,0 +1,431 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/styles/color.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory source/styles">source/styles</a> - color.cpp<span style="font-size: 80%;"> (source / <a href="color.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">91.5&nbsp;%</td>
+            <td class="headerCovTableEntry">142</td>
+            <td class="headerCovTableEntry">130</td>
+            <td class="headerCovTableEntry"><a href="#L116" title="goto first UBC line">12</a></td>
+            <td class="headerCovTableEntry"><a href="#L35" title="goto first CBC line">130</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-04-20 22:30:17</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryMed">88.9&nbsp;%</td>
+            <td class="headerCovTableEntry">45</td>
+            <td class="headerCovTableEntry">40</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">40</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">55.6&nbsp;%</td>
+            <td class="headerCovTableEntry">72</td>
+            <td class="headerCovTableEntry">40</td>
+            <td class="headerCovTableEntry"><a href="#L38" title="goto first UBC branch">64</a></td>
+            <td class="headerCovTableEntry"><a href="#L38" title="goto first CBC branch">80</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-04-20 22:30:16</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>                 :                : // Copyright (c) 2014-2022 Thomas Fussell</span>
+<span id="L2"><span class="lineNum">       2</span>                 :                : // Copyright (c) 2010-2015 openpyxl</span>
+<span id="L3"><span class="lineNum">       3</span>                 :                : // Copyright (c) 2024-2025 xlnt-community</span>
+<span id="L4"><span class="lineNum">       4</span>                 :                : //</span>
+<span id="L5"><span class="lineNum">       5</span>                 :                : // Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="L6"><span class="lineNum">       6</span>                 :                : // of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span id="L7"><span class="lineNum">       7</span>                 :                : // in the Software without restriction, including without limitation the rights</span>
+<span id="L8"><span class="lineNum">       8</span>                 :                : // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="L9"><span class="lineNum">       9</span>                 :                : // copies of the Software, and to permit persons to whom the Software is</span>
+<span id="L10"><span class="lineNum">      10</span>                 :                : // furnished to do so, subject to the following conditions:</span>
+<span id="L11"><span class="lineNum">      11</span>                 :                : //</span>
+<span id="L12"><span class="lineNum">      12</span>                 :                : // The above copyright notice and this permission notice shall be included in</span>
+<span id="L13"><span class="lineNum">      13</span>                 :                : // all copies or substantial portions of the Software.</span>
+<span id="L14"><span class="lineNum">      14</span>                 :                : //</span>
+<span id="L15"><span class="lineNum">      15</span>                 :                : // THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span id="L16"><span class="lineNum">      16</span>                 :                : // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span id="L17"><span class="lineNum">      17</span>                 :                : // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span id="L18"><span class="lineNum">      18</span>                 :                : // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span id="L19"><span class="lineNum">      19</span>                 :                : // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span id="L20"><span class="lineNum">      20</span>                 :                : // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span id="L21"><span class="lineNum">      21</span>                 :                : // THE SOFTWARE</span>
+<span id="L22"><span class="lineNum">      22</span>                 :                : //</span>
+<span id="L23"><span class="lineNum">      23</span>                 :                : // @license: http://www.opensource.org/licenses/mit-license.php</span>
+<span id="L24"><span class="lineNum">      24</span>                 :                : // @author: see AUTHORS file</span>
+<span id="L25"><span class="lineNum">      25</span>                 :                : </span>
+<span id="L26"><span class="lineNum">      26</span>                 :                : #include &lt;cmath&gt;</span>
+<span id="L27"><span class="lineNum">      27</span>                 :                : #include &lt;cstdlib&gt;</span>
+<span id="L28"><span class="lineNum">      28</span>                 :                : </span>
+<span id="L29"><span class="lineNum">      29</span>                 :                : #include &lt;xlnt/styles/color.hpp&gt;</span>
+<span id="L30"><span class="lineNum">      30</span>                 :                : #include &lt;xlnt/utils/exceptions.hpp&gt;</span>
+<span id="L31"><span class="lineNum">      31</span>                 :                : #include &lt;detail/serialization/parsers.hpp&gt;</span>
+<span id="L32"><span class="lineNum">      32</span>                 :                : </span>
+<span id="L33"><span class="lineNum">      33</span>                 :                : namespace {</span>
+<span id="L34"><span class="lineNum">      34</span>                 :                : </span>
+<span id="L35"><span class="lineNum">      35</span>                 :<a href="#L141" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         475 : std::array&lt;std::uint8_t, 4&gt; decode_hex_string(const std::string &amp;hex_string)</span></span>
+<span id="L36"><span class="lineNum">      36</span>                 :                : {</span>
+<span id="L37"><span class="lineNum">      37</span>                 :<span class="tlaCBC">            475 :     unsigned int x = 0;</span></span>
+<span id="L38"><span class="lineNum">      38</span>         [<span class="tlaCBC"> <a href="#L91" title="CBC: Branch 0 was taken 475 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L91" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            475 :     xlnt::detail::parse(hex_string, x, nullptr, 16);</span></span>
+<span id="L39"><span class="lineNum">      39</span>                 :                : </span>
+<span id="L40"><span class="lineNum">      40</span>                 :<span class="tlaCBC">            475 :     auto a = static_cast&lt;std::uint8_t&gt;(x &gt;&gt; 24);</span></span>
+<span id="L41"><span class="lineNum">      41</span>                 :<span class="tlaCBC">            475 :     auto r = static_cast&lt;std::uint8_t&gt;((x &gt;&gt; 16) &amp; 0xff);</span></span>
+<span id="L42"><span class="lineNum">      42</span>                 :<span class="tlaCBC">            475 :     auto g = static_cast&lt;std::uint8_t&gt;((x &gt;&gt; 8) &amp; 0xff);</span></span>
+<span id="L43"><span class="lineNum">      43</span>                 :<span class="tlaCBC">            475 :     auto b = static_cast&lt;std::uint8_t&gt;(x &amp; 0xff);</span></span>
+<span id="L44"><span class="lineNum">      44</span>                 :                : </span>
+<span id="L45"><span class="lineNum">      45</span>                 :<span class="tlaCBC">            475 :     return {{r, g, b, a}};</span></span>
+<span id="L46"><span class="lineNum">      46</span>                 :                : }</span>
+<span id="L47"><span class="lineNum">      47</span>                 :                : </span>
+<span id="L48"><span class="lineNum">      48</span>                 :                : } // namespace</span>
+<span id="L49"><span class="lineNum">      49</span>                 :                : </span>
+<span id="L50"><span class="lineNum">      50</span>                 :                : namespace xlnt {</span>
+<span id="L51"><span class="lineNum">      51</span>                 :                : </span>
+<span id="L52"><span class="lineNum">      52</span>                 :                : // indexed_color implementation</span>
+<span id="L53"><span class="lineNum">      53</span>                 :                : </span>
+<span id="L54"><span class="lineNum">      54</span>                 :<span class="tlaCBC">           3543 : indexed_color::indexed_color(std::size_t index)</span></span>
+<span id="L55"><span class="lineNum">      55</span>                 :<span class="tlaCBC">           3543 :     : index_(index)</span></span>
+<span id="L56"><span class="lineNum">      56</span>                 :                : {</span>
+<span id="L57"><span class="lineNum">      57</span>                 :<span class="tlaCBC">           3543 : }</span></span>
+<span id="L58"><span class="lineNum">      58</span>                 :                : </span>
+<span id="L59"><span class="lineNum">      59</span>                 :<span class="tlaCBC">           1214 : std::size_t indexed_color::index() const</span></span>
+<span id="L60"><span class="lineNum">      60</span>                 :                : {</span>
+<span id="L61"><span class="lineNum">      61</span>                 :<span class="tlaCBC">           1214 :     return index_;</span></span>
+<span id="L62"><span class="lineNum">      62</span>                 :                : }</span>
+<span id="L63"><span class="lineNum">      63</span>                 :                : </span>
+<span id="L64"><span class="lineNum">      64</span>                 :<span class="tlaCBC">              1 : void indexed_color::index(std::size_t index)</span></span>
+<span id="L65"><span class="lineNum">      65</span>                 :                : {</span>
+<span id="L66"><span class="lineNum">      66</span>                 :<span class="tlaCBC">              1 :     index_ = index;</span></span>
+<span id="L67"><span class="lineNum">      67</span>                 :<span class="tlaCBC">              1 : }</span></span>
+<span id="L68"><span class="lineNum">      68</span>                 :                : </span>
+<span id="L69"><span class="lineNum">      69</span>                 :                : // theme_color implementation</span>
+<span id="L70"><span class="lineNum">      70</span>                 :                : </span>
+<span id="L71"><span class="lineNum">      71</span>                 :<span class="tlaCBC">           3543 : theme_color::theme_color(std::size_t index)</span></span>
+<span id="L72"><span class="lineNum">      72</span>                 :<span class="tlaCBC">           3543 :     : index_(index)</span></span>
+<span id="L73"><span class="lineNum">      73</span>                 :                : {</span>
+<span id="L74"><span class="lineNum">      74</span>                 :<span class="tlaCBC">           3543 : }</span></span>
+<span id="L75"><span class="lineNum">      75</span>                 :                : </span>
+<span id="L76"><span class="lineNum">      76</span>                 :<span class="tlaCBC">           2090 : std::size_t theme_color::index() const</span></span>
+<span id="L77"><span class="lineNum">      77</span>                 :                : {</span>
+<span id="L78"><span class="lineNum">      78</span>                 :<span class="tlaCBC">           2090 :     return index_;</span></span>
+<span id="L79"><span class="lineNum">      79</span>                 :                : }</span>
+<span id="L80"><span class="lineNum">      80</span>                 :                : </span>
+<span id="L81"><span class="lineNum">      81</span>                 :<span class="tlaCBC">              1 : void theme_color::index(std::size_t index)</span></span>
+<span id="L82"><span class="lineNum">      82</span>                 :                : {</span>
+<span id="L83"><span class="lineNum">      83</span>                 :<span class="tlaCBC">              1 :     index_ = index;</span></span>
+<span id="L84"><span class="lineNum">      84</span>                 :<span class="tlaCBC">              1 : }</span></span>
+<span id="L85"><span class="lineNum">      85</span>                 :                : </span>
+<span id="L86"><span class="lineNum">      86</span>                 :                : // rgb_color implementation</span>
+<span id="L87"><span class="lineNum">      87</span>                 :                : </span>
+<span id="L88"><span class="lineNum">      88</span>                 :<span class="tlaCBC">           1432 : std::string rgb_color::hex_string() const</span></span>
+<span id="L89"><span class="lineNum">      89</span>                 :                : {</span>
+<span id="L90"><span class="lineNum">      90</span>                 :                :     static const char *digits = &quot;0123456789ABCDEF&quot;;</span>
+<span id="L91"><span class="lineNum">      91</span>         [<span class="tlaCBC"> <a href="#L94" title="CBC: Branch 0 was taken 716 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L150" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            716 :     std::string hex_string(8, '0');</span></span>
+<span id="L92"><span class="lineNum">      92</span>                 :<span class="tlaCBC">            716 :     auto out_iter = hex_string.begin();</span></span>
+<span id="L93"><span class="lineNum">      93</span>                 :                : </span>
+<span id="L94"><span class="lineNum">      94</span>         [<span class="tlaCBC"> <a href="#L96" title="CBC: Branch 0 was taken 2864 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L96" title="CBC: Branch 1 was taken 716 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           3580 :     for (auto byte : {rgba_[3], rgba_[0], rgba_[1], rgba_[2]})</span></span>
+<span id="L95"><span class="lineNum">      95</span>                 :                :     {</span>
+<span id="L96"><span class="lineNum">      96</span>         [<span class="tlaCBC"> <a href="#L150" title="CBC: Branch 0 was taken 5728 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L150" title="CBC: Branch 1 was taken 2864 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           8592 :         for (auto i = 0; i &lt; 2; ++i)</span></span>
+<span id="L97"><span class="lineNum">      97</span>                 :                :         {</span>
+<span id="L98"><span class="lineNum">      98</span>                 :<span class="tlaCBC">           5728 :             auto nibble = byte &gt;&gt; (4 * (1 - i)) &amp; 0xf;</span></span>
+<span id="L99"><span class="lineNum">      99</span>                 :<span class="tlaCBC">           5728 :             *(out_iter++) = digits[nibble];</span></span>
+<span id="L100"><span class="lineNum">     100</span>                 :                :         }</span>
+<span id="L101"><span class="lineNum">     101</span>                 :                :     }</span>
+<span id="L102"><span class="lineNum">     102</span>                 :                : </span>
+<span id="L103"><span class="lineNum">     103</span>                 :<span class="tlaCBC">            716 :     return hex_string;</span></span>
+<span id="L104"><span class="lineNum">     104</span>                 :                : }</span>
+<span id="L105"><span class="lineNum">     105</span>                 :                : </span>
+<span id="L106"><span class="lineNum">     106</span>                 :<span class="tlaCBC">            475 : rgb_color::rgb_color(const std::string &amp;hex_string)</span></span>
+<span id="L107"><span class="lineNum">     107</span>                 :<span class="tlaCBC">            475 :     : rgba_(decode_hex_string(hex_string))</span></span>
+<span id="L108"><span class="lineNum">     108</span>                 :                : {</span>
+<span id="L109"><span class="lineNum">     109</span>                 :<span class="tlaCBC">            475 : }</span></span>
+<span id="L110"><span class="lineNum">     110</span>                 :                : </span>
+<span id="L111"><span class="lineNum">     111</span>                 :<span class="tlaCBC">           3313 : rgb_color::rgb_color(std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a)</span></span>
+<span id="L112"><span class="lineNum">     112</span>                 :<span class="tlaCBC">           3313 :     : rgba_({{r, g, b, a}})</span></span>
+<span id="L113"><span class="lineNum">     113</span>                 :                : {</span>
+<span id="L114"><span class="lineNum">     114</span>                 :<span class="tlaCBC">           3313 : }</span></span>
+<span id="L115"><span class="lineNum">     115</span>                 :                : </span>
+<span id="L116"><span class="lineNum">     116</span>                 :<a href="#L309" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : std::uint8_t rgb_color::red() const</span></span>
+<span id="L117"><span class="lineNum">     117</span>                 :                : {</span>
+<span id="L118"><span class="lineNum">     118</span>                 :<span class="tlaUBC">              0 :     return rgba_[0];</span></span>
+<span id="L119"><span class="lineNum">     119</span>                 :                : }</span>
+<span id="L120"><span class="lineNum">     120</span>                 :                : </span>
+<span id="L121"><span class="lineNum">     121</span>                 :<span class="tlaUBC">              0 : std::uint8_t rgb_color::green() const</span></span>
+<span id="L122"><span class="lineNum">     122</span>                 :                : {</span>
+<span id="L123"><span class="lineNum">     123</span>                 :<span class="tlaUBC">              0 :     return rgba_[1];</span></span>
+<span id="L124"><span class="lineNum">     124</span>                 :                : }</span>
+<span id="L125"><span class="lineNum">     125</span>                 :                : </span>
+<span id="L126"><span class="lineNum">     126</span>                 :<span class="tlaUBC">              0 : std::uint8_t rgb_color::blue() const</span></span>
+<span id="L127"><span class="lineNum">     127</span>                 :                : {</span>
+<span id="L128"><span class="lineNum">     128</span>                 :<span class="tlaUBC">              0 :     return rgba_[2];</span></span>
+<span id="L129"><span class="lineNum">     129</span>                 :                : }</span>
+<span id="L130"><span class="lineNum">     130</span>                 :                : </span>
+<span id="L131"><span class="lineNum">     131</span>                 :<span class="tlaUBC">              0 : std::uint8_t rgb_color::alpha() const</span></span>
+<span id="L132"><span class="lineNum">     132</span>                 :                : {</span>
+<span id="L133"><span class="lineNum">     133</span>                 :<span class="tlaUBC">              0 :     return rgba_[3];</span></span>
+<span id="L134"><span class="lineNum">     134</span>                 :                : }</span>
+<span id="L135"><span class="lineNum">     135</span>                 :                : </span>
+<span id="L136"><span class="lineNum">     136</span>                 :<span class="tlaUBC">              0 : std::array&lt;std::uint8_t, 3&gt; rgb_color::rgb() const</span></span>
+<span id="L137"><span class="lineNum">     137</span>                 :                : {</span>
+<span id="L138"><span class="lineNum">     138</span>                 :<span class="tlaUBC">              0 :     return {{red(), green(), blue()}};</span></span>
+<span id="L139"><span class="lineNum">     139</span>                 :                : }</span>
+<span id="L140"><span class="lineNum">     140</span>                 :                : </span>
+<span id="L141"><span class="lineNum">     141</span>                 :<a href="#L312" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        1032 : std::array&lt;std::uint8_t, 4&gt; rgb_color::rgba() const</span></span>
+<span id="L142"><span class="lineNum">     142</span>                 :                : {</span>
+<span id="L143"><span class="lineNum">     143</span>                 :<span class="tlaCBC">           1032 :     return rgba_;</span></span>
+<span id="L144"><span class="lineNum">     144</span>                 :                : }</span>
+<span id="L145"><span class="lineNum">     145</span>                 :                : </span>
+<span id="L146"><span class="lineNum">     146</span>                 :                : // color implementation</span>
+<span id="L147"><span class="lineNum">     147</span>                 :                : </span>
+<span id="L148"><span class="lineNum">     148</span>                 :<span class="tlaCBC">              3 : const color color::black()</span></span>
+<span id="L149"><span class="lineNum">     149</span>                 :                : {</span>
+<span id="L150"><span class="lineNum">     150</span>   [<span class="tlaCBC"> <a href="#L155" title="CBC: Branch 0 was taken 3 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L155" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L155" title="CBC: Branch 2 was taken 3 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L155" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              6 :     return color(rgb_color(&quot;ff000000&quot;));</span></span>
+<span id="L151"><span class="lineNum">     151</span>                 :                : }</span>
+<span id="L152"><span class="lineNum">     152</span>                 :                : </span>
+<span id="L153"><span class="lineNum">     153</span>                 :<span class="tlaCBC">              1 : const color color::white()</span></span>
+<span id="L154"><span class="lineNum">     154</span>                 :                : {</span>
+<span id="L155"><span class="lineNum">     155</span>   [<span class="tlaCBC"> <a href="#L160" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L160" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L160" title="CBC: Branch 2 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L160" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :     return color(rgb_color(&quot;ffffffff&quot;));</span></span>
+<span id="L156"><span class="lineNum">     156</span>                 :                : }</span>
+<span id="L157"><span class="lineNum">     157</span>                 :                : </span>
+<span id="L158"><span class="lineNum">     158</span>                 :<span class="tlaCBC">              9 : const color color::red()</span></span>
+<span id="L159"><span class="lineNum">     159</span>                 :                : {</span>
+<span id="L160"><span class="lineNum">     160</span>   [<span class="tlaCBC"> <a href="#L165" title="CBC: Branch 0 was taken 9 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L165" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L165" title="CBC: Branch 2 was taken 9 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L165" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             18 :     return color(rgb_color(&quot;ffff0000&quot;));</span></span>
+<span id="L161"><span class="lineNum">     161</span>                 :                : }</span>
+<span id="L162"><span class="lineNum">     162</span>                 :                : </span>
+<span id="L163"><span class="lineNum">     163</span>                 :<span class="tlaCBC">              1 : const color color::darkred()</span></span>
+<span id="L164"><span class="lineNum">     164</span>                 :                : {</span>
+<span id="L165"><span class="lineNum">     165</span>   [<span class="tlaCBC"> <a href="#L170" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L170" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L170" title="CBC: Branch 2 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L170" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :     return color(rgb_color(&quot;ff8b0000&quot;));</span></span>
+<span id="L166"><span class="lineNum">     166</span>                 :                : }</span>
+<span id="L167"><span class="lineNum">     167</span>                 :                : </span>
+<span id="L168"><span class="lineNum">     168</span>                 :<span class="tlaCBC">              1 : const color color::blue()</span></span>
+<span id="L169"><span class="lineNum">     169</span>                 :                : {</span>
+<span id="L170"><span class="lineNum">     170</span>   [<span class="tlaCBC"> <a href="#L175" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L175" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L175" title="CBC: Branch 2 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L175" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :     return color(rgb_color(&quot;ff0000ff&quot;));</span></span>
+<span id="L171"><span class="lineNum">     171</span>                 :                : }</span>
+<span id="L172"><span class="lineNum">     172</span>                 :                : </span>
+<span id="L173"><span class="lineNum">     173</span>                 :<span class="tlaCBC">              2 : const color color::darkblue()</span></span>
+<span id="L174"><span class="lineNum">     174</span>                 :                : {</span>
+<span id="L175"><span class="lineNum">     175</span>   [<span class="tlaCBC"> <a href="#L180" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L180" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L180" title="CBC: Branch 2 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L180" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              4 :     return color(rgb_color(&quot;ff00008b&quot;));</span></span>
+<span id="L176"><span class="lineNum">     176</span>                 :                : }</span>
+<span id="L177"><span class="lineNum">     177</span>                 :                : </span>
+<span id="L178"><span class="lineNum">     178</span>                 :<span class="tlaCBC">              6 : const color color::green()</span></span>
+<span id="L179"><span class="lineNum">     179</span>                 :                : {</span>
+<span id="L180"><span class="lineNum">     180</span>   [<span class="tlaCBC"> <a href="#L185" title="CBC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L185" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L185" title="CBC: Branch 2 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L185" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             12 :     return color(rgb_color(&quot;ff00ff00&quot;));</span></span>
+<span id="L181"><span class="lineNum">     181</span>                 :                : }</span>
+<span id="L182"><span class="lineNum">     182</span>                 :                : </span>
+<span id="L183"><span class="lineNum">     183</span>                 :<span class="tlaCBC">              1 : const color color::darkgreen()</span></span>
+<span id="L184"><span class="lineNum">     184</span>                 :                : {</span>
+<span id="L185"><span class="lineNum">     185</span>   [<span class="tlaCBC"> <a href="#L190" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L190" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L190" title="CBC: Branch 2 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L190" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :     return color(rgb_color(&quot;ff008b00&quot;));</span></span>
+<span id="L186"><span class="lineNum">     186</span>                 :                : }</span>
+<span id="L187"><span class="lineNum">     187</span>                 :                : </span>
+<span id="L188"><span class="lineNum">     188</span>                 :<span class="tlaCBC">              3 : const color color::yellow()</span></span>
+<span id="L189"><span class="lineNum">     189</span>                 :                : {</span>
+<span id="L190"><span class="lineNum">     190</span>   [<span class="tlaCBC"> <a href="#L195" title="CBC: Branch 0 was taken 3 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L195" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L195" title="CBC: Branch 2 was taken 3 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L195" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              6 :     return color(rgb_color(&quot;ffffff00&quot;));</span></span>
+<span id="L191"><span class="lineNum">     191</span>                 :                : }</span>
+<span id="L192"><span class="lineNum">     192</span>                 :                : </span>
+<span id="L193"><span class="lineNum">     193</span>                 :<span class="tlaCBC">              1 : const color color::darkyellow()</span></span>
+<span id="L194"><span class="lineNum">     194</span>                 :                : {</span>
+<span id="L195"><span class="lineNum">     195</span>   [<span class="tlaCBC"> <a href="#L290" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L290" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L290" title="CBC: Branch 2 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L290" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :     return color(rgb_color(&quot;ffcccc00&quot;));</span></span>
+<span id="L196"><span class="lineNum">     196</span>                 :                : }</span>
+<span id="L197"><span class="lineNum">     197</span>                 :                : </span>
+<span id="L198"><span class="lineNum">     198</span>                 :<span class="tlaCBC">           1365 : color::color()</span></span>
+<span id="L199"><span class="lineNum">     199</span>                 :<span class="tlaCBC">           1365 :     : color(indexed_color(0))</span></span>
+<span id="L200"><span class="lineNum">     200</span>                 :                : {</span>
+<span id="L201"><span class="lineNum">     201</span>                 :<span class="tlaCBC">           1365 : }</span></span>
+<span id="L202"><span class="lineNum">     202</span>                 :                : </span>
+<span id="L203"><span class="lineNum">     203</span>                 :<span class="tlaCBC">            486 : color::color(const rgb_color &amp;rgb)</span></span>
+<span id="L204"><span class="lineNum">     204</span>                 :<span class="tlaCBC">            486 :     : type_(color_type::rgb),</span></span>
+<span id="L205"><span class="lineNum">     205</span>                 :<span class="tlaCBC">            486 :       rgb_(rgb),</span></span>
+<span id="L206"><span class="lineNum">     206</span>                 :<span class="tlaCBC">            486 :       indexed_(0),</span></span>
+<span id="L207"><span class="lineNum">     207</span>                 :<span class="tlaCBC">            486 :       theme_(0)</span></span>
+<span id="L208"><span class="lineNum">     208</span>                 :                : {</span>
+<span id="L209"><span class="lineNum">     209</span>                 :<span class="tlaCBC">            486 : }</span></span>
+<span id="L210"><span class="lineNum">     210</span>                 :                : </span>
+<span id="L211"><span class="lineNum">     211</span>                 :<span class="tlaCBC">           2020 : color::color(const indexed_color &amp;indexed)</span></span>
+<span id="L212"><span class="lineNum">     212</span>                 :<span class="tlaCBC">           2020 :     : type_(color_type::indexed),</span></span>
+<span id="L213"><span class="lineNum">     213</span>                 :<span class="tlaCBC">           2020 :       rgb_(rgb_color(0, 0, 0, 0)),</span></span>
+<span id="L214"><span class="lineNum">     214</span>                 :<span class="tlaCBC">           2020 :       indexed_(indexed),</span></span>
+<span id="L215"><span class="lineNum">     215</span>                 :<span class="tlaCBC">           2020 :       theme_(0)</span></span>
+<span id="L216"><span class="lineNum">     216</span>                 :                : {</span>
+<span id="L217"><span class="lineNum">     217</span>                 :<span class="tlaCBC">           2020 : }</span></span>
+<span id="L218"><span class="lineNum">     218</span>                 :                : </span>
+<span id="L219"><span class="lineNum">     219</span>                 :<span class="tlaCBC">           1037 : color::color(const theme_color &amp;theme)</span></span>
+<span id="L220"><span class="lineNum">     220</span>                 :<span class="tlaCBC">           1037 :     : type_(color_type::theme),</span></span>
+<span id="L221"><span class="lineNum">     221</span>                 :<span class="tlaCBC">           1037 :       rgb_(rgb_color(0, 0, 0, 0)),</span></span>
+<span id="L222"><span class="lineNum">     222</span>                 :<span class="tlaCBC">           1037 :       indexed_(0),</span></span>
+<span id="L223"><span class="lineNum">     223</span>                 :<span class="tlaCBC">           1037 :       theme_(theme)</span></span>
+<span id="L224"><span class="lineNum">     224</span>                 :                : {</span>
+<span id="L225"><span class="lineNum">     225</span>                 :<span class="tlaCBC">           1037 : }</span></span>
+<span id="L226"><span class="lineNum">     226</span>                 :                : </span>
+<span id="L227"><span class="lineNum">     227</span>                 :<span class="tlaCBC">            641 : color_type color::type() const</span></span>
+<span id="L228"><span class="lineNum">     228</span>                 :                : {</span>
+<span id="L229"><span class="lineNum">     229</span>                 :<span class="tlaCBC">            641 :     return type_;</span></span>
+<span id="L230"><span class="lineNum">     230</span>                 :                : }</span>
+<span id="L231"><span class="lineNum">     231</span>                 :                : </span>
+<span id="L232"><span class="lineNum">     232</span>                 :<span class="tlaCBC">            645 : bool color::auto_() const</span></span>
+<span id="L233"><span class="lineNum">     233</span>                 :                : {</span>
+<span id="L234"><span class="lineNum">     234</span>                 :<span class="tlaCBC">            645 :     return auto_color;</span></span>
+<span id="L235"><span class="lineNum">     235</span>                 :                : }</span>
+<span id="L236"><span class="lineNum">     236</span>                 :                : </span>
+<span id="L237"><span class="lineNum">     237</span>                 :<span class="tlaCBC">              4 : void color::auto_(bool value)</span></span>
+<span id="L238"><span class="lineNum">     238</span>                 :                : {</span>
+<span id="L239"><span class="lineNum">     239</span>                 :<span class="tlaCBC">              4 :     auto_color = value;</span></span>
+<span id="L240"><span class="lineNum">     240</span>                 :<span class="tlaCBC">              4 : }</span></span>
+<span id="L241"><span class="lineNum">     241</span>                 :                : </span>
+<span id="L242"><span class="lineNum">     242</span>                 :<span class="tlaCBC">            194 : const indexed_color &amp;color::indexed() const</span></span>
+<span id="L243"><span class="lineNum">     243</span>                 :                : {</span>
+<span id="L244"><span class="lineNum">     244</span>                 :<span class="tlaCBC">            194 :     assert_type(color_type::indexed);</span></span>
+<span id="L245"><span class="lineNum">     245</span>                 :<span class="tlaCBC">            194 :     return indexed_;</span></span>
+<span id="L246"><span class="lineNum">     246</span>                 :                : }</span>
+<span id="L247"><span class="lineNum">     247</span>                 :                : </span>
+<span id="L248"><span class="lineNum">     248</span>                 :<span class="tlaCBC">              4 : indexed_color &amp;color::indexed()</span></span>
+<span id="L249"><span class="lineNum">     249</span>                 :                : {</span>
+<span id="L250"><span class="lineNum">     250</span>                 :<span class="tlaCBC">              4 :     assert_type(color_type::indexed);</span></span>
+<span id="L251"><span class="lineNum">     251</span>                 :<span class="tlaCBC">              3 :     return indexed_;</span></span>
+<span id="L252"><span class="lineNum">     252</span>                 :                : }</span>
+<span id="L253"><span class="lineNum">     253</span>                 :                : </span>
+<span id="L254"><span class="lineNum">     254</span>                 :<span class="tlaCBC">            290 : const theme_color &amp;color::theme() const</span></span>
+<span id="L255"><span class="lineNum">     255</span>                 :                : {</span>
+<span id="L256"><span class="lineNum">     256</span>                 :<span class="tlaCBC">            290 :     assert_type(color_type::theme);</span></span>
+<span id="L257"><span class="lineNum">     257</span>                 :<span class="tlaCBC">            290 :     return theme_;</span></span>
+<span id="L258"><span class="lineNum">     258</span>                 :                : }</span>
+<span id="L259"><span class="lineNum">     259</span>                 :                : </span>
+<span id="L260"><span class="lineNum">     260</span>                 :<span class="tlaCBC">              4 : theme_color &amp;color::theme()</span></span>
+<span id="L261"><span class="lineNum">     261</span>                 :                : {</span>
+<span id="L262"><span class="lineNum">     262</span>                 :<span class="tlaCBC">              4 :     assert_type(color_type::theme);</span></span>
+<span id="L263"><span class="lineNum">     263</span>                 :<span class="tlaCBC">              3 :     return theme_;</span></span>
+<span id="L264"><span class="lineNum">     264</span>                 :                : }</span>
+<span id="L265"><span class="lineNum">     265</span>                 :                : </span>
+<span id="L266"><span class="lineNum">     266</span>                 :<span class="tlaCBC">            172 : const rgb_color &amp;color::rgb() const</span></span>
+<span id="L267"><span class="lineNum">     267</span>                 :                : {</span>
+<span id="L268"><span class="lineNum">     268</span>                 :<span class="tlaCBC">            172 :     assert_type(color_type::rgb);</span></span>
+<span id="L269"><span class="lineNum">     269</span>                 :<span class="tlaCBC">            172 :     return rgb_;</span></span>
+<span id="L270"><span class="lineNum">     270</span>                 :                : }</span>
+<span id="L271"><span class="lineNum">     271</span>                 :                : </span>
+<span id="L272"><span class="lineNum">     272</span>                 :<span class="tlaCBC">             23 : rgb_color &amp;color::rgb()</span></span>
+<span id="L273"><span class="lineNum">     273</span>                 :                : {</span>
+<span id="L274"><span class="lineNum">     274</span>                 :<span class="tlaCBC">             23 :     assert_type(color_type::rgb);</span></span>
+<span id="L275"><span class="lineNum">     275</span>                 :<span class="tlaCBC">             21 :     return rgb_;</span></span>
+<span id="L276"><span class="lineNum">     276</span>                 :                : }</span>
+<span id="L277"><span class="lineNum">     277</span>                 :                : </span>
+<span id="L278"><span class="lineNum">     278</span>                 :<span class="tlaCBC">            641 : bool color::has_tint() const</span></span>
+<span id="L279"><span class="lineNum">     279</span>                 :                : {</span>
+<span id="L280"><span class="lineNum">     280</span>                 :<span class="tlaCBC">            641 :     return tint_.is_set();</span></span>
+<span id="L281"><span class="lineNum">     281</span>                 :                : }</span>
+<span id="L282"><span class="lineNum">     282</span>                 :                : </span>
+<span id="L283"><span class="lineNum">     283</span>                 :<span class="tlaCBC">            180 : void color::tint(double tint)</span></span>
+<span id="L284"><span class="lineNum">     284</span>                 :                : {</span>
+<span id="L285"><span class="lineNum">     285</span>                 :<span class="tlaCBC">            180 :     tint_ = tint;</span></span>
+<span id="L286"><span class="lineNum">     286</span>                 :<span class="tlaCBC">            180 : }</span></span>
+<span id="L287"><span class="lineNum">     287</span>                 :                : </span>
+<span id="L288"><span class="lineNum">     288</span>                 :<span class="tlaCBC">             80 : double color::tint() const</span></span>
+<span id="L289"><span class="lineNum">     289</span>                 :                : {</span>
+<span id="L290"><span class="lineNum">     290</span>         [<span class="tlaCBC"> <a href="#L295" title="CBC: Branch 0 was taken 80 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L297" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             80 :     return tint_.is_set() ? tint_.get() : 0.0;</span></span>
+<span id="L291"><span class="lineNum">     291</span>                 :                : }</span>
+<span id="L292"><span class="lineNum">     292</span>                 :                : </span>
+<span id="L293"><span class="lineNum">     293</span>                 :<span class="tlaCBC">            687 : void color::assert_type(color_type t) const</span></span>
+<span id="L294"><span class="lineNum">     294</span>                 :                : {</span>
+<span id="L295"><span class="lineNum">     295</span>         [<span class="tlaCBC"> <a href="#L297" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L297" title="CBC: Branch 1 was taken 683 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            687 :     if (t != type_)</span></span>
+<span id="L296"><span class="lineNum">     296</span>                 :                :     {</span>
+<span id="L297"><span class="lineNum">     297</span>         [<span class="tlaCBC"> <a href="#L303" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L303" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              4 :         throw invalid_attribute();</span></span>
+<span id="L298"><span class="lineNum">     298</span>                 :                :     }</span>
+<span id="L299"><span class="lineNum">     299</span>                 :<span class="tlaCBC">            683 : }</span></span>
+<span id="L300"><span class="lineNum">     300</span>                 :                : </span>
+<span id="L301"><span class="lineNum">     301</span>                 :<span class="tlaCBC">           1950 : bool color::operator==(const xlnt::color &amp;other) const</span></span>
+<span id="L302"><span class="lineNum">     302</span>                 :                : {</span>
+<span id="L303"><span class="lineNum">     303</span>   [<span class="tlaCBC"> <a href="#L307" title="CBC: Branch 0 was taken 1924 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L307" title="CBC: Branch 1 was taken 26 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L307" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L307" title="CBC: Branch 3 was taken 1924 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1950 :     if (type_ != other.type_ || auto_color != other.auto_color)</span></span>
+<span id="L304"><span class="lineNum">     304</span>                 :                :     {</span>
+<span id="L305"><span class="lineNum">     305</span>                 :<span class="tlaCBC">             26 :         return false;</span></span>
+<span id="L306"><span class="lineNum">     306</span>                 :                :     }</span>
+<span id="L307"><span class="lineNum">     307</span>   [<span class="tlaCBC"> <a href="#L312" title="CBC: Branch 0 was taken 1924 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L312" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L312" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L312" title="CBC: Branch 3 was taken 1924 times" class="branchTla">+</a> </span> :<span class="tlaCBC">           1924 :     if (tint_.is_set() != other.tint_.is_set() || (tint_.is_set() &amp;&amp; std::fabs(tint_.get() - other.tint_.get()) != 0.0))</span></span>
+<span class="lineNum">        </span>    <span class="tlaUBC"> <a href="#L312" title="UBC: Branch 4 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L312" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L312" title="UBC: Branch 6 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L312" title="CBC: Branch 7 was taken 1924 times" class="branchTla">+</a> </span>]
+<span id="L308"><span class="lineNum">     308</span>                 :                :     {</span>
+<span id="L309"><span class="lineNum">     309</span>                 :<a href="#L322" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         return false;</span></span>
+<span id="L310"><span class="lineNum">     310</span>                 :                :     }</span>
+<span id="L311"><span class="lineNum">     311</span>                 :                : </span>
+<span id="L312"><span class="lineNum">     312</span>   [<span class="tlaCBC"> <a href="#L319" title="CBC: Branch 0 was taken 509 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L319" title="CBC: Branch 1 was taken 899 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L319" title="CBC: Branch 2 was taken 516 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L319" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<a href="#L325" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        1924 :     switch (type_)</span></span>
+<span id="L313"><span class="lineNum">     313</span>                 :                :     {</span>
+<span id="L314"><span class="lineNum">     314</span>                 :<span class="tlaCBC">            509 :     case color_type::indexed:</span></span>
+<span id="L315"><span class="lineNum">     315</span>                 :<span class="tlaCBC">            509 :         return indexed_.index() == other.indexed_.index();</span></span>
+<span id="L316"><span class="lineNum">     316</span>                 :<span class="tlaCBC">            899 :     case color_type::theme:</span></span>
+<span id="L317"><span class="lineNum">     317</span>                 :<span class="tlaCBC">            899 :         return theme_.index() == other.theme_.index();</span></span>
+<span id="L318"><span class="lineNum">     318</span>                 :<span class="tlaCBC">            516 :     case color_type::rgb:</span></span>
+<span id="L319"><span class="lineNum">     319</span>         [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 516 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            516 :         return rgb_.rgba() == other.rgb_.rgba();</span></span>
+<span id="L320"><span class="lineNum">     320</span>                 :                :     }</span>
+<span id="L321"><span class="lineNum">     321</span>                 :                : </span>
+<span id="L322"><span class="lineNum">     322</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     return false;</span></span>
+<span id="L323"><span class="lineNum">     323</span>                 :                : }</span>
+<span id="L324"><span class="lineNum">     324</span>                 :                : </span>
+<span id="L325"><span class="lineNum">     325</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        1938 : bool color::operator!=(const color &amp;other) const</span></span>
+<span id="L326"><span class="lineNum">     326</span>                 :                : {</span>
+<span id="L327"><span class="lineNum">     327</span>                 :<span class="tlaCBC">           1938 :     return !(*this == other);</span></span>
+<span id="L328"><span class="lineNum">     328</span>                 :                : }</span>
+<span id="L329"><span class="lineNum">     329</span>                 :                : </span>
+<span id="L330"><span class="lineNum">     330</span>                 :                : } // namespace xlnt</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
