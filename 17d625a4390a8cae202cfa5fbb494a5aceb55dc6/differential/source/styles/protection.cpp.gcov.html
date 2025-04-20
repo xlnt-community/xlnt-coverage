@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/styles/protection.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory source/styles">source/styles</a> - protection.cpp<span style="font-size: 80%;"> (source / <a href="protection.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">92.0&nbsp;%</td>
+            <td class="headerCovTableEntry">25</td>
+            <td class="headerCovTableEntry">23</td>
+            <td class="headerCovTableEntry"><a href="#L82" title="goto first UBC line">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L30" title="goto first CBC line">23</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-04-20 23:36:41</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">90.9&nbsp;%</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">10</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"><a href="#L79" title="goto first UBC branch">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L79" title="goto first CBC branch">4</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-04-20 23:36:40</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>                 :                : // Copyright (c) 2014-2022 Thomas Fussell</span>
+<span id="L2"><span class="lineNum">       2</span>                 :                : // Copyright (c) 2010-2015 openpyxl</span>
+<span id="L3"><span class="lineNum">       3</span>                 :                : // Copyright (c) 2024-2025 xlnt-community</span>
+<span id="L4"><span class="lineNum">       4</span>                 :                : //</span>
+<span id="L5"><span class="lineNum">       5</span>                 :                : // Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="L6"><span class="lineNum">       6</span>                 :                : // of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span id="L7"><span class="lineNum">       7</span>                 :                : // in the Software without restriction, including without limitation the rights</span>
+<span id="L8"><span class="lineNum">       8</span>                 :                : // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="L9"><span class="lineNum">       9</span>                 :                : // copies of the Software, and to permit persons to whom the Software is</span>
+<span id="L10"><span class="lineNum">      10</span>                 :                : // furnished to do so, subject to the following conditions:</span>
+<span id="L11"><span class="lineNum">      11</span>                 :                : //</span>
+<span id="L12"><span class="lineNum">      12</span>                 :                : // The above copyright notice and this permission notice shall be included in</span>
+<span id="L13"><span class="lineNum">      13</span>                 :                : // all copies or substantial portions of the Software.</span>
+<span id="L14"><span class="lineNum">      14</span>                 :                : //</span>
+<span id="L15"><span class="lineNum">      15</span>                 :                : // THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span id="L16"><span class="lineNum">      16</span>                 :                : // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span id="L17"><span class="lineNum">      17</span>                 :                : // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span id="L18"><span class="lineNum">      18</span>                 :                : // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span id="L19"><span class="lineNum">      19</span>                 :                : // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span id="L20"><span class="lineNum">      20</span>                 :                : // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span id="L21"><span class="lineNum">      21</span>                 :                : // THE SOFTWARE</span>
+<span id="L22"><span class="lineNum">      22</span>                 :                : //</span>
+<span id="L23"><span class="lineNum">      23</span>                 :                : // @license: http://www.opensource.org/licenses/mit-license.php</span>
+<span id="L24"><span class="lineNum">      24</span>                 :                : // @author: see AUTHORS file</span>
+<span id="L25"><span class="lineNum">      25</span>                 :                : </span>
+<span id="L26"><span class="lineNum">      26</span>                 :                : #include &lt;xlnt/styles/protection.hpp&gt;</span>
+<span id="L27"><span class="lineNum">      27</span>                 :                : </span>
+<span id="L28"><span class="lineNum">      28</span>                 :                : namespace xlnt {</span>
+<span id="L29"><span class="lineNum">      29</span>                 :                : </span>
+<span id="L30"><span class="lineNum">      30</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           1 : protection protection::unlocked_and_visible()</span></span>
+<span id="L31"><span class="lineNum">      31</span>                 :                : {</span>
+<span id="L32"><span class="lineNum">      32</span>                 :<span class="tlaCBC">              1 :     return protection();</span></span>
+<span id="L33"><span class="lineNum">      33</span>                 :                : }</span>
+<span id="L34"><span class="lineNum">      34</span>                 :                : </span>
+<span id="L35"><span class="lineNum">      35</span>                 :<span class="tlaCBC">              1 : protection protection::locked_and_visible()</span></span>
+<span id="L36"><span class="lineNum">      36</span>                 :                : {</span>
+<span id="L37"><span class="lineNum">      37</span>                 :<span class="tlaCBC">              1 :     return protection().locked(true);</span></span>
+<span id="L38"><span class="lineNum">      38</span>                 :                : }</span>
+<span id="L39"><span class="lineNum">      39</span>                 :                : </span>
+<span id="L40"><span class="lineNum">      40</span>                 :<span class="tlaCBC">              1 : protection protection::unlocked_and_hidden()</span></span>
+<span id="L41"><span class="lineNum">      41</span>                 :                : {</span>
+<span id="L42"><span class="lineNum">      42</span>                 :<span class="tlaCBC">              1 :     return protection().hidden(true);</span></span>
+<span id="L43"><span class="lineNum">      43</span>                 :                : }</span>
+<span id="L44"><span class="lineNum">      44</span>                 :                : </span>
+<span id="L45"><span class="lineNum">      45</span>                 :<span class="tlaCBC">              1 : protection protection::locked_and_hidden()</span></span>
+<span id="L46"><span class="lineNum">      46</span>                 :                : {</span>
+<span id="L47"><span class="lineNum">      47</span>                 :<span class="tlaCBC">              1 :     return protection().locked(true).hidden(true);</span></span>
+<span id="L48"><span class="lineNum">      48</span>                 :                : }</span>
+<span id="L49"><span class="lineNum">      49</span>                 :                : </span>
+<span id="L50"><span class="lineNum">      50</span>                 :<span class="tlaCBC">             27 : protection::protection()</span></span>
+<span id="L51"><span class="lineNum">      51</span>                 :<span class="tlaCBC">             27 :     : locked_(false), hidden_(false)</span></span>
+<span id="L52"><span class="lineNum">      52</span>                 :                : {</span>
+<span id="L53"><span class="lineNum">      53</span>                 :<span class="tlaCBC">             27 : }</span></span>
+<span id="L54"><span class="lineNum">      54</span>                 :                : </span>
+<span id="L55"><span class="lineNum">      55</span>                 :<span class="tlaCBC">              5 : bool protection::locked() const</span></span>
+<span id="L56"><span class="lineNum">      56</span>                 :                : {</span>
+<span id="L57"><span class="lineNum">      57</span>                 :<span class="tlaCBC">              5 :     return locked_;</span></span>
+<span id="L58"><span class="lineNum">      58</span>                 :                : }</span>
+<span id="L59"><span class="lineNum">      59</span>                 :                : </span>
+<span id="L60"><span class="lineNum">      60</span>                 :<span class="tlaCBC">             25 : protection &amp;protection::locked(bool locked)</span></span>
+<span id="L61"><span class="lineNum">      61</span>                 :                : {</span>
+<span id="L62"><span class="lineNum">      62</span>                 :<span class="tlaCBC">             25 :     locked_ = locked;</span></span>
+<span id="L63"><span class="lineNum">      63</span>                 :<span class="tlaCBC">             25 :     return *this;</span></span>
+<span id="L64"><span class="lineNum">      64</span>                 :                : }</span>
+<span id="L65"><span class="lineNum">      65</span>                 :                : </span>
+<span id="L66"><span class="lineNum">      66</span>                 :<span class="tlaCBC">              5 : bool protection::hidden() const</span></span>
+<span id="L67"><span class="lineNum">      67</span>                 :                : {</span>
+<span id="L68"><span class="lineNum">      68</span>                 :<span class="tlaCBC">              5 :     return hidden_;</span></span>
+<span id="L69"><span class="lineNum">      69</span>                 :                : }</span>
+<span id="L70"><span class="lineNum">      70</span>                 :                : </span>
+<span id="L71"><span class="lineNum">      71</span>                 :<span class="tlaCBC">             25 : protection &amp;protection::hidden(bool hidden)</span></span>
+<span id="L72"><span class="lineNum">      72</span>                 :                : {</span>
+<span id="L73"><span class="lineNum">      73</span>                 :<span class="tlaCBC">             25 :     hidden_ = hidden;</span></span>
+<span id="L74"><span class="lineNum">      74</span>                 :<span class="tlaCBC">             25 :     return *this;</span></span>
+<span id="L75"><span class="lineNum">      75</span>                 :                : }</span>
+<span id="L76"><span class="lineNum">      76</span>                 :                : </span>
+<span id="L77"><span class="lineNum">      77</span>                 :<span class="tlaCBC">             13 : bool protection::operator==(const protection &amp;other) const</span></span>
+<span id="L78"><span class="lineNum">      78</span>                 :                : {</span>
+<span id="L79"><span class="lineNum">      79</span>   [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 13 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 2 was taken 13 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             13 :     return locked_ == other.locked_ &amp;&amp; hidden_ == other.hidden_;</span></span>
+<span id="L80"><span class="lineNum">      80</span>                 :                : }</span>
+<span id="L81"><span class="lineNum">      81</span>                 :                : </span>
+<span id="L82"><span class="lineNum">      82</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : bool protection::operator!=(const protection &amp;other) const</span></span>
+<span id="L83"><span class="lineNum">      83</span>                 :                : {</span>
+<span id="L84"><span class="lineNum">      84</span>                 :<span class="tlaUBC">              0 :     return !(*this == other);</span></span>
+<span id="L85"><span class="lineNum">      85</span>                 :                : }</span>
+<span id="L86"><span class="lineNum">      86</span>                 :                : </span>
+<span id="L87"><span class="lineNum">      87</span>                 :                : } // namespace xlnt</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
