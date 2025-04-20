@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - include/xlnt/worksheet/selection.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory include/xlnt/worksheet">include/xlnt/worksheet</a> - selection.hpp<span style="font-size: 80%;"> (source / <a href="selection.hpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">96.4&nbsp;%</td>
+            <td class="headerCovTableEntry">28</td>
+            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry"><a href="#L110" title="goto first UBC line">1</a></td>
+            <td class="headerCovTableEntry"><a href="#L47" title="goto first CBC line">27</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-04-20 21:48:46</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">11</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">42.9&nbsp;%</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry"><a href="#L54" title="goto first UBC branch">16</a></td>
+            <td class="headerCovTableEntry"><a href="#L54" title="goto first CBC branch">12</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-04-20 21:48:46</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>                 :                : // Copyright (c) 2014-2022 Thomas Fussell</span>
+<span id="L2"><span class="lineNum">       2</span>                 :                : // Copyright (c) 2024-2025 xlnt-community</span>
+<span id="L3"><span class="lineNum">       3</span>                 :                : //</span>
+<span id="L4"><span class="lineNum">       4</span>                 :                : // Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="L5"><span class="lineNum">       5</span>                 :                : // of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span id="L6"><span class="lineNum">       6</span>                 :                : // in the Software without restriction, including without limitation the rights</span>
+<span id="L7"><span class="lineNum">       7</span>                 :                : // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="L8"><span class="lineNum">       8</span>                 :                : // copies of the Software, and to permit persons to whom the Software is</span>
+<span id="L9"><span class="lineNum">       9</span>                 :                : // furnished to do so, subject to the following conditions:</span>
+<span id="L10"><span class="lineNum">      10</span>                 :                : //</span>
+<span id="L11"><span class="lineNum">      11</span>                 :                : // The above copyright notice and this permission notice shall be included in</span>
+<span id="L12"><span class="lineNum">      12</span>                 :                : // all copies or substantial portions of the Software.</span>
+<span id="L13"><span class="lineNum">      13</span>                 :                : //</span>
+<span id="L14"><span class="lineNum">      14</span>                 :                : // THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span id="L15"><span class="lineNum">      15</span>                 :                : // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span id="L16"><span class="lineNum">      16</span>                 :                : // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span id="L17"><span class="lineNum">      17</span>                 :                : // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span id="L18"><span class="lineNum">      18</span>                 :                : // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span id="L19"><span class="lineNum">      19</span>                 :                : // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span id="L20"><span class="lineNum">      20</span>                 :                : // THE SOFTWARE</span>
+<span id="L21"><span class="lineNum">      21</span>                 :                : //</span>
+<span id="L22"><span class="lineNum">      22</span>                 :                : // @license: http://www.opensource.org/licenses/mit-license.php</span>
+<span id="L23"><span class="lineNum">      23</span>                 :                : // @author: see AUTHORS file</span>
+<span id="L24"><span class="lineNum">      24</span>                 :                : </span>
+<span id="L25"><span class="lineNum">      25</span>                 :                : #pragma once</span>
+<span id="L26"><span class="lineNum">      26</span>                 :                : </span>
+<span id="L27"><span class="lineNum">      27</span>                 :                : #include &lt;vector&gt;</span>
+<span id="L28"><span class="lineNum">      28</span>                 :                : </span>
+<span id="L29"><span class="lineNum">      29</span>                 :                : #include &lt;xlnt/xlnt_config.hpp&gt;</span>
+<span id="L30"><span class="lineNum">      30</span>                 :                : #include &lt;xlnt/cell/cell_reference.hpp&gt;</span>
+<span id="L31"><span class="lineNum">      31</span>                 :                : #include &lt;xlnt/worksheet/pane.hpp&gt;</span>
+<span id="L32"><span class="lineNum">      32</span>                 :                : #include &lt;xlnt/worksheet/range_reference.hpp&gt;</span>
+<span id="L33"><span class="lineNum">      33</span>                 :                : #include &lt;xlnt/utils/exceptions.hpp&gt;</span>
+<span id="L34"><span class="lineNum">      34</span>                 :                : #include &lt;xlnt/utils/optional.hpp&gt;</span>
+<span id="L35"><span class="lineNum">      35</span>                 :                : </span>
+<span id="L36"><span class="lineNum">      36</span>                 :                : namespace xlnt {</span>
+<span id="L37"><span class="lineNum">      37</span>                 :                : </span>
+<span id="L38"><span class="lineNum">      38</span>                 :                : /// &lt;summary&gt;</span>
+<span id="L39"><span class="lineNum">      39</span>                 :                : /// The selected area of a worksheet.</span>
+<span id="L40"><span class="lineNum">      40</span>                 :                : /// &lt;/summary&gt;</span>
+<span id="L41"><span class="lineNum">      41</span>                 :                : class XLNT_API selection</span>
+<span id="L42"><span class="lineNum">      42</span>                 :                : {</span>
+<span id="L43"><span class="lineNum">      43</span>                 :                : public:</span>
+<span id="L44"><span class="lineNum">      44</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L45"><span class="lineNum">      45</span>                 :                :     /// default ctor</span>
+<span id="L46"><span class="lineNum">      46</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L47"><span class="lineNum">      47</span>                 :<a href="#L112" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          66 :     explicit selection() = default;</span></span>
+<span id="L48"><span class="lineNum">      48</span>                 :                : </span>
+<span id="L49"><span class="lineNum">      49</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L50"><span class="lineNum">      50</span>                 :                :     /// ctor when no range selected</span>
+<span id="L51"><span class="lineNum">      51</span>                 :                :     /// sqref == active_cell</span>
+<span id="L52"><span class="lineNum">      52</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L53"><span class="lineNum">      53</span>                 :<span class="tlaCBC">             18 :     explicit selection(pane_corner quadrant, cell_reference active_cell)</span></span>
+<span id="L54"><span class="lineNum">      54</span>   [<span class="tlaCBC"> <a href="#L109" title="CBC: Branch 0 was taken 18 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L109" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L109" title="CBC: Branch 2 was taken 18 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L109" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             36 :         : active_cell_(active_cell), sqref_({range_reference(active_cell, active_cell)}), pane_(quadrant)</span></span>
+<span id="L55"><span class="lineNum">      55</span>                 :                :     {</span>
+<span id="L56"><span class="lineNum">      56</span>                 :<span class="tlaCBC">             18 :     }</span></span>
+<span id="L57"><span class="lineNum">      57</span>                 :                : </span>
+<span id="L58"><span class="lineNum">      58</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L59"><span class="lineNum">      59</span>                 :                :     /// ctor with selected range</span>
+<span id="L60"><span class="lineNum">      60</span>                 :                :     /// sqref must contain active_cell</span>
+<span id="L61"><span class="lineNum">      61</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L62"><span class="lineNum">      62</span>                 :                :     explicit selection(pane_corner quadrant, cell_reference active_cell, range_reference selected)</span>
+<span id="L63"><span class="lineNum">      63</span>                 :                :         : active_cell_(active_cell), sqref_({selected}), pane_(quadrant)</span>
+<span id="L64"><span class="lineNum">      64</span>                 :                :     {</span>
+<span id="L65"><span class="lineNum">      65</span>                 :                :     }</span>
+<span id="L66"><span class="lineNum">      66</span>                 :                : </span>
+<span id="L67"><span class="lineNum">      67</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L68"><span class="lineNum">      68</span>                 :                :     /// Returns true if this selection has a defined active cell.</span>
+<span id="L69"><span class="lineNum">      69</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L70"><span class="lineNum">      70</span>                 :<span class="tlaCBC">             32 :     bool has_active_cell() const</span></span>
+<span id="L71"><span class="lineNum">      71</span>                 :                :     {</span>
+<span id="L72"><span class="lineNum">      72</span>                 :<span class="tlaCBC">             32 :         return active_cell_.is_set();</span></span>
+<span id="L73"><span class="lineNum">      73</span>                 :                :     }</span>
+<span id="L74"><span class="lineNum">      74</span>                 :                : </span>
+<span id="L75"><span class="lineNum">      75</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L76"><span class="lineNum">      76</span>                 :                :     /// Returns the cell reference of the active cell.</span>
+<span id="L77"><span class="lineNum">      77</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L78"><span class="lineNum">      78</span>                 :<span class="tlaCBC">             35 :     cell_reference active_cell() const</span></span>
+<span id="L79"><span class="lineNum">      79</span>                 :                :     {</span>
+<span id="L80"><span class="lineNum">      80</span>                 :<span class="tlaCBC">             35 :         return active_cell_.get();</span></span>
+<span id="L81"><span class="lineNum">      81</span>                 :                :     }</span>
+<span id="L82"><span class="lineNum">      82</span>                 :                : </span>
+<span id="L83"><span class="lineNum">      83</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L84"><span class="lineNum">      84</span>                 :                :     /// Sets the active cell to that pointed to by ref.</span>
+<span id="L85"><span class="lineNum">      85</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L86"><span class="lineNum">      86</span>                 :<span class="tlaCBC">             61 :     void active_cell(const cell_reference &amp;ref)</span></span>
+<span id="L87"><span class="lineNum">      87</span>                 :                :     {</span>
+<span id="L88"><span class="lineNum">      88</span>                 :<span class="tlaCBC">             61 :         active_cell_ = ref;</span></span>
+<span id="L89"><span class="lineNum">      89</span>                 :<span class="tlaCBC">             61 :     }</span></span>
+<span id="L90"><span class="lineNum">      90</span>                 :                : </span>
+<span id="L91"><span class="lineNum">      91</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L92"><span class="lineNum">      92</span>                 :                :     /// Returns true if this selection has a defined sqref.</span>
+<span id="L93"><span class="lineNum">      93</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L94"><span class="lineNum">      94</span>                 :<span class="tlaCBC">             39 :     bool has_sqref() const</span></span>
+<span id="L95"><span class="lineNum">      95</span>                 :                :     {</span>
+<span id="L96"><span class="lineNum">      96</span>                 :<span class="tlaCBC">             39 :         return !sqref_.empty();</span></span>
+<span id="L97"><span class="lineNum">      97</span>                 :                :     }</span>
+<span id="L98"><span class="lineNum">      98</span>                 :                : </span>
+<span id="L99"><span class="lineNum">      99</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L100"><span class="lineNum">     100</span>                 :                :     /// Returns the range encompassed by this selection.</span>
+<span id="L101"><span class="lineNum">     101</span>                 :                :     /// If the range contains multiple (non-contiguous) regions, the first range is returned.</span>
+<span id="L102"><span class="lineNum">     102</span>                 :                :     /// Use sqrefs to obtain the full selection.</span>
+<span id="L103"><span class="lineNum">     103</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L104"><span class="lineNum">     104</span>                 :                :     /// &lt;deprecated&gt;</span>
+<span id="L105"><span class="lineNum">     105</span>                 :                :     /// Use sqrefs instead.</span>
+<span id="L106"><span class="lineNum">     106</span>                 :                :     /// &lt;/deprecated&gt;</span>
+<span id="L107"><span class="lineNum">     107</span>                 :<span class="tlaCBC">              7 :     XLNT_DEPRECATED range_reference sqref() const</span></span>
+<span id="L108"><span class="lineNum">     108</span>                 :                :     {</span>
+<span id="L109"><span class="lineNum">     109</span>         [<span class="tlaUBC"> <a href="#L110" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L169" title="CBC: Branch 1 was taken 7 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              7 :         if (!has_sqref())</span></span>
+<span id="L110"><span class="lineNum">     110</span>         [<span class="tlaUBC"> <a href="#L169" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L169" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :             throw invalid_attribute();</span></span>
+<span id="L111"><span class="lineNum">     111</span>                 :                : </span>
+<span id="L112"><span class="lineNum">     112</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           7 :         return sqref_.front();</span></span>
+<span id="L113"><span class="lineNum">     113</span>                 :                :     }</span>
+<span id="L114"><span class="lineNum">     114</span>                 :                : </span>
+<span id="L115"><span class="lineNum">     115</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L116"><span class="lineNum">     116</span>                 :                :     /// Returns the range encompassed by this selection.</span>
+<span id="L117"><span class="lineNum">     117</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L118"><span class="lineNum">     118</span>                 :<span class="tlaCBC">             41 :     const std::vector&lt;range_reference&gt;&amp; sqrefs() const</span></span>
+<span id="L119"><span class="lineNum">     119</span>                 :                :     {</span>
+<span id="L120"><span class="lineNum">     120</span>                 :<span class="tlaCBC">             41 :         return sqref_;</span></span>
+<span id="L121"><span class="lineNum">     121</span>                 :                :     }</span>
+<span id="L122"><span class="lineNum">     122</span>                 :                : </span>
+<span id="L123"><span class="lineNum">     123</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L124"><span class="lineNum">     124</span>                 :                :     /// Sets the range encompassed by this selection.</span>
+<span id="L125"><span class="lineNum">     125</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L126"><span class="lineNum">     126</span>                 :                :     void sqref(const range_reference &amp;ref)</span>
+<span id="L127"><span class="lineNum">     127</span>                 :                :     {</span>
+<span id="L128"><span class="lineNum">     128</span>                 :                :         sqref_ = {ref};</span>
+<span id="L129"><span class="lineNum">     129</span>                 :                :     }</span>
+<span id="L130"><span class="lineNum">     130</span>                 :                : </span>
+<span id="L131"><span class="lineNum">     131</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L132"><span class="lineNum">     132</span>                 :                :     /// Sets the range encompassed by this selection.</span>
+<span id="L133"><span class="lineNum">     133</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L134"><span class="lineNum">     134</span>                 :                :     void sqref(const std::vector&lt;range_reference&gt; &amp;ref)</span>
+<span id="L135"><span class="lineNum">     135</span>                 :                :     {</span>
+<span id="L136"><span class="lineNum">     136</span>                 :                :         sqref_ = ref;</span>
+<span id="L137"><span class="lineNum">     137</span>                 :                :     }</span>
+<span id="L138"><span class="lineNum">     138</span>                 :                : </span>
+<span id="L139"><span class="lineNum">     139</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L140"><span class="lineNum">     140</span>                 :                :     /// Sets the range encompassed by this selection.</span>
+<span id="L141"><span class="lineNum">     141</span>                 :                :     /// The provided range should be a space delimited list of range references.</span>
+<span id="L142"><span class="lineNum">     142</span>                 :                :     /// E.g. &quot;A1 B2:C3&quot;</span>
+<span id="L143"><span class="lineNum">     143</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L144"><span class="lineNum">     144</span>                 :                :     void sqref(const std::string &amp;ref);</span>
+<span id="L145"><span class="lineNum">     145</span>                 :                : </span>
+<span id="L146"><span class="lineNum">     146</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L147"><span class="lineNum">     147</span>                 :                :     /// Returns the sheet quadrant of this selection.</span>
+<span id="L148"><span class="lineNum">     148</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L149"><span class="lineNum">     149</span>                 :<span class="tlaCBC">             42 :     pane_corner pane() const</span></span>
+<span id="L150"><span class="lineNum">     150</span>                 :                :     {</span>
+<span id="L151"><span class="lineNum">     151</span>                 :<span class="tlaCBC">             42 :         return pane_;</span></span>
+<span id="L152"><span class="lineNum">     152</span>                 :                :     }</span>
+<span id="L153"><span class="lineNum">     153</span>                 :                : </span>
+<span id="L154"><span class="lineNum">     154</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L155"><span class="lineNum">     155</span>                 :                :     /// Sets the sheet quadrant of this selection to corner.</span>
+<span id="L156"><span class="lineNum">     156</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L157"><span class="lineNum">     157</span>                 :<span class="tlaCBC">             13 :     void pane(pane_corner corner)</span></span>
+<span id="L158"><span class="lineNum">     158</span>                 :                :     {</span>
+<span id="L159"><span class="lineNum">     159</span>                 :<span class="tlaCBC">             13 :         pane_ = corner;</span></span>
+<span id="L160"><span class="lineNum">     160</span>                 :<span class="tlaCBC">             13 :     }</span></span>
+<span id="L161"><span class="lineNum">     161</span>                 :                : </span>
+<span id="L162"><span class="lineNum">     162</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L163"><span class="lineNum">     163</span>                 :                :     /// Returns true if this selection is equal to rhs based on its active cell,</span>
+<span id="L164"><span class="lineNum">     164</span>                 :                :     /// sqref, and pane.</span>
+<span id="L165"><span class="lineNum">     165</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L166"><span class="lineNum">     166</span>                 :<span class="tlaCBC">              6 :     bool operator==(const selection &amp;rhs) const</span></span>
+<span id="L167"><span class="lineNum">     167</span>                 :                :     {</span>
+<span id="L168"><span class="lineNum">     168</span>                 :<span class="tlaCBC">              6 :         return active_cell_ == rhs.active_cell_</span></span>
+<span id="L169"><span class="lineNum">     169</span>         [<span class="tlaCBC"> <a href="#L170" title="CBC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L170" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              6 :             &amp;&amp; sqref_ == rhs.sqref_</span></span>
+<span id="L170"><span class="lineNum">     170</span>   [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 2 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             12 :             &amp;&amp; pane_ == rhs.pane_;</span></span>
+<span id="L171"><span class="lineNum">     171</span>                 :                :     }</span>
+<span id="L172"><span class="lineNum">     172</span>                 :                : </span>
+<span id="L173"><span class="lineNum">     173</span>                 :                :     // &lt;summary&gt;</span>
+<span id="L174"><span class="lineNum">     174</span>                 :                :     /// Returns the negation of the equality operator.</span>
+<span id="L175"><span class="lineNum">     175</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L176"><span class="lineNum">     176</span>                 :                :     bool operator!=(const selection &amp;rhs) const</span>
+<span id="L177"><span class="lineNum">     177</span>                 :                :     {</span>
+<span id="L178"><span class="lineNum">     178</span>                 :                :         return !(*this == rhs);</span>
+<span id="L179"><span class="lineNum">     179</span>                 :                :     }</span>
+<span id="L180"><span class="lineNum">     180</span>                 :                : </span>
+<span id="L181"><span class="lineNum">     181</span>                 :                : private:</span>
+<span id="L182"><span class="lineNum">     182</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L183"><span class="lineNum">     183</span>                 :                :     /// The last selected cell in the selection</span>
+<span id="L184"><span class="lineNum">     184</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L185"><span class="lineNum">     185</span>                 :                :     optional&lt;cell_reference&gt; active_cell_;</span>
+<span id="L186"><span class="lineNum">     186</span>                 :                : </span>
+<span id="L187"><span class="lineNum">     187</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L188"><span class="lineNum">     188</span>                 :                :     /// The last selected block in the selection</span>
+<span id="L189"><span class="lineNum">     189</span>                 :                :     /// contains active_cell_, normally == to active_cell_</span>
+<span id="L190"><span class="lineNum">     190</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L191"><span class="lineNum">     191</span>                 :                :     std::vector&lt;range_reference&gt; sqref_;</span>
+<span id="L192"><span class="lineNum">     192</span>                 :                : </span>
+<span id="L193"><span class="lineNum">     193</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L194"><span class="lineNum">     194</span>                 :                :     /// The corner of the worksheet that this selection extends to</span>
+<span id="L195"><span class="lineNum">     195</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L196"><span class="lineNum">     196</span>                 :                :     pane_corner pane_ = pane_corner::top_left;</span>
+<span id="L197"><span class="lineNum">     197</span>                 :                : };</span>
+<span id="L198"><span class="lineNum">     198</span>                 :                : </span>
+<span id="L199"><span class="lineNum">     199</span>                 :                : } // namespace xlnt</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
