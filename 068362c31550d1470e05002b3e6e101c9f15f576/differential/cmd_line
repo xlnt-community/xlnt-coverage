@@ -1,0 +1,1 @@
+genhtml -j 2 -p /root/project --output-directory coverage/differential --baseline-file coverage_master.info --diff-file diff.txt -- coverage.info
