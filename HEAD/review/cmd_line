@@ -1,0 +1,1 @@
+genhtml -j 2 -p /root/project --output-directory coverage/review --baseline-file coverage_master.info --diff-file diff.txt --branch-coverage --title 'review summary' --select-script lcov/scripts/select.pm --select-script --tla --select-script UNC,UIC,LBC -- coverage.info
