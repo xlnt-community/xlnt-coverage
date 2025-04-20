@@ -1,0 +1,436 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/utils/datetime.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory source/utils">source/utils</a> - datetime.cpp<span style="font-size: 80%;"> (source / <a href="datetime.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">97.4&nbsp;%</td>
+            <td class="headerCovTableEntry">151</td>
+            <td class="headerCovTableEntry">147</td>
+            <td class="headerCovTableEntry"><a href="#L70" title="goto first UBC line">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L36" title="goto first CBC line">147</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-04-20 21:52:49</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">90.0&nbsp;%</td>
+            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">18</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">59.6&nbsp;%</td>
+            <td class="headerCovTableEntry">270</td>
+            <td class="headerCovTableEntry">161</td>
+            <td class="headerCovTableEntry"><a href="#L43" title="goto first UBC branch">218</a></td>
+            <td class="headerCovTableEntry"><a href="#L38" title="goto first CBC branch">322</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-04-20 21:52:48</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>                 :                : // Copyright (c) 2014-2022 Thomas Fussell</span>
+<span id="L2"><span class="lineNum">       2</span>                 :                : // Copyright (c) 2024-2025 xlnt-community</span>
+<span id="L3"><span class="lineNum">       3</span>                 :                : //</span>
+<span id="L4"><span class="lineNum">       4</span>                 :                : // Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="L5"><span class="lineNum">       5</span>                 :                : // of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span id="L6"><span class="lineNum">       6</span>                 :                : // in the Software without restriction, including without limitation the rights</span>
+<span id="L7"><span class="lineNum">       7</span>                 :                : // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="L8"><span class="lineNum">       8</span>                 :                : // copies of the Software, and to permit persons to whom the Software is</span>
+<span id="L9"><span class="lineNum">       9</span>                 :                : // furnished to do so, subject to the following conditions:</span>
+<span id="L10"><span class="lineNum">      10</span>                 :                : //</span>
+<span id="L11"><span class="lineNum">      11</span>                 :                : // The above copyright notice and this permission notice shall be included in</span>
+<span id="L12"><span class="lineNum">      12</span>                 :                : // all copies or substantial portions of the Software.</span>
+<span id="L13"><span class="lineNum">      13</span>                 :                : //</span>
+<span id="L14"><span class="lineNum">      14</span>                 :                : // THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span id="L15"><span class="lineNum">      15</span>                 :                : // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span id="L16"><span class="lineNum">      16</span>                 :                : // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span id="L17"><span class="lineNum">      17</span>                 :                : // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span id="L18"><span class="lineNum">      18</span>                 :                : // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span id="L19"><span class="lineNum">      19</span>                 :                : // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span id="L20"><span class="lineNum">      20</span>                 :                : // THE SOFTWARE</span>
+<span id="L21"><span class="lineNum">      21</span>                 :                : //</span>
+<span id="L22"><span class="lineNum">      22</span>                 :                : // @license: http://www.opensource.org/licenses/mit-license.php</span>
+<span id="L23"><span class="lineNum">      23</span>                 :                : // @author: see AUTHORS file</span>
+<span id="L24"><span class="lineNum">      24</span>                 :                : #include &lt;cmath&gt;</span>
+<span id="L25"><span class="lineNum">      25</span>                 :                : #include &lt;ctime&gt;</span>
+<span id="L26"><span class="lineNum">      26</span>                 :                : </span>
+<span id="L27"><span class="lineNum">      27</span>                 :                : #include &lt;xlnt/utils/date.hpp&gt;</span>
+<span id="L28"><span class="lineNum">      28</span>                 :                : #include &lt;xlnt/utils/datetime.hpp&gt;</span>
+<span id="L29"><span class="lineNum">      29</span>                 :                : #include &lt;xlnt/utils/time.hpp&gt;</span>
+<span id="L30"><span class="lineNum">      30</span>                 :                : #include &lt;detail/serialization/parsers.hpp&gt;</span>
+<span id="L31"><span class="lineNum">      31</span>                 :                : </span>
+<span id="L32"><span class="lineNum">      32</span>                 :                : #include &lt;xlnt/utils/optional.hpp&gt;</span>
+<span id="L33"><span class="lineNum">      33</span>                 :                : </span>
+<span id="L34"><span class="lineNum">      34</span>                 :                : namespace {</span>
+<span id="L35"><span class="lineNum">      35</span>                 :                : </span>
+<span id="L36"><span class="lineNum">      36</span>                 :<a href="#L75" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        2654 : std::string fill(const std::string &amp;string, std::size_t length = 2)</span></span>
+<span id="L37"><span class="lineNum">      37</span>                 :                : {</span>
+<span id="L38"><span class="lineNum">      38</span>         [<span class="tlaCBC"> <a href="#L43" title="CBC: Branch 0 was taken 1580 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L43" title="CBC: Branch 1 was taken 1074 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           2654 :     if (string.size() &gt;= length)</span></span>
+<span id="L39"><span class="lineNum">      39</span>                 :                :     {</span>
+<span id="L40"><span class="lineNum">      40</span>                 :<span class="tlaCBC">           1580 :         return string;</span></span>
+<span id="L41"><span class="lineNum">      41</span>                 :                :     }</span>
+<span id="L42"><span class="lineNum">      42</span>                 :                : </span>
+<span id="L43"><span class="lineNum">      43</span>   [<span class="tlaCBC"> <a href="#L52" title="CBC: Branch 0 was taken 1074 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L52" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L52" title="CBC: Branch 2 was taken 1074 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L52" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">           2148 :     return std::string(length - string.size(), '0') + string;</span></span>
+<span id="L44"><span class="lineNum">      44</span>                 :                : }</span>
+<span id="L45"><span class="lineNum">      45</span>                 :                : </span>
+<span id="L46"><span class="lineNum">      46</span>                 :                : } // namespace</span>
+<span id="L47"><span class="lineNum">      47</span>                 :                : </span>
+<span id="L48"><span class="lineNum">      48</span>                 :                : namespace xlnt {</span>
+<span id="L49"><span class="lineNum">      49</span>                 :                : </span>
+<span id="L50"><span class="lineNum">      50</span>                 :<span class="tlaCBC">             47 : datetime datetime::from_number(double raw_time, calendar base_date)</span></span>
+<span id="L51"><span class="lineNum">      51</span>                 :                : {</span>
+<span id="L52"><span class="lineNum">      52</span>         [<span class="tlaCBC"> <a href="#L53" title="CBC: Branch 0 was taken 47 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L53" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             47 :     auto date_part = date::from_number(static_cast&lt;int&gt;(raw_time), base_date);</span></span>
+<span id="L53"><span class="lineNum">      53</span>         [<span class="tlaCBC"> <a href="#L55" title="CBC: Branch 0 was taken 47 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L55" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             47 :     auto time_part = time::from_number(raw_time);</span></span>
+<span id="L54"><span class="lineNum">      54</span>                 :                : </span>
+<span id="L55"><span class="lineNum">      55</span>         [<span class="tlaCBC"> <a href="#L61" title="CBC: Branch 0 was taken 47 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L61" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             94 :     return datetime(date_part, time_part);</span></span>
+<span id="L56"><span class="lineNum">      56</span>                 :                : }</span>
+<span id="L57"><span class="lineNum">      57</span>                 :                : </span>
+<span id="L58"><span class="lineNum">      58</span>                 :<span class="tlaCBC">              1 : bool datetime::operator==(const datetime &amp;comparand) const</span></span>
+<span id="L59"><span class="lineNum">      59</span>                 :                : {</span>
+<span id="L60"><span class="lineNum">      60</span>                 :<span class="tlaCBC">              1 :     return year == comparand.year</span></span>
+<span id="L61"><span class="lineNum">      61</span>         [<span class="tlaCBC"> <a href="#L62" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L62" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         &amp;&amp; month == comparand.month</span></span>
+<span id="L62"><span class="lineNum">      62</span>         [<span class="tlaCBC"> <a href="#L63" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L63" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         &amp;&amp; day == comparand.day</span></span>
+<span id="L63"><span class="lineNum">      63</span>         [<span class="tlaCBC"> <a href="#L64" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L64" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         &amp;&amp; hour == comparand.hour</span></span>
+<span id="L64"><span class="lineNum">      64</span>         [<span class="tlaCBC"> <a href="#L65" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L65" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         &amp;&amp; minute == comparand.minute</span></span>
+<span id="L65"><span class="lineNum">      65</span>         [<span class="tlaCBC"> <a href="#L66" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L66" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         &amp;&amp; second == comparand.second</span></span>
+<span id="L66"><span class="lineNum">      66</span>         [<span class="tlaCBC"> <a href="#L67" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L67" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         &amp;&amp; microsecond == comparand.microsecond</span></span>
+<span id="L67"><span class="lineNum">      67</span>   [<span class="tlaCBC"> <a href="#L77" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L79" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L77" title="CBC: Branch 2 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L79" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         &amp;&amp; _is_null == comparand._is_null;</span></span>
+<span id="L68"><span class="lineNum">      68</span>                 :                : }</span>
+<span id="L69"><span class="lineNum">      69</span>                 :                : </span>
+<span id="L70"><span class="lineNum">      70</span>                 :<a href="#L116" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : bool datetime::operator!=(const datetime &amp;comparand) const</span></span>
+<span id="L71"><span class="lineNum">      71</span>                 :                : {</span>
+<span id="L72"><span class="lineNum">      72</span>                 :<span class="tlaUBC">              0 :     return !(*this == comparand);</span></span>
+<span id="L73"><span class="lineNum">      73</span>                 :                : }</span>
+<span id="L74"><span class="lineNum">      74</span>                 :                : </span>
+<span id="L75"><span class="lineNum">      75</span>                 :<a href="#L121" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           8 : double datetime::to_number(calendar base_date) const</span></span>
+<span id="L76"><span class="lineNum">      76</span>                 :                : {</span>
+<span id="L77"><span class="lineNum">      77</span>         [<span class="tlaCBC"> <a href="#L79" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L79" title="CBC: Branch 1 was taken 7 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              8 :     if (_is_null)</span></span>
+<span id="L78"><span class="lineNum">      78</span>                 :                :     {</span>
+<span id="L79"><span class="lineNum">      79</span>         [<span class="tlaCBC"> <a href="#L82" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L82" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         throw xlnt::invalid_attribute(&quot;cannot convert invalid/empty datetime to a number&quot;);</span></span>
+<span id="L80"><span class="lineNum">      80</span>                 :                :     }</span>
+<span id="L81"><span class="lineNum">      81</span>                 :                : </span>
+<span id="L82"><span class="lineNum">      82</span>   [<span class="tlaCBC"> <a href="#L83" title="CBC: Branch 0 was taken 7 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L83" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L83" title="CBC: Branch 2 was taken 7 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L83" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              7 :     return date(year, month, day).to_number(base_date)</span></span>
+<span id="L83"><span class="lineNum">      83</span>   [<span class="tlaCBC"> <a href="#L88" title="CBC: Branch 0 was taken 7 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L95" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L88" title="CBC: Branch 2 was taken 7 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L95" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              7 :         + time(hour, minute, second, microsecond).to_number();</span></span>
+<span id="L84"><span class="lineNum">      84</span>                 :                : }</span>
+<span id="L85"><span class="lineNum">      85</span>                 :                : </span>
+<span id="L86"><span class="lineNum">      86</span>                 :<span class="tlaCBC">              3 : std::string datetime::to_string() const</span></span>
+<span id="L87"><span class="lineNum">      87</span>                 :                : {</span>
+<span id="L88"><span class="lineNum">      88</span>         [<span class="tlaCBC"> <a href="#L95" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L95" title="CBC: Branch 1 was taken 2 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              3 :     if (_is_null)</span></span>
+<span id="L89"><span class="lineNum">      89</span>                 :                :     {</span>
+<span id="L90"><span class="lineNum">      90</span>                 :<span class="tlaCBC">              1 :         return {};</span></span>
+<span id="L91"><span class="lineNum">      91</span>                 :                :     }</span>
+<span id="L92"><span class="lineNum">      92</span>                 :                :     else</span>
+<span id="L93"><span class="lineNum">      93</span>                 :                :     {</span>
+<span id="L94"><span class="lineNum">      94</span>                 :<span class="tlaCBC">              2 :         std::string str = std::to_string(year);</span></span>
+<span id="L95"><span class="lineNum">      95</span>         [<span class="tlaCBC"> <a href="#L96" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L96" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         str.push_back('/');</span></span>
+<span id="L96"><span class="lineNum">      96</span>         [<span class="tlaCBC"> <a href="#L97" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L97" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         str.append(std::to_string(month));</span></span>
+<span id="L97"><span class="lineNum">      97</span>         [<span class="tlaCBC"> <a href="#L98" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L98" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         str.push_back('/');</span></span>
+<span id="L98"><span class="lineNum">      98</span>         [<span class="tlaCBC"> <a href="#L99" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L99" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         str.append(std::to_string(day));</span></span>
+<span id="L99"><span class="lineNum">      99</span>         [<span class="tlaCBC"> <a href="#L100" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L100" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         str.push_back(' ');</span></span>
+<span id="L100"><span class="lineNum">     100</span>         [<span class="tlaCBC"> <a href="#L101" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L101" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         str.append(std::to_string(hour));</span></span>
+<span id="L101"><span class="lineNum">     101</span>         [<span class="tlaCBC"> <a href="#L102" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L102" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         str.push_back(':');</span></span>
+<span id="L102"><span class="lineNum">     102</span>         [<span class="tlaCBC"> <a href="#L103" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L103" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         str.append(std::to_string(minute));</span></span>
+<span id="L103"><span class="lineNum">     103</span>         [<span class="tlaCBC"> <a href="#L104" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L104" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         str.push_back(':');</span></span>
+<span id="L104"><span class="lineNum">     104</span>         [<span class="tlaCBC"> <a href="#L106" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L106" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         str.append(std::to_string(second));</span></span>
+<span id="L105"><span class="lineNum">     105</span>                 :                : </span>
+<span id="L106"><span class="lineNum">     106</span>         [<span class="tlaCBC"> <a href="#L108" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L108" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         if (microsecond != 0)</span></span>
+<span id="L107"><span class="lineNum">     107</span>                 :                :         {</span>
+<span id="L108"><span class="lineNum">     108</span>         [<span class="tlaCBC"> <a href="#L109" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L109" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :             str.push_back('.');</span></span>
+<span id="L109"><span class="lineNum">     109</span>   [<span class="tlaCBC"> <a href="#L123" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L118" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L123" title="CBC: Branch 2 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L118" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :             str.append(fill(std::to_string(microsecond), 6));</span></span>
+<span id="L110"><span class="lineNum">     110</span>                 :                :         }</span>
+<span id="L111"><span class="lineNum">     111</span>                 :                : </span>
+<span id="L112"><span class="lineNum">     112</span>                 :<span class="tlaCBC">              2 :         return str;</span></span>
+<span id="L113"><span class="lineNum">     113</span>                 :<span class="tlaCBC">              2 :     }</span></span>
+<span id="L114"><span class="lineNum">     114</span>                 :                : }</span>
+<span id="L115"><span class="lineNum">     115</span>                 :                : </span>
+<span id="L116"><span class="lineNum">     116</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : datetime datetime::now()</span></span>
+<span id="L117"><span class="lineNum">     117</span>                 :                : {</span>
+<span id="L118"><span class="lineNum">     118</span>   [<span class="tlaUBC"> <a href="#L123" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L123" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L123" title="UBC: Branch 2 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L123" title="UBC: Branch 3 was not executed" class="branchTla">#</a> </span> :<span class="tlaUBC">              0 :     return datetime(date::today(), time::now());</span></span>
+<span class="lineNum">        </span>          <span class="tlaUBC"> <a href="#L123" title="UBC: Branch 4 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L123" title="UBC: Branch 5 was not executed" class="branchTla">#</a> </span>]
+<span id="L119"><span class="lineNum">     119</span>                 :                : }</span>
+<span id="L120"><span class="lineNum">     120</span>                 :                : </span>
+<span id="L121"><span class="lineNum">     121</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           3 : datetime datetime::today()</span></span>
+<span id="L122"><span class="lineNum">     122</span>                 :                : {</span>
+<span id="L123"><span class="lineNum">     123</span>   [<span class="tlaCBC"> <a href="#L138" title="CBC: Branch 0 was taken 3 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L138" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L138" title="CBC: Branch 2 was taken 3 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L138" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">              3 :     return datetime(date::today(), time(0, 0, 0, 0));</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L138" title="CBC: Branch 4 was taken 3 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L138" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L124"><span class="lineNum">     124</span>                 :                : }</span>
+<span id="L125"><span class="lineNum">     125</span>                 :                : </span>
+<span id="L126"><span class="lineNum">     126</span>                 :<span class="tlaCBC">            720 : datetime::datetime(int year_, int month_, int day_, int hour_, int minute_, int second_, int microsecond_)</span></span>
+<span id="L127"><span class="lineNum">     127</span>                 :<span class="tlaCBC">            720 :     : year(year_), month(month_), day(day_), hour(hour_), minute(minute_), second(second_), microsecond(microsecond_), _is_null(false)</span></span>
+<span id="L128"><span class="lineNum">     128</span>                 :                : {</span>
+<span id="L129"><span class="lineNum">     129</span>                 :<span class="tlaCBC">            720 : }</span></span>
+<span id="L130"><span class="lineNum">     130</span>                 :                : </span>
+<span id="L131"><span class="lineNum">     131</span>                 :<span class="tlaCBC">             50 : datetime::datetime(const date &amp;d, const time &amp;t)</span></span>
+<span id="L132"><span class="lineNum">     132</span>                 :<span class="tlaCBC">             50 :     : hour(t.hour),</span></span>
+<span id="L133"><span class="lineNum">     133</span>                 :<span class="tlaCBC">             50 :       minute(t.minute),</span></span>
+<span id="L134"><span class="lineNum">     134</span>                 :<span class="tlaCBC">             50 :       second(t.second),</span></span>
+<span id="L135"><span class="lineNum">     135</span>                 :<span class="tlaCBC">             50 :       microsecond(t.microsecond),</span></span>
+<span id="L136"><span class="lineNum">     136</span>                 :<span class="tlaCBC">             50 :       _is_null(d.is_null())</span></span>
+<span id="L137"><span class="lineNum">     137</span>                 :                : {</span>
+<span id="L138"><span class="lineNum">     138</span>         [<span class="tlaCBC"> <a href="#L148" title="CBC: Branch 0 was taken 50 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L150" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             50 :     if (!d.is_null())</span></span>
+<span id="L139"><span class="lineNum">     139</span>                 :                :     {</span>
+<span id="L140"><span class="lineNum">     140</span>                 :<span class="tlaCBC">             50 :         year = d.get_year();</span></span>
+<span id="L141"><span class="lineNum">     141</span>                 :<span class="tlaCBC">             50 :         month = d.get_month();</span></span>
+<span id="L142"><span class="lineNum">     142</span>                 :<span class="tlaCBC">             50 :         day = d.get_day();</span></span>
+<span id="L143"><span class="lineNum">     143</span>                 :                :     }</span>
+<span id="L144"><span class="lineNum">     144</span>                 :<span class="tlaCBC">             50 : }</span></span>
+<span id="L145"><span class="lineNum">     145</span>                 :                : </span>
+<span id="L146"><span class="lineNum">     146</span>                 :<span class="tlaCBC">              3 : int datetime::weekday() const</span></span>
+<span id="L147"><span class="lineNum">     147</span>                 :                : {</span>
+<span id="L148"><span class="lineNum">     148</span>         [<span class="tlaCBC"> <a href="#L150" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L150" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaCBC">              3 :     if (!_is_null)</span></span>
+<span id="L149"><span class="lineNum">     149</span>                 :                :     {</span>
+<span id="L150"><span class="lineNum">     150</span>   [<span class="tlaCBC"> <a href="#L160" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L162" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L160" title="CBC: Branch 2 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L162" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         return date(year, month, day).weekday();</span></span>
+<span id="L151"><span class="lineNum">     151</span>                 :                :     }</span>
+<span id="L152"><span class="lineNum">     152</span>                 :                :     else</span>
+<span id="L153"><span class="lineNum">     153</span>                 :                :     {</span>
+<span id="L154"><span class="lineNum">     154</span>                 :<span class="tlaCBC">              1 :         return -1;</span></span>
+<span id="L155"><span class="lineNum">     155</span>                 :                :     }</span>
+<span id="L156"><span class="lineNum">     156</span>                 :                : }</span>
+<span id="L157"><span class="lineNum">     157</span>                 :                : </span>
+<span id="L158"><span class="lineNum">     158</span>                 :<span class="tlaCBC">             39 : int datetime::get_year() const</span></span>
+<span id="L159"><span class="lineNum">     159</span>                 :                : {</span>
+<span id="L160"><span class="lineNum">     160</span>         [<span class="tlaCBC"> <a href="#L162" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L162" title="CBC: Branch 1 was taken 38 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             39 :     if (_is_null)</span></span>
+<span id="L161"><span class="lineNum">     161</span>                 :                :     {</span>
+<span id="L162"><span class="lineNum">     162</span>         [<span class="tlaCBC"> <a href="#L170" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L172" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         throw xlnt::invalid_attribute(&quot;access to invalid/empty year of xlnt::datetime&quot;);</span></span>
+<span id="L163"><span class="lineNum">     163</span>                 :                :     }</span>
+<span id="L164"><span class="lineNum">     164</span>                 :                : </span>
+<span id="L165"><span class="lineNum">     165</span>                 :<span class="tlaCBC">             38 :     return year;</span></span>
+<span id="L166"><span class="lineNum">     166</span>                 :                : }</span>
+<span id="L167"><span class="lineNum">     167</span>                 :                : </span>
+<span id="L168"><span class="lineNum">     168</span>                 :<span class="tlaCBC">             35 : int datetime::get_month() const</span></span>
+<span id="L169"><span class="lineNum">     169</span>                 :                : {</span>
+<span id="L170"><span class="lineNum">     170</span>         [<span class="tlaCBC"> <a href="#L172" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L172" title="CBC: Branch 1 was taken 34 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             35 :     if (_is_null)</span></span>
+<span id="L171"><span class="lineNum">     171</span>                 :                :     {</span>
+<span id="L172"><span class="lineNum">     172</span>         [<span class="tlaCBC"> <a href="#L180" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L182" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         throw xlnt::invalid_attribute(&quot;access to invalid/empty month of xlnt::datetime&quot;);</span></span>
+<span id="L173"><span class="lineNum">     173</span>                 :                :     }</span>
+<span id="L174"><span class="lineNum">     174</span>                 :                : </span>
+<span id="L175"><span class="lineNum">     175</span>                 :<span class="tlaCBC">             34 :     return month;</span></span>
+<span id="L176"><span class="lineNum">     176</span>                 :                : }</span>
+<span id="L177"><span class="lineNum">     177</span>                 :                : </span>
+<span id="L178"><span class="lineNum">     178</span>                 :<span class="tlaCBC">             30 : int datetime::get_day() const</span></span>
+<span id="L179"><span class="lineNum">     179</span>                 :                : {</span>
+<span id="L180"><span class="lineNum">     180</span>         [<span class="tlaCBC"> <a href="#L182" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L182" title="CBC: Branch 1 was taken 29 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             30 :     if (_is_null)</span></span>
+<span id="L181"><span class="lineNum">     181</span>                 :                :     {</span>
+<span id="L182"><span class="lineNum">     182</span>         [<span class="tlaCBC"> <a href="#L190" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L192" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         throw xlnt::invalid_attribute(&quot;access to invalid/empty day of xlnt::datetime&quot;);</span></span>
+<span id="L183"><span class="lineNum">     183</span>                 :                :     }</span>
+<span id="L184"><span class="lineNum">     184</span>                 :                : </span>
+<span id="L185"><span class="lineNum">     185</span>                 :<span class="tlaCBC">             29 :     return day;</span></span>
+<span id="L186"><span class="lineNum">     186</span>                 :                : }</span>
+<span id="L187"><span class="lineNum">     187</span>                 :                : </span>
+<span id="L188"><span class="lineNum">     188</span>                 :<span class="tlaCBC">             77 : int datetime::get_hour() const</span></span>
+<span id="L189"><span class="lineNum">     189</span>                 :                : {</span>
+<span id="L190"><span class="lineNum">     190</span>         [<span class="tlaCBC"> <a href="#L192" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L192" title="CBC: Branch 1 was taken 76 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             77 :     if (_is_null)</span></span>
+<span id="L191"><span class="lineNum">     191</span>                 :                :     {</span>
+<span id="L192"><span class="lineNum">     192</span>         [<span class="tlaCBC"> <a href="#L200" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L202" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         throw xlnt::invalid_attribute(&quot;access to invalid/empty hour of xlnt::datetime&quot;);</span></span>
+<span id="L193"><span class="lineNum">     193</span>                 :                :     }</span>
+<span id="L194"><span class="lineNum">     194</span>                 :                : </span>
+<span id="L195"><span class="lineNum">     195</span>                 :<span class="tlaCBC">             76 :     return hour;</span></span>
+<span id="L196"><span class="lineNum">     196</span>                 :                : }</span>
+<span id="L197"><span class="lineNum">     197</span>                 :                : </span>
+<span id="L198"><span class="lineNum">     198</span>                 :<span class="tlaCBC">             48 : int datetime::get_minute() const</span></span>
+<span id="L199"><span class="lineNum">     199</span>                 :                : {</span>
+<span id="L200"><span class="lineNum">     200</span>         [<span class="tlaCBC"> <a href="#L202" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L202" title="CBC: Branch 1 was taken 47 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             48 :     if (_is_null)</span></span>
+<span id="L201"><span class="lineNum">     201</span>                 :                :     {</span>
+<span id="L202"><span class="lineNum">     202</span>         [<span class="tlaCBC"> <a href="#L210" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L212" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         throw xlnt::invalid_attribute(&quot;access to invalid/empty minute of xlnt::datetime&quot;);</span></span>
+<span id="L203"><span class="lineNum">     203</span>                 :                :     }</span>
+<span id="L204"><span class="lineNum">     204</span>                 :                : </span>
+<span id="L205"><span class="lineNum">     205</span>                 :<span class="tlaCBC">             47 :     return minute;</span></span>
+<span id="L206"><span class="lineNum">     206</span>                 :                : }</span>
+<span id="L207"><span class="lineNum">     207</span>                 :                : </span>
+<span id="L208"><span class="lineNum">     208</span>                 :<span class="tlaCBC">             39 : int datetime::get_second() const</span></span>
+<span id="L209"><span class="lineNum">     209</span>                 :                : {</span>
+<span id="L210"><span class="lineNum">     210</span>         [<span class="tlaCBC"> <a href="#L212" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L212" title="CBC: Branch 1 was taken 38 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             39 :     if (_is_null)</span></span>
+<span id="L211"><span class="lineNum">     211</span>                 :                :     {</span>
+<span id="L212"><span class="lineNum">     212</span>         [<span class="tlaCBC"> <a href="#L220" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L222" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         throw xlnt::invalid_attribute(&quot;access to invalid/empty second of xlnt::datetime&quot;);</span></span>
+<span id="L213"><span class="lineNum">     213</span>                 :                :     }</span>
+<span id="L214"><span class="lineNum">     214</span>                 :                : </span>
+<span id="L215"><span class="lineNum">     215</span>                 :<span class="tlaCBC">             38 :     return second;</span></span>
+<span id="L216"><span class="lineNum">     216</span>                 :                : }</span>
+<span id="L217"><span class="lineNum">     217</span>                 :                : </span>
+<span id="L218"><span class="lineNum">     218</span>                 :<span class="tlaCBC">             35 : int datetime::get_microsecond() const</span></span>
+<span id="L219"><span class="lineNum">     219</span>                 :                : {</span>
+<span id="L220"><span class="lineNum">     220</span>         [<span class="tlaCBC"> <a href="#L222" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L222" title="CBC: Branch 1 was taken 34 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             35 :     if (_is_null)</span></span>
+<span id="L221"><span class="lineNum">     221</span>                 :                :     {</span>
+<span id="L222"><span class="lineNum">     222</span>         [<span class="tlaCBC"> <a href="#L234" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L234" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         throw xlnt::invalid_attribute(&quot;access to invalid/empty microsecond of xlnt::datetime&quot;);</span></span>
+<span id="L223"><span class="lineNum">     223</span>                 :                :     }</span>
+<span id="L224"><span class="lineNum">     224</span>                 :                : </span>
+<span id="L225"><span class="lineNum">     225</span>                 :<span class="tlaCBC">             34 :     return microsecond;</span></span>
+<span id="L226"><span class="lineNum">     226</span>                 :                : }</span>
+<span id="L227"><span class="lineNum">     227</span>                 :                : </span>
+<span id="L228"><span class="lineNum">     228</span>                 :<span class="tlaCBC">             33 : datetime datetime::from_iso_string(const std::string &amp;string)</span></span>
+<span id="L229"><span class="lineNum">     229</span>                 :                : {</span>
+<span id="L230"><span class="lineNum">     230</span>                 :<span class="tlaCBC">             33 :     xlnt::datetime result(1900, 1, 1);</span></span>
+<span id="L231"><span class="lineNum">     231</span>                 :                : </span>
+<span id="L232"><span class="lineNum">     232</span>                 :<span class="tlaCBC">             33 :     bool ok = true;</span></span>
+<span id="L233"><span class="lineNum">     233</span>                 :<span class="tlaCBC">             33 :     auto next_separator_index = string.find('-');</span></span>
+<span id="L234"><span class="lineNum">     234</span>   [<span class="tlaCBC"> <a href="#L236" title="CBC: Branch 0 was taken 33 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L237" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L236" title="CBC: Branch 2 was taken 33 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L237" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">             33 :     ok = ok &amp;&amp; detail::parse(string.substr(0, next_separator_index), result.year) == std::errc();</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L236" title="CBC: Branch 4 was taken 33 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L237" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L236" title="CBC: Branch 6 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L236" title="CBC: Branch 7 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L236" title="CBC: Branch 8 was taken 33 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>       <span class="tlaUBC"> <a href="#L237" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L237" title="UBC: Branch 10 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L237" title="UBC: Branch 11 was not taken" class="branchTla">-</a> </span>]
+<span id="L235"><span class="lineNum">     235</span>                 :<span class="tlaCBC">             33 :     auto previous_separator_index = next_separator_index;</span></span>
+<span id="L236"><span class="lineNum">     236</span>         [<span class="tlaCBC"> <a href="#L237" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L237" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaCBC">             33 :     next_separator_index = ok ? string.find('-', previous_separator_index + 1) : next_separator_index;</span></span>
+<span id="L237"><span class="lineNum">     237</span>   [<span class="tlaCBC"> <a href="#L239" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L239" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L239" title="CBC: Branch 2 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L240" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">             33 :     ok = ok &amp;&amp; detail::parse(string.substr(previous_separator_index + 1, next_separator_index), result.month) == std::errc();</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L239" title="CBC: Branch 4 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L240" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L239" title="CBC: Branch 6 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L240" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L239" title="CBC: Branch 8 was taken 32 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>       <span class="tlaCBC"> <a href="#L239" title="CBC: Branch 9 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L240" title="UBC: Branch 10 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L240" title="UBC: Branch 11 was not taken" class="branchTla">-</a> </span>]
+<span id="L238"><span class="lineNum">     238</span>                 :<span class="tlaCBC">             33 :     previous_separator_index = next_separator_index;</span></span>
+<span id="L239"><span class="lineNum">     239</span>         [<span class="tlaCBC"> <a href="#L240" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L240" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaCBC">             33 :     next_separator_index = ok ? string.find('T', previous_separator_index + 1) : next_separator_index;</span></span>
+<span id="L240"><span class="lineNum">     240</span>   [<span class="tlaCBC"> <a href="#L242" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L242" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L242" title="CBC: Branch 2 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L243" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">             33 :     ok = ok &amp;&amp; detail::parse(string.substr(previous_separator_index + 1, next_separator_index), result.day) == std::errc();</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L242" title="CBC: Branch 4 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L243" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L242" title="CBC: Branch 6 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L243" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L242" title="CBC: Branch 8 was taken 32 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>       <span class="tlaCBC"> <a href="#L242" title="CBC: Branch 9 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L243" title="UBC: Branch 10 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L243" title="UBC: Branch 11 was not taken" class="branchTla">-</a> </span>]
+<span id="L241"><span class="lineNum">     241</span>                 :<span class="tlaCBC">             33 :     previous_separator_index = next_separator_index;</span></span>
+<span id="L242"><span class="lineNum">     242</span>         [<span class="tlaCBC"> <a href="#L243" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L243" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaCBC">             33 :     next_separator_index = ok ? string.find(':', previous_separator_index + 1) : next_separator_index;</span></span>
+<span id="L243"><span class="lineNum">     243</span>   [<span class="tlaCBC"> <a href="#L245" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L245" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L245" title="CBC: Branch 2 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L246" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">             33 :     ok = ok &amp;&amp; detail::parse(string.substr(previous_separator_index + 1, next_separator_index), result.hour) == std::errc();</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L245" title="CBC: Branch 4 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L246" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L245" title="CBC: Branch 6 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L246" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L245" title="CBC: Branch 8 was taken 32 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>       <span class="tlaCBC"> <a href="#L245" title="CBC: Branch 9 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L246" title="UBC: Branch 10 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L246" title="UBC: Branch 11 was not taken" class="branchTla">-</a> </span>]
+<span id="L244"><span class="lineNum">     244</span>                 :<span class="tlaCBC">             33 :     previous_separator_index = next_separator_index;</span></span>
+<span id="L245"><span class="lineNum">     245</span>         [<span class="tlaCBC"> <a href="#L246" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L246" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaCBC">             33 :     next_separator_index = ok ? string.find(':', previous_separator_index + 1) : next_separator_index;</span></span>
+<span id="L246"><span class="lineNum">     246</span>   [<span class="tlaCBC"> <a href="#L248" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L248" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L248" title="CBC: Branch 2 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L253" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">             33 :     ok = ok &amp;&amp; detail::parse(string.substr(previous_separator_index + 1, next_separator_index), result.minute) == std::errc();</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L248" title="CBC: Branch 4 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L253" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L248" title="CBC: Branch 6 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L253" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L248" title="CBC: Branch 8 was taken 32 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>       <span class="tlaCBC"> <a href="#L248" title="CBC: Branch 9 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L253" title="UBC: Branch 10 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L253" title="UBC: Branch 11 was not taken" class="branchTla">-</a> </span>]
+<span id="L247"><span class="lineNum">     247</span>                 :<span class="tlaCBC">             33 :     previous_separator_index = next_separator_index;</span></span>
+<span id="L248"><span class="lineNum">     248</span>         [<span class="tlaCBC"> <a href="#L250" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L250" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaCBC">             33 :     next_separator_index = ok ? string.find('.', previous_separator_index + 1) : next_separator_index;</span></span>
+<span id="L249"><span class="lineNum">     249</span>                 :<span class="tlaCBC">             33 :     bool subseconds_available = next_separator_index != std::string::npos;</span></span>
+<span id="L250"><span class="lineNum">     250</span>         [<span class="tlaCBC"> <a href="#L253" title="CBC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L253" title="CBC: Branch 1 was taken 27 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             33 :     if (subseconds_available)</span></span>
+<span id="L251"><span class="lineNum">     251</span>                 :                :     {</span>
+<span id="L252"><span class="lineNum">     252</span>                 :                :         // First parse the seconds.</span>
+<span id="L253"><span class="lineNum">     253</span>   [<span class="tlaCBC"> <a href="#L257" title="CBC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L259" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L257" title="CBC: Branch 2 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L259" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">              6 :         ok = ok &amp;&amp; detail::parse(string.substr(previous_separator_index + 1, next_separator_index), result.second) == std::errc();</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L257" title="CBC: Branch 4 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L259" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L257" title="CBC: Branch 6 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L259" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L257" title="CBC: Branch 8 was taken 6 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>       <span class="tlaUBC"> <a href="#L259" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L259" title="UBC: Branch 10 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L259" title="UBC: Branch 11 was not taken" class="branchTla">-</a> </span>]
+<span id="L254"><span class="lineNum">     254</span>                 :<span class="tlaCBC">              6 :         previous_separator_index = next_separator_index;</span></span>
+<span id="L255"><span class="lineNum">     255</span>                 :                : </span>
+<span id="L256"><span class="lineNum">     256</span>                 :                :     }</span>
+<span id="L257"><span class="lineNum">     257</span>         [<span class="tlaCBC"> <a href="#L259" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L259" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaCBC">             33 :     next_separator_index = ok ? string.find('Z', previous_separator_index + 1) : next_separator_index;</span></span>
+<span id="L258"><span class="lineNum">     258</span>                 :<span class="tlaCBC">             33 :     size_t num_characters_parsed = 0;</span></span>
+<span id="L259"><span class="lineNum">     259</span>   [<span class="tlaCBC"> <a href="#L261" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L261" title="CBC: Branch 1 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L261" title="CBC: Branch 2 was taken 6 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L261" title="CBC: Branch 3 was taken 26 times" class="branchTla">+</a> </span> :<span class="tlaCBC">             33 :     ok = ok &amp;&amp; detail::parse(string.substr(previous_separator_index + 1, next_separator_index), subseconds_available ? result.microsecond : result.second, &amp;num_characters_parsed) == std::errc();</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L261" title="CBC: Branch 4 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L281" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L261" title="CBC: Branch 6 was taken 32 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L281" title="UBC: Branch 7 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L261" title="CBC: Branch 8 was taken 32 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>    <span class="tlaUBC"> <a href="#L281" title="UBC: Branch 9 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L261" title="CBC: Branch 10 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L261" title="CBC: Branch 11 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L281" title="UBC: Branch 12 was not taken" class="branchTla">-</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaUBC"> <a href="#L281" title="UBC: Branch 13 was not taken" class="branchTla">-</a> </span>]
+<span id="L260"><span class="lineNum">     260</span>                 :                : </span>
+<span id="L261"><span class="lineNum">     261</span>         [<span class="tlaCBC"> <a href="#L266" title="CBC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L266" title="CBC: Branch 1 was taken 27 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             33 :     if (subseconds_available)</span></span>
+<span id="L262"><span class="lineNum">     262</span>                 :                :     {</span>
+<span id="L263"><span class="lineNum">     263</span>                 :<span class="tlaCBC">              6 :         constexpr size_t expected_digits = 6; // microseconds have 6 digits</span></span>
+<span id="L264"><span class="lineNum">     264</span>                 :<span class="tlaCBC">              6 :         size_t actual_digits = num_characters_parsed;</span></span>
+<span id="L265"><span class="lineNum">     265</span>                 :                : </span>
+<span id="L266"><span class="lineNum">     266</span>         [<span class="tlaCBC"> <a href="#L272" title="CBC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L272" title="CBC: Branch 1 was taken 6 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             12 :         while (actual_digits &gt; expected_digits)</span></span>
+<span id="L267"><span class="lineNum">     267</span>                 :                :         {</span>
+<span id="L268"><span class="lineNum">     268</span>                 :<span class="tlaCBC">              6 :             result.microsecond /= 10;</span></span>
+<span id="L269"><span class="lineNum">     269</span>                 :<span class="tlaCBC">              6 :             --actual_digits;</span></span>
+<span id="L270"><span class="lineNum">     270</span>                 :                :         }</span>
+<span id="L271"><span class="lineNum">     271</span>                 :                : </span>
+<span id="L272"><span class="lineNum">     272</span>         [<span class="tlaCBC"> <a href="#L279" title="CBC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L279" title="CBC: Branch 1 was taken 6 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             12 :         while (actual_digits &lt; expected_digits)</span></span>
+<span id="L273"><span class="lineNum">     273</span>                 :                :         {</span>
+<span id="L274"><span class="lineNum">     274</span>                 :<span class="tlaCBC">              6 :             result.microsecond *= 10;</span></span>
+<span id="L275"><span class="lineNum">     275</span>                 :<span class="tlaCBC">              6 :             ++actual_digits;</span></span>
+<span id="L276"><span class="lineNum">     276</span>                 :                :         }</span>
+<span id="L277"><span class="lineNum">     277</span>                 :                :     }</span>
+<span id="L278"><span class="lineNum">     278</span>                 :                : </span>
+<span id="L279"><span class="lineNum">     279</span>         [<span class="tlaCBC"> <a href="#L281" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L281" title="CBC: Branch 1 was taken 32 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             33 :     if (!ok)</span></span>
+<span id="L280"><span class="lineNum">     280</span>                 :                :     {</span>
+<span id="L281"><span class="lineNum">     281</span>         [<span class="tlaCBC"> <a href="#L289" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L296" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              1 :         throw xlnt::invalid_parameter(&quot;invalid ISO date&quot;);</span></span>
+<span id="L282"><span class="lineNum">     282</span>                 :                :     }</span>
+<span id="L283"><span class="lineNum">     283</span>                 :                : </span>
+<span id="L284"><span class="lineNum">     284</span>                 :<span class="tlaCBC">             64 :     return result;</span></span>
+<span id="L285"><span class="lineNum">     285</span>                 :                : }</span>
+<span id="L286"><span class="lineNum">     286</span>                 :                : </span>
+<span id="L287"><span class="lineNum">     287</span>                 :<span class="tlaCBC">            531 : std::string datetime::to_iso_string() const</span></span>
+<span id="L288"><span class="lineNum">     288</span>                 :                : {</span>
+<span id="L289"><span class="lineNum">     289</span>         [<span class="tlaCBC"> <a href="#L296" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L296" title="CBC: Branch 1 was taken 530 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            531 :     if (_is_null)</span></span>
+<span id="L290"><span class="lineNum">     290</span>                 :                :     {</span>
+<span id="L291"><span class="lineNum">     291</span>                 :<span class="tlaCBC">              1 :         return {};</span></span>
+<span id="L292"><span class="lineNum">     292</span>                 :                :     }</span>
+<span id="L293"><span class="lineNum">     293</span>                 :                :     else</span>
+<span id="L294"><span class="lineNum">     294</span>                 :                :     {</span>
+<span id="L295"><span class="lineNum">     295</span>                 :<span class="tlaCBC">            530 :         std::string iso = std::to_string(year);</span></span>
+<span id="L296"><span class="lineNum">     296</span>         [<span class="tlaCBC"> <a href="#L297" title="CBC: Branch 0 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L297" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            530 :         iso.push_back('-');</span></span>
+<span id="L297"><span class="lineNum">     297</span>   [<span class="tlaCBC"> <a href="#L298" title="CBC: Branch 0 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L298" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L298" title="CBC: Branch 2 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L298" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            530 :         iso.append(fill(std::to_string(month)));</span></span>
+<span id="L298"><span class="lineNum">     298</span>         [<span class="tlaCBC"> <a href="#L299" title="CBC: Branch 0 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L299" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            530 :         iso.push_back('-');</span></span>
+<span id="L299"><span class="lineNum">     299</span>   [<span class="tlaCBC"> <a href="#L300" title="CBC: Branch 0 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L300" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L300" title="CBC: Branch 2 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L300" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            530 :         iso.append(fill(std::to_string(day)));</span></span>
+<span id="L300"><span class="lineNum">     300</span>         [<span class="tlaCBC"> <a href="#L301" title="CBC: Branch 0 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L301" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            530 :         iso.push_back('T');</span></span>
+<span id="L301"><span class="lineNum">     301</span>   [<span class="tlaCBC"> <a href="#L302" title="CBC: Branch 0 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L302" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L302" title="CBC: Branch 2 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L302" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            530 :         iso.append(fill(std::to_string(hour)));</span></span>
+<span id="L302"><span class="lineNum">     302</span>         [<span class="tlaCBC"> <a href="#L303" title="CBC: Branch 0 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L303" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            530 :         iso.push_back(':');</span></span>
+<span id="L303"><span class="lineNum">     303</span>   [<span class="tlaCBC"> <a href="#L304" title="CBC: Branch 0 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L304" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L304" title="CBC: Branch 2 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L304" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            530 :         iso.append(fill(std::to_string(minute)));</span></span>
+<span id="L304"><span class="lineNum">     304</span>         [<span class="tlaCBC"> <a href="#L305" title="CBC: Branch 0 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L305" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            530 :         iso.push_back(':');</span></span>
+<span id="L305"><span class="lineNum">     305</span>   [<span class="tlaCBC"> <a href="#L307" title="CBC: Branch 0 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L309" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L307" title="CBC: Branch 2 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L309" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            530 :         iso.append(fill(std::to_string(second)));</span></span>
+<span id="L306"><span class="lineNum">     306</span>                 :                : </span>
+<span id="L307"><span class="lineNum">     307</span>         [<span class="tlaCBC"> <a href="#L309" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L309" title="CBC: Branch 1 was taken 528 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            530 :         if (microsecond != 0)</span></span>
+<span id="L308"><span class="lineNum">     308</span>                 :                :         {</span>
+<span id="L309"><span class="lineNum">     309</span>         [<span class="tlaCBC"> <a href="#L310" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L310" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :             iso.push_back('.');</span></span>
+<span id="L310"><span class="lineNum">     310</span>   [<span class="tlaCBC"> <a href="#L313" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L313" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L313" title="CBC: Branch 2 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L313" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :             iso.append(fill(std::to_string(microsecond), 6));</span></span>
+<span id="L311"><span class="lineNum">     311</span>                 :                :         }</span>
+<span id="L312"><span class="lineNum">     312</span>                 :                : </span>
+<span id="L313"><span class="lineNum">     313</span>         [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 530 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            530 :         iso.push_back('Z');</span></span>
+<span id="L314"><span class="lineNum">     314</span>                 :                : </span>
+<span id="L315"><span class="lineNum">     315</span>                 :<span class="tlaCBC">            530 :         return iso;</span></span>
+<span id="L316"><span class="lineNum">     316</span>                 :<span class="tlaCBC">            530 :     }</span></span>
+<span id="L317"><span class="lineNum">     317</span>                 :                : }</span>
+<span id="L318"><span class="lineNum">     318</span>                 :                : </span>
+<span id="L319"><span class="lineNum">     319</span>                 :                : } // namespace xlnt</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

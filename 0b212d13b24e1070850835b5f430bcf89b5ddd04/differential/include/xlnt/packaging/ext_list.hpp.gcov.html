@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - include/xlnt/packaging/ext_list.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory include/xlnt/packaging">include/xlnt/packaging</a> - ext_list.hpp<span style="font-size: 80%;"> (source / <a href="ext_list.hpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry"><a href="#L77" title="goto first UBC line">3</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-04-20 21:52:49</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry"><a href="#L80" title="goto first UBC branch">8</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-04-20 21:52:48</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>                 :                : // Copyright (c) 2014-2022 Thomas Fussell</span>
+<span id="L2"><span class="lineNum">       2</span>                 :                : // Copyright (c) 2024-2025 xlnt-community</span>
+<span id="L3"><span class="lineNum">       3</span>                 :                : //</span>
+<span id="L4"><span class="lineNum">       4</span>                 :                : // Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="L5"><span class="lineNum">       5</span>                 :                : // of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span id="L6"><span class="lineNum">       6</span>                 :                : // in the Software without restriction, including without limitation the rights</span>
+<span id="L7"><span class="lineNum">       7</span>                 :                : // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="L8"><span class="lineNum">       8</span>                 :                : // copies of the Software, and to permit persons to whom the Software is</span>
+<span id="L9"><span class="lineNum">       9</span>                 :                : // furnished to do so, subject to the following conditions:</span>
+<span id="L10"><span class="lineNum">      10</span>                 :                : //</span>
+<span id="L11"><span class="lineNum">      11</span>                 :                : // The above copyright notice and this permission notice shall be included in</span>
+<span id="L12"><span class="lineNum">      12</span>                 :                : // all copies or substantial portions of the Software.</span>
+<span id="L13"><span class="lineNum">      13</span>                 :                : //</span>
+<span id="L14"><span class="lineNum">      14</span>                 :                : // THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span id="L15"><span class="lineNum">      15</span>                 :                : // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span id="L16"><span class="lineNum">      16</span>                 :                : // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span id="L17"><span class="lineNum">      17</span>                 :                : // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span id="L18"><span class="lineNum">      18</span>                 :                : // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span id="L19"><span class="lineNum">      19</span>                 :                : // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span id="L20"><span class="lineNum">      20</span>                 :                : // THE SOFTWARE</span>
+<span id="L21"><span class="lineNum">      21</span>                 :                : //</span>
+<span id="L22"><span class="lineNum">      22</span>                 :                : // @license: http://www.opensource.org/licenses/mit-license.php</span>
+<span id="L23"><span class="lineNum">      23</span>                 :                : // @author: see AUTHORS file</span>
+<span id="L24"><span class="lineNum">      24</span>                 :                : </span>
+<span id="L25"><span class="lineNum">      25</span>                 :                : #pragma once</span>
+<span id="L26"><span class="lineNum">      26</span>                 :                : </span>
+<span id="L27"><span class="lineNum">      27</span>                 :                : #include &lt;xlnt/xlnt_config.hpp&gt;</span>
+<span id="L28"><span class="lineNum">      28</span>                 :                : #include &lt;xlnt/packaging/uri.hpp&gt;</span>
+<span id="L29"><span class="lineNum">      29</span>                 :                : </span>
+<span id="L30"><span class="lineNum">      30</span>                 :                : #include &lt;string&gt;</span>
+<span id="L31"><span class="lineNum">      31</span>                 :                : #include &lt;vector&gt;</span>
+<span id="L32"><span class="lineNum">      32</span>                 :                : </span>
+<span id="L33"><span class="lineNum">      33</span>                 :                : namespace xml {</span>
+<span id="L34"><span class="lineNum">      34</span>                 :                : class parser;</span>
+<span id="L35"><span class="lineNum">      35</span>                 :                : class serializer;</span>
+<span id="L36"><span class="lineNum">      36</span>                 :                : } // namespace xml</span>
+<span id="L37"><span class="lineNum">      37</span>                 :                : </span>
+<span id="L38"><span class="lineNum">      38</span>                 :                : namespace xlnt {</span>
+<span id="L39"><span class="lineNum">      39</span>                 :                : </span>
+<span id="L40"><span class="lineNum">      40</span>                 :                : /// &lt;summary&gt;</span>
+<span id="L41"><span class="lineNum">      41</span>                 :                : /// A list of xml extensions that may or may not be understood by the parser</span>
+<span id="L42"><span class="lineNum">      42</span>                 :                : /// preservation is required for round-tripping even if extension is not understood</span>
+<span id="L43"><span class="lineNum">      43</span>                 :                : /// [serialised: extLst]</span>
+<span id="L44"><span class="lineNum">      44</span>                 :                : /// &lt;/summary&gt;</span>
+<span id="L45"><span class="lineNum">      45</span>                 :                : class XLNT_API ext_list</span>
+<span id="L46"><span class="lineNum">      46</span>                 :                : {</span>
+<span id="L47"><span class="lineNum">      47</span>                 :                : public:</span>
+<span id="L48"><span class="lineNum">      48</span>                 :                :     struct ext</span>
+<span id="L49"><span class="lineNum">      49</span>                 :                :     {</span>
+<span id="L50"><span class="lineNum">      50</span>                 :                :         ext(xml::parser &amp;parser, const std::string &amp;ns);</span>
+<span id="L51"><span class="lineNum">      51</span>                 :                :         ext(const uri &amp;ID, const std::string &amp;serialised);</span>
+<span id="L52"><span class="lineNum">      52</span>                 :                :         void serialise(xml::serializer &amp;serialiser, const std::string &amp;ns);</span>
+<span id="L53"><span class="lineNum">      53</span>                 :                : </span>
+<span id="L54"><span class="lineNum">      54</span>                 :                :         uri extension_ID_;</span>
+<span id="L55"><span class="lineNum">      55</span>                 :                :         std::string serialised_value_;</span>
+<span id="L56"><span class="lineNum">      56</span>                 :                :     };</span>
+<span id="L57"><span class="lineNum">      57</span>                 :                :     ext_list() = default; // default ctor required by xlnt::optional</span>
+<span id="L58"><span class="lineNum">      58</span>                 :                :     explicit ext_list(xml::parser &amp;parser, const std::string &amp;ns);</span>
+<span id="L59"><span class="lineNum">      59</span>                 :                :     void serialize(xml::serializer &amp;serialiser, const std::string &amp;ns);</span>
+<span id="L60"><span class="lineNum">      60</span>                 :                : </span>
+<span id="L61"><span class="lineNum">      61</span>                 :                :     void add_extension(const uri &amp;ID, const std::string &amp;element);</span>
+<span id="L62"><span class="lineNum">      62</span>                 :                : </span>
+<span id="L63"><span class="lineNum">      63</span>                 :                :     bool has_extension(const uri &amp;extension_uri) const;</span>
+<span id="L64"><span class="lineNum">      64</span>                 :                : </span>
+<span id="L65"><span class="lineNum">      65</span>                 :                :     const ext &amp;extension(const uri &amp;extension_uri) const;</span>
+<span id="L66"><span class="lineNum">      66</span>                 :                : </span>
+<span id="L67"><span class="lineNum">      67</span>                 :                :     const std::vector&lt;ext&gt; &amp;extensions() const;</span>
+<span id="L68"><span class="lineNum">      68</span>                 :                : </span>
+<span id="L69"><span class="lineNum">      69</span>                 :                :     bool operator==(const ext_list &amp;rhs) const;</span>
+<span id="L70"><span class="lineNum">      70</span>                 :                : </span>
+<span id="L71"><span class="lineNum">      71</span>                 :                :     bool operator!=(const ext_list &amp;rhs) const;</span>
+<span id="L72"><span class="lineNum">      72</span>                 :                : </span>
+<span id="L73"><span class="lineNum">      73</span>                 :                : private:</span>
+<span id="L74"><span class="lineNum">      74</span>                 :                :     std::vector&lt;ext&gt; extensions_;</span>
+<span id="L75"><span class="lineNum">      75</span>                 :                : };</span>
+<span id="L76"><span class="lineNum">      76</span>                 :                : </span>
+<span id="L77"><span class="lineNum">      77</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : inline bool operator==(const ext_list::ext &amp;lhs, const ext_list::ext &amp;rhs)</span></span>
+<span id="L78"><span class="lineNum">      78</span>                 :                : {</span>
+<span id="L79"><span class="lineNum">      79</span>                 :<span class="tlaUBC">              0 :     return lhs.extension_ID_ == rhs.extension_ID_</span></span>
+<span id="L80"><span class="lineNum">      80</span>   [<span class="tlaUBC"> <a href="#top" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 2 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 3 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         &amp;&amp; lhs.serialised_value_ == rhs.serialised_value_;</span></span>
+<span id="L81"><span class="lineNum">      81</span>                 :                : }</span>
+<span id="L82"><span class="lineNum">      82</span>                 :                : </span>
+<span id="L83"><span class="lineNum">      83</span>                 :                : inline bool operator!=(const ext_list::ext &amp;lhs, const ext_list::ext &amp;rhs)</span>
+<span id="L84"><span class="lineNum">      84</span>                 :                : {</span>
+<span id="L85"><span class="lineNum">      85</span>                 :                :     return !(lhs == rhs);</span>
+<span id="L86"><span class="lineNum">      86</span>                 :                : }</span>
+<span id="L87"><span class="lineNum">      87</span>                 :                : } // namespace xlnt</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
