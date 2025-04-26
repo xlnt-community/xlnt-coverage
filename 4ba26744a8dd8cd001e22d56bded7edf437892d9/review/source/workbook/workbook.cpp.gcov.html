@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/workbook/workbook.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/workbook/workbook.cpp<span style="font-size: 80%;"> (source / <a href="workbook.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadLBC" title="Lost Baseline Coverage (1 => 0):
+Unchanged code is no longer tested">LBC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadGBC" title="Gained Baseline Coverage (0 => 1):
+Unchanged code is tested now">GBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadEUB" title="Excluded Uncovered Baseline (0 => #):
+Previously untested code is unused now">EUB</td>
+            <td width="5%" class="headerCovTableHeadECB" title="Excluded Covered Baseline (1 => #):
+Previously tested code is unused now">ECB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">28.6&nbsp;%</td>
+            <td class="headerCovTableEntry">35</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry"><a href="#L113" title="goto first LBC line">7</a></td>
+            <td class="headerCovTableEntry"><a href="#L108" title="goto first UBC line">18</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L111" title="goto first CBC line">10</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-04-26 18:10:13</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryLo">68.4&nbsp;%</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">20.8&nbsp;%</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry"><a href="#L114" title="goto first LBC branch">8</a></td>
+            <td class="headerCovTableEntry"><a href="#L108" title="goto first UBC branch">30</a></td>
+            <td class="headerCovTableEntry"><a href="#L112" title="goto first GBC branch">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L112" title="goto first CBC branch">8</a></td>
+            <td class="headerCovTableEntry"><a href="#L108" title="goto first EUB branch">36</a></td>
+            <td class="headerCovTableEntry"><a href="#L112" title="goto first ECB branch">4</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-04-26 18:10:08</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 107 ignored lines)</span>
+<span id="L108"><span class="lineNum">     108</span>   [<span class="tlaUBC"> <a href="#L110" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L110" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L110" title="EUB: Branch 2 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L110" title="EUB: Branch 3 was not executed" class="branchTla">#</a> </span>]:<a href="#L115" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         return path(&quot;/xl/comments.xml&quot;);</span></span>
+<span id="L109"><span class="lineNum">     109</span>                 :<span class="tlaUBC">              0 :     case relationship_type::connections:</span></span>
+<span id="L110"><span class="lineNum">     110</span>   [<span class="tlaUBC"> <a href="#L114" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L114" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L112" title="EUB: Branch 2 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L112" title="EUB: Branch 3 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return path(&quot;/xl/connections.xml&quot;);</span></span>
+<span id="L111"><span class="lineNum">     111</span>                 :<a href="#L192" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         484 :     case relationship_type::core_properties:</span></span>
+<span id="L112"><span class="lineNum">     112</span>   [<span class="tlaCBC"> <a href="#L193" title="CBC: Branch 0 was taken 484 times" class="branchTla">+</a> </span><span class="tlaGBC"> <a href="#top" title="GBC: Branch &quot;2&quot; was taken 484 times" class="branchTla">+</a> </span><span class="tlaECB"> <a href="#L114" title="ECB: Branch 2 was taken 500 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L114" title="EUB: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            968 :         return path(&quot;/docProps/core.xml&quot;);</span></span>
+<span id="L113"><span class="lineNum">     113</span>                 :<a href="#L194" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (2) :     case relationship_type::custom_properties:</span></span>
+<span id="L114"><span class="lineNum">     114</span>   [<span class="tlaLBC"> <a href="#L195" title="LBC: Branch 0 was not executed (previously taken 2 times)" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L116" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaECB"> <a href="#top" title="ECB: Branch 2 was taken 2 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L116" title="EUB: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (4) :         return path(&quot;/docProps/custom.xml&quot;);</span></span>
+<span id="L115"><span class="lineNum">     115</span>                 :<a href="#L196" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     case relationship_type::custom_property:</span></span>
+<span id="L116"><span class="lineNum">     116</span>   [<span class="tlaUBC"> <a href="#L118" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L118" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L118" title="EUB: Branch 2 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L118" title="EUB: Branch 3 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return path(&quot;/xl/customProperty.xml&quot;);</span></span>
+<span id="L117"><span class="lineNum">     117</span>                 :<span class="tlaUBC">              0 :     case relationship_type::custom_xml_mappings:</span></span>
+<span id="L118"><span class="lineNum">     118</span>   [<span class="tlaUBC"> <a href="#L189" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L189" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L189" title="EUB: Branch 2 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L189" title="EUB: Branch 3 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return path(&quot;/xl/customXmlMappings.xml&quot;);</span></span>
+<span id="L119"><span class="lineNum">     119</span>                 :<span class="tlaUBC">              0 :     case relationship_type::dialogsheet:</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 69 ignored lines)</span>
+<span id="L189"><span class="lineNum">     189</span>         [<span class="tlaUBC"> <a href="#L191" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L191" title="EUB: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.comments+xml&quot;;</span></span>
+<span id="L190"><span class="lineNum">     190</span>                 :<span class="tlaUBC">              0 :     case relationship_type::connections:</span></span>
+<span id="L191"><span class="lineNum">     191</span>         [<span class="tlaUBC"> <a href="#L197" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L193" title="EUB: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.connections+xml&quot;;</span></span>
+<span id="L192"><span class="lineNum">     192</span>                 :<a href="#L353" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         242 :     case relationship_type::core_properties:</span></span>
+<span id="L193"><span class="lineNum">     193</span>         [<span class="tlaCBC"> <a href="#L355" title="CBC: Branch 0 was taken 242 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L195" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">            484 :         return &quot;application/vnd.openxmlformats-package.core-properties+xml&quot;;</span></span>
+<span id="L194"><span class="lineNum">     194</span>                 :<a href="#L357" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case relationship_type::custom_properties:</span></span>
+<span id="L195"><span class="lineNum">     195</span>         [<span class="tlaLBC"> <a href="#L355" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L197" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;application/vnd.openxmlformats-officedocument.custom-properties+xml&quot;;</span></span>
+<span id="L196"><span class="lineNum">     196</span>                 :<a href="#L359" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     case relationship_type::custom_property:</span></span>
+<span id="L197"><span class="lineNum">     197</span>         [<span class="tlaUBC"> <a href="#L199" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L199" title="EUB: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         throw xlnt::unhandled_switch_case();</span></span>
+<span id="L198"><span class="lineNum">     198</span>                 :<span class="tlaUBC">              0 :     case relationship_type::custom_xml_mappings:</span></span>
+<span id="L199"><span class="lineNum">     199</span>         [<span class="tlaUBC"> <a href="#L357" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L359" title="EUB: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;application/xml&quot;;</span></span>
+<span id="L200"><span class="lineNum">     200</span>                 :<span class="tlaUBC">              0 :     case relationship_type::dialogsheet:</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 151 ignored lines)</span>
+<span id="L352"><span class="lineNum">     352</span>                 :                : {</span>
+<span id="L353"><span class="lineNum">     353</span>                 :<a href="#L1435" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           4 :     register_package_part(relationship_type::custom_properties);</span></span>
+<span id="L354"><span class="lineNum">     354</span>                 :                : </span>
+<span id="L355"><span class="lineNum">     355</span>         [<span class="tlaLBC"> <a href="#L357" title="LBC: Branch 0 was not taken (previously taken 1 time)" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1446" title="CBC: Branch 1 was taken 4 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              4 :     for (auto &amp;iter : d_-&gt;custom_properties_)</span></span>
+<span id="L356"><span class="lineNum">     356</span>                 :                :     {</span>
+<span id="L357"><span class="lineNum">     357</span>         [<span class="tlaUBC"> <a href="#L359" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaLBC"> <a href="#top" title="LBC: Branch 1 was not executed (previously taken 1 time)" class="branchTla">#</a> </span>]:<a href="#L1439" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :         if (iter.first == property_name)</span></span>
+<span id="L358"><span class="lineNum">     358</span>                 :                :         {</span>
+<span id="L359"><span class="lineNum">     359</span>         [<span class="tlaUBC"> <a href="#top" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L1446" title="EUB: Branch 1 was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :             iter.second = value;</span></span>
+<span id="L360"><span class="lineNum">     360</span>                 :<span class="tlaUBC">              0 :             return;</span></span>
+<span id="L361"><span class="lineNum">     361</span>                 :                :         }</span>
+<span id="L362"><span class="lineNum">     362</span>                 :                :     }</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 1071 ignored lines)</span>
+<span id="L1434"><span class="lineNum">    1434</span>                 :                : {</span>
+<span id="L1435"><span class="lineNum">    1435</span>                 :<a href="#L1444" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         291 :     register_workbook_part(relationship_type::stylesheet);</span></span>
+<span id="L1436"><span class="lineNum">    1436</span>                 :<span class="tlaCBC">            291 :     return d_-&gt;stylesheet_.get().create_format(default_format);</span></span>
+<span id="L1437"><span class="lineNum">    1437</span>                 :                : }</span>
+<span id="L1438"><span class="lineNum">    1438</span>                 :                : </span>
+<span id="L1439"><span class="lineNum">    1439</span>                 :<a href="#top" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">       (256) : bool workbook::has_style(const std::string &amp;name) const</span></span>
+<span id="L1440"><span class="lineNum">    1440</span>                 :                : {</span>
+<span id="L1441"><span class="lineNum">    1441</span>                 :<span class="tlaLBC">          (256) :     return d_-&gt;stylesheet_.get().has_style(name);</span></span>
+<span id="L1442"><span class="lineNum">    1442</span>                 :                : }</span>
+<span id="L1443"><span class="lineNum">    1443</span>                 :                : </span>
+<span id="L1444"><span class="lineNum">    1444</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           1 : void workbook::clear_styles()</span></span>
+<span id="L1445"><span class="lineNum">    1445</span>                 :                : {</span>
+<span id="L1446"><span class="lineNum">    1446</span>         [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#top" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :     apply_to_cells([](cell c) { c.clear_style(); });</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 407 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

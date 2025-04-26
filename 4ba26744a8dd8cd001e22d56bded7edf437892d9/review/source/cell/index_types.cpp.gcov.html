@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/cell/index_types.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/cell/index_types.cpp</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadLBC" title="Lost Baseline Coverage (1 => 0):
+Unchanged code is no longer tested">LBC</td>
+            <td width="5%" class="headerCovTableHeadGBC" title="Gained Baseline Coverage (0 => 1):
+Unchanged code is tested now">GBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadEUB" title="Excluded Uncovered Baseline (0 => #):
+Previously untested code is unused now">EUB</td>
+            <td width="5%" class="headerCovTableHeadECB" title="Excluded Covered Baseline (1 => #):
+Previously tested code is unused now">ECB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">66.7&nbsp;%</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry"><a href="#L82" title="goto first LBC line">2</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L77" title="goto first CBC line">4</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-04-26 18:10:13</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">-</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryMed">75.0&nbsp;%</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry"><a href="#L80" title="goto first LBC branch">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L86" title="goto first GBC branch">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L80" title="goto first CBC branch">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L86" title="goto first EUB branch">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L86" title="goto first ECB branch">2</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-04-26 18:10:08</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 76 ignored lines)</span>
+<span id="L77"><span class="lineNum">      77</span>                 :<a href="#L86" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        1407 :         int quotient = temp / 26, remainder = temp % 26;</span></span>
+<span id="L78"><span class="lineNum">      78</span>                 :                : </span>
+<span id="L79"><span class="lineNum">      79</span>                 :                :         // check for exact division and borrow if needed</span>
+<span id="L80"><span class="lineNum">      80</span>         [<span class="tlaLBC"> <a href="#top" title="LBC: Branch 0 was not taken (previously taken 300 times)" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L86" title="CBC: Branch 1 was taken 1407 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1407 :         if (remainder == 0)</span></span>
+<span id="L81"><span class="lineNum">      81</span>                 :                :         {</span>
+<span id="L82"><span class="lineNum">      82</span>                 :<a href="#top" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">       (300) :             quotient -= 1;</span></span>
+<span id="L83"><span class="lineNum">      83</span>                 :<span class="tlaLBC">          (300) :             remainder = 26;</span></span>
+<span id="L84"><span class="lineNum">      84</span>                 :                :         }</span>
+<span id="L85"><span class="lineNum">      85</span>                 :                : </span>
+<span id="L86"><span class="lineNum">      86</span>   [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 1407 times" class="branchTla">+</a> </span><span class="tlaGBC"> <a href="#top" title="GBC: Branch &quot;2&quot; was taken 1407 times" class="branchTla">+</a> </span><span class="tlaECB"> <a href="#top" title="ECB: Branch 2 was taken 19086 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#top" title="EUB: Branch 3 was not taken" class="branchTla">-</a> </span>]:<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        1407 :         column_letter = std::string(1, char(remainder + 64)) + column_letter;</span></span>
+<span id="L87"><span class="lineNum">      87</span>                 :<span class="tlaCBC">           1407 :         temp = quotient;</span></span>
+<span id="L88"><span class="lineNum">      88</span>                 :                :     }</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 212 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

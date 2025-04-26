@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/implementations/style_impl.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory source/detail/implementations">source/detail/implementations</a> - style_impl.hpp<span style="font-size: 80%;"> (source / <a href="style_impl.hpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L25" title="goto first CBC line">21</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-04-26 18:10:08</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
+            <td class="headerCovTableEntry">40</td>
+            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntry"><a href="#L29" title="goto first UBC branch">40</a></td>
+            <td class="headerCovTableEntry"><a href="#L29" title="goto first CBC branch">40</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-04-26 18:10:08</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>                 :                : #pragma once</span>
+<span id="L2"><span class="lineNum">       2</span>                 :                : </span>
+<span id="L3"><span class="lineNum">       3</span>                 :                : #include &lt;cstddef&gt;</span>
+<span id="L4"><span class="lineNum">       4</span>                 :                : #include &lt;string&gt;</span>
+<span id="L5"><span class="lineNum">       5</span>                 :                : </span>
+<span id="L6"><span class="lineNum">       6</span>                 :                : #include &lt;xlnt/utils/optional.hpp&gt;</span>
+<span id="L7"><span class="lineNum">       7</span>                 :                : </span>
+<span id="L8"><span class="lineNum">       8</span>                 :                : namespace xlnt {</span>
+<span id="L9"><span class="lineNum">       9</span>                 :                : </span>
+<span id="L10"><span class="lineNum">      10</span>                 :                : class alignment;</span>
+<span id="L11"><span class="lineNum">      11</span>                 :                : class border;</span>
+<span id="L12"><span class="lineNum">      12</span>                 :                : class fill;</span>
+<span id="L13"><span class="lineNum">      13</span>                 :                : class font;</span>
+<span id="L14"><span class="lineNum">      14</span>                 :                : class number_format;</span>
+<span id="L15"><span class="lineNum">      15</span>                 :                : class protection;</span>
+<span id="L16"><span class="lineNum">      16</span>                 :                : </span>
+<span id="L17"><span class="lineNum">      17</span>                 :                : namespace detail {</span>
+<span id="L18"><span class="lineNum">      18</span>                 :                : </span>
+<span id="L19"><span class="lineNum">      19</span>                 :                : struct stylesheet;</span>
+<span id="L20"><span class="lineNum">      20</span>                 :                : </span>
+<span id="L21"><span class="lineNum">      21</span>                 :                : struct style_impl</span>
+<span id="L22"><span class="lineNum">      22</span>                 :                : {</span>
+<span id="L23"><span class="lineNum">      23</span>                 :                :         stylesheet *parent = nullptr;</span>
+<span id="L24"><span class="lineNum">      24</span>                 :                : </span>
+<span id="L25"><span class="lineNum">      25</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          38 :     bool operator==(const style_impl&amp; rhs) const</span></span>
+<span id="L26"><span class="lineNum">      26</span>                 :                :     {</span>
+<span id="L27"><span class="lineNum">      27</span>                 :                :         // not comparing parent</span>
+<span id="L28"><span class="lineNum">      28</span>                 :<span class="tlaCBC">             38 :         return name == rhs.name</span></span>
+<span id="L29"><span class="lineNum">      29</span>         [<span class="tlaCBC"> <a href="#L30" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L30" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; formatting_record_id == rhs.formatting_record_id</span></span>
+<span id="L30"><span class="lineNum">      30</span>         [<span class="tlaCBC"> <a href="#L31" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L31" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; custom_builtin == rhs.custom_builtin</span></span>
+<span id="L31"><span class="lineNum">      31</span>         [<span class="tlaCBC"> <a href="#L32" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L32" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; hidden_style == rhs.hidden_style</span></span>
+<span id="L32"><span class="lineNum">      32</span>         [<span class="tlaCBC"> <a href="#L33" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L33" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; builtin_id == rhs.builtin_id</span></span>
+<span id="L33"><span class="lineNum">      33</span>         [<span class="tlaCBC"> <a href="#L34" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L34" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; outline_style == rhs.outline_style</span></span>
+<span id="L34"><span class="lineNum">      34</span>         [<span class="tlaCBC"> <a href="#L35" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L35" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; alignment_id == rhs.alignment_id</span></span>
+<span id="L35"><span class="lineNum">      35</span>         [<span class="tlaCBC"> <a href="#L36" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L36" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; alignment_applied == rhs.alignment_applied</span></span>
+<span id="L36"><span class="lineNum">      36</span>         [<span class="tlaCBC"> <a href="#L37" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L37" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; border_id == rhs.border_id</span></span>
+<span id="L37"><span class="lineNum">      37</span>         [<span class="tlaCBC"> <a href="#L38" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L38" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; border_applied == rhs.border_applied</span></span>
+<span id="L38"><span class="lineNum">      38</span>         [<span class="tlaCBC"> <a href="#L39" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L39" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; fill_id == rhs.fill_id</span></span>
+<span id="L39"><span class="lineNum">      39</span>         [<span class="tlaCBC"> <a href="#L40" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L40" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; fill_applied == rhs.fill_applied</span></span>
+<span id="L40"><span class="lineNum">      40</span>         [<span class="tlaCBC"> <a href="#L41" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L41" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; font_id == rhs.font_id</span></span>
+<span id="L41"><span class="lineNum">      41</span>         [<span class="tlaCBC"> <a href="#L42" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L42" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; font_applied == rhs.font_applied</span></span>
+<span id="L42"><span class="lineNum">      42</span>         [<span class="tlaCBC"> <a href="#L43" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L43" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; number_format_id == rhs.number_format_id</span></span>
+<span id="L43"><span class="lineNum">      43</span>         [<span class="tlaCBC"> <a href="#L44" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L44" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; number_format_applied == number_format_applied</span></span>
+<span id="L44"><span class="lineNum">      44</span>         [<span class="tlaCBC"> <a href="#L45" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L45" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; protection_id == rhs.protection_id</span></span>
+<span id="L45"><span class="lineNum">      45</span>         [<span class="tlaCBC"> <a href="#L46" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L46" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; protection_applied == rhs.protection_applied</span></span>
+<span id="L46"><span class="lineNum">      46</span>         [<span class="tlaCBC"> <a href="#L47" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L47" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             38 :             &amp;&amp; pivot_button_ == rhs.pivot_button_</span></span>
+<span id="L47"><span class="lineNum">      47</span>   [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 2 was taken 38 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             76 :             &amp;&amp; quote_prefix_ == rhs.quote_prefix_;</span></span>
+<span id="L48"><span class="lineNum">      48</span>                 :                :     }</span>
+<span id="L49"><span class="lineNum">      49</span>                 :                : </span>
+<span id="L50"><span class="lineNum">      50</span>                 :                :     bool operator!=(const style_impl&amp; rhs) const</span>
+<span id="L51"><span class="lineNum">      51</span>                 :                :     {</span>
+<span id="L52"><span class="lineNum">      52</span>                 :                :         return !(*this == rhs);</span>
+<span id="L53"><span class="lineNum">      53</span>                 :                :     }</span>
+<span id="L54"><span class="lineNum">      54</span>                 :                : </span>
+<span id="L55"><span class="lineNum">      55</span>                 :                :         std::string name;</span>
+<span id="L56"><span class="lineNum">      56</span>                 :                :         std::size_t formatting_record_id = 0;</span>
+<span id="L57"><span class="lineNum">      57</span>                 :                : </span>
+<span id="L58"><span class="lineNum">      58</span>                 :                :         bool custom_builtin = false;</span>
+<span id="L59"><span class="lineNum">      59</span>                 :                :         bool hidden_style = false;</span>
+<span id="L60"><span class="lineNum">      60</span>                 :                : </span>
+<span id="L61"><span class="lineNum">      61</span>                 :                :         optional&lt;std::size_t&gt; builtin_id;</span>
+<span id="L62"><span class="lineNum">      62</span>                 :                :         optional&lt;std::size_t&gt; outline_style;</span>
+<span id="L63"><span class="lineNum">      63</span>                 :                : </span>
+<span id="L64"><span class="lineNum">      64</span>                 :                :         optional&lt;std::size_t&gt; alignment_id;</span>
+<span id="L65"><span class="lineNum">      65</span>                 :                :     optional&lt;bool&gt; alignment_applied;</span>
+<span id="L66"><span class="lineNum">      66</span>                 :                : </span>
+<span id="L67"><span class="lineNum">      67</span>                 :                :         optional&lt;std::size_t&gt; border_id;</span>
+<span id="L68"><span class="lineNum">      68</span>                 :                :     optional&lt;bool&gt; border_applied;</span>
+<span id="L69"><span class="lineNum">      69</span>                 :                : </span>
+<span id="L70"><span class="lineNum">      70</span>                 :                :         optional&lt;std::size_t&gt; fill_id;</span>
+<span id="L71"><span class="lineNum">      71</span>                 :                :     optional&lt;bool&gt; fill_applied;</span>
+<span id="L72"><span class="lineNum">      72</span>                 :                : </span>
+<span id="L73"><span class="lineNum">      73</span>                 :                :         optional&lt;std::size_t&gt; font_id;</span>
+<span id="L74"><span class="lineNum">      74</span>                 :                :     optional&lt;bool&gt; font_applied;</span>
+<span id="L75"><span class="lineNum">      75</span>                 :                : </span>
+<span id="L76"><span class="lineNum">      76</span>                 :                :         optional&lt;std::size_t&gt; number_format_id;</span>
+<span id="L77"><span class="lineNum">      77</span>                 :                :     optional&lt;bool&gt; number_format_applied;</span>
+<span id="L78"><span class="lineNum">      78</span>                 :                : </span>
+<span id="L79"><span class="lineNum">      79</span>                 :                :         optional&lt;std::size_t&gt; protection_id;</span>
+<span id="L80"><span class="lineNum">      80</span>                 :                :     optional&lt;bool&gt; protection_applied;</span>
+<span id="L81"><span class="lineNum">      81</span>                 :                : </span>
+<span id="L82"><span class="lineNum">      82</span>                 :                :     bool pivot_button_ = false;</span>
+<span id="L83"><span class="lineNum">      83</span>                 :                :     bool quote_prefix_ = false;</span>
+<span id="L84"><span class="lineNum">      84</span>                 :                : };</span>
+<span id="L85"><span class="lineNum">      85</span>                 :                : </span>
+<span id="L86"><span class="lineNum">      86</span>                 :                : } // namespace detail</span>
+<span id="L87"><span class="lineNum">      87</span>                 :                : } // namespace xlnt</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
