@@ -1,0 +1,832 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/serialization/xlsx_consumer.cpp - functions</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory source/detail/serialization">source/detail/serialization</a> - xlsx_consumer.cpp<span style="font-size: 80%;"> (<a href="xlsx_consumer.cpp.gcov.html" title="Click to go to source detail">source</a> / functions)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadLBC" title="Lost Baseline Coverage (1 => 0):
+Unchanged code is no longer tested">LBC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadGBC" title="Gained Baseline Coverage (0 => 1):
+Unchanged code is tested now">GBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadEUB" title="Excluded Uncovered Baseline (0 => #):
+Previously untested code is unused now">EUB</td>
+            <td width="5%" class="headerCovTableHeadECB" title="Excluded Covered Baseline (1 => #):
+Previously tested code is unused now">ECB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryMed">83.9&nbsp;%</td>
+            <td class="headerCovTableEntry">1846</td>
+            <td class="headerCovTableEntry">1548</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">298</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">1548</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-04-26 19:14:08</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryMed">83.9&nbsp;%</td>
+            <td class="headerCovTableEntry">87</td>
+            <td class="headerCovTableEntry">73</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">73</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">74.7&nbsp;%</td>
+            <td class="headerCovTableEntry">4614</td>
+            <td class="headerCovTableEntry">3448</td>
+            <td class="headerCovTableEntry">486</td>
+            <td class="headerCovTableEntry">1846</td>
+            <td class="headerCovTableEntry">2560</td>
+            <td class="headerCovTableEntry">4336</td>
+            <td class="headerCovTableEntry">3392</td>
+            <td class="headerCovTableEntry">2078</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-04-26 19:14:07</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <center>
+          <table cellpadding=1 cellspacing=1 border=0>
+            <tr><td><br></td></tr>
+            <tr>
+              <td class="tableHead">Function Name <span  title="Click to sort table by function name" class="tableHeadSort"><a href="xlsx_consumer.cpp.func.html"><img src="../../../updown.png" width=10 height=14 alt="Sort by function name" title="Click to sort table by function name" border=0></a></span></td>
+              <td width="10%" class="tableHead">TLA</td>
+              <td class="tableHead">Hit count <span  title="Click to sort table by function hit count" class="tableHeadSort"><img src="../../../glass.png" width=10 height=14 alt="Sort by function hit count" title="Click to sort table by function hit count" border=0></span></td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2283">_ZN4xlnt6detail13xlsx_consumer15read_chartsheetERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2287">_ZN4xlnt6detail13xlsx_consumer16read_connectionsEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2299">_ZN4xlnt6detail13xlsx_consumer16read_dialogsheetERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2307">_ZN4xlnt6detail13xlsx_consumer16read_pivot_tableEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3187">_ZN4xlnt6detail13xlsx_consumer18read_unknown_partsEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2291">_ZN4xlnt6detail13xlsx_consumer20read_custom_propertyEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2342">_ZN4xlnt6detail13xlsx_consumer20read_shared_workbookEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2279">_ZN4xlnt6detail13xlsx_consumer22read_calculation_chainEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2295">_ZN4xlnt6detail13xlsx_consumer24read_custom_xml_mappingsEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3191">_ZN4xlnt6detail13xlsx_consumer26read_unknown_relationshipsEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3106">_ZN4xlnt6detail13xlsx_consumer26read_volatile_dependenciesEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2346">_ZN4xlnt6detail13xlsx_consumer30read_shared_workbook_user_dataEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2303">_ZN4xlnt6detail13xlsx_consumer33read_external_workbook_referencesEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2338">_ZN4xlnt6detail13xlsx_consumer37read_shared_workbook_revision_headersEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1663">_ZN4xlnt6detail13xlsx_consumer15read_stylesheetERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3172">_ZZN4xlnt6detail13xlsx_consumer13read_drawingsENS_9worksheetERKNS_4pathEENKUlRKNS_12relationshipEE_clES8_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3163">_ZN4xlnt6detail13xlsx_consumer13read_drawingsENS_9worksheetERKNS_4pathE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L434">_ZN4xlnt6detail13xlsx_consumer4openERSi</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1925">_ZN4xlnt6detail13xlsx_consumer22read_custom_propertiesEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3203">_ZN4xlnt6detail13xlsx_consumer11read_binaryERKNS_4pathE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">7</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3383">_ZN4xlnt6detail13xlsx_consumer18unexpected_elementERKN3xml5qnameE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">11</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3116">_ZN4xlnt6detail13xlsx_consumer13read_commentsENS_9worksheetE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">14</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3112">_ZN4xlnt6detail13xlsx_consumer17read_vml_drawingsENS_9worksheetE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">14</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3195">_ZN4xlnt6detail13xlsx_consumer10read_imageERKNS_4pathE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">46</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1023">_ZZN4xlnt6detail13xlsx_consumer18read_worksheet_endERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRKNS_12relationshipEE_clESC_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">50</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2311">_ZN4xlnt6detail13xlsx_consumer24read_shared_string_tableEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">66</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3088">_ZN4xlnt6detail13xlsx_consumer10read_themeEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">69</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1889">_ZN4xlnt6detail13xlsx_consumer20read_core_propertiesEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">81</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1910">_ZN4xlnt6detail13xlsx_consumer24read_extended_propertiesEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">81</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2350">_ZN4xlnt6detail13xlsx_consumer15read_stylesheetEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">82</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L428">_ZN4xlnt6detail13xlsx_consumer4readERSi</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">90</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L801">_ZZN4xlnt6detail13xlsx_consumer20read_worksheet_beginERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRN3xml6parserEE0_clESC_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">90</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L793">_ZZN4xlnt6detail13xlsx_consumer20read_worksheet_beginERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRN3xml6parserEE_clESC_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">90</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1813">_ZN4xlnt6detail13xlsx_consumer17populate_workbookEb</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">93</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1852">_ZN4xlnt6detail13xlsx_consumer18read_content_typesEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">93</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1942">_ZN4xlnt6detail13xlsx_consumer20read_office_documentERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">93</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L418">_ZN4xlnt6detail13xlsx_consumerC2ERNS_8workbookE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">99</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L424">_ZN4xlnt6detail13xlsx_consumerD2Ev</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">99</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L359">_ZN12_GLOBAL__N_116parse_sheet_dataEPN3xml6parserERSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES9_St4hashIS9_ESt8equal_toIS9_ESaISt4pairIKS9_S9_EEERS3_IiS9_SA_IiESC_IiESaISE_IKiS9_EEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">112</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L445">_ZN4xlnt6detail13xlsx_consumer14read_worksheetERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">112</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L853">_ZN4xlnt6detail13xlsx_consumer24read_worksheet_sheetdataEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">112</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L929">_ZN4xlnt6detail13xlsx_consumer18read_worksheet_endERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">113</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L527">_ZN4xlnt6detail13xlsx_consumer20read_worksheet_beginERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">115</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L456">_ZN4xlnt6detail18read_defined_namesENS_9worksheetESt6vectorINS0_12defined_nameESaIS3_EE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">115</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L440">_ZN4xlnt6detail13xlsx_consumer9read_cellEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">145</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1395">_ZN4xlnt6detail13xlsx_consumer8has_cellEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">147</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L2254">_ZZN4xlnt6detail13xlsx_consumer20read_office_documentERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRKSt4pairIS7_S7_EE_clESD_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">159</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L539">_ZZN4xlnt6detail13xlsx_consumer20read_worksheet_beginERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRKSt4pairIS7_S7_EE_clESD_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">159</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3299">_ZN4xlnt6detail13xlsx_consumer15skip_attributesERKSt6vectorIN3xml5qnameESaIS4_EE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">197</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3315">_ZN4xlnt6detail13xlsx_consumer14skip_attributeERKN3xml5qnameE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">256</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3288">_ZN4xlnt6detail13xlsx_consumer15skip_attributesERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS8_EE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">379</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L121">_ZN12_GLOBAL__N_117set_style_by_xfidERKSt6vectorISt4pairIN4xlnt6detail10style_implEmESaIS5_EEmRNS2_8optionalINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">430</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3331">_ZN4xlnt6detail13xlsx_consumer22skip_remaining_contentERKN3xml5qnameE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">460</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1672">_ZN4xlnt6detail13xlsx_consumer9read_partERKSt6vectorINS_12relationshipESaIS3_EE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">638</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3392">_ZN4xlnt6detail13xlsx_consumer14read_rich_textERKN3xml5qnameE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">742</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3224">_ZN4xlnt6detail13xlsx_consumer12read_variantEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">932</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1622">_ZN4xlnt6detail13xlsx_consumer18read_relationshipsERKNS_4pathE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1127</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3550">_ZN4xlnt6detail13xlsx_consumer10read_colorEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1339</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3310">_ZN4xlnt6detail13xlsx_consumer15skip_attributesEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1453</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L140">_ZN12_GLOBAL__N_116type_from_stringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1466</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L280">_ZN12_GLOBAL__N_19parse_rowEPN3xml6parserERSt6vectorIN4xlnt6detail4CellESaIS6_EERSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESG_St4hashISG_ESt8equal_toISG_ESaISt4pairIKSG_SG_EEERSA_IiSG_SH_IiESJ_IiESaISL_IKiSG_EEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1585</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3323">_ZN4xlnt6detail13xlsx_consumer14skip_attributeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1964</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3581">_ZN4xlnt6detail13xlsx_consumer8manifestEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1989</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L169">_ZN12_GLOBAL__N_110parse_cellEjPN3xml6parserERSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES9_St4hashIS9_ESt8equal_toIS9_ESaISt4pairIKS9_S9_EEERS3_IiS9_SA_IiESC_IiESaISE_IKiS9_EEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2033</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3211">_ZN4xlnt6detail13xlsx_consumer9read_textB5cxx11Ev</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">5029</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L96">_ZN12_GLOBAL__N_17is_trueERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">5185</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3366">_ZN4xlnt6detail13xlsx_consumer20expect_start_elementERKN3xml5qnameENS2_7contentE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">6640</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3354">_ZN4xlnt6detail13xlsx_consumer20expect_start_elementEN3xml7contentE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">10832</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3376">_ZN4xlnt6detail13xlsx_consumer18expect_end_elementERKN3xml5qnameE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">17356</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L55">_ZN12_GLOBAL__N_121string_arr_loop_equalILm2EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">19801</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L55">_ZN12_GLOBAL__N_121string_arr_loop_equalILm4EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">15</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L55">_ZN12_GLOBAL__N_121string_arr_loop_equalILm7EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">22</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L55">_ZN12_GLOBAL__N_121string_arr_loop_equalILm10EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">490</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L55">_ZN12_GLOBAL__N_121string_arr_loop_equalILm6EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">525</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L55">_ZN12_GLOBAL__N_121string_arr_loop_equalILm3EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">1158</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L55">_ZN12_GLOBAL__N_121string_arr_loop_equalILm13EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">2229</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L55">_ZN12_GLOBAL__N_121string_arr_loop_equalILm2EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">15362</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3029">_ZZN4xlnt6detail13xlsx_consumer15read_stylesheetEvENKUlRKSt4pairINS0_10style_implEmEE_clES6_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">19908</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L3348">_ZN4xlnt6detail13xlsx_consumer10in_elementERKN3xml5qnameE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">23453</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L68">_ZN12_GLOBAL__N_112string_equalILm2EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">40339</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L68">_ZN12_GLOBAL__N_112string_equalILm4EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">15</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L68">_ZN12_GLOBAL__N_112string_equalILm7EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">2750</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L68">_ZN12_GLOBAL__N_112string_equalILm13EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">3838</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L68">_ZN12_GLOBAL__N_112string_equalILm6EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">4450</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L68">_ZN12_GLOBAL__N_112string_equalILm10EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">4943</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L68">_ZN12_GLOBAL__N_112string_equalILm3EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">6624</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="xlsx_consumer.cpp.gcov.html#L68">_ZN12_GLOBAL__N_112string_equalILm2EEEbRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERAT__Kc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnAliasHi">17719</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L78">_ZN12_GLOBAL__N_12qnERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">78642</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="xlsx_consumer.cpp.gcov.html#L1390">_ZN4xlnt6detail13xlsx_consumer6parserEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">196016</td>
+              
+              
+              
+            </tr>
+          </table>
+          <br>
+          </center>
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
