@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/implementations</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/implementations</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadLBC" title="Lost Baseline Coverage (1 => 0):
+Unchanged code is no longer tested">LBC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadGBC" title="Gained Baseline Coverage (0 => 1):
+Unchanged code is tested now">GBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadEUB" title="Excluded Uncovered Baseline (0 => #):
+Previously untested code is unused now">EUB</td>
+            <td width="5%" class="headerCovTableHeadECB" title="Excluded Covered Baseline (1 => #):
+Previously tested code is unused now">ECB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryMed">83.3&nbsp;%</td>
+            <td class="headerCovTableEntry">456</td>
+            <td class="headerCovTableEntry">380</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">76</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">380</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-04-26 19:56:33</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">95.5&nbsp;%</td>
+            <td class="headerCovTableEntry">44</td>
+            <td class="headerCovTableEntry">42</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">42</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">68.5&nbsp;%</td>
+            <td class="headerCovTableEntry">555</td>
+            <td class="headerCovTableEntry">380</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry">340</td>
+            <td class="headerCovTableEntry">100</td>
+            <td class="headerCovTableEntry">660</td>
+            <td class="headerCovTableEntry">272</td>
+            <td class="headerCovTableEntry">90</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-04-26 19:56:32</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <center>
+          <table width="80%" cellpadding=1 cellspacing=1 border=0>
+
+            <tr>
+              <td width="40%"><br></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            <td width="3%"></td>
+            </tr>
+
+            <tr>
+              <td class="tableHead" rowspan=2>File <span  title="Click to sort table by file name" class="tableHeadSort"><a href="index.html"><img src="../../../updown.png" width=10 height=14 alt="Sort by file name" title="Click to sort table by file name" border=0></a></span></td>
+        <td class="tableHead" colspan=6>Line Coverage <span  title="Click to sort table by line coverage" class="tableHeadSort"><img src="../../../glass.png" width=10 height=14 alt="Sort by line coverage" title="Click to sort table by line coverage" border=0></span></td>
+        <td class="tableHead" colspan=9>Branch Coverage <span  title="Click to sort table by branch coverage" class="tableHeadSort"><a href="index-sort-b.html"><img src="../../../updown.png" width=10 height=14 alt="Sort by branch coverage" title="Click to sort table by branch coverage" border=0></a></span></td>
+        <td class="tableHead" colspan=5>Function Coverage <span  title="Click to sort table by function coverage" class="tableHeadSort"><a href="index-sort-f.html"><img src="../../../updown.png" width=10 height=14 alt="Sort by function coverage" title="Click to sort table by function coverage" border=0></a></span></td>
+            </tr>
+            <tr>
+                    <td class="tableHead" colspan=2> Rate</td>
+                    <td class="tableHead"> Total</td>
+                    <td class="tableHead"> Hit</td>
+                    <td class="tableHead" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now"> UBC</td>
+                    <td class="tableHead" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested"> CBC</td>
+                    <td class="tableHead"> Rate</td>
+                    <td class="tableHead"> Total</td>
+                    <td class="tableHead"> Hit</td>
+                    <td class="tableHead" title="Lost Baseline Coverage (1 => 0):
+Unchanged code is no longer tested"> LBC</td>
+                    <td class="tableHead" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now"> UBC</td>
+                    <td class="tableHead" title="Gained Baseline Coverage (0 => 1):
+Unchanged code is tested now"> GBC</td>
+                    <td class="tableHead" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested"> CBC</td>
+                    <td class="tableHead" title="Excluded Uncovered Baseline (0 => #):
+Previously untested code is unused now"> EUB</td>
+                    <td class="tableHead" title="Excluded Covered Baseline (1 => #):
+Previously tested code is unused now"> ECB</td>
+                    <td class="tableHead"> Rate</td>
+                    <td class="tableHead"> Total</td>
+                    <td class="tableHead"> Hit</td>
+                    <td class="tableHead" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now"> UBC</td>
+                    <td class="tableHead" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested"> CBC</td>
+            </tr>
+            <tr>
+              <td class="coverFile"><a href="hyperlink_impl.hpp.gcov.html" title="Click to go to file /root/project/source/detail/implementations/hyperlink_impl.hpp">hyperlink_impl.hpp</a></td>
+              <td class="coverBar" align="center">
+                                <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline"><img src="../../../snow.png" width=100 height=10 alt="0.0%"></td></tr></table>
+              </td>
+              <td class="coverPerLo">0.0&nbsp;%</td>
+              <td class="coverNumDflt">4</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="hyperlink_impl.hpp.gcov.html#L44" title="Go to first UBC line in hyperlink_impl.hpp">4</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverPerLo">0.0&nbsp;%</td>
+              <td class="coverNumDflt">6</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="hyperlink_impl.hpp.gcov.html#L47" title="Go to first UBC branch in hyperlink_impl.hpp">12</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverPerLo">0.0&nbsp;%</td>
+              <td class="coverNumDflt">1</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt">1</td>
+              <td class="coverNumDflt"></td>
+            </tr>
+            <tr>
+              <td class="coverFile"><a href="conditional_format_impl.hpp.gcov.html" title="Click to go to file /root/project/source/detail/implementations/conditional_format_impl.hpp">conditional_format_impl.hpp</a></td>
+              <td class="coverBar" align="center">
+                                <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline"><img src="../../../snow.png" width=100 height=10 alt="0.0%"></td></tr></table>
+              </td>
+              <td class="coverPerLo">0.0&nbsp;%</td>
+              <td class="coverNumDflt">8</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="conditional_format_impl.hpp.gcov.html#L25" title="Go to first UBC line in conditional_format_impl.hpp">8</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverPerLo">0.0&nbsp;%</td>
+              <td class="coverNumDflt">14</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="conditional_format_impl.hpp.gcov.html#L29" title="Go to first UBC branch in conditional_format_impl.hpp">28</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverPerLo">0.0&nbsp;%</td>
+              <td class="coverNumDflt">1</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt">1</td>
+              <td class="coverNumDflt"></td>
+            </tr>
+            <tr>
+              <td class="coverFile"><a href="stylesheet.hpp.gcov.html" title="Click to go to file /root/project/source/detail/implementations/stylesheet.hpp">stylesheet.hpp</a></td>
+              <td class="coverBar" align="center">
+                                <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline"><img src="../../../amber.png" width=78 height=10 alt="77.9%"><img src="../../../snow.png" width=22 height=10 alt="77.9%"></td></tr></table>
+              </td>
+              <td class="coverPerMed">77.9&nbsp;%</td>
+              <td class="coverNumDflt">289</td>
+              <td class="coverNumDflt">225</td>
+              <td class="coverNumDflt"><a href="stylesheet.hpp.gcov.html#L91" title="Go to first UBC line in stylesheet.hpp">64</a></td>
+              <td class="coverNumDflt"><a href="stylesheet.hpp.gcov.html#L49" title="Go to first CBC line in stylesheet.hpp">225</a></td>
+              <td class="coverPerMed">79.8&nbsp;%</td>
+              <td class="coverNumDflt">331</td>
+              <td class="coverNumDflt">264</td>
+              <td class="tlaLBC tlaBgLBC"><a href="stylesheet.hpp.gcov.html#L143" class="tlaBgLBC" title="Go to first LBC branch in stylesheet.hpp">10</a></td>
+              <td class="coverNumDflt"><a href="stylesheet.hpp.gcov.html#L143" title="Go to first UBC branch in stylesheet.hpp">124</a></td>
+              <td class="coverNumDflt"><a href="stylesheet.hpp.gcov.html#L143" title="Go to first GBC branch in stylesheet.hpp">100</a></td>
+              <td class="coverNumDflt"><a href="stylesheet.hpp.gcov.html#L51" title="Go to first CBC branch in stylesheet.hpp">428</a></td>
+              <td class="coverNumDflt"><a href="stylesheet.hpp.gcov.html#L51" title="Go to first EUB branch in stylesheet.hpp">268</a></td>
+              <td class="coverNumDflt"><a href="stylesheet.hpp.gcov.html#L145" title="Go to first ECB branch in stylesheet.hpp">90</a></td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">29</td>
+              <td class="coverNumDflt">29</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt">29</td>
+            </tr>
+            <tr>
+              <td class="coverFile"><a href="cell_impl.hpp.gcov.html" title="Click to go to file /root/project/source/detail/implementations/cell_impl.hpp">cell_impl.hpp</a></td>
+              <td class="coverBar" align="center">
+                                <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline"><img src="../../../emerald.png" width=100 height=10 alt="100.0%"></td></tr></table>
+              </td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">12</td>
+              <td class="coverNumDflt">12</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="cell_impl.hpp.gcov.html#L63" title="Go to first CBC line in cell_impl.hpp">12</a></td>
+              <td class="coverPerLo">63.2&nbsp;%</td>
+              <td class="coverNumDflt">38</td>
+              <td class="coverNumDflt">24</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="cell_impl.hpp.gcov.html#L65" title="Go to first UBC branch in cell_impl.hpp">28</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="cell_impl.hpp.gcov.html#L65" title="Go to first CBC branch in cell_impl.hpp">48</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">2</td>
+              <td class="coverNumDflt">2</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt">2</td>
+            </tr>
+            <tr>
+              <td class="coverFile"><a href="format_impl.hpp.gcov.html" title="Click to go to file /root/project/source/detail/implementations/format_impl.hpp">format_impl.hpp</a></td>
+              <td class="coverBar" align="center">
+                                <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline"><img src="../../../emerald.png" width=100 height=10 alt="100.0%"></td></tr></table>
+              </td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">16</td>
+              <td class="coverNumDflt">16</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="format_impl.hpp.gcov.html#L55" title="Go to first CBC line in format_impl.hpp">16</a></td>
+              <td class="coverPerLo">70.0&nbsp;%</td>
+              <td class="coverNumDflt">30</td>
+              <td class="coverNumDflt">21</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="format_impl.hpp.gcov.html#L59" title="Go to first UBC branch in format_impl.hpp">18</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="format_impl.hpp.gcov.html#L59" title="Go to first CBC branch in format_impl.hpp">42</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">1</td>
+              <td class="coverNumDflt">1</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt">1</td>
+            </tr>
+            <tr>
+              <td class="coverFile"><a href="style_impl.hpp.gcov.html" title="Click to go to file /root/project/source/detail/implementations/style_impl.hpp">style_impl.hpp</a></td>
+              <td class="coverBar" align="center">
+                                <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline"><img src="../../../emerald.png" width=100 height=10 alt="100.0%"></td></tr></table>
+              </td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">21</td>
+              <td class="coverNumDflt">21</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="style_impl.hpp.gcov.html#L25" title="Go to first CBC line in style_impl.hpp">21</a></td>
+              <td class="coverPerLo">50.0&nbsp;%</td>
+              <td class="coverNumDflt">40</td>
+              <td class="coverNumDflt">20</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="style_impl.hpp.gcov.html#L29" title="Go to first UBC branch in style_impl.hpp">40</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="style_impl.hpp.gcov.html#L29" title="Go to first CBC branch in style_impl.hpp">40</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">1</td>
+              <td class="coverNumDflt">1</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt">1</td>
+            </tr>
+            <tr>
+              <td class="coverFile"><a href="workbook_impl.hpp.gcov.html" title="Click to go to file /root/project/source/detail/implementations/workbook_impl.hpp">workbook_impl.hpp</a></td>
+              <td class="coverBar" align="center">
+                                <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline"><img src="../../../emerald.png" width=100 height=10 alt="100.0%"></td></tr></table>
+              </td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">48</td>
+              <td class="coverNumDflt">48</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="workbook_impl.hpp.gcov.html#L51" title="Go to first CBC line in workbook_impl.hpp">48</a></td>
+              <td class="coverPerLo">50.0&nbsp;%</td>
+              <td class="coverNumDflt">50</td>
+              <td class="coverNumDflt">25</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="workbook_impl.hpp.gcov.html#L99" title="Go to first UBC branch in workbook_impl.hpp">50</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="workbook_impl.hpp.gcov.html#L99" title="Go to first CBC branch in workbook_impl.hpp">50</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">5</td>
+              <td class="coverNumDflt">5</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt">5</td>
+            </tr>
+            <tr>
+              <td class="coverFile"><a href="worksheet_impl.hpp.gcov.html" title="Click to go to file /root/project/source/detail/implementations/worksheet_impl.hpp">worksheet_impl.hpp</a></td>
+              <td class="coverBar" align="center">
+                                <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline"><img src="../../../emerald.png" width=100 height=10 alt="100.0%"></td></tr></table>
+              </td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">58</td>
+              <td class="coverNumDflt">58</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="worksheet_impl.hpp.gcov.html#L55" title="Go to first CBC line in worksheet_impl.hpp">58</a></td>
+              <td class="coverPerLo">56.5&nbsp;%</td>
+              <td class="coverNumDflt">46</td>
+              <td class="coverNumDflt">26</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="worksheet_impl.hpp.gcov.html#L106" title="Go to first UBC branch in worksheet_impl.hpp">40</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt"><a href="worksheet_impl.hpp.gcov.html#L58" title="Go to first CBC branch in worksheet_impl.hpp">52</a></td>
+              <td class="coverNumDflt"><a href="worksheet_impl.hpp.gcov.html#L58" title="Go to first EUB branch in worksheet_impl.hpp">4</a></td>
+              <td class="coverNumDflt"></td>
+              <td class="coverPerHi">100.0&nbsp;%</td>
+              <td class="coverNumDflt">4</td>
+              <td class="coverNumDflt">4</td>
+              <td class="coverNumDflt"></td>
+              <td class="coverNumDflt">4</td>
+            </tr>
+          </table>
+          </center>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
