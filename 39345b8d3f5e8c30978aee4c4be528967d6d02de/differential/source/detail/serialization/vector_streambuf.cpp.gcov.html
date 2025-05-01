@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/serialization/vector_streambuf.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory source/detail/serialization">source/detail/serialization</a> - vector_streambuf.cpp<span style="font-size: 80%;"> (source / <a href="vector_streambuf.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">61.3&nbsp;%</td>
+            <td class="headerCovTableEntry">93</td>
+            <td class="headerCovTableEntry">57</td>
+            <td class="headerCovTableEntry"><a href="#L52" title="goto first UBC line">36</a></td>
+            <td class="headerCovTableEntry"><a href="#L32" title="goto first CBC line">57</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-05-01 15:27:04</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryLo">71.4&nbsp;%</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">10</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">51.9&nbsp;%</td>
+            <td class="headerCovTableEntry">54</td>
+            <td class="headerCovTableEntry">28</td>
+            <td class="headerCovTableEntry"><a href="#L50" title="goto first UBC branch">52</a></td>
+            <td class="headerCovTableEntry"><a href="#L40" title="goto first CBC branch">56</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-05-01 15:27:03</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>                 :                : // Copyright (c) 2016-2022 Thomas Fussell</span>
+<span id="L2"><span class="lineNum">       2</span>                 :                : // Copyright (c) 2024-2025 xlnt-community</span>
+<span id="L3"><span class="lineNum">       3</span>                 :                : //</span>
+<span id="L4"><span class="lineNum">       4</span>                 :                : // Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="L5"><span class="lineNum">       5</span>                 :                : // of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span id="L6"><span class="lineNum">       6</span>                 :                : // in the Software without restriction, including without limitation the rights</span>
+<span id="L7"><span class="lineNum">       7</span>                 :                : // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="L8"><span class="lineNum">       8</span>                 :                : // copies of the Software, and to permit persons to whom the Software is</span>
+<span id="L9"><span class="lineNum">       9</span>                 :                : // furnished to do so, subject to the following conditions:</span>
+<span id="L10"><span class="lineNum">      10</span>                 :                : //</span>
+<span id="L11"><span class="lineNum">      11</span>                 :                : // The above copyright notice and this permission notice shall be included in</span>
+<span id="L12"><span class="lineNum">      12</span>                 :                : // all copies or substantial portions of the Software.</span>
+<span id="L13"><span class="lineNum">      13</span>                 :                : //</span>
+<span id="L14"><span class="lineNum">      14</span>                 :                : // THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span id="L15"><span class="lineNum">      15</span>                 :                : // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span id="L16"><span class="lineNum">      16</span>                 :                : // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span id="L17"><span class="lineNum">      17</span>                 :                : // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span id="L18"><span class="lineNum">      18</span>                 :                : // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span id="L19"><span class="lineNum">      19</span>                 :                : // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span id="L20"><span class="lineNum">      20</span>                 :                : // THE SOFTWARE</span>
+<span id="L21"><span class="lineNum">      21</span>                 :                : //</span>
+<span id="L22"><span class="lineNum">      22</span>                 :                : // @license: http://www.opensource.org/licenses/mit-license.php</span>
+<span id="L23"><span class="lineNum">      23</span>                 :                : // @author: see AUTHORS file</span>
+<span id="L24"><span class="lineNum">      24</span>                 :                : </span>
+<span id="L25"><span class="lineNum">      25</span>                 :                : #include &lt;xlnt/utils/exceptions.hpp&gt;</span>
+<span id="L26"><span class="lineNum">      26</span>                 :                : #include &lt;detail/serialization/vector_streambuf.hpp&gt;</span>
+<span id="L27"><span class="lineNum">      27</span>                 :                : #include &lt;algorithm&gt;</span>
+<span id="L28"><span class="lineNum">      28</span>                 :                : </span>
+<span id="L29"><span class="lineNum">      29</span>                 :                : namespace xlnt {</span>
+<span id="L30"><span class="lineNum">      30</span>                 :                : namespace detail {</span>
+<span id="L31"><span class="lineNum">      31</span>                 :                : </span>
+<span id="L32"><span class="lineNum">      32</span>                 :<a href="#L55" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         123 : vector_istreambuf::vector_istreambuf(const std::vector&lt;std::uint8_t&gt; &amp;data)</span></span>
+<span id="L33"><span class="lineNum">      33</span>                 :<span class="tlaCBC">            123 :     : data_(data),</span></span>
+<span id="L34"><span class="lineNum">      34</span>                 :<span class="tlaCBC">            123 :       position_(0)</span></span>
+<span id="L35"><span class="lineNum">      35</span>                 :                : {</span>
+<span id="L36"><span class="lineNum">      36</span>                 :<span class="tlaCBC">            123 : }</span></span>
+<span id="L37"><span class="lineNum">      37</span>                 :                : </span>
+<span id="L38"><span class="lineNum">      38</span>                 :<span class="tlaCBC">        2595385 : vector_istreambuf::int_type vector_istreambuf::underflow()</span></span>
+<span id="L39"><span class="lineNum">      39</span>                 :                : {</span>
+<span id="L40"><span class="lineNum">      40</span>         [<span class="tlaCBC"> <a href="#L50" title="CBC: Branch 0 was taken 41 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L50" title="CBC: Branch 1 was taken 2595344 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">        2595385 :     if (position_ == data_.size())</span></span>
+<span id="L41"><span class="lineNum">      41</span>                 :                :     {</span>
+<span id="L42"><span class="lineNum">      42</span>                 :<span class="tlaCBC">             41 :         return traits_type::eof();</span></span>
+<span id="L43"><span class="lineNum">      43</span>                 :                :     }</span>
+<span id="L44"><span class="lineNum">      44</span>                 :                : </span>
+<span id="L45"><span class="lineNum">      45</span>                 :<span class="tlaCBC">        2595344 :     return traits_type::to_int_type(static_cast&lt;char&gt;(data_[position_]));</span></span>
+<span id="L46"><span class="lineNum">      46</span>                 :                : }</span>
+<span id="L47"><span class="lineNum">      47</span>                 :                : </span>
+<span id="L48"><span class="lineNum">      48</span>                 :<span class="tlaCBC">        6144104 : vector_istreambuf::int_type vector_istreambuf::uflow()</span></span>
+<span id="L49"><span class="lineNum">      49</span>                 :                : {</span>
+<span id="L50"><span class="lineNum">      50</span>         [<span class="tlaUBC"> <a href="#L60" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L70" title="CBC: Branch 1 was taken 6144104 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">        6144104 :     if (position_ == data_.size())</span></span>
+<span id="L51"><span class="lineNum">      51</span>                 :                :     {</span>
+<span id="L52"><span class="lineNum">      52</span>                 :<a href="#L58" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         return traits_type::eof();</span></span>
+<span id="L53"><span class="lineNum">      53</span>                 :                :     }</span>
+<span id="L54"><span class="lineNum">      54</span>                 :                : </span>
+<span id="L55"><span class="lineNum">      55</span>                 :<a href="#L68" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">     6144104 :     return traits_type::to_int_type(static_cast&lt;char&gt;(data_[position_++]));</span></span>
+<span id="L56"><span class="lineNum">      56</span>                 :                : }</span>
+<span id="L57"><span class="lineNum">      57</span>                 :                : </span>
+<span id="L58"><span class="lineNum">      58</span>                 :<a href="#L81" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : std::streamsize vector_istreambuf::showmanyc()</span></span>
+<span id="L59"><span class="lineNum">      59</span>                 :                : {</span>
+<span id="L60"><span class="lineNum">      60</span>         [<span class="tlaUBC"> <a href="#L79" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L79" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :     if (position_ == data_.size())</span></span>
+<span id="L61"><span class="lineNum">      61</span>                 :                :     {</span>
+<span id="L62"><span class="lineNum">      62</span>                 :<span class="tlaUBC">              0 :         return static_cast&lt;std::streamsize&gt;(-1);</span></span>
+<span id="L63"><span class="lineNum">      63</span>                 :                :     }</span>
+<span id="L64"><span class="lineNum">      64</span>                 :                : </span>
+<span id="L65"><span class="lineNum">      65</span>                 :<span class="tlaUBC">              0 :     return static_cast&lt;std::streamsize&gt;(data_.size() - position_);</span></span>
+<span id="L66"><span class="lineNum">      66</span>                 :                : }</span>
+<span id="L67"><span class="lineNum">      67</span>                 :                : </span>
+<span id="L68"><span class="lineNum">      68</span>                 :<a href="#L91" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         299 : std::streampos vector_istreambuf::seekoff(std::streamoff off, std::ios_base::seekdir way, std::ios_base::openmode)</span></span>
+<span id="L69"><span class="lineNum">      69</span>                 :                : {</span>
+<span id="L70"><span class="lineNum">      70</span>         [<span class="tlaCBC"> <a href="#L74" title="CBC: Branch 0 was taken 177 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L74" title="CBC: Branch 1 was taken 122 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            299 :     if (way == std::ios_base::beg)</span></span>
+<span id="L71"><span class="lineNum">      71</span>                 :                :     {</span>
+<span id="L72"><span class="lineNum">      72</span>                 :<span class="tlaCBC">            177 :         position_ = 0;</span></span>
+<span id="L73"><span class="lineNum">      73</span>                 :                :     }</span>
+<span id="L74"><span class="lineNum">      74</span>         [<span class="tlaCBC"> <a href="#L79" title="CBC: Branch 0 was taken 61 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L79" title="CBC: Branch 1 was taken 61 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            122 :     else if (way == std::ios_base::end)</span></span>
+<span id="L75"><span class="lineNum">      75</span>                 :                :     {</span>
+<span id="L76"><span class="lineNum">      76</span>                 :<span class="tlaCBC">             61 :         position_ = data_.size();</span></span>
+<span id="L77"><span class="lineNum">      77</span>                 :                :     }</span>
+<span id="L78"><span class="lineNum">      78</span>                 :                : </span>
+<span id="L79"><span class="lineNum">      79</span>         [<span class="tlaUBC"> <a href="#L81" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L91" title="CBC: Branch 1 was taken 299 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            299 :     if (off &lt; 0)</span></span>
+<span id="L80"><span class="lineNum">      80</span>                 :                :     {</span>
+<span id="L81"><span class="lineNum">      81</span>         [<span class="tlaUBC"> <a href="#L93" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L93" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span>]:<a href="#L95" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         if (static_cast&lt;std::size_t&gt;(-off) &gt; position_)</span></span>
+<span id="L82"><span class="lineNum">      82</span>                 :                :         {</span>
+<span id="L83"><span class="lineNum">      83</span>                 :<span class="tlaUBC">              0 :             position_ = 0;</span></span>
+<span id="L84"><span class="lineNum">      84</span>                 :<span class="tlaUBC">              0 :             return static_cast&lt;std::ptrdiff_t&gt;(-1);</span></span>
+<span id="L85"><span class="lineNum">      85</span>                 :                :         }</span>
+<span id="L86"><span class="lineNum">      86</span>                 :                :         else</span>
+<span id="L87"><span class="lineNum">      87</span>                 :                :         {</span>
+<span id="L88"><span class="lineNum">      88</span>                 :<span class="tlaUBC">              0 :             position_ -= static_cast&lt;std::size_t&gt;(-off);</span></span>
+<span id="L89"><span class="lineNum">      89</span>                 :                :         }</span>
+<span id="L90"><span class="lineNum">      90</span>                 :                :     }</span>
+<span id="L91"><span class="lineNum">      91</span>         [<span class="tlaCBC"> <a href="#L93" title="CBC: Branch 0 was taken 156 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L93" title="CBC: Branch 1 was taken 143 times" class="branchTla">+</a> </span>]:<a href="#L100" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         299 :     else if (off &gt; 0)</span></span>
+<span id="L92"><span class="lineNum">      92</span>                 :                :     {</span>
+<span id="L93"><span class="lineNum">      93</span>         [<span class="tlaUBC"> <a href="#L109" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L109" title="CBC: Branch 1 was taken 156 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            156 :         if (static_cast&lt;std::size_t&gt;(off) + position_ &gt; data_.size())</span></span>
+<span id="L94"><span class="lineNum">      94</span>                 :                :         {</span>
+<span id="L95"><span class="lineNum">      95</span>                 :<a href="#L111" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :             position_ = data_.size();</span></span>
+<span id="L96"><span class="lineNum">      96</span>                 :<span class="tlaUBC">              0 :             return static_cast&lt;std::ptrdiff_t&gt;(-1);</span></span>
+<span id="L97"><span class="lineNum">      97</span>                 :                :         }</span>
+<span id="L98"><span class="lineNum">      98</span>                 :                :         else</span>
+<span id="L99"><span class="lineNum">      99</span>                 :                :         {</span>
+<span id="L100"><span class="lineNum">     100</span>                 :<a href="#L113" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         156 :             position_ += static_cast&lt;std::size_t&gt;(off);</span></span>
+<span id="L101"><span class="lineNum">     101</span>                 :                :         }</span>
+<span id="L102"><span class="lineNum">     102</span>                 :                :     }</span>
+<span id="L103"><span class="lineNum">     103</span>                 :                : </span>
+<span id="L104"><span class="lineNum">     104</span>                 :<span class="tlaCBC">            299 :     return static_cast&lt;std::ptrdiff_t&gt;(position_);</span></span>
+<span id="L105"><span class="lineNum">     105</span>                 :                : }</span>
+<span id="L106"><span class="lineNum">     106</span>                 :                : </span>
+<span id="L107"><span class="lineNum">     107</span>                 :<span class="tlaCBC">           3567 : std::streampos vector_istreambuf::seekpos(std::streampos sp, std::ios_base::openmode)</span></span>
+<span id="L108"><span class="lineNum">     108</span>                 :                : {</span>
+<span id="L109"><span class="lineNum">     109</span>         [<span class="tlaUBC"> <a href="#L113" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L113" title="CBC: Branch 1 was taken 3567 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           3567 :     if (sp &lt; 0)</span></span>
+<span id="L110"><span class="lineNum">     110</span>                 :                :     {</span>
+<span id="L111"><span class="lineNum">     111</span>                 :<a href="#L115" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         position_ = 0;</span></span>
+<span id="L112"><span class="lineNum">     112</span>                 :                :     }</span>
+<span id="L113"><span class="lineNum">     113</span>         [<span class="tlaUBC"> <a href="#L133" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L144" title="CBC: Branch 1 was taken 3567 times" class="branchTla">+</a> </span>]:<a href="#L119" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        3567 :     else if (static_cast&lt;std::size_t&gt;(sp) &gt; data_.size())</span></span>
+<span id="L114"><span class="lineNum">     114</span>                 :                :     {</span>
+<span id="L115"><span class="lineNum">     115</span>                 :<a href="#L131" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         position_ = data_.size();</span></span>
+<span id="L116"><span class="lineNum">     116</span>                 :                :     }</span>
+<span id="L117"><span class="lineNum">     117</span>                 :                :     else</span>
+<span id="L118"><span class="lineNum">     118</span>                 :                :     {</span>
+<span id="L119"><span class="lineNum">     119</span>                 :<a href="#L142" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        3567 :         position_ = static_cast&lt;std::size_t&gt;(sp);</span></span>
+<span id="L120"><span class="lineNum">     120</span>                 :                :     }</span>
+<span id="L121"><span class="lineNum">     121</span>                 :                : </span>
+<span id="L122"><span class="lineNum">     122</span>                 :<span class="tlaCBC">           3567 :     return static_cast&lt;std::ptrdiff_t&gt;(position_);</span></span>
+<span id="L123"><span class="lineNum">     123</span>                 :                : }</span>
+<span id="L124"><span class="lineNum">     124</span>                 :                : </span>
+<span id="L125"><span class="lineNum">     125</span>                 :<span class="tlaCBC">             74 : vector_ostreambuf::vector_ostreambuf(std::vector&lt;std::uint8_t&gt; &amp;data)</span></span>
+<span id="L126"><span class="lineNum">     126</span>                 :<span class="tlaCBC">             74 :     : data_(data),</span></span>
+<span id="L127"><span class="lineNum">     127</span>                 :<span class="tlaCBC">             74 :       position_(0)</span></span>
+<span id="L128"><span class="lineNum">     128</span>                 :                : {</span>
+<span id="L129"><span class="lineNum">     129</span>                 :<span class="tlaCBC">             74 : }</span></span>
+<span id="L130"><span class="lineNum">     130</span>                 :                : </span>
+<span id="L131"><span class="lineNum">     131</span>                 :<a href="#L169" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : vector_ostreambuf::int_type vector_ostreambuf::overflow(int_type c)</span></span>
+<span id="L132"><span class="lineNum">     132</span>                 :                : {</span>
+<span id="L133"><span class="lineNum">     133</span>         [<span class="tlaUBC"> <a href="#L135" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L135" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :     if (c != traits_type::eof())</span></span>
+<span id="L134"><span class="lineNum">     134</span>                 :                :     {</span>
+<span id="L135"><span class="lineNum">     135</span>            [<span class="tlaUBC"> <a href="#L167" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         data_.push_back(static_cast&lt;std::uint8_t&gt;(c));</span></span>
+<span id="L136"><span class="lineNum">     136</span>                 :<span class="tlaUBC">              0 :         position_ = data_.size() - 1;</span></span>
+<span id="L137"><span class="lineNum">     137</span>                 :                :     }</span>
+<span id="L138"><span class="lineNum">     138</span>                 :                : </span>
+<span id="L139"><span class="lineNum">     139</span>                 :<span class="tlaUBC">              0 :     return traits_type::to_int_type(static_cast&lt;char&gt;(data_[position_]));</span></span>
+<span id="L140"><span class="lineNum">     140</span>                 :                : }</span>
+<span id="L141"><span class="lineNum">     141</span>                 :                : </span>
+<span id="L142"><span class="lineNum">     142</span>                 :<a href="#L172" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">       40301 : std::streamsize vector_ostreambuf::xsputn(const char *s, std::streamsize n)</span></span>
+<span id="L143"><span class="lineNum">     143</span>                 :                : {</span>
+<span id="L144"><span class="lineNum">     144</span>         [<span class="tlaCBC"> <a href="#L152" title="CBC: Branch 0 was taken 32 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L152" title="CBC: Branch 1 was taken 40269 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">          40301 :     if (data_.empty())</span></span>
+<span id="L145"><span class="lineNum">     145</span>                 :                :     {</span>
+<span id="L146"><span class="lineNum">     146</span>                 :<span class="tlaCBC">             32 :         data_.resize(static_cast&lt;std::size_t&gt;(n));</span></span>
+<span id="L147"><span class="lineNum">     147</span>                 :                :     }</span>
+<span id="L148"><span class="lineNum">     148</span>                 :                :     else</span>
+<span id="L149"><span class="lineNum">     149</span>                 :                :     {</span>
+<span id="L150"><span class="lineNum">     150</span>                 :<span class="tlaCBC">          40269 :         auto position_size = data_.size();</span></span>
+<span id="L151"><span class="lineNum">     151</span>                 :<span class="tlaCBC">          40269 :         auto required_size = static_cast&lt;std::size_t&gt;(position_ + static_cast&lt;std::size_t&gt;(n));</span></span>
+<span id="L152"><span class="lineNum">     152</span>            [<span class="tlaCBC"> <a href="#L155" title="CBC: Branch 0 was taken 40269 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">          40269 :         data_.resize(std::max(position_size, required_size));</span></span>
+<span id="L153"><span class="lineNum">     153</span>                 :                :     }</span>
+<span id="L154"><span class="lineNum">     154</span>                 :                : </span>
+<span id="L155"><span class="lineNum">     155</span>            [<span class="tlaCBC"> <a href="#L163" title="CBC: Branch 0 was taken 40301 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">          40301 :     std::copy(s, s + n, data_.begin() + static_cast&lt;std::ptrdiff_t&gt;(position_));</span></span>
+<span id="L156"><span class="lineNum">     156</span>                 :<span class="tlaCBC">          40301 :     position_ += static_cast&lt;std::size_t&gt;(n);</span></span>
+<span id="L157"><span class="lineNum">     157</span>                 :                : </span>
+<span id="L158"><span class="lineNum">     158</span>                 :<span class="tlaCBC">          40301 :     return n;</span></span>
+<span id="L159"><span class="lineNum">     159</span>                 :                : }</span>
+<span id="L160"><span class="lineNum">     160</span>                 :                : </span>
+<span id="L161"><span class="lineNum">     161</span>                 :<span class="tlaCBC">           4525 : std::streampos vector_ostreambuf::seekoff(std::streamoff off, std::ios_base::seekdir way, std::ios_base::openmode)</span></span>
+<span id="L162"><span class="lineNum">     162</span>                 :                : {</span>
+<span id="L163"><span class="lineNum">     163</span>         [<span class="tlaCBC"> <a href="#L167" title="CBC: Branch 0 was taken 4107 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L167" title="CBC: Branch 1 was taken 418 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           4525 :     if (way == std::ios_base::beg)</span></span>
+<span id="L164"><span class="lineNum">     164</span>                 :                :     {</span>
+<span id="L165"><span class="lineNum">     165</span>                 :<span class="tlaCBC">           4107 :         position_ = 0;</span></span>
+<span id="L166"><span class="lineNum">     166</span>                 :                :     }</span>
+<span id="L167"><span class="lineNum">     167</span>         [<span class="tlaUBC"> <a href="#L172" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L172" title="CBC: Branch 1 was taken 418 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            418 :     else if (way == std::ios_base::end)</span></span>
+<span id="L168"><span class="lineNum">     168</span>                 :                :     {</span>
+<span id="L169"><span class="lineNum">     169</span>                 :<a href="#L174" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         position_ = data_.size();</span></span>
+<span id="L170"><span class="lineNum">     170</span>                 :                :     }</span>
+<span id="L171"><span class="lineNum">     171</span>                 :                : </span>
+<span id="L172"><span class="lineNum">     172</span>         [<span class="tlaUBC"> <a href="#L174" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L184" title="CBC: Branch 1 was taken 4525 times" class="branchTla">+</a> </span>]:<a href="#L184" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        4525 :     if (off &lt; 0)</span></span>
+<span id="L173"><span class="lineNum">     173</span>                 :                :     {</span>
+<span id="L174"><span class="lineNum">     174</span>         [<span class="tlaUBC"> <a href="#L186" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L186" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span>]:<a href="#L188" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         if (static_cast&lt;std::size_t&gt;(-off) &gt; position_)</span></span>
+<span id="L175"><span class="lineNum">     175</span>                 :                :         {</span>
+<span id="L176"><span class="lineNum">     176</span>                 :<span class="tlaUBC">              0 :             position_ = 0;</span></span>
+<span id="L177"><span class="lineNum">     177</span>                 :<span class="tlaUBC">              0 :             return static_cast&lt;std::ptrdiff_t&gt;(-1);</span></span>
+<span id="L178"><span class="lineNum">     178</span>                 :                :         }</span>
+<span id="L179"><span class="lineNum">     179</span>                 :                :         else</span>
+<span id="L180"><span class="lineNum">     180</span>                 :                :         {</span>
+<span id="L181"><span class="lineNum">     181</span>                 :<span class="tlaUBC">              0 :             position_ -= static_cast&lt;std::size_t&gt;(-off);</span></span>
+<span id="L182"><span class="lineNum">     182</span>                 :                :         }</span>
+<span id="L183"><span class="lineNum">     183</span>                 :                :     }</span>
+<span id="L184"><span class="lineNum">     184</span>         [<span class="tlaCBC"> <a href="#L186" title="CBC: Branch 0 was taken 4012 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L186" title="CBC: Branch 1 was taken 513 times" class="branchTla">+</a> </span>]:<a href="#L193" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        4525 :     else if (off &gt; 0)</span></span>
+<span id="L185"><span class="lineNum">     185</span>                 :                :     {</span>
+<span id="L186"><span class="lineNum">     186</span>         [<span class="tlaUBC"> <a href="#L202" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L202" title="CBC: Branch 1 was taken 4012 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           4012 :         if (static_cast&lt;std::size_t&gt;(off) + position_ &gt; data_.size())</span></span>
+<span id="L187"><span class="lineNum">     187</span>                 :                :         {</span>
+<span id="L188"><span class="lineNum">     188</span>                 :<a href="#L204" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :             position_ = data_.size();</span></span>
+<span id="L189"><span class="lineNum">     189</span>                 :<span class="tlaUBC">              0 :             return static_cast&lt;std::ptrdiff_t&gt;(-1);</span></span>
+<span id="L190"><span class="lineNum">     190</span>                 :                :         }</span>
+<span id="L191"><span class="lineNum">     191</span>                 :                :         else</span>
+<span id="L192"><span class="lineNum">     192</span>                 :                :         {</span>
+<span id="L193"><span class="lineNum">     193</span>                 :<a href="#L206" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        4012 :             position_ += static_cast&lt;std::size_t&gt;(off);</span></span>
+<span id="L194"><span class="lineNum">     194</span>                 :                :         }</span>
+<span id="L195"><span class="lineNum">     195</span>                 :                :     }</span>
+<span id="L196"><span class="lineNum">     196</span>                 :                : </span>
+<span id="L197"><span class="lineNum">     197</span>                 :<span class="tlaCBC">           4525 :     return static_cast&lt;std::ptrdiff_t&gt;(position_);</span></span>
+<span id="L198"><span class="lineNum">     198</span>                 :                : }</span>
+<span id="L199"><span class="lineNum">     199</span>                 :                : </span>
+<span id="L200"><span class="lineNum">     200</span>                 :<span class="tlaCBC">          11039 : std::streampos vector_ostreambuf::seekpos(std::streampos sp, std::ios_base::openmode)</span></span>
+<span id="L201"><span class="lineNum">     201</span>                 :                : {</span>
+<span id="L202"><span class="lineNum">     202</span>         [<span class="tlaUBC"> <a href="#L206" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L206" title="CBC: Branch 1 was taken 11039 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">          11039 :     if (sp &lt; 0)</span></span>
+<span id="L203"><span class="lineNum">     203</span>                 :                :     {</span>
+<span id="L204"><span class="lineNum">     204</span>                 :<a href="#L208" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         position_ = 0;</span></span>
+<span id="L205"><span class="lineNum">     205</span>                 :                :     }</span>
+<span id="L206"><span class="lineNum">     206</span>         [<span class="tlaUBC"> <a href="#L220" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L220" title="CBC: Branch 1 was taken 11039 times" class="branchTla">+</a> </span>]:<a href="#L212" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">       11039 :     else if (static_cast&lt;std::size_t&gt;(sp) &gt; data_.size())</span></span>
+<span id="L207"><span class="lineNum">     207</span>                 :                :     {</span>
+<span id="L208"><span class="lineNum">     208</span>                 :<a href="#L222" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         position_ = data_.size();</span></span>
+<span id="L209"><span class="lineNum">     209</span>                 :                :     }</span>
+<span id="L210"><span class="lineNum">     210</span>                 :                :     else</span>
+<span id="L211"><span class="lineNum">     211</span>                 :                :     {</span>
+<span id="L212"><span class="lineNum">     212</span>                 :<a href="#L226" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">       11039 :         position_ = static_cast&lt;std::size_t&gt;(sp);</span></span>
+<span id="L213"><span class="lineNum">     213</span>                 :                :     }</span>
+<span id="L214"><span class="lineNum">     214</span>                 :                : </span>
+<span id="L215"><span class="lineNum">     215</span>                 :<span class="tlaCBC">          11039 :     return static_cast&lt;std::ptrdiff_t&gt;(position_);</span></span>
+<span id="L216"><span class="lineNum">     216</span>                 :                : }</span>
+<span id="L217"><span class="lineNum">     217</span>                 :                : </span>
+<span id="L218"><span class="lineNum">     218</span>                 :<span class="tlaCBC">            271 : std::vector&lt;std::uint8_t&gt; to_vector(std::istream &amp;in_stream)</span></span>
+<span id="L219"><span class="lineNum">     219</span>                 :                : {</span>
+<span id="L220"><span class="lineNum">     220</span>         [<span class="tlaUBC"> <a href="#L222" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L227" title="CBC: Branch 1 was taken 271 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            271 :     if (!in_stream)</span></span>
+<span id="L221"><span class="lineNum">     221</span>                 :                :     {</span>
+<span id="L222"><span class="lineNum">     222</span>         [<span class="tlaUBC"> <a href="#L232" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L232" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L230" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         throw xlnt::exception(&quot;bad stream&quot;);</span></span>
+<span id="L223"><span class="lineNum">     223</span>                 :                :     }</span>
+<span id="L224"><span class="lineNum">     224</span>                 :                : </span>
+<span id="L225"><span class="lineNum">     225</span>                 :                :     return std::vector&lt;std::uint8_t&gt;(</span>
+<span id="L226"><span class="lineNum">     226</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         271 :         std::istreambuf_iterator&lt;char&gt;(in_stream),</span></span>
+<span id="L227"><span class="lineNum">     227</span>            [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 271 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            542 :         std::istreambuf_iterator&lt;char&gt;());</span></span>
+<span id="L228"><span class="lineNum">     228</span>                 :                : }</span>
+<span id="L229"><span class="lineNum">     229</span>                 :                : </span>
+<span id="L230"><span class="lineNum">     230</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : void to_stream(const std::vector&lt;std::uint8_t&gt; &amp;bytes, std::ostream &amp;out_stream)</span></span>
+<span id="L231"><span class="lineNum">     231</span>                 :                : {</span>
+<span id="L232"><span class="lineNum">     232</span>         [<span class="tlaUBC"> <a href="#L234" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L234" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :     if (!out_stream)</span></span>
+<span id="L233"><span class="lineNum">     233</span>                 :                :     {</span>
+<span id="L234"><span class="lineNum">     234</span>         [<span class="tlaUBC"> <a href="#top" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         throw xlnt::exception(&quot;bad stream&quot;);</span></span>
+<span id="L235"><span class="lineNum">     235</span>                 :                :     }</span>
+<span id="L236"><span class="lineNum">     236</span>                 :                : </span>
+<span id="L237"><span class="lineNum">     237</span>                 :<span class="tlaUBC">              0 :     out_stream.write(reinterpret_cast&lt;const char *&gt;(bytes.data()), static_cast&lt;std::ptrdiff_t&gt;(bytes.size()));</span></span>
+<span id="L238"><span class="lineNum">     238</span>                 :<span class="tlaUBC">              0 : }</span></span>
+<span id="L239"><span class="lineNum">     239</span>                 :                : </span>
+<span id="L240"><span class="lineNum">     240</span>                 :<span class="tlaUBC">              0 : std::ostream &amp;operator&lt;&lt;(std::ostream &amp;out_stream, const std::vector&lt;std::uint8_t&gt; &amp;bytes)</span></span>
+<span id="L241"><span class="lineNum">     241</span>                 :                : {</span>
+<span id="L242"><span class="lineNum">     242</span>                 :<span class="tlaUBC">              0 :     to_stream(bytes, out_stream);</span></span>
+<span id="L243"><span class="lineNum">     243</span>                 :<span class="tlaUBC">              0 :     return out_stream;</span></span>
+<span id="L244"><span class="lineNum">     244</span>                 :                : }</span>
+<span id="L245"><span class="lineNum">     245</span>                 :                : </span>
+<span id="L246"><span class="lineNum">     246</span>                 :                : } // namespace detail</span>
+<span id="L247"><span class="lineNum">     247</span>                 :                : } // namespace xlnt</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
