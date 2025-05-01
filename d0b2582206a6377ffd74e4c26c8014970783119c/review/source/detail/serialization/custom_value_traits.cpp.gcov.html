@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/serialization/custom_value_traits.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/serialization/custom_value_traits.cpp</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadLBC" title="Lost Baseline Coverage (1 => 0):
+Unchanged code is no longer tested">LBC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadEUB" title="Excluded Uncovered Baseline (0 => #):
+Previously untested code is unused now">EUB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">54.1&nbsp;%</td>
+            <td class="headerCovTableEntry">98</td>
+            <td class="headerCovTableEntry">53</td>
+            <td class="headerCovTableEntry"><a href="#L304" title="goto first LBC line">36</a></td>
+            <td class="headerCovTableEntry"><a href="#L334" title="goto first UBC line">9</a></td>
+            <td class="headerCovTableEntry"><a href="#L300" title="goto first CBC line">53</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-05-01 14:52:54</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">-</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">56.9&nbsp;%</td>
+            <td class="headerCovTableEntry">65</td>
+            <td class="headerCovTableEntry">37</td>
+            <td class="headerCovTableEntry"><a href="#L300" title="goto first LBC branch">44</a></td>
+            <td class="headerCovTableEntry"><a href="#L300" title="goto first UBC branch">12</a></td>
+            <td class="headerCovTableEntry"><a href="#L300" title="goto first CBC branch">74</a></td>
+            <td class="headerCovTableEntry"><a href="#L303" title="goto first EUB branch">98</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-05-01 14:52:49</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 298 ignored lines)</span>
+<span id="L299"><span class="lineNum">     299</span>                 :                : {</span>
+<span id="L300"><span class="lineNum">     300</span>   [<span class="tlaCBC"> <a href="#L303" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaLBC"> <a href="#L305" title="LBC: Branch 1 was not taken (previously taken 1 time)" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L303" title="CBC: Branch 2 was taken 34 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L303" title="CBC: Branch 3 was taken 36 times" class="branchTla">+</a> </span> :<a href="#L306" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         171 :     switch (prop)</span></span>
+<span class="lineNum">        </span> <span class="tlaCBC"> <a href="#L303" title="CBC: Branch 4 was taken 5 times" class="branchTla">+</a> </span><span class="tlaLBC"> <a href="#L305" title="LBC: Branch 5 was not taken (previously taken 1 time)" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L303" title="CBC: Branch 6 was taken 4 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L303" title="CBC: Branch 7 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L303" title="CBC: Branch 8 was taken 38 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span> <span class="tlaLBC"> <a href="#L305" title="LBC: Branch 9 was not taken (previously taken 1 time)" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L303" title="CBC: Branch 10 was taken 38 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L303" title="CBC: Branch 11 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L303" title="CBC: Branch 12 was taken 5 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L303" title="CBC: Branch 13 was taken 5 times" class="branchTla">+</a> </span> 
+<span class="lineNum">        </span>          <span class="tlaLBC"> <a href="#L305" title="LBC: Branch 14 was not taken (previously taken 1 time)" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L334" title="UBC: Branch 15 was not taken" class="branchTla">-</a> </span>]
+<span id="L301"><span class="lineNum">     301</span>                 :                :     {</span>
+<span id="L302"><span class="lineNum">     302</span>                 :<span class="tlaCBC">              4 :     case core_property::category:</span></span>
+<span id="L303"><span class="lineNum">     303</span>         [<span class="tlaCBC"> <a href="#L307" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L305" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              8 :         return &quot;category&quot;;</span></span>
+<span id="L304"><span class="lineNum">     304</span>                 :<a href="#L312" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case core_property::content_status:</span></span>
+<span id="L305"><span class="lineNum">     305</span>         [<span class="tlaLBC"> <a href="#L313" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L307" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;contentStatus&quot;;</span></span>
+<span id="L306"><span class="lineNum">     306</span>                 :<a href="#L314" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          34 :     case core_property::created:</span></span>
+<span id="L307"><span class="lineNum">     307</span>         [<span class="tlaCBC"> <a href="#L309" title="CBC: Branch 0 was taken 34 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L309" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             68 :         return &quot;created&quot;;</span></span>
+<span id="L308"><span class="lineNum">     308</span>                 :<span class="tlaCBC">             36 :     case core_property::creator:</span></span>
+<span id="L309"><span class="lineNum">     309</span>         [<span class="tlaCBC"> <a href="#L311" title="CBC: Branch 0 was taken 36 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L311" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             72 :         return &quot;creator&quot;;</span></span>
+<span id="L310"><span class="lineNum">     310</span>                 :<span class="tlaCBC">              5 :     case core_property::description:</span></span>
+<span id="L311"><span class="lineNum">     311</span>         [<span class="tlaCBC"> <a href="#L315" title="CBC: Branch 0 was taken 5 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L313" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             10 :         return &quot;description&quot;;</span></span>
+<span id="L312"><span class="lineNum">     312</span>                 :<a href="#L320" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case core_property::identifier:</span></span>
+<span id="L313"><span class="lineNum">     313</span>         [<span class="tlaLBC"> <a href="#L321" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L315" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;identifier&quot;;</span></span>
+<span id="L314"><span class="lineNum">     314</span>                 :<a href="#L322" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           4 :     case core_property::keywords:</span></span>
+<span id="L315"><span class="lineNum">     315</span>         [<span class="tlaCBC"> <a href="#L317" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L317" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              8 :         return &quot;keywords&quot;;</span></span>
+<span id="L316"><span class="lineNum">     316</span>                 :<span class="tlaCBC">              1 :     case core_property::language:</span></span>
+<span id="L317"><span class="lineNum">     317</span>         [<span class="tlaCBC"> <a href="#L319" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L319" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         return &quot;language&quot;;</span></span>
+<span id="L318"><span class="lineNum">     318</span>                 :<span class="tlaCBC">             38 :     case core_property::last_modified_by:</span></span>
+<span id="L319"><span class="lineNum">     319</span>         [<span class="tlaCBC"> <a href="#L323" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L321" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             76 :         return &quot;lastModifiedBy&quot;;</span></span>
+<span id="L320"><span class="lineNum">     320</span>                 :<a href="#L330" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case core_property::last_printed:</span></span>
+<span id="L321"><span class="lineNum">     321</span>         [<span class="tlaLBC"> <a href="#L331" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L323" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;lastPrinted&quot;;</span></span>
+<span id="L322"><span class="lineNum">     322</span>                 :<a href="#L341" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          38 :     case core_property::modified:</span></span>
+<span id="L323"><span class="lineNum">     323</span>         [<span class="tlaCBC"> <a href="#L325" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L325" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             76 :         return &quot;modified&quot;;</span></span>
+<span id="L324"><span class="lineNum">     324</span>                 :<span class="tlaCBC">              1 :     case core_property::revision:</span></span>
+<span id="L325"><span class="lineNum">     325</span>         [<span class="tlaCBC"> <a href="#L327" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L327" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         return &quot;revision&quot;;</span></span>
+<span id="L326"><span class="lineNum">     326</span>                 :<span class="tlaCBC">              5 :     case core_property::subject:</span></span>
+<span id="L327"><span class="lineNum">     327</span>         [<span class="tlaCBC"> <a href="#L329" title="CBC: Branch 0 was taken 5 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L329" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             10 :         return &quot;subject&quot;;</span></span>
+<span id="L328"><span class="lineNum">     328</span>                 :<span class="tlaCBC">              5 :     case core_property::title:</span></span>
+<span id="L329"><span class="lineNum">     329</span>         [<span class="tlaCBC"> <a href="#L342" title="CBC: Branch 0 was taken 5 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L331" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             10 :         return &quot;title&quot;;</span></span>
+<span id="L330"><span class="lineNum">     330</span>                 :<a href="#L345" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case core_property::version:</span></span>
+<span id="L331"><span class="lineNum">     331</span>         [<span class="tlaLBC"> <a href="#L346" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L334" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;version&quot;;</span></span>
+<span id="L332"><span class="lineNum">     332</span>                 :                :     }</span>
+<span id="L333"><span class="lineNum">     333</span>                 :                : </span>
+<span id="L334"><span class="lineNum">     334</span>         [<span class="tlaUBC"> <a href="#L397" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L342" title="EUB: Branch 1 was not executed" class="branchTla">#</a> </span>]:<a href="#L397" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     default_case(&quot;category&quot;);</span></span>
+<span id="L335"><span class="lineNum">     335</span>                 :                : }</span>
+<span id="L336"><span class="lineNum">     336</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 3 ignored lines)</span>
+<span id="L340"><span class="lineNum">     340</span>                 :                :     {</span>
+<span id="L341"><span class="lineNum">     341</span>                 :<a href="#L349" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          38 :     case extended_property::application:</span></span>
+<span id="L342"><span class="lineNum">     342</span>         [<span class="tlaCBC"> <a href="#L344" title="CBC: Branch 0 was taken 38 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L344" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             76 :         return &quot;Application&quot;;</span></span>
+<span id="L343"><span class="lineNum">     343</span>                 :<span class="tlaCBC">             37 :     case extended_property::app_version:</span></span>
+<span id="L344"><span class="lineNum">     344</span>         [<span class="tlaCBC"> <a href="#L350" title="CBC: Branch 0 was taken 37 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L346" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             74 :         return &quot;AppVersion&quot;;</span></span>
+<span id="L345"><span class="lineNum">     345</span>                 :<a href="#L351" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case extended_property::characters:</span></span>
+<span id="L346"><span class="lineNum">     346</span>         [<span class="tlaLBC"> <a href="#L348" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L348" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;Characters&quot;;</span></span>
+<span id="L347"><span class="lineNum">     347</span>                 :<span class="tlaLBC">            (1) :     case extended_property::characters_with_spaces:</span></span>
+<span id="L348"><span class="lineNum">     348</span>         [<span class="tlaLBC"> <a href="#L352" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L350" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;CharactersWithSpaces&quot;;</span></span>
+<span id="L349"><span class="lineNum">     349</span>                 :<a href="#L353" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          34 :     case extended_property::company:</span></span>
+<span id="L350"><span class="lineNum">     350</span>         [<span class="tlaCBC"> <a href="#L354" title="CBC: Branch 0 was taken 34 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L352" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             68 :         return &quot;Company&quot;;</span></span>
+<span id="L351"><span class="lineNum">     351</span>                 :<a href="#L357" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case extended_property::dig_sig:</span></span>
+<span id="L352"><span class="lineNum">     352</span>         [<span class="tlaLBC"> <a href="#L358" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L354" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;DigSig&quot;;</span></span>
+<span id="L353"><span class="lineNum">     353</span>                 :<a href="#L359" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          37 :     case extended_property::doc_security:</span></span>
+<span id="L354"><span class="lineNum">     354</span>         [<span class="tlaCBC"> <a href="#L356" title="CBC: Branch 0 was taken 37 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L356" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             74 :         return &quot;DocSecurity&quot;;</span></span>
+<span id="L355"><span class="lineNum">     355</span>                 :<span class="tlaCBC">             37 :     case extended_property::heading_pairs:</span></span>
+<span id="L356"><span class="lineNum">     356</span>         [<span class="tlaCBC"> <a href="#L360" title="CBC: Branch 0 was taken 37 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L358" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             74 :         return &quot;HeadingPairs&quot;;</span></span>
+<span id="L357"><span class="lineNum">     357</span>                 :<a href="#L363" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case extended_property::hidden_slides:</span></span>
+<span id="L358"><span class="lineNum">     358</span>         [<span class="tlaLBC"> <a href="#L364" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L360" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;HiddenSlides&quot;;</span></span>
+<span id="L359"><span class="lineNum">     359</span>                 :<a href="#L367" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          37 :     case extended_property::hyperlinks_changed:</span></span>
+<span id="L360"><span class="lineNum">     360</span>         [<span class="tlaCBC"> <a href="#L362" title="CBC: Branch 0 was taken 37 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L362" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             74 :         return &quot;HyperlinksChanged&quot;;</span></span>
+<span id="L361"><span class="lineNum">     361</span>                 :<span class="tlaCBC">              4 :     case extended_property::hyperlink_base:</span></span>
+<span id="L362"><span class="lineNum">     362</span>         [<span class="tlaCBC"> <a href="#L368" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L364" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              8 :         return &quot;HyperlinkBase&quot;;</span></span>
+<span id="L363"><span class="lineNum">     363</span>                 :<a href="#L371" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case extended_property::h_links:</span></span>
+<span id="L364"><span class="lineNum">     364</span>         [<span class="tlaLBC"> <a href="#L366" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L366" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;HLinks&quot;;</span></span>
+<span id="L365"><span class="lineNum">     365</span>                 :<span class="tlaLBC">            (1) :     case extended_property::lines:</span></span>
+<span id="L366"><span class="lineNum">     366</span>         [<span class="tlaLBC"> <a href="#L372" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L368" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;Lines&quot;;</span></span>
+<span id="L367"><span class="lineNum">     367</span>                 :<a href="#L381" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          37 :     case extended_property::links_up_to_date:</span></span>
+<span id="L368"><span class="lineNum">     368</span>         [<span class="tlaCBC"> <a href="#L370" title="CBC: Branch 0 was taken 37 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L370" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             74 :         return &quot;LinksUpToDate&quot;;</span></span>
+<span id="L369"><span class="lineNum">     369</span>                 :<span class="tlaCBC">              4 :     case extended_property::manager:</span></span>
+<span id="L370"><span class="lineNum">     370</span>         [<span class="tlaCBC"> <a href="#L382" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L372" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              8 :         return &quot;Manager&quot;;</span></span>
+<span id="L371"><span class="lineNum">     371</span>                 :<a href="#L385" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case extended_property::m_m_clips:</span></span>
+<span id="L372"><span class="lineNum">     372</span>         [<span class="tlaLBC"> <a href="#L374" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L374" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;MMClips&quot;;</span></span>
+<span id="L373"><span class="lineNum">     373</span>                 :<span class="tlaLBC">            (1) :     case extended_property::notes:</span></span>
+<span id="L374"><span class="lineNum">     374</span>         [<span class="tlaLBC"> <a href="#L376" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L376" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;Notes&quot;;</span></span>
+<span id="L375"><span class="lineNum">     375</span>                 :<span class="tlaLBC">            (1) :     case extended_property::pages:</span></span>
+<span id="L376"><span class="lineNum">     376</span>         [<span class="tlaLBC"> <a href="#L378" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L378" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;Pages&quot;;</span></span>
+<span id="L377"><span class="lineNum">     377</span>                 :<span class="tlaLBC">            (1) :     case extended_property::paragraphs:</span></span>
+<span id="L378"><span class="lineNum">     378</span>         [<span class="tlaLBC"> <a href="#L380" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L380" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;Paragraphs&quot;;</span></span>
+<span id="L379"><span class="lineNum">     379</span>                 :<span class="tlaLBC">            (1) :     case extended_property::presentation_format:</span></span>
+<span id="L380"><span class="lineNum">     380</span>         [<span class="tlaLBC"> <a href="#L386" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L382" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;PresentationFormat&quot;;</span></span>
+<span id="L381"><span class="lineNum">     381</span>                 :<a href="#L387" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          37 :     case extended_property::scale_crop:</span></span>
+<span id="L382"><span class="lineNum">     382</span>         [<span class="tlaCBC"> <a href="#L384" title="CBC: Branch 0 was taken 37 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L384" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             74 :         return &quot;ScaleCrop&quot;;</span></span>
+<span id="L383"><span class="lineNum">     383</span>                 :<span class="tlaCBC">             37 :     case extended_property::shared_doc:</span></span>
+<span id="L384"><span class="lineNum">     384</span>         [<span class="tlaCBC"> <a href="#L388" title="CBC: Branch 0 was taken 37 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L386" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             74 :         return &quot;SharedDoc&quot;;</span></span>
+<span id="L385"><span class="lineNum">     385</span>                 :<a href="#L393" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case extended_property::slides:</span></span>
+<span id="L386"><span class="lineNum">     386</span>         [<span class="tlaLBC"> <a href="#L394" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L388" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;Slides&quot;;</span></span>
+<span id="L387"><span class="lineNum">     387</span>                 :<a href="#L410" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           1 :     case extended_property::template_:</span></span>
+<span id="L388"><span class="lineNum">     388</span>         [<span class="tlaCBC"> <a href="#L390" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L390" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         return &quot;Template&quot;;</span></span>
+<span id="L389"><span class="lineNum">     389</span>                 :<span class="tlaCBC">             37 :     case extended_property::titles_of_parts:</span></span>
+<span id="L390"><span class="lineNum">     390</span>         [<span class="tlaCBC"> <a href="#L392" title="CBC: Branch 0 was taken 37 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L392" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             74 :         return &quot;TitlesOfParts&quot;;</span></span>
+<span id="L391"><span class="lineNum">     391</span>                 :<span class="tlaCBC">              1 :     case extended_property::total_time:</span></span>
+<span id="L392"><span class="lineNum">     392</span>         [<span class="tlaCBC"> <a href="#L411" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L394" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">              2 :         return &quot;TotalTime&quot;;</span></span>
+<span id="L393"><span class="lineNum">     393</span>                 :<a href="#L408" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case extended_property::words:</span></span>
+<span id="L394"><span class="lineNum">     394</span>         [<span class="tlaLBC"> <a href="#L409" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L397" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;Words&quot;;</span></span>
+<span id="L395"><span class="lineNum">     395</span>                 :                :     }</span>
+<span id="L396"><span class="lineNum">     396</span>                 :                : </span>
+<span id="L397"><span class="lineNum">     397</span>         [<span class="tlaUBC"> <a href="#L405" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L405" title="EUB: Branch 1 was not executed" class="branchTla">#</a> </span>]:<a href="#L412" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     default_case(&quot;Application&quot;);</span></span>
+<span id="L398"><span class="lineNum">     398</span>                 :                : }</span>
+<span id="L399"><span class="lineNum">     399</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 3 ignored lines)</span>
+<span id="L403"><span class="lineNum">     403</span>                 :                :     {</span>
+<span id="L404"><span class="lineNum">     404</span>                 :<span class="tlaUBC">              0 :     case variant::type::boolean:</span></span>
+<span id="L405"><span class="lineNum">     405</span>         [<span class="tlaUBC"> <a href="#L407" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L407" title="EUB: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;bool&quot;;</span></span>
+<span id="L406"><span class="lineNum">     406</span>                 :<span class="tlaUBC">              0 :     case variant::type::date:</span></span>
+<span id="L407"><span class="lineNum">     407</span>         [<span class="tlaUBC"> <a href="#L413" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L409" title="EUB: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;date&quot;;</span></span>
+<span id="L408"><span class="lineNum">     408</span>                 :<a href="#top" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :     case variant::type::i4:</span></span>
+<span id="L409"><span class="lineNum">     409</span>         [<span class="tlaLBC"> <a href="#top" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#L411" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaLBC">            (2) :         return &quot;i4&quot;;</span></span>
+<span id="L410"><span class="lineNum">     410</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          37 :     case variant::type::lpstr:</span></span>
+<span id="L411"><span class="lineNum">     411</span>         [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 37 times" class="branchTla">+</a> </span><span class="tlaEUB"> <a href="#L413" title="EUB: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaCBC">             74 :         return &quot;lpstr&quot;;</span></span>
+<span id="L412"><span class="lineNum">     412</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     case variant::type::null:</span></span>
+<span id="L413"><span class="lineNum">     413</span>         [<span class="tlaUBC"> <a href="#top" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaEUB"> <a href="#top" title="EUB: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;null&quot;;</span></span>
+<span id="L414"><span class="lineNum">     414</span>                 :<span class="tlaUBC">              0 :     case variant::type::vector:</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 67 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
