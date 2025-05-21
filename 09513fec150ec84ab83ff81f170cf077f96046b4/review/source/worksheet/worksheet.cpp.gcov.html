@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/worksheet/worksheet.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/worksheet/worksheet.cpp<span style="font-size: 80%;"> (source / <a href="worksheet.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">71.4&nbsp;%</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry"><a href="#L370" title="goto first UNC line">2</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L366" title="goto first CBC line">5</a></td>
+            <td class="headerCovTableEntry">2</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-05-21 20:44:51</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">33.3&nbsp;%</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"><a href="#L370" title="goto first UNC branch">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L368" title="goto first UBC branch">4</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L368" title="goto first CBC branch">4</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-05-21 20:44:47</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 364 ignored lines)</span>
+<span id="L365"><span class="lineNum">     365</span>                 :                : </span>
+<span id="L366"><span class="lineNum">     366</span>                 :<a href="#L373" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           2 : cell_reference worksheet::active_cell() const</span></span>
+<span id="L367"><span class="lineNum">     367</span>                 :                : {</span>
+<span id="L368"><span class="lineNum">     368</span>         [<span class="tlaUBC"> <a href="#L375" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L375" title="CBC: Branch 1 was taken 2 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              2 :     if (!has_view())</span></span>
+<span id="L369"><span class="lineNumWithDelete" title="removed line 370 from baseline version">     369</span>                 :                :     {</span>
+<span id="L370"><span class="lineNum">     370</span>            [<span class="tlaUNC"> <a href="#L377" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L377" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::invalid_attribute(&quot;Worksheet has no view.&quot;);</span></span>
+<span id="L371"><span class="lineNum">     371</span>                 :                :     }</span>
+<span id="L372"><span class="lineNum">     372</span>                 :                : </span>
+<span id="L373"><span class="lineNum">     373</span>                 :<a href="#L380" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           2 :     auto &amp;primary_view = d_-&gt;views_.front();</span></span>
+<span id="L374"><span class="lineNum">     374</span>                 :                : </span>
+<span id="L375"><span class="lineNum">     375</span>         [<span class="tlaUBC"> <a href="#top" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 1 was taken 2 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              2 :     if (!primary_view.has_selections())</span></span>
+<span id="L376"><span class="lineNumWithDelete" title="removed line 377 from baseline version">     376</span>                 :                :     {</span>
+<span id="L377"><span class="lineNum">     377</span>            [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::invalid_attribute(&quot;Default worksheet view has no selections.&quot;);</span></span>
+<span id="L378"><span class="lineNum">     378</span>                 :                :     }</span>
+<span id="L379"><span class="lineNum">     379</span>                 :                : </span>
+<span id="L380"><span class="lineNum">     380</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           2 :     return primary_view.selection(0).active_cell();</span></span>
+<span id="L381"><span class="lineNum">     381</span>                 :                : }</span>
+<span id="L382"><span class="lineNum">     382</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 947 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
