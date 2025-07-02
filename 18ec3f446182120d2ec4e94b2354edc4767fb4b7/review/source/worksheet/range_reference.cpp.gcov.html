@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/worksheet/range_reference.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/worksheet/range_reference.cpp<span style="font-size: 80%;"> (source / <a href="range_reference.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+            <td width="5%" class="headerCovTableHeadDCB" title="Deleted Covered Baseline (1 => -):
+Previously tested code has been deleted">DCB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">65.5&nbsp;%</td>
+            <td class="headerCovTableEntry">29</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry"><a href="#L37" title="goto first UNC line">7</a></td>
+            <td class="headerCovTableEntry"><a href="#L181" title="goto first UBC line">3</a></td>
+            <td class="headerCovTableEntry"><a href="#L33" title="goto first GNC line">17</a></td>
+            <td class="headerCovTableEntry"><a href="#L189" title="goto first CBC line">2</a></td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">6</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-07-02 23:27:07</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryMed">75.0&nbsp;%</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">73.0&nbsp;%</td>
+            <td class="headerCovTableEntry">37</td>
+            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry"><a href="#L35" title="goto first UNC branch">16</a></td>
+            <td class="headerCovTableEntry"><a href="#L183" title="goto first UBC branch">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L35" title="goto first GNC branch">54</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-07-02 23:27:02</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 31 ignored lines)</span>
+<span id="L32"><span class="lineNum">      32</span>                 :                : </span>
+<span id="L33"><span class="lineNum">      33</span>                 :<a href="#L40" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">         122 : bool is_whole_column(const std::string &amp;s)</span></span>
+<span id="L34"><span class="lineNum">      34</span>                 :                : {</span>
+<span id="L35"><span class="lineNum">      35</span>         [<span class="tlaUNC"> <a href="#L41" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L40" title="GNC: Branch 1 was taken 122 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">            122 :     if (s.empty())</span></span>
+<span id="L36"><span class="lineNum">      36</span>                 :                :     {</span>
+<span id="L37"><span class="lineNum">      37</span>                 :<a href="#L43" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         return false;</span></span>
+<span id="L38"><span class="lineNum">      38</span>                 :                :     }</span>
+<span id="L39"><span class="lineNum">      39</span>                 :                : </span>
+<span id="L40"><span class="lineNum">      40</span>         [<span class="tlaGNC"> <a href="#L41" title="GNC: Branch 0 was taken 13 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L41" title="GNC: Branch 1 was taken 109 times" class="branchTla">+</a> </span>]:<a href="#L46" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">         122 :     size_t start_pos = (s[0] == '$') ? 1 : 0;</span></span>
+<span id="L41"><span class="lineNum">      41</span>         [<span class="tlaUNC"> <a href="#L59" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L46" title="GNC: Branch 1 was taken 122 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">            122 :     if (start_pos &gt;= s.length()) // String contains only a &quot;$&quot;</span></span>
+<span id="L42"><span class="lineNum">      42</span>                 :                :     {</span>
+<span id="L43"><span class="lineNum">      43</span>                 :<a href="#L61" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         return false;</span></span>
+<span id="L44"><span class="lineNum">      44</span>                 :                :     }</span>
+<span id="L45"><span class="lineNum">      45</span>                 :                : </span>
+<span id="L46"><span class="lineNum">      46</span>         [<span class="tlaGNC"> <a href="#L48" title="GNC: Branch 0 was taken 217 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L48" title="GNC: Branch 1 was taken 18 times" class="branchTla">+</a> </span>]:<a href="#L64" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">         235 :     for (size_t i = start_pos; i &lt; s.length(); ++i)</span></span>
+<span id="L47"><span class="lineNum">      47</span>                 :                :     {</span>
+<span id="L48"><span class="lineNum">      48</span>         [<span class="tlaGNC"> <a href="#L59" title="GNC: Branch 0 was taken 104 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L59" title="GNC: Branch 1 was taken 113 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">            217 :         if (!std::isalpha(static_cast&lt;unsigned char&gt;(s[i])))</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 7 ignored lines)</span>
+<span id="L56"><span class="lineNum">      56</span>                 :                : </span>
+<span id="L57"><span class="lineNum">      57</span>                 :<span class="tlaGNC">            113 : bool is_whole_row(const std::string &amp;s)</span></span>
+<span id="L58"><span class="lineNum">      58</span>                 :                : {</span>
+<span id="L59"><span class="lineNum">      59</span>         [<span class="tlaUNC"> <a href="#L65" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L64" title="GNC: Branch 1 was taken 113 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">            113 :     if (s.empty())</span></span>
+<span id="L60"><span class="lineNum">      60</span>                 :                :     {</span>
+<span id="L61"><span class="lineNum">      61</span>                 :<a href="#L67" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         return false;</span></span>
+<span id="L62"><span class="lineNum">      62</span>                 :                :     }</span>
+<span id="L63"><span class="lineNum">      63</span>                 :                : </span>
+<span id="L64"><span class="lineNum">      64</span>         [<span class="tlaGNC"> <a href="#L65" title="GNC: Branch 0 was taken 10 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L65" title="GNC: Branch 1 was taken 103 times" class="branchTla">+</a> </span>]:<a href="#L70" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">         113 :     size_t start_pos = (s[0] == '$') ? 1 : 0;</span></span>
+<span id="L65"><span class="lineNum">      65</span>         [<span class="tlaUNC"> <a href="#L145" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L70" title="GNC: Branch 1 was taken 113 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">            113 :     if (start_pos &gt;= s.length()) // String contains only a &quot;$&quot;</span></span>
+<span id="L66"><span class="lineNum">      66</span>                 :                :     {</span>
+<span id="L67"><span class="lineNum">      67</span>                 :<a href="#L147" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         return false;</span></span>
+<span id="L68"><span class="lineNum">      68</span>                 :                :     }</span>
+<span id="L69"><span class="lineNum">      69</span>                 :                : </span>
+<span id="L70"><span class="lineNum">      70</span>         [<span class="tlaGNC"> <a href="#L72" title="GNC: Branch 0 was taken 117 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L72" title="GNC: Branch 1 was taken 18 times" class="branchTla">+</a> </span>]:<a href="#L150" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">         135 :     for (size_t i = start_pos; i &lt; s.length(); ++i)</span></span>
+<span id="L71"><span class="lineNum">      71</span>                 :                :     {</span>
+<span id="L72"><span class="lineNum">      72</span>         [<span class="tlaGNC"> <a href="#L142" title="GNC: Branch 0 was taken 95 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L142" title="GNC: Branch 1 was taken 22 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">            117 :         if (!std::isdigit(static_cast&lt;unsigned char&gt;(s[i])))</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 69 ignored lines)</span>
+<span id="L142"><span class="lineNum">     142</span>            [<span class="tlaGNC"> <a href="#L145" title="GNC: Branch 0 was taken 9 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              9 :         bool absoluteEnd = extract_absolute(end_part);</span></span>
+<span id="L143"><span class="lineNum">     143</span>                 :                : </span>
+<span id="L144"><span class="lineNum">     144</span>                 :                :         row_t start_row;</span>
+<span id="L145"><span class="lineNum">     145</span>      [<span class="tlaGNC"> <a href="#L150" title="GNC: Branch 0 was taken 9 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L147" title="UNC: Branch &quot;2&quot; was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L150" title="GNC: Branch &quot;3&quot; was taken 9 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              9 :         if (detail::parse(start_part, start_row) != std::errc())</span></span>
+<span id="L146"><span class="lineNumWithDelete" title="removed lines [56:57] from baseline version">     146</span>                 :                :         {</span>
+<span id="L147"><span class="lineNum">     147</span>            [<span class="tlaUNC"> <a href="#L150" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L152" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::invalid_parameter(&quot;invalid row number&quot;);</span></span>
+<span id="L148"><span class="lineNum">     148</span>                 :                :         }</span>
+<span id="L149"><span class="lineNum">     149</span>                 :                :         row_t end_row;</span>
+<span id="L150"><span class="lineNum">     150</span>      [<span class="tlaGNC"> <a href="#L155" title="GNC: Branch 0 was taken 9 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L152" title="UNC: Branch &quot;2&quot; was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L155" title="GNC: Branch &quot;3&quot; was taken 9 times" class="branchTla">+</a> </span>]:<a href="#L155" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           9 :         if (detail::parse(end_part, end_row) != std::errc())</span></span>
+<span id="L151"><span class="lineNum">     151</span>                 :                :         {</span>
+<span id="L152"><span class="lineNum">     152</span>            [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L186" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::invalid_parameter(&quot;invalid row number&quot;);</span></span>
+<span id="L153"><span class="lineNum">     153</span>                 :                :         }</span>
+<span id="L154"><span class="lineNum">     154</span>                 :                : </span>
+<span id="L155"><span class="lineNum">     155</span>      [<span class="tlaGNC"> <a href="#L156" title="GNC: Branch 0 was taken 9 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L156" title="GNC: Branch &quot;2&quot; was taken 9 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L156" title="GNC: Branch &quot;4&quot; was taken 9 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           9 :         top_left_ = cell_reference(constants::min_column(), start_row).make_absolute(true, absoluteStart);</span></span>
+<span id="L156"><span class="lineNum">     156</span>      [<span class="tlaGNC"> <a href="#top" title="GNC: Branch 0 was taken 9 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch &quot;2&quot; was taken 9 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch &quot;4&quot; was taken 9 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              9 :         bottom_right_ = cell_reference(constants::max_column(), end_row).make_absolute(true, absoluteEnd);</span></span>
+<span id="L157"><span class="lineNum">     157</span>                 :                :     }</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 23 ignored lines)</span>
+<span id="L181"><span class="lineNum">     181</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : range_reference range_reference::make_offset(int column_offset, int row_offset) const</span></span>
+<span id="L182"><span class="lineNum">     182</span>                 :                : {</span>
+<span id="L183"><span class="lineNum">     183</span>            [<span class="tlaUBC"> <a href="#L184" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :     auto top_left = top_left_.make_offset(column_offset, row_offset);</span></span>
+<span id="L184"><span class="lineNum">     184</span>            [<span class="tlaUBC"> <a href="#top" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :     auto bottom_right = bottom_right_.make_offset(column_offset, row_offset);</span></span>
+<span id="L185"><span class="lineNumWithDelete" title="removed line 87 from baseline version">     185</span>                 :                : </span>
+<span id="L186"><span class="lineNum">     186</span>                 :<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     return range_reference(top_left, bottom_right);</span></span>
+<span id="L187"><span class="lineNum">     187</span>                 :                : }</span>
+<span id="L188"><span class="lineNum">     188</span>                 :                : </span>
+<span id="L189"><span class="lineNum">     189</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          67 : std::size_t range_reference::height() const</span></span>
+<span id="L190"><span class="lineNum">     190</span>                 :                : {</span>
+<span id="L191"><span class="lineNum">     191</span>                 :<span class="tlaCBC">             67 :     return 1 + bottom_right_.row() - top_left_.row();</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 111 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
