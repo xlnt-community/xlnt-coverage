@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/worksheet/worksheet.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/worksheet/worksheet.cpp<span style="font-size: 80%;"> (source / <a href="worksheet.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">69.2&nbsp;%</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry"><a href="#L1338" title="goto first UNC line">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L1334" title="goto first GNC line">9</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-07-05 21:43:46</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">2</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">66.7&nbsp;%</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry"><a href="#L1336" title="goto first UNC branch">6</a></td>
+            <td class="headerCovTableEntry"><a href="#L1336" title="goto first GNC branch">12</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-07-05 21:43:42</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 1332 ignored lines)</span>
+<span id="L1333"><span class="lineNum">    1333</span>                 :                : </span>
+<span id="L1334"><span class="lineNum">    1334</span>                 :<a href="#L1341" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           3 : int worksheet::zoom_scale() const</span></span>
+<span id="L1335"><span class="lineNum">    1335</span>                 :                : {</span>
+<span id="L1336"><span class="lineNum">    1336</span>         [<span class="tlaUNC"> <a href="#L1347" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L1341" title="GNC: Branch 1 was taken 3 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              3 :     if (!has_view())</span></span>
+<span id="L1337"><span class="lineNum">    1337</span>                 :                :     {</span>
+<span id="L1338"><span class="lineNum">    1338</span>                 :<a href="#L1349" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         return 100;</span></span>
+<span id="L1339"><span class="lineNum">    1339</span>                 :                :     }</span>
+<span id="L1340"><span class="lineNum">    1340</span>                 :                :     </span>
+<span id="L1341"><span class="lineNum">    1341</span>            [<span class="tlaGNC"> <a href="#L1342" title="GNC: Branch 0 was taken 3 times" class="branchTla">+</a> </span>]:<a href="#L1352" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           3 :     auto opt = view(0).zoom_scale();</span></span>
+<span id="L1342"><span class="lineNum">    1342</span>      [<span class="tlaGNC"> <a href="#L1347" title="GNC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L1347" title="GNC: Branch 1 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L1347" title="GNC: Branch 2 was taken 2 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              3 :     return opt.is_set() ? opt.get() : 100;</span></span>
+<span id="L1343"><span class="lineNum">    1343</span>                 :<span class="tlaGNC">              3 : }</span></span>
+<span id="L1344"><span class="lineNum">    1344</span>                 :                : </span>
+<span id="L1345"><span class="lineNum">    1345</span>                 :<span class="tlaGNC">              1 : void worksheet::zoom_scale(int scale)</span></span>
+<span id="L1346"><span class="lineNum">    1346</span>                 :                : {</span>
+<span id="L1347"><span class="lineNum">    1347</span>         [<span class="tlaUNC"> <a href="#L1350" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              1 :     if (!has_view())</span></span>
+<span id="L1348"><span class="lineNum">    1348</span>                 :                :     {</span>
+<span id="L1349"><span class="lineNum">    1349</span>                 :<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         sheet_view sv;</span></span>
+<span id="L1350"><span class="lineNum">    1350</span>            [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :         add_view(sv);</span></span>
+<span id="L1351"><span class="lineNum">    1351</span>                 :<span class="tlaUNC">              0 :     }</span></span>
+<span id="L1352"><span class="lineNum">    1352</span>                 :<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           1 :     view(0).zoom_scale(scale);</span></span>
+<span id="L1353"><span class="lineNum">    1353</span>                 :<span class="tlaGNC">              1 : }</span></span>
+<span id="L1354"><span class="lineNum">    1354</span>                 :                : </span>
+<span id="L1355"><span class="lineNum">    1355</span>                 :                : } // namespace xlnt</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
