@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - include/xlnt/utils/hash.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - include/xlnt/utils/hash.hpp</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">66.7&nbsp;%</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry"><a href="#L113" title="goto first UNC line">3</a></td>
+            <td class="headerCovTableEntry"><a href="#L108" title="goto first GNC line">6</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-07-21 22:54:00</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">62.5&nbsp;%</td>
+            <td class="headerCovTableEntry">16</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry"><a href="#L111" title="goto first UNC branch">12</a></td>
+            <td class="headerCovTableEntry"><a href="#L108" title="goto first GNC branch">20</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-07-21 22:53:55</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 107 ignored lines)</span>
+<span id="L108"><span class="lineNum">     108</span>            [<span class="tlaGNC"> <a href="#L111" title="GNC: Branch 0 was taken 10014 times" class="branchTla">+</a> </span>]:<a href="#L117" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">       10014 :         hash_combine(seed, f.shadow());</span></span>
+<span id="L109"><span class="lineNum">     109</span>                 :                :         </span>
+<span id="L110"><span class="lineNum">     110</span>                 :                :         // Hash scheme</span>
+<span id="L111"><span class="lineNum">     111</span>      [<span class="tlaGNC"> <a href="#L117" title="GNC: Branch 0 was taken 10014 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L113" title="UNC: Branch &quot;2&quot; was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L117" title="GNC: Branch &quot;3&quot; was taken 10014 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">          10014 :         if (f.has_scheme())</span></span>
+<span id="L112"><span class="lineNum">     112</span>                 :                :         {</span>
+<span id="L113"><span class="lineNum">     113</span>            [<span class="tlaUNC"> <a href="#L123" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L125" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             hash_combine(seed, f.scheme());</span></span>
+<span id="L114"><span class="lineNum">     114</span>                 :                :         }</span>
+<span id="L115"><span class="lineNum">     115</span>                 :                :         </span>
+<span id="L116"><span class="lineNum">     116</span>                 :                :         // Hash color (importantly, this re-uses the std::hash&lt;xlnt::color&gt; we just defined)</span>
+<span id="L117"><span class="lineNum">     117</span>      [<span class="tlaGNC"> <a href="#L123" title="GNC: Branch 0 was taken 10014 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L123" title="GNC: Branch &quot;2&quot; was taken 10001 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L123" title="GNC: Branch &quot;3&quot; was taken 13 times" class="branchTla">+</a> </span>]:<a href="#L129" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">       10014 :         if (f.has_color())</span></span>
+<span id="L118"><span class="lineNum">     118</span>                 :                :         {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 1 ignored lines)</span>
+<span id="L120"><span class="lineNum">     120</span>                 :                :         }</span>
+<span id="L121"><span class="lineNum">     121</span>                 :                :         </span>
+<span id="L122"><span class="lineNum">     122</span>                 :                :         // Hash family</span>
+<span id="L123"><span class="lineNum">     123</span>      [<span class="tlaGNC"> <a href="#L129" title="GNC: Branch 0 was taken 10014 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L125" title="UNC: Branch &quot;2&quot; was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L129" title="GNC: Branch &quot;3&quot; was taken 10014 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">          10014 :         if (f.has_family())</span></span>
+<span id="L124"><span class="lineNum">     124</span>                 :                :         {</span>
+<span id="L125"><span class="lineNum">     125</span>            [<span class="tlaUNC"> <a href="#L129" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L131" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             hash_combine(seed, f.family());</span></span>
+<span id="L126"><span class="lineNum">     126</span>                 :                :         }</span>
+<span id="L127"><span class="lineNum">     127</span>                 :                :         </span>
+<span id="L128"><span class="lineNum">     128</span>                 :                :         // Hash charset</span>
+<span id="L129"><span class="lineNum">     129</span>      [<span class="tlaGNC"> <a href="#top" title="GNC: Branch 0 was taken 10014 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L131" title="UNC: Branch &quot;2&quot; was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch &quot;3&quot; was taken 10014 times" class="branchTla">+</a> </span>]:<a href="#L134" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">       10014 :         if (f.has_charset())</span></span>
+<span id="L130"><span class="lineNum">     130</span>                 :                :         {</span>
+<span id="L131"><span class="lineNum">     131</span>            [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             hash_combine(seed, f.charset());</span></span>
+<span id="L132"><span class="lineNum">     132</span>                 :                :         }</span>
+<span id="L133"><span class="lineNum">     133</span>                 :                : </span>
+<span id="L134"><span class="lineNum">     134</span>                 :<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">       10014 :         return seed;</span></span>
+<span id="L135"><span class="lineNum">     135</span>                 :                :     }</span>
+<span id="L136"><span class="lineNum">     136</span>                 :                : };</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 2 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
