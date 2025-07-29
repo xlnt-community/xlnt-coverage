@@ -1,0 +1,499 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - include/xlnt/styles/color.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory include/xlnt/styles">include/xlnt/styles</a> - color.hpp<span style="font-size: 80%;"> (source / <a href="color.hpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L360" title="goto first CBC line">21</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-07-29 20:05:49</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryHi">95.0&nbsp;%</td>
+            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry"><a href="#L376" title="goto first UBC branch">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L365" title="goto first CBC branch">38</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-07-29 20:05:49</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>                 :                : // Copyright (c) 2014-2022 Thomas Fussell</span>
+<span id="L2"><span class="lineNum">       2</span>                 :                : // Copyright (c) 2010-2015 openpyxl</span>
+<span id="L3"><span class="lineNum">       3</span>                 :                : // Copyright (c) 2024-2025 xlnt-community</span>
+<span id="L4"><span class="lineNum">       4</span>                 :                : //</span>
+<span id="L5"><span class="lineNum">       5</span>                 :                : // Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="L6"><span class="lineNum">       6</span>                 :                : // of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span id="L7"><span class="lineNum">       7</span>                 :                : // in the Software without restriction, including without limitation the rights</span>
+<span id="L8"><span class="lineNum">       8</span>                 :                : // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="L9"><span class="lineNum">       9</span>                 :                : // copies of the Software, and to permit persons to whom the Software is</span>
+<span id="L10"><span class="lineNum">      10</span>                 :                : // furnished to do so, subject to the following conditions:</span>
+<span id="L11"><span class="lineNum">      11</span>                 :                : //</span>
+<span id="L12"><span class="lineNum">      12</span>                 :                : // The above copyright notice and this permission notice shall be included in</span>
+<span id="L13"><span class="lineNum">      13</span>                 :                : // all copies or substantial portions of the Software.</span>
+<span id="L14"><span class="lineNum">      14</span>                 :                : //</span>
+<span id="L15"><span class="lineNum">      15</span>                 :                : // THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span id="L16"><span class="lineNum">      16</span>                 :                : // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span id="L17"><span class="lineNum">      17</span>                 :                : // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span id="L18"><span class="lineNum">      18</span>                 :                : // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span id="L19"><span class="lineNum">      19</span>                 :                : // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span id="L20"><span class="lineNum">      20</span>                 :                : // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span id="L21"><span class="lineNum">      21</span>                 :                : // THE SOFTWARE</span>
+<span id="L22"><span class="lineNum">      22</span>                 :                : //</span>
+<span id="L23"><span class="lineNum">      23</span>                 :                : // @license: http://www.opensource.org/licenses/mit-license.php</span>
+<span id="L24"><span class="lineNum">      24</span>                 :                : // @author: see AUTHORS file</span>
+<span id="L25"><span class="lineNum">      25</span>                 :                : </span>
+<span id="L26"><span class="lineNum">      26</span>                 :                : #pragma once</span>
+<span id="L27"><span class="lineNum">      27</span>                 :                : </span>
+<span id="L28"><span class="lineNum">      28</span>                 :                : #include &lt;array&gt;</span>
+<span id="L29"><span class="lineNum">      29</span>                 :                : #include &lt;cstring&gt;</span>
+<span id="L30"><span class="lineNum">      30</span>                 :                : #include &lt;functional&gt;</span>
+<span id="L31"><span class="lineNum">      31</span>                 :                : </span>
+<span id="L32"><span class="lineNum">      32</span>                 :                : #include &lt;xlnt/xlnt_config.hpp&gt;</span>
+<span id="L33"><span class="lineNum">      33</span>                 :                : #include &lt;xlnt/utils/optional.hpp&gt;</span>
+<span id="L34"><span class="lineNum">      34</span>                 :                : #include &lt;xlnt/utils/hash_combine.hpp&gt;</span>
+<span id="L35"><span class="lineNum">      35</span>                 :                : </span>
+<span id="L36"><span class="lineNum">      36</span>                 :                : namespace xlnt {</span>
+<span id="L37"><span class="lineNum">      37</span>                 :                : </span>
+<span id="L38"><span class="lineNum">      38</span>                 :                : /// &lt;summary&gt;</span>
+<span id="L39"><span class="lineNum">      39</span>                 :                : /// An indexed color encapsulates a simple index to a color in the indexedColors of the stylesheet.</span>
+<span id="L40"><span class="lineNum">      40</span>                 :                : /// &lt;/summary&gt;</span>
+<span id="L41"><span class="lineNum">      41</span>                 :                : class XLNT_API indexed_color</span>
+<span id="L42"><span class="lineNum">      42</span>                 :                : {</span>
+<span id="L43"><span class="lineNum">      43</span>                 :                : public:</span>
+<span id="L44"><span class="lineNum">      44</span>                 :                :     //TODO: should this be explicit?</span>
+<span id="L45"><span class="lineNum">      45</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L46"><span class="lineNum">      46</span>                 :                :     /// Constructs an indexed_color from an index.</span>
+<span id="L47"><span class="lineNum">      47</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L48"><span class="lineNum">      48</span>                 :                :     indexed_color(std::size_t index);</span>
+<span id="L49"><span class="lineNum">      49</span>                 :                : </span>
+<span id="L50"><span class="lineNum">      50</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L51"><span class="lineNum">      51</span>                 :                :     /// Returns the index this color points to.</span>
+<span id="L52"><span class="lineNum">      52</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L53"><span class="lineNum">      53</span>                 :                :     std::size_t index() const;</span>
+<span id="L54"><span class="lineNum">      54</span>                 :                : </span>
+<span id="L55"><span class="lineNum">      55</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L56"><span class="lineNum">      56</span>                 :                :     /// Sets the index to index.</span>
+<span id="L57"><span class="lineNum">      57</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L58"><span class="lineNum">      58</span>                 :                :     void index(std::size_t index);</span>
+<span id="L59"><span class="lineNum">      59</span>                 :                : </span>
+<span id="L60"><span class="lineNum">      60</span>                 :                : private:</span>
+<span id="L61"><span class="lineNum">      61</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L62"><span class="lineNum">      62</span>                 :                :     /// The index of this color</span>
+<span id="L63"><span class="lineNum">      63</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L64"><span class="lineNum">      64</span>                 :                :     std::size_t index_;</span>
+<span id="L65"><span class="lineNum">      65</span>                 :                : };</span>
+<span id="L66"><span class="lineNum">      66</span>                 :                : </span>
+<span id="L67"><span class="lineNum">      67</span>                 :                : /// &lt;summary&gt;</span>
+<span id="L68"><span class="lineNum">      68</span>                 :                : /// A theme color encapsulates a color derived from the theme.</span>
+<span id="L69"><span class="lineNum">      69</span>                 :                : /// &lt;/summary&gt;</span>
+<span id="L70"><span class="lineNum">      70</span>                 :                : class XLNT_API theme_color</span>
+<span id="L71"><span class="lineNum">      71</span>                 :                : {</span>
+<span id="L72"><span class="lineNum">      72</span>                 :                : public:</span>
+<span id="L73"><span class="lineNum">      73</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L74"><span class="lineNum">      74</span>                 :                :     /// Constructs a theme_color from an index.</span>
+<span id="L75"><span class="lineNum">      75</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L76"><span class="lineNum">      76</span>                 :                :     theme_color(std::size_t index);</span>
+<span id="L77"><span class="lineNum">      77</span>                 :                : </span>
+<span id="L78"><span class="lineNum">      78</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L79"><span class="lineNum">      79</span>                 :                :     /// Returns the index of the color in the theme this points to.</span>
+<span id="L80"><span class="lineNum">      80</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L81"><span class="lineNum">      81</span>                 :                :     std::size_t index() const;</span>
+<span id="L82"><span class="lineNum">      82</span>                 :                : </span>
+<span id="L83"><span class="lineNum">      83</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L84"><span class="lineNum">      84</span>                 :                :     /// Sets the index of this color to index.</span>
+<span id="L85"><span class="lineNum">      85</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L86"><span class="lineNum">      86</span>                 :                :     void index(std::size_t index);</span>
+<span id="L87"><span class="lineNum">      87</span>                 :                : </span>
+<span id="L88"><span class="lineNum">      88</span>                 :                : private:</span>
+<span id="L89"><span class="lineNum">      89</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L90"><span class="lineNum">      90</span>                 :                :     /// The index of the color</span>
+<span id="L91"><span class="lineNum">      91</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L92"><span class="lineNum">      92</span>                 :                :     std::size_t index_;</span>
+<span id="L93"><span class="lineNum">      93</span>                 :                : };</span>
+<span id="L94"><span class="lineNum">      94</span>                 :                : </span>
+<span id="L95"><span class="lineNum">      95</span>                 :                : /// &lt;summary&gt;</span>
+<span id="L96"><span class="lineNum">      96</span>                 :                : /// An RGB color describes a color in terms of its red, green, blue, and alpha components.</span>
+<span id="L97"><span class="lineNum">      97</span>                 :                : /// &lt;/summary&gt;</span>
+<span id="L98"><span class="lineNum">      98</span>                 :                : class XLNT_API rgb_color</span>
+<span id="L99"><span class="lineNum">      99</span>                 :                : {</span>
+<span id="L100"><span class="lineNum">     100</span>                 :                : public:</span>
+<span id="L101"><span class="lineNum">     101</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L102"><span class="lineNum">     102</span>                 :                :     /// Constructs an RGB color from a string in the form \#[aa]rrggbb</span>
+<span id="L103"><span class="lineNum">     103</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L104"><span class="lineNum">     104</span>                 :                :     rgb_color(const std::string &amp;hex_string);</span>
+<span id="L105"><span class="lineNum">     105</span>                 :                : </span>
+<span id="L106"><span class="lineNum">     106</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L107"><span class="lineNum">     107</span>                 :                :     /// Constructs an RGB color from red, green, and blue values in the range 0 to 255</span>
+<span id="L108"><span class="lineNum">     108</span>                 :                :     /// plus an optional alpha which defaults to fully opaque.</span>
+<span id="L109"><span class="lineNum">     109</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L110"><span class="lineNum">     110</span>                 :                :     rgb_color(std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a = 255);</span>
+<span id="L111"><span class="lineNum">     111</span>                 :                : </span>
+<span id="L112"><span class="lineNum">     112</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L113"><span class="lineNum">     113</span>                 :                :     /// Returns a string representation of this color in the form \#aarrggbb</span>
+<span id="L114"><span class="lineNum">     114</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L115"><span class="lineNum">     115</span>                 :                :     std::string hex_string() const;</span>
+<span id="L116"><span class="lineNum">     116</span>                 :                : </span>
+<span id="L117"><span class="lineNum">     117</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L118"><span class="lineNum">     118</span>                 :                :     /// Returns a byte representing the red component of this color</span>
+<span id="L119"><span class="lineNum">     119</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L120"><span class="lineNum">     120</span>                 :                :     std::uint8_t red() const;</span>
+<span id="L121"><span class="lineNum">     121</span>                 :                : </span>
+<span id="L122"><span class="lineNum">     122</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L123"><span class="lineNum">     123</span>                 :                :     /// Returns a byte representing the red component of this color</span>
+<span id="L124"><span class="lineNum">     124</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L125"><span class="lineNum">     125</span>                 :                :     std::uint8_t green() const;</span>
+<span id="L126"><span class="lineNum">     126</span>                 :                : </span>
+<span id="L127"><span class="lineNum">     127</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L128"><span class="lineNum">     128</span>                 :                :     /// Returns a byte representing the blue component of this color</span>
+<span id="L129"><span class="lineNum">     129</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L130"><span class="lineNum">     130</span>                 :                :     std::uint8_t blue() const;</span>
+<span id="L131"><span class="lineNum">     131</span>                 :                : </span>
+<span id="L132"><span class="lineNum">     132</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L133"><span class="lineNum">     133</span>                 :                :     /// Returns a byte representing the alpha component of this color</span>
+<span id="L134"><span class="lineNum">     134</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L135"><span class="lineNum">     135</span>                 :                :     std::uint8_t alpha() const;</span>
+<span id="L136"><span class="lineNum">     136</span>                 :                : </span>
+<span id="L137"><span class="lineNum">     137</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L138"><span class="lineNum">     138</span>                 :                :     /// Returns the red, green, and blue components of this color separately in an array in that order.</span>
+<span id="L139"><span class="lineNum">     139</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L140"><span class="lineNum">     140</span>                 :                :     std::array&lt;std::uint8_t, 3&gt; rgb() const;</span>
+<span id="L141"><span class="lineNum">     141</span>                 :                : </span>
+<span id="L142"><span class="lineNum">     142</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L143"><span class="lineNum">     143</span>                 :                :     /// Returns the red, green, blue, and alpha components of this color separately in an array in that order.</span>
+<span id="L144"><span class="lineNum">     144</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L145"><span class="lineNum">     145</span>                 :                :     std::array&lt;std::uint8_t, 4&gt; rgba() const;</span>
+<span id="L146"><span class="lineNum">     146</span>                 :                : </span>
+<span id="L147"><span class="lineNum">     147</span>                 :                : private:</span>
+<span id="L148"><span class="lineNum">     148</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L149"><span class="lineNum">     149</span>                 :                :     /// The four bytes of this color</span>
+<span id="L150"><span class="lineNum">     150</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L151"><span class="lineNum">     151</span>                 :                :     std::array&lt;std::uint8_t, 4&gt; rgba_;</span>
+<span id="L152"><span class="lineNum">     152</span>                 :                : };</span>
+<span id="L153"><span class="lineNum">     153</span>                 :                : </span>
+<span id="L154"><span class="lineNum">     154</span>                 :                : /// &lt;summary&gt;</span>
+<span id="L155"><span class="lineNum">     155</span>                 :                : /// Some colors are references to colors rather than having a particular RGB value.</span>
+<span id="L156"><span class="lineNum">     156</span>                 :                : /// &lt;/summary&gt;</span>
+<span id="L157"><span class="lineNum">     157</span>                 :                : enum class color_type</span>
+<span id="L158"><span class="lineNum">     158</span>                 :                : {</span>
+<span id="L159"><span class="lineNum">     159</span>                 :                :     indexed,</span>
+<span id="L160"><span class="lineNum">     160</span>                 :                :     theme,</span>
+<span id="L161"><span class="lineNum">     161</span>                 :                :     rgb</span>
+<span id="L162"><span class="lineNum">     162</span>                 :                : };</span>
+<span id="L163"><span class="lineNum">     163</span>                 :                : </span>
+<span id="L164"><span class="lineNum">     164</span>                 :                : /// &lt;summary&gt;</span>
+<span id="L165"><span class="lineNum">     165</span>                 :                : /// Colors can be applied to many parts of a cell's style.</span>
+<span id="L166"><span class="lineNum">     166</span>                 :                : /// &lt;/summary&gt;</span>
+<span id="L167"><span class="lineNum">     167</span>                 :                : class XLNT_API color</span>
+<span id="L168"><span class="lineNum">     168</span>                 :                : {</span>
+<span id="L169"><span class="lineNum">     169</span>                 :                : public:</span>
+<span id="L170"><span class="lineNum">     170</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L171"><span class="lineNum">     171</span>                 :                :     /// Returns the color \#000000</span>
+<span id="L172"><span class="lineNum">     172</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L173"><span class="lineNum">     173</span>                 :                :     static const color black();</span>
+<span id="L174"><span class="lineNum">     174</span>                 :                : </span>
+<span id="L175"><span class="lineNum">     175</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L176"><span class="lineNum">     176</span>                 :                :     /// Returns the color \#ffffff</span>
+<span id="L177"><span class="lineNum">     177</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L178"><span class="lineNum">     178</span>                 :                :     static const color white();</span>
+<span id="L179"><span class="lineNum">     179</span>                 :                : </span>
+<span id="L180"><span class="lineNum">     180</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L181"><span class="lineNum">     181</span>                 :                :     /// Returns the color \#ff0000</span>
+<span id="L182"><span class="lineNum">     182</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L183"><span class="lineNum">     183</span>                 :                :     static const color red();</span>
+<span id="L184"><span class="lineNum">     184</span>                 :                : </span>
+<span id="L185"><span class="lineNum">     185</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L186"><span class="lineNum">     186</span>                 :                :     /// Returns the color \#8b0000</span>
+<span id="L187"><span class="lineNum">     187</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L188"><span class="lineNum">     188</span>                 :                :     static const color darkred();</span>
+<span id="L189"><span class="lineNum">     189</span>                 :                : </span>
+<span id="L190"><span class="lineNum">     190</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L191"><span class="lineNum">     191</span>                 :                :     /// Returns the color \#00ff00</span>
+<span id="L192"><span class="lineNum">     192</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L193"><span class="lineNum">     193</span>                 :                :     static const color blue();</span>
+<span id="L194"><span class="lineNum">     194</span>                 :                : </span>
+<span id="L195"><span class="lineNum">     195</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L196"><span class="lineNum">     196</span>                 :                :     /// Returns the color \#008b00</span>
+<span id="L197"><span class="lineNum">     197</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L198"><span class="lineNum">     198</span>                 :                :     static const color darkblue();</span>
+<span id="L199"><span class="lineNum">     199</span>                 :                : </span>
+<span id="L200"><span class="lineNum">     200</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L201"><span class="lineNum">     201</span>                 :                :     /// Returns the color \#0000ff</span>
+<span id="L202"><span class="lineNum">     202</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L203"><span class="lineNum">     203</span>                 :                :     static const color green();</span>
+<span id="L204"><span class="lineNum">     204</span>                 :                : </span>
+<span id="L205"><span class="lineNum">     205</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L206"><span class="lineNum">     206</span>                 :                :     /// Returns the color \#00008b</span>
+<span id="L207"><span class="lineNum">     207</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L208"><span class="lineNum">     208</span>                 :                :     static const color darkgreen();</span>
+<span id="L209"><span class="lineNum">     209</span>                 :                : </span>
+<span id="L210"><span class="lineNum">     210</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L211"><span class="lineNum">     211</span>                 :                :     /// Returns the color \#ffff00</span>
+<span id="L212"><span class="lineNum">     212</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L213"><span class="lineNum">     213</span>                 :                :     static const color yellow();</span>
+<span id="L214"><span class="lineNum">     214</span>                 :                : </span>
+<span id="L215"><span class="lineNum">     215</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L216"><span class="lineNum">     216</span>                 :                :     /// Returns the color \#cccc00</span>
+<span id="L217"><span class="lineNum">     217</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L218"><span class="lineNum">     218</span>                 :                :     static const color darkyellow();</span>
+<span id="L219"><span class="lineNum">     219</span>                 :                : </span>
+<span id="L220"><span class="lineNum">     220</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L221"><span class="lineNum">     221</span>                 :                :     /// Constructs a default color</span>
+<span id="L222"><span class="lineNum">     222</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L223"><span class="lineNum">     223</span>                 :                :     color();</span>
+<span id="L224"><span class="lineNum">     224</span>                 :                : </span>
+<span id="L225"><span class="lineNum">     225</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L226"><span class="lineNum">     226</span>                 :                :     /// Constructs a color from a given RGB color</span>
+<span id="L227"><span class="lineNum">     227</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L228"><span class="lineNum">     228</span>                 :                :     color(const rgb_color &amp;rgb);</span>
+<span id="L229"><span class="lineNum">     229</span>                 :                : </span>
+<span id="L230"><span class="lineNum">     230</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L231"><span class="lineNum">     231</span>                 :                :     /// Constructs a color from a given indexed color</span>
+<span id="L232"><span class="lineNum">     232</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L233"><span class="lineNum">     233</span>                 :                :     color(const indexed_color &amp;indexed);</span>
+<span id="L234"><span class="lineNum">     234</span>                 :                : </span>
+<span id="L235"><span class="lineNum">     235</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L236"><span class="lineNum">     236</span>                 :                :     /// Constructs a color from a given theme color</span>
+<span id="L237"><span class="lineNum">     237</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L238"><span class="lineNum">     238</span>                 :                :     color(const theme_color &amp;theme);</span>
+<span id="L239"><span class="lineNum">     239</span>                 :                : </span>
+<span id="L240"><span class="lineNum">     240</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L241"><span class="lineNum">     241</span>                 :                :     /// Returns the type of this color</span>
+<span id="L242"><span class="lineNum">     242</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L243"><span class="lineNum">     243</span>                 :                :     color_type type() const;</span>
+<span id="L244"><span class="lineNum">     244</span>                 :                : </span>
+<span id="L245"><span class="lineNum">     245</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L246"><span class="lineNum">     246</span>                 :                :     /// Returns true if this color has been set to auto</span>
+<span id="L247"><span class="lineNum">     247</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L248"><span class="lineNum">     248</span>                 :                :     bool auto_() const;</span>
+<span id="L249"><span class="lineNum">     249</span>                 :                : </span>
+<span id="L250"><span class="lineNum">     250</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L251"><span class="lineNum">     251</span>                 :                :     /// Sets the auto property of this color to value</span>
+<span id="L252"><span class="lineNum">     252</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L253"><span class="lineNum">     253</span>                 :                :     void auto_(bool value);</span>
+<span id="L254"><span class="lineNum">     254</span>                 :                : </span>
+<span id="L255"><span class="lineNum">     255</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L256"><span class="lineNum">     256</span>                 :                :     /// Returns the internal indexed color representing this color. If this is not an RGB color,</span>
+<span id="L257"><span class="lineNum">     257</span>                 :                :     /// an invalid_attribute exception will be thrown.</span>
+<span id="L258"><span class="lineNum">     258</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L259"><span class="lineNum">     259</span>                 :                :     const rgb_color &amp;rgb() const;</span>
+<span id="L260"><span class="lineNum">     260</span>                 :                : </span>
+<span id="L261"><span class="lineNum">     261</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L262"><span class="lineNum">     262</span>                 :                :     /// Returns the internal indexed color representing this color. If this is not an RGB color,</span>
+<span id="L263"><span class="lineNum">     263</span>                 :                :     /// an invalid_attribute exception will be thrown.</span>
+<span id="L264"><span class="lineNum">     264</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L265"><span class="lineNum">     265</span>                 :                :     rgb_color &amp;rgb();</span>
+<span id="L266"><span class="lineNum">     266</span>                 :                : </span>
+<span id="L267"><span class="lineNum">     267</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L268"><span class="lineNum">     268</span>                 :                :     /// Returns the internal indexed color representing this color. If this is not an indexed color,</span>
+<span id="L269"><span class="lineNum">     269</span>                 :                :     /// an invalid_attribute exception will be thrown.</span>
+<span id="L270"><span class="lineNum">     270</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L271"><span class="lineNum">     271</span>                 :                :     const indexed_color &amp;indexed() const;</span>
+<span id="L272"><span class="lineNum">     272</span>                 :                : </span>
+<span id="L273"><span class="lineNum">     273</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L274"><span class="lineNum">     274</span>                 :                :     /// Returns the internal indexed color representing this color. If this is not an indexed color,</span>
+<span id="L275"><span class="lineNum">     275</span>                 :                :     /// an invalid_attribute exception will be thrown.</span>
+<span id="L276"><span class="lineNum">     276</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L277"><span class="lineNum">     277</span>                 :                :     indexed_color &amp;indexed();</span>
+<span id="L278"><span class="lineNum">     278</span>                 :                : </span>
+<span id="L279"><span class="lineNum">     279</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L280"><span class="lineNum">     280</span>                 :                :     /// Returns the internal indexed color representing this color. If this is not a theme color,</span>
+<span id="L281"><span class="lineNum">     281</span>                 :                :     /// an invalid_attribute exception will be thrown.</span>
+<span id="L282"><span class="lineNum">     282</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L283"><span class="lineNum">     283</span>                 :                :     const theme_color &amp;theme() const;</span>
+<span id="L284"><span class="lineNum">     284</span>                 :                : </span>
+<span id="L285"><span class="lineNum">     285</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L286"><span class="lineNum">     286</span>                 :                :     /// Returns the internal indexed color representing this color. If this is not a theme color,</span>
+<span id="L287"><span class="lineNum">     287</span>                 :                :     /// an invalid_attribute exception will be thrown.</span>
+<span id="L288"><span class="lineNum">     288</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L289"><span class="lineNum">     289</span>                 :                :     theme_color &amp;theme();</span>
+<span id="L290"><span class="lineNum">     290</span>                 :                : </span>
+<span id="L291"><span class="lineNum">     291</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L292"><span class="lineNum">     292</span>                 :                :     /// Returns true if tint is set</span>
+<span id="L293"><span class="lineNum">     293</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L294"><span class="lineNum">     294</span>                 :                :     bool has_tint() const;</span>
+<span id="L295"><span class="lineNum">     295</span>                 :                : </span>
+<span id="L296"><span class="lineNum">     296</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L297"><span class="lineNum">     297</span>                 :                :     /// Returns the tint of this color.</span>
+<span id="L298"><span class="lineNum">     298</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L299"><span class="lineNum">     299</span>                 :                :     double tint() const;</span>
+<span id="L300"><span class="lineNum">     300</span>                 :                : </span>
+<span id="L301"><span class="lineNum">     301</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L302"><span class="lineNum">     302</span>                 :                :     /// Sets the tint of this color to tint. Tints lighten or darken an existing color by multiplying the color with the tint.</span>
+<span id="L303"><span class="lineNum">     303</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L304"><span class="lineNum">     304</span>                 :                :     void tint(double tint);</span>
+<span id="L305"><span class="lineNum">     305</span>                 :                : </span>
+<span id="L306"><span class="lineNum">     306</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L307"><span class="lineNum">     307</span>                 :                :     /// Returns true if this color is equivalent to other</span>
+<span id="L308"><span class="lineNum">     308</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L309"><span class="lineNum">     309</span>                 :                :     bool operator==(const color &amp;other) const;</span>
+<span id="L310"><span class="lineNum">     310</span>                 :                : </span>
+<span id="L311"><span class="lineNum">     311</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L312"><span class="lineNum">     312</span>                 :                :     /// Returns true if this color is not equivalent to other</span>
+<span id="L313"><span class="lineNum">     313</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L314"><span class="lineNum">     314</span>                 :                :     bool operator!=(const color &amp;other) const;</span>
+<span id="L315"><span class="lineNum">     315</span>                 :                : </span>
+<span id="L316"><span class="lineNum">     316</span>                 :                : private:</span>
+<span id="L317"><span class="lineNum">     317</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L318"><span class="lineNum">     318</span>                 :                :     /// Throws an invalid_attribute exception if the given type is different from this color's type</span>
+<span id="L319"><span class="lineNum">     319</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L320"><span class="lineNum">     320</span>                 :                :     void assert_type(color_type t) const;</span>
+<span id="L321"><span class="lineNum">     321</span>                 :                : </span>
+<span id="L322"><span class="lineNum">     322</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L323"><span class="lineNum">     323</span>                 :                :     /// The type of this color</span>
+<span id="L324"><span class="lineNum">     324</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L325"><span class="lineNum">     325</span>                 :                :     color_type type_;</span>
+<span id="L326"><span class="lineNum">     326</span>                 :                : </span>
+<span id="L327"><span class="lineNum">     327</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L328"><span class="lineNum">     328</span>                 :                :     /// The internal RGB color. Only valid when this color has a type of rgb</span>
+<span id="L329"><span class="lineNum">     329</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L330"><span class="lineNum">     330</span>                 :                :     rgb_color rgb_;</span>
+<span id="L331"><span class="lineNum">     331</span>                 :                : </span>
+<span id="L332"><span class="lineNum">     332</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L333"><span class="lineNum">     333</span>                 :                :     /// The internal RGB color. Only valid when this color has a type of indexed</span>
+<span id="L334"><span class="lineNum">     334</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L335"><span class="lineNum">     335</span>                 :                :     indexed_color indexed_;</span>
+<span id="L336"><span class="lineNum">     336</span>                 :                : </span>
+<span id="L337"><span class="lineNum">     337</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L338"><span class="lineNum">     338</span>                 :                :     /// The internal RGB color. Only valid when this color has a type of theme</span>
+<span id="L339"><span class="lineNum">     339</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L340"><span class="lineNum">     340</span>                 :                :     theme_color theme_;</span>
+<span id="L341"><span class="lineNum">     341</span>                 :                : </span>
+<span id="L342"><span class="lineNum">     342</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L343"><span class="lineNum">     343</span>                 :                :     /// The tint of this color</span>
+<span id="L344"><span class="lineNum">     344</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L345"><span class="lineNum">     345</span>                 :                :     optional&lt;double&gt; tint_;</span>
+<span id="L346"><span class="lineNum">     346</span>                 :                : </span>
+<span id="L347"><span class="lineNum">     347</span>                 :                :     /// &lt;summary&gt;</span>
+<span id="L348"><span class="lineNum">     348</span>                 :                :     /// Whether or not this is an auto color</span>
+<span id="L349"><span class="lineNum">     349</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L350"><span class="lineNum">     350</span>                 :                :     bool auto_color = false;</span>
+<span id="L351"><span class="lineNum">     351</span>                 :                : };</span>
+<span id="L352"><span class="lineNum">     352</span>                 :                : </span>
+<span id="L353"><span class="lineNum">     353</span>                 :                : } // namespace xlnt</span>
+<span id="L354"><span class="lineNum">     354</span>                 :                : </span>
+<span id="L355"><span class="lineNum">     355</span>                 :                : namespace std {</span>
+<span id="L356"><span class="lineNum">     356</span>                 :                : </span>
+<span id="L357"><span class="lineNum">     357</span>                 :                : template&lt;&gt;</span>
+<span id="L358"><span class="lineNum">     358</span>                 :                : struct hash&lt;xlnt::color&gt;</span>
+<span id="L359"><span class="lineNum">     359</span>                 :                : {</span>
+<span id="L360"><span class="lineNum">     360</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          46 :     size_t operator()(const xlnt::color&amp; c) const</span></span>
+<span id="L361"><span class="lineNum">     361</span>                 :                :     {</span>
+<span id="L362"><span class="lineNum">     362</span>                 :<span class="tlaCBC">             46 :         size_t seed = 0;</span></span>
+<span id="L363"><span class="lineNum">     363</span>                 :                :         // Start by hashing the type to prevent collisions between different color types</span>
+<span id="L364"><span class="lineNum">     364</span>                 :                :         // that might share an underlying value (e.g., theme(1) vs indexed(1)).</span>
+<span id="L365"><span class="lineNum">     365</span>            [<span class="tlaCBC"> <a href="#L368" title="CBC: Branch 0 was taken 46 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             46 :         xlnt::detail::hash_combine(seed, static_cast&lt;int&gt;(c.type()));</span></span>
+<span id="L366"><span class="lineNum">     366</span>                 :                : </span>
+<span id="L367"><span class="lineNum">     367</span>                 :                :         // Hash auto color flag</span>
+<span id="L368"><span class="lineNum">     368</span>            [<span class="tlaCBC"> <a href="#L371" title="CBC: Branch 0 was taken 46 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             46 :         xlnt::detail::hash_combine(seed, c.auto_());</span></span>
+<span id="L369"><span class="lineNum">     369</span>                 :                : </span>
+<span id="L370"><span class="lineNum">     370</span>                 :                :         // Hash tint if present</span>
+<span id="L371"><span class="lineNum">     371</span>      [<span class="tlaCBC"> <a href="#L373" title="CBC: Branch 0 was taken 46 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L373" title="CBC: Branch &quot;2&quot; was taken 8 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L373" title="CBC: Branch &quot;3&quot; was taken 38 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             46 :         if (c.has_tint())</span></span>
+<span id="L372"><span class="lineNum">     372</span>                 :                :         {</span>
+<span id="L373"><span class="lineNum">     373</span>            [<span class="tlaCBC"> <a href="#L376" title="CBC: Branch 0 was taken 8 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              8 :             xlnt::detail::hash_combine(seed, c.tint());</span></span>
+<span id="L374"><span class="lineNum">     374</span>                 :                :         }</span>
+<span id="L375"><span class="lineNum">     375</span>                 :                : </span>
+<span id="L376"><span class="lineNum">     376</span>   [<span class="tlaCBC"> <a href="#L379" title="CBC: Branch 0 was taken 46 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L379" title="CBC: Branch &quot;2&quot; was taken 6 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L379" title="CBC: Branch &quot;3&quot; was taken 6 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L379" title="CBC: Branch &quot;4&quot; was taken 34 times" class="branchTla">+</a> </span> :<span class="tlaCBC">             46 :         switch (c.type())</span></span>
+<span class="lineNum">        </span>             <span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;5&quot; was not taken" class="branchTla">-</a> </span>]
+<span id="L377"><span class="lineNum">     377</span>                 :                :         {</span>
+<span id="L378"><span class="lineNum">     378</span>                 :<span class="tlaCBC">              6 :             case xlnt::color_type::indexed:</span></span>
+<span id="L379"><span class="lineNum">     379</span>         [<span class="tlaCBC"> <a href="#L382" title="CBC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L382" title="CBC: Branch &quot;2&quot; was taken 6 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              6 :                 xlnt::detail::hash_combine(seed, c.indexed().index());</span></span>
+<span id="L380"><span class="lineNum">     380</span>                 :<span class="tlaCBC">              6 :                 break;</span></span>
+<span id="L381"><span class="lineNum">     381</span>                 :<span class="tlaCBC">              6 :             case xlnt::color_type::theme:</span></span>
+<span id="L382"><span class="lineNum">     382</span>         [<span class="tlaCBC"> <a href="#L386" title="CBC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L386" title="CBC: Branch &quot;2&quot; was taken 6 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              6 :                 xlnt::detail::hash_combine(seed, c.theme().index());</span></span>
+<span id="L383"><span class="lineNum">     383</span>                 :<span class="tlaCBC">              6 :                 break;</span></span>
+<span id="L384"><span class="lineNum">     384</span>                 :<span class="tlaCBC">             34 :             case xlnt::color_type::rgb:</span></span>
+<span id="L385"><span class="lineNum">     385</span>                 :                :             {</span>
+<span id="L386"><span class="lineNum">     386</span>            [<span class="tlaCBC"> <a href="#L387" title="CBC: Branch 0 was taken 34 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             34 :                 const auto&amp; rgb = c.rgb();</span></span>
+<span id="L387"><span class="lineNum">     387</span>            [<span class="tlaCBC"> <a href="#L388" title="CBC: Branch 0 was taken 34 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             34 :                 xlnt::detail::hash_combine(seed, rgb.red());</span></span>
+<span id="L388"><span class="lineNum">     388</span>            [<span class="tlaCBC"> <a href="#L389" title="CBC: Branch 0 was taken 34 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             34 :                 xlnt::detail::hash_combine(seed, rgb.green());</span></span>
+<span id="L389"><span class="lineNum">     389</span>            [<span class="tlaCBC"> <a href="#L390" title="CBC: Branch 0 was taken 34 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             34 :                 xlnt::detail::hash_combine(seed, rgb.blue());</span></span>
+<span id="L390"><span class="lineNum">     390</span>            [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 34 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             34 :                 xlnt::detail::hash_combine(seed, rgb.alpha());</span></span>
+<span id="L391"><span class="lineNum">     391</span>                 :<span class="tlaCBC">             34 :                 break;</span></span>
+<span id="L392"><span class="lineNum">     392</span>                 :                :             }</span>
+<span id="L393"><span class="lineNum">     393</span>                 :                :         }</span>
+<span id="L394"><span class="lineNum">     394</span>                 :<span class="tlaCBC">             46 :         return seed;</span></span>
+<span id="L395"><span class="lineNum">     395</span>                 :                :     }</span>
+<span id="L396"><span class="lineNum">     396</span>                 :                : };</span>
+<span id="L397"><span class="lineNum">     397</span>                 :                : </span>
+<span id="L398"><span class="lineNum">     398</span>                 :                : } // namespace std</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
