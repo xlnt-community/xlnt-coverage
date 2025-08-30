@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - include/xlnt/worksheet/sheet_view.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - include/xlnt/worksheet/sheet_view.hpp<span style="font-size: 80%;"> (source / <a href="sheet_view.hpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryMed">75.0&nbsp;%</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry"><a href="#L99" title="goto first UNC line">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L97" title="goto first GNC line">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L95" title="goto first CBC line">4</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-08-30 18:01:14</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">15.4&nbsp;%</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"><a href="#L97" title="goto first UNC branch">22</a></td>
+            <td class="headerCovTableEntry"><a href="#L97" title="goto first GNC branch">4</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-08-30 18:01:09</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 93 ignored lines)</span>
+<span id="L94"><span class="lineNum">      94</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L95"><span class="lineNum">      95</span>                 :<a href="#L101" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           2 :     const struct pane &amp;pane() const</span></span>
+<span id="L96"><span class="lineNum">      96</span>                 :                :     {</span>
+<span id="L97"><span class="lineNum">      97</span>         [<span class="tlaUNC"> <a href="#L99" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L158" title="GNC: Branch 1 was taken 2 times" class="branchTla">+</a> </span>]:<a href="#L158" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           2 :         if (!pane_.is_set())</span></span>
+<span id="L98"><span class="lineNum">      98</span>                 :                :         {</span>
+<span id="L99"><span class="lineNum">      99</span>         [<span class="tlaUNC"> <a href="#L158" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L158" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L160" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::invalid_attribute(&quot;sheet view has no pane&quot;);</span></span>
+<span id="L100"><span class="lineNum">     100</span>                 :                :         }</span>
+<span id="L101"><span class="lineNum">     101</span>                 :<a href="#L163" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           2 :         return pane_.get();</span></span>
+<span id="L102"><span class="lineNum">     102</span>                 :                :     }</span>
+<span id="L103"><span class="lineNum">     103</span>                 :                : </span>
+<span id="L104"><span class="lineNum">     104</span>                 :                :     /// &lt;summary&gt;</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 50 ignored lines)</span>
+<span id="L155"><span class="lineNum">     155</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L156"><span class="lineNum">     156</span>                 :<span class="tlaCBC">             11 :     class xlnt::selection &amp;selection(std::size_t index)</span></span>
+<span id="L157"><span class="lineNum">     157</span>                 :                :     {</span>
+<span id="L158"><span class="lineNum">     158</span>         [<span class="tlaUNC"> <a href="#L160" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch 1 was taken 11 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          11 :         if (index &gt;= selections_.size())</span></span>
+<span id="L159"><span class="lineNum">     159</span>                 :                :         {</span>
+<span id="L160"><span class="lineNum">     160</span>   [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;6&quot; was not executed" class="branchTla">#</a> </span> :<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::invalid_parameter(&quot;sheet view selection at index &quot; + std::to_string(index) + &quot; does not exist (&quot; + std::to_string(selections_.size()) + &quot; selections available)&quot;);</span></span>
+<span class="lineNum">        </span>       <span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;8&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;10&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;12&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L161"><span class="lineNum">     161</span>                 :                :         }</span>
+<span id="L162"><span class="lineNum">     162</span>                 :                : </span>
+<span id="L163"><span class="lineNum">     163</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          11 :         return selections_.at(index);</span></span>
+<span id="L164"><span class="lineNum">     164</span>                 :                :     }</span>
+<span id="L165"><span class="lineNum">     165</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 160 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.2-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
