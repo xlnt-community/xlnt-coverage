@@ -1,0 +1,1053 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/cell/cell.cpp - functions</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory source/cell">source/cell</a> - cell.cpp<span style="font-size: 80%;"> (<a href="cell.cpp.gcov.html" title="Click to go to source detail">source</a> / functions)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadGBC" title="Gained Baseline Coverage (0 => 1):
+Unchanged code is tested now">GBC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+            <td width="5%" class="headerCovTableHeadDCB" title="Deleted Covered Baseline (1 => -):
+Previously tested code has been deleted">DCB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">91.2&nbsp;%</td>
+            <td class="headerCovTableEntry">491</td>
+            <td class="headerCovTableEntry">448</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">41</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">23</td>
+            <td class="headerCovTableEntry">425</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">6</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-11-30 22:28:42</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryMed">87.9&nbsp;%</td>
+            <td class="headerCovTableEntry">116</td>
+            <td class="headerCovTableEntry">102</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">16</td>
+            <td class="headerCovTableEntry">86</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryMed">83.5&nbsp;%</td>
+            <td class="headerCovTableEntry">562</td>
+            <td class="headerCovTableEntry">469</td>
+            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntry">166</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry">100</td>
+            <td class="headerCovTableEntry">828</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-11-30 22:28:42</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <center>
+          <table cellpadding=1 cellspacing=1 border=0>
+            <tr><td><br></td></tr>
+            <tr>
+              <td class="tableHead">Function Name <span  title="Click to sort table by function name" class="tableHeadSort"><img src="../../glass.png" width=10 height=14 alt="Sort by function name" title="Click to sort table by function name" border=0></span></td>
+              <td width="10%" class="tableHead">TLA</td>
+              <td class="tableHead">Hit count <span  title="Click to sort table by function hit count" class="tableHeadSort"><a href="cell.cpp.func-c.html"><img src="../../updown.png" width=10 height=14 alt="Sort by function hit count" title="Click to sort table by function hit count" border=0></a></span></td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L63">_ZN12_GLOBAL__N_112cast_numericERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">11</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L72">_ZN12_GLOBAL__N_115cast_percentageERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">14</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L87">_ZN12_GLOBAL__N_19cast_timeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">13</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L718">_ZN4xlnt4cell10protectionERKNS_10protectionE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L867">_ZN4xlnt4cell11clear_styleEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L614">_ZN4xlnt4cell11clear_valueEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">767</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L153">_ZN4xlnt4cell11error_codesB5cxx11Ev</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L167">_ZN4xlnt4cell12check_stringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">617</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L861">_ZN4xlnt4cell12clear_formatEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L1011">_ZN4xlnt4cell13clear_commentEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L501">_ZN4xlnt4cell13clear_formulaEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">795</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L712">_ZN4xlnt4cell13number_formatERKNS_13number_formatE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">21</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L335">_ZN4xlnt4cell14show_phoneticsEb</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L919">_ZN4xlnt4cell17modifiable_formatEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">12</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L700">_ZN4xlnt4cell4fillERKNS_4fillE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">13</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L706">_ZN4xlnt4cell4fontERKNS_4fontE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">23</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L519">_ZN4xlnt4cell5errorERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">17</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L875">_ZN4xlnt4cell5styleERKNS_5styleE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L887">_ZN4xlnt4cell5styleERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L892">_ZN4xlnt4cell5styleEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">8</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L202">_ZN4xlnt4cell5valueEDn</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L262">_ZN4xlnt4cell5valueEPKc</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">121</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L277">_ZN4xlnt4cell5valueERKNS_4dateE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L291">_ZN4xlnt4cell5valueERKNS_4timeE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L284">_ZN4xlnt4cell5valueERKNS_8datetimeE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">5</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L254">_ZN4xlnt4cell5valueERKNS_9rich_textE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">294</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L298">_ZN4xlnt4cell5valueERKNS_9timedeltaE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L249">_ZN4xlnt4cell5valueERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">323</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L809">_ZN4xlnt4cell5valueERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEb</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">23</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L267">_ZN4xlnt4cell5valueES0_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L207">_ZN4xlnt4cell5valueEb</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">10</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L243">_ZN4xlnt4cell5valueEd</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">6</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L237">_ZN4xlnt4cell5valueEf</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L213">_ZN4xlnt4cell5valueEi</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">14</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L219">_ZN4xlnt4cell5valueEj</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L225">_ZN4xlnt4cell5valueEx</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L231">_ZN4xlnt4cell5valueEy</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L694">_ZN4xlnt4cell6borderERKNS_6borderE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L774">_ZN4xlnt4cell6formatENS_6formatE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">103</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L320">_ZN4xlnt4cell6mergedEb</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">774</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L530">_ZN4xlnt4cell6offsetEii</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L1040">_ZN4xlnt4cell7commentERKNS_7commentE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">34</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L1035">_ZN4xlnt4cell7commentERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS_4fontES8_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L1030">_ZN4xlnt4cell7commentERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L468">_ZN4xlnt4cell7formulaERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">17</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L545">_ZN4xlnt4cell8workbookEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">349</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L688">_ZN4xlnt4cell9alignmentERKNS_9alignmentE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L579">_ZN4xlnt4cell9data_typeENS_9cell_typeE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">151</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L447">_ZN4xlnt4cell9hyperlinkENS_5rangeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L385">_ZN4xlnt4cell9hyperlinkERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">40</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L427">_ZN4xlnt4cell9hyperlinkES0_RKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L535">_ZN4xlnt4cell9worksheetEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">461</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L192">_ZN4xlnt4cellC2EPNS_6detail9cell_implE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">3267</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L374">_ZN4xlnt4cellaSERKS0_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L784">_ZN4xlnteqEDnRKNS_4cellE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L789">_ZN4xlnteqERKNS_4cellEDn</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L804">_ZN4xlntlsERSoRKNS_4cellE</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">6</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L794">_ZN4xlntneEDnRKNS_4cellE</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L799">_ZN4xlntneERKNS_4cellEDn</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L769">_ZNK4xlnt4cell10has_formatEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1096</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L989">_ZNK4xlnt4cell10protectionEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L1006">_ZNK4xlnt4cell11has_commentEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1050</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L487">_ZNK4xlnt4cell11has_formulaEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2208</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L315">_ZNK4xlnt4cell12column_indexEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L594">_ZNK4xlnt4cell13computed_fillEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L589">_ZNK4xlnt4cell13computed_fontEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L999">_ZNK4xlnt4cell13has_hyperlinkEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">967</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L979">_ZNK4xlnt4cell13number_formatEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">19</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L599">_ZNK4xlnt4cell15computed_borderEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L330">_ZNK4xlnt4cell17phonetics_visibleEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">964</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L604">_ZNK4xlnt4cell18computed_alignmentEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L609">_ZNK4xlnt4cell19computed_protectionEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L197">_ZNK4xlnt4cell19garbage_collectibleEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">957</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L584">_ZNK4xlnt4cell22computed_number_formatEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">48</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L305">_ZNK4xlnt4cell3rowEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">7</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L959">_ZNK4xlnt4cell4fillEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L969">_ZNK4xlnt4cell4fontEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">8</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L510">_ZNK4xlnt4cell5errorB5cxx11Ev</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">21</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L904">_ZNK4xlnt4cell5styleEv</a></td>
+              <td class="tlaUNC">UNC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L677">_ZNK4xlnt4cell5valueINS_4dateEEET_v</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L665">_ZNK4xlnt4cell5valueINS_4timeEEET_v</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L671">_ZNK4xlnt4cell5valueINS_8datetimeEEET_v</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L731">_ZNK4xlnt4cell5valueINS_9rich_textEEET_v</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">215</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L683">_ZNK4xlnt4cell5valueINS_9timedeltaEEET_v</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L725">_ZNK4xlnt4cell5valueINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEET_v</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">212</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L623">_ZNK4xlnt4cell5valueIbEET_v</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">7</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L659">_ZNK4xlnt4cell5valueIdEET_v</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">67</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L653">_ZNK4xlnt4cell5valueIfEET_v</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L629">_ZNK4xlnt4cell5valueIiEET_v</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">24</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L641">_ZNK4xlnt4cell5valueIjEET_v</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L635">_ZNK4xlnt4cell5valueIxEET_v</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L647">_ZNK4xlnt4cell5valueIyEET_v</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L1062">_ZNK4xlnt4cell5widthEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">34</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L555">_ZNK4xlnt4cell6anchorEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">35</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L949">_ZNK4xlnt4cell6borderEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L310">_ZNK4xlnt4cell6columnEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">39</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L929">_ZNK4xlnt4cell6formatEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">401</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L1067">_ZNK4xlnt4cell6heightEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L1020">_ZNK4xlnt4cell7commentEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">56</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L352">_ZNK4xlnt4cell7compareERKS0_b</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">17</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L492">_ZNK4xlnt4cell7formulaB5cxx11Ev</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">21</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L340">_ZNK4xlnt4cell7is_dateEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">7</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L550">_ZNK4xlnt4cell8workbookEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">203</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L939">_ZNK4xlnt4cell9alignmentEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L779">_ZNK4xlnt4cell9base_dateEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">13</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L574">_ZNK4xlnt4cell9data_typeEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2962</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L914">_ZNK4xlnt4cell9has_styleEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">5</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L741">_ZNK4xlnt4cell9has_valueEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">114</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L376">_ZNK4xlnt4cell9hyperlinkEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">110</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L325">_ZNK4xlnt4cell9is_mergedEv</a></td>
+              <td class="tlaUBC">UBC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L347">_ZNK4xlnt4cell9referenceEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">1135</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L746">_ZNK4xlnt4cell9to_stringB5cxx11Ev</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">48</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L540">_ZNK4xlnt4cell9worksheetEv</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">253</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L364">_ZNK4xlnt4celleqERKS0_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">17</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L369">_ZNK4xlnt4cellneERKS0_</a></td>
+              <td class="tlaCBC">CBC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="cell.cpp.gcov.html#L400">_ZZN4xlnt4cell9hyperlinkERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_ENKUlRKNS_12relationshipEE_clESB_</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+          </table>
+          <br>
+          </center>
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.2-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

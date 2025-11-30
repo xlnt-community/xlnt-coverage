@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/cryptography/compound_document.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/cryptography/compound_document.cpp<span style="font-size: 80%;"> (source / <a href="compound_document.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadUIC" title="Uncovered Included Code (# => 0):
+Previously unused code is untested">UIC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">58.8&nbsp;%</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry"><a href="#L545" title="goto first UNC line">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L878" title="goto first UIC line">1</a></td>
+            <td class="headerCovTableEntry"><a href="#L872" title="goto first UBC line">2</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L541" title="goto first CBC line">10</a></td>
+            <td class="headerCovTableEntry">3</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-11-30 22:28:47</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">31.2&nbsp;%</td>
+            <td class="headerCovTableEntry">16</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry"><a href="#L545" title="goto first UNC branch">12</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L543" title="goto first UBC branch">10</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L543" title="goto first CBC branch">10</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-11-30 22:28:42</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 539 ignored lines)</span>
+<span id="L540"><span class="lineNum">     540</span>                 :                : </span>
+<span id="L541"><span class="lineNum">     541</span>                 :<a href="#L548" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          64 : std::istream &amp;compound_document::open_read_stream(const std::string &amp;name)</span></span>
+<span id="L542"><span class="lineNum">     542</span>                 :                : {</span>
+<span id="L543"><span class="lineNum">     543</span>         [<span class="tlaUBC"> <a href="#L867" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L864" title="CBC: Branch 1 was taken 64 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             64 :     if (!contains_entry(name, compound_document_entry::entry_type::UserStream))</span></span>
+<span id="L544"><span class="lineNumWithDelete" title="removed line 545 from baseline version">     544</span>                 :                :     {</span>
+<span id="L545"><span class="lineNum">     545</span>         [<span class="tlaUNC"> <a href="#L869" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L869" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L869" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::exception(&quot;compound document entry of type UserStream not found at path: &quot; + name);</span></span>
+<span id="L546"><span class="lineNum">     546</span>                 :                :     }</span>
+<span id="L547"><span class="lineNum">     547</span>                 :                : </span>
+<span id="L548"><span class="lineNum">     548</span>                 :<a href="#L880" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          64 :     const auto entry_id = find_entry(name, compound_document_entry::entry_type::UserStream);</span></span>
+<span id="L549"><span class="lineNum">     549</span>                 :<span class="tlaCBC">             64 :     const auto &amp;entry = entries_.at(static_cast&lt;std::size_t&gt;(entry_id));</span></span>
+<span id="L550"><span class="lineNum">     550</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 313 ignored lines)</span>
+<span id="L864"><span class="lineNum">     864</span>            [<span class="tlaCBC"> <a href="#L867" title="CBC: Branch 0 was taken 12 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             12 :     auto filename = split.back();</span></span>
+<span id="L865"><span class="lineNum">     865</span>                 :<span class="tlaCBC">             12 :     split.pop_back();</span></span>
+<span id="L866"><span class="lineNum">     866</span>                 :                : </span>
+<span id="L867"><span class="lineNum">     867</span>         [<span class="tlaUBC"> <a href="#L872" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L880" title="CBC: Branch 1 was taken 12 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             12 :     if (split.size() &gt; 1)</span></span>
+<span id="L868"><span class="lineNumWithDelete" title="removed line 869 from baseline version">     868</span>                 :                :     {</span>
+<span id="L869"><span class="lineNum">     869</span>            [<span class="tlaUNC"> <a href="#L870" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L874" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         auto joined_path = join_path(split);</span></span>
+<span id="L870"><span class="lineNum">     870</span>            [<span class="tlaUNC"> <a href="#L874" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :         parent_id = find_entry(joined_path, compound_document_entry::entry_type::UserStorage);</span></span>
+<span id="L871"><span class="lineNum">     871</span>                 :                : </span>
+<span id="L872"><span class="lineNum">     872</span>         [<span class="tlaUBC"> <a href="#L877" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L877" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span>]:<a href="#L877" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         if (parent_id &lt; 0)</span></span>
+<span id="L873"><span class="lineNumWithDelete" title="removed line 873 from baseline version">     873</span>                 :                :         {</span>
+<span id="L874"><span class="lineNum">     874</span>         [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::exception(&quot;compound document entry of type UserStorage not found at path: &quot; + joined_path);</span></span>
+<span id="L875"><span class="lineNum">     875</span>                 :                :         }</span>
+<span id="L876"><span class="lineNum">     876</span>                 :                : </span>
+<span id="L877"><span class="lineNum">     877</span>            [<span class="tlaUBC"> <a href="#top" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         parent_storage_[entry_id] = parent_id;</span></span>
+<span id="L878"><span class="lineNum">     878</span>                 :<a href="#top" class="tlaBgUIC"  title="Next UIC group">UIC</a><span class="tlaUIC tlaBgUIC">           0 :     }</span></span>
+<span id="L879"><span class="lineNum">     879</span>                 :                : </span>
+<span id="L880"><span class="lineNum">     880</span>            [<span class="tlaCBC"> <a href="#L883" title="CBC: Branch 0 was taken 12 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          12 :     entry.name(filename);</span></span>
+<span id="L881"><span class="lineNum">     881</span>                 :<span class="tlaCBC">             12 :     entry.type = type;</span></span>
+<span id="L882"><span class="lineNum">     882</span>                 :                : </span>
+<span id="L883"><span class="lineNum">     883</span>            [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 12 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             12 :     tree_insert(entry_id, parent_id);</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 483 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.2-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
