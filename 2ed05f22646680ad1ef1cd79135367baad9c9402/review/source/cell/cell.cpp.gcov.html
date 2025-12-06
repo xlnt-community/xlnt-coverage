@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/cell/cell.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/cell/cell.cpp<span style="font-size: 80%;"> (source / <a href="cell.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">48.6&nbsp;%</td>
+            <td class="headerCovTableEntry">35</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry"><a href="#L300" title="goto first UNC line">18</a></td>
+            <td class="headerCovTableEntry"><a href="#L295" title="goto first GNC line">17</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-12-06 18:32:38</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">39.5&nbsp;%</td>
+            <td class="headerCovTableEntry">43</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry"><a href="#L298" title="goto first UNC branch">52</a></td>
+            <td class="headerCovTableEntry"><a href="#L296" title="goto first GNC branch">34</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-12-06 18:32:33</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 294 ignored lines)</span>
+<span id="L295"><span class="lineNum">     295</span>                 :<a href="#L305" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           9 :         d_-&gt;value_numeric_ = static_cast&lt;double&gt;(new_index);</span></span>
+<span id="L296"><span class="lineNum">     296</span>            [<span class="tlaGNC"> <a href="#L298" title="GNC: Branch 0 was taken 9 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              9 :         d_-&gt;value_text_ = rich_text();</span></span>
+<span id="L297"><span class="lineNum">     297</span>                 :<span class="tlaGNC">              9 :     }</span></span>
+<span id="L298"><span class="lineNum">     298</span>   [<span class="tlaGNC"> <a href="#L842" title="GNC: Branch 0 was taken 3 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L842" title="UNC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaUNC"> <a href="#L842" title="UNC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L842" title="GNC: Branch 3 was taken 3 times" class="branchTla">+</a> </span> :<span class="tlaGNC">              3 :     else if (source.data_type() == type::inline_string || source.data_type() == type::formula_string)</span></span>
+<span class="lineNum">        </span>          <span class="tlaUNC"> <a href="#L842" title="UNC: Branch 4 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L842" title="GNC: Branch 5 was taken 3 times" class="branchTla">+</a> </span>]
+<span id="L299"><span class="lineNum">     299</span>                 :                :     {</span>
+<span id="L300"><span class="lineNum">     300</span>                 :<a href="#L844" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         d_-&gt;value_text_ = source.d_-&gt;value_text_;</span></span>
+<span id="L301"><span class="lineNum">     301</span>                 :<span class="tlaUNC">              0 :         d_-&gt;value_numeric_ = 0.0;</span></span>
+<span id="L302"><span class="lineNum">     302</span>                 :                :     }</span>
+<span id="L303"><span class="lineNum">     303</span>                 :                :     else</span>
+<span id="L304"><span class="lineNum">     304</span>                 :                :     {</span>
+<span id="L305"><span class="lineNum">     305</span>                 :<a href="#L849" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           3 :         d_-&gt;value_numeric_ = source.d_-&gt;value_numeric_;</span></span>
+<span id="L306"><span class="lineNum">     306</span>                 :<span class="tlaGNC">              3 :         d_-&gt;value_text_ = source.d_-&gt;value_text_;</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 532 ignored lines)</span>
+<span id="L839"><span class="lineNum">     839</span>                 :<span class="tlaGNC">              1 :     }</span></span>
+<span id="L840"><span class="lineNum">     840</span>                 :                : </span>
+<span id="L841"><span class="lineNum">     841</span>                 :                :     // Copy border if present</span>
+<span id="L842"><span class="lineNum">     842</span>         [<span class="tlaUNC"> <a href="#L844" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L849" title="GNC: Branch 1 was taken 5 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              5 :     if (source_format.d_-&gt;border_id.is_set())</span></span>
+<span id="L843"><span class="lineNum">     843</span>                 :                :     {</span>
+<span id="L844"><span class="lineNum">     844</span>         [<span class="tlaUNC"> <a href="#L845" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L845" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L874" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         auto src_border = source_format.d_-&gt;parent-&gt;borders.at(source_format.d_-&gt;border_id.get());</span></span>
+<span id="L845"><span class="lineNum">     845</span>            [<span class="tlaUNC"> <a href="#L874" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :         cloned_format.border(src_border, source_format.d_-&gt;border_applied);</span></span>
+<span id="L846"><span class="lineNum">     846</span>                 :<span class="tlaUNC">              0 :     }</span></span>
+<span id="L847"><span class="lineNum">     847</span>                 :                : </span>
+<span id="L848"><span class="lineNum">     848</span>                 :                :     // Copy fill if present</span>
+<span id="L849"><span class="lineNum">     849</span>         [<span class="tlaGNC"> <a href="#L851" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L851" title="GNC: Branch 1 was taken 4 times" class="branchTla">+</a> </span>]:<a href="#L885" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           5 :     if (source_format.d_-&gt;fill_id.is_set())</span></span>
+<span id="L850"><span class="lineNum">     850</span>                 :                :     {</span>
+<span id="L851"><span class="lineNum">     851</span>      [<span class="tlaGNC"> <a href="#L870" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L870" title="GNC: Branch &quot;2&quot; was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L870" title="GNC: Branch &quot;4&quot; was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              1 :         auto src_fill = source_format.d_-&gt;parent-&gt;fills.at(source_format.d_-&gt;fill_id.get());</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 17 ignored lines)</span>
+<span id="L869"><span class="lineNum">     869</span>                 :                :         {</span>
+<span id="L870"><span class="lineNum">     870</span>         [<span class="tlaGNC"> <a href="#L885" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L885" title="GNC: Branch &quot;2&quot; was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              1 :             src_number_format = number_format::from_builtin_id(number_format_id);</span></span>
+<span id="L871"><span class="lineNum">     871</span>                 :                :         }</span>
+<span id="L872"><span class="lineNum">     872</span>                 :                :         else</span>
+<span id="L873"><span class="lineNum">     873</span>                 :                :         {</span>
+<span id="L874"><span class="lineNum">     874</span>            [<span class="tlaUNC"> <a href="#L879" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L891" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             const auto it = std::find_if(source_format.d_-&gt;parent-&gt;number_formats.begin(),</span></span>
+<span id="L875"><span class="lineNum">     875</span>                 :<span class="tlaUNC">              0 :                 source_format.d_-&gt;parent-&gt;number_formats.end(),</span></span>
+<span id="L876"><span class="lineNum">     876</span>                 :<span class="tlaUNC">              0 :                 [number_format_id](const xlnt::number_format &amp;nf) {</span></span>
+<span id="L877"><span class="lineNum">     877</span>                 :<span class="tlaUNC">              0 :                     return nf.id() == number_format_id;</span></span>
+<span id="L878"><span class="lineNum">     878</span>                 :                :                 });</span>
+<span id="L879"><span class="lineNum">     879</span>         [<span class="tlaUNC"> <a href="#L881" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L881" title="UNC: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :             if (it != source_format.d_-&gt;parent-&gt;number_formats.end())</span></span>
+<span id="L880"><span class="lineNum">     880</span>                 :                :             {</span>
+<span id="L881"><span class="lineNum">     881</span>            [<span class="tlaUNC"> <a href="#L889" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :                 src_number_format = *it;</span></span>
+<span id="L882"><span class="lineNum">     882</span>                 :                :             }</span>
+<span id="L883"><span class="lineNum">     883</span>                 :                :         }</span>
+<span id="L884"><span class="lineNum">     884</span>                 :                : </span>
+<span id="L885"><span class="lineNum">     885</span>            [<span class="tlaGNC"> <a href="#L889" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span>]:<a href="#L896" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           1 :         cloned_format.number_format(src_number_format, source_format.d_-&gt;number_format_applied);</span></span>
+<span id="L886"><span class="lineNum">     886</span>                 :<span class="tlaGNC">              1 :     }</span></span>
+<span id="L887"><span class="lineNum">     887</span>                 :                : </span>
+<span id="L888"><span class="lineNum">     888</span>                 :                :     // Copy protection if present</span>
+<span id="L889"><span class="lineNum">     889</span>         [<span class="tlaUNC"> <a href="#L891" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L896" title="GNC: Branch 1 was taken 5 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              5 :     if (source_format.d_-&gt;protection_id.is_set())</span></span>
+<span id="L890"><span class="lineNum">     890</span>                 :                :     {</span>
+<span id="L891"><span class="lineNum">     891</span>         [<span class="tlaUNC"> <a href="#L892" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L892" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L898" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         auto src_protection = source_format.d_-&gt;parent-&gt;protections.at(source_format.d_-&gt;protection_id.get());</span></span>
+<span id="L892"><span class="lineNum">     892</span>            [<span class="tlaUNC"> <a href="#L896" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :         cloned_format.protection(src_protection, source_format.d_-&gt;protection_applied);</span></span>
+<span id="L893"><span class="lineNum">     893</span>                 :                :     }</span>
+<span id="L894"><span class="lineNum">     894</span>                 :                : </span>
+<span id="L895"><span class="lineNum">     895</span>                 :                :     // Copy other properties</span>
+<span id="L896"><span class="lineNum">     896</span>         [<span class="tlaUNC"> <a href="#L898" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L901" title="GNC: Branch 1 was taken 5 times" class="branchTla">+</a> </span>]:<a href="#L901" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           5 :     if (source_format.d_-&gt;pivot_button_)</span></span>
+<span id="L897"><span class="lineNum">     897</span>                 :                :     {</span>
+<span id="L898"><span class="lineNum">     898</span>            [<span class="tlaUNC"> <a href="#L901" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L903" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         cloned_format.pivot_button(source_format.d_-&gt;pivot_button_);</span></span>
+<span id="L899"><span class="lineNum">     899</span>                 :                :     }</span>
+<span id="L900"><span class="lineNum">     900</span>                 :                : </span>
+<span id="L901"><span class="lineNum">     901</span>         [<span class="tlaUNC"> <a href="#L903" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L908" title="GNC: Branch 1 was taken 5 times" class="branchTla">+</a> </span>]:<a href="#L908" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           5 :     if (source_format.d_-&gt;quote_prefix_)</span></span>
+<span id="L902"><span class="lineNum">     902</span>                 :                :     {</span>
+<span id="L903"><span class="lineNum">     903</span>            [<span class="tlaUNC"> <a href="#L908" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L910" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         cloned_format.quote_prefix(source_format.d_-&gt;quote_prefix_);</span></span>
+<span id="L904"><span class="lineNum">     904</span>                 :                :     }</span>
+<span id="L905"><span class="lineNum">     905</span>                 :                : </span>
+<span id="L906"><span class="lineNum">     906</span>                 :                :     // Try to copy style name if it exists in destination workbook</span>
+<span id="L907"><span class="lineNum">     907</span>                 :                :     // This preserves style-based formatting when styles are shared across workbooks</span>
+<span id="L908"><span class="lineNum">     908</span>         [<span class="tlaUNC"> <a href="#L910" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch 1 was taken 5 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           5 :     if (source_format.d_-&gt;style.is_set())</span></span>
+<span id="L909"><span class="lineNum">     909</span>                 :                :     {</span>
+<span id="L910"><span class="lineNum">     910</span>            [<span class="tlaUNC"> <a href="#L914" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         const auto &amp;style_name = source_format.d_-&gt;style.get();</span></span>
+<span id="L911"><span class="lineNum">     911</span>                 :                : </span>
+<span id="L912"><span class="lineNum">     912</span>                 :                :         // Only copy if destination workbook has a style with the same name</span>
+<span id="L913"><span class="lineNum">     913</span>                 :                :         // This avoids creating style name mismatches or conflicts</span>
+<span id="L914"><span class="lineNum">     914</span>   [<span class="tlaUNC"> <a href="#L916" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L916" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L916" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L916" title="UNC: Branch &quot;5&quot; was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :         if (workbook().has_style(style_name))</span></span>
+<span id="L915"><span class="lineNum">     915</span>                 :                :         {</span>
+<span id="L916"><span class="lineNum">     916</span>            [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :             cloned_format.style(style_name);</span></span>
+<span id="L917"><span class="lineNum">     917</span>                 :                :         }</span>
+<span id="L918"><span class="lineNum">     918</span>                 :                :         // Otherwise, formatting properties (font, fill, border, etc)</span>
+<span id="L919"><span class="lineNum">     919</span>                 :                :         // were already copied above</span>
+<span id="L920"><span class="lineNum">     920</span>                 :                :     }</span>
+<span id="L921"><span class="lineNum">     921</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 268 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
