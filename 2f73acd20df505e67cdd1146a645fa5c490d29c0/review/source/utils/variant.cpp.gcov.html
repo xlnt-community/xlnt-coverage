@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/utils/variant.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/utils/variant.cpp<span style="font-size: 80%;"> (source / <a href="variant.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryMed">75.0&nbsp;%</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry"><a href="#L157" title="goto first UNC line">6</a></td>
+            <td class="headerCovTableEntry"><a href="#L152" title="goto first GNC line">6</a></td>
+            <td class="headerCovTableEntry"><a href="#L154" title="goto first CBC line">12</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-12-07 14:20:21</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryMed">78.6&nbsp;%</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">36.8&nbsp;%</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry"><a href="#L152" title="goto first UNC branch">24</a></td>
+            <td class="headerCovTableEntry"><a href="#L152" title="goto first GNC branch">12</a></td>
+            <td class="headerCovTableEntry"><a href="#L214" title="goto first CBC branch">2</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-12-07 14:20:16</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 151 ignored lines)</span>
+<span id="L152"><span class="lineNum">     152</span>         [<span class="tlaGNC"> <a href="#L163" title="GNC: Branch 0 was taken 517 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L157" title="UNC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<a href="#L163" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">         517 :     if (type_ == type::lpstr)</span></span>
+<span id="L153"><span class="lineNum">     153</span>                 :                :     {</span>
+<span id="L154"><span class="lineNum">     154</span>                 :<a href="#L161" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         517 :         return lpstr_value_;</span></span>
+<span id="L155"><span class="lineNum">     155</span>                 :                :     }</span>
+<span id="L156"><span class="lineNum">     156</span>                 :                : </span>
+<span id="L157"><span class="lineNum">     157</span>            [<span class="tlaUNC"> <a href="#L163" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L168" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     throw xlnt::bad_variant_access(static_cast&lt;int&gt;(type::lpstr), static_cast&lt;int&gt;(type_));</span></span>
+<span id="L158"><span class="lineNum">     158</span>                 :                : }</span>
+<span id="L159"><span class="lineNum">     159</span>                 :                : </span>
+<span id="L160"><span class="lineNum">     160</span>                 :                : template &lt;&gt;</span>
+<span id="L161"><span class="lineNum">     161</span>                 :<a href="#L165" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          56 : bool variant::get() const</span></span>
+<span id="L162"><span class="lineNum">     162</span>                 :                : {</span>
+<span id="L163"><span class="lineNum">     163</span>         [<span class="tlaGNC"> <a href="#L174" title="GNC: Branch 0 was taken 56 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L168" title="UNC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<a href="#L174" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          56 :     if (type_ == type::boolean)</span></span>
+<span id="L164"><span class="lineNum">     164</span>                 :                :     {</span>
+<span id="L165"><span class="lineNum">     165</span>                 :<a href="#L172" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          56 :         return i4_value_ != 0;</span></span>
+<span id="L166"><span class="lineNum">     166</span>                 :                :     }</span>
+<span id="L167"><span class="lineNum">     167</span>                 :                : </span>
+<span id="L168"><span class="lineNum">     168</span>            [<span class="tlaUNC"> <a href="#L174" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L179" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     throw xlnt::bad_variant_access(static_cast&lt;int&gt;(type::boolean), static_cast&lt;int&gt;(type_));</span></span>
+<span id="L169"><span class="lineNum">     169</span>                 :                : }</span>
+<span id="L170"><span class="lineNum">     170</span>                 :                : </span>
+<span id="L171"><span class="lineNum">     171</span>                 :                : template &lt;&gt;</span>
+<span id="L172"><span class="lineNum">     172</span>                 :<a href="#L176" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          68 : std::int32_t variant::get() const</span></span>
+<span id="L173"><span class="lineNum">     173</span>                 :                : {</span>
+<span id="L174"><span class="lineNum">     174</span>         [<span class="tlaGNC"> <a href="#L185" title="GNC: Branch 0 was taken 68 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L179" title="UNC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<a href="#L185" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          68 :     if (type_ == type::i4)</span></span>
+<span id="L175"><span class="lineNum">     175</span>                 :                :     {</span>
+<span id="L176"><span class="lineNum">     176</span>                 :<a href="#L183" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          68 :         return i4_value_;</span></span>
+<span id="L177"><span class="lineNum">     177</span>                 :                :     }</span>
+<span id="L178"><span class="lineNum">     178</span>                 :                : </span>
+<span id="L179"><span class="lineNum">     179</span>            [<span class="tlaUNC"> <a href="#L185" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L190" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     throw xlnt::bad_variant_access(static_cast&lt;int&gt;(type::i4), static_cast&lt;int&gt;(type_));</span></span>
+<span id="L180"><span class="lineNum">     180</span>                 :                : }</span>
+<span id="L181"><span class="lineNum">     181</span>                 :                : </span>
+<span id="L182"><span class="lineNum">     182</span>                 :                : template &lt;&gt;</span>
+<span id="L183"><span class="lineNum">     183</span>                 :<a href="#L187" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          20 : datetime variant::get() const</span></span>
+<span id="L184"><span class="lineNum">     184</span>                 :                : {</span>
+<span id="L185"><span class="lineNum">     185</span>         [<span class="tlaGNC"> <a href="#L196" title="GNC: Branch 0 was taken 20 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L190" title="UNC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<a href="#L196" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          20 :     if (type_ == type::date)</span></span>
+<span id="L186"><span class="lineNum">     186</span>                 :                :     {</span>
+<span id="L187"><span class="lineNum">     187</span>                 :<a href="#L194" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          20 :         return datetime::from_iso_string(lpstr_value_);</span></span>
+<span id="L188"><span class="lineNum">     188</span>                 :                :     }</span>
+<span id="L189"><span class="lineNum">     189</span>                 :                : </span>
+<span id="L190"><span class="lineNum">     190</span>            [<span class="tlaUNC"> <a href="#L196" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L201" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     throw xlnt::bad_variant_access(static_cast&lt;int&gt;(type::date), static_cast&lt;int&gt;(type_));</span></span>
+<span id="L191"><span class="lineNum">     191</span>                 :                : }</span>
+<span id="L192"><span class="lineNum">     192</span>                 :                : </span>
+<span id="L193"><span class="lineNum">     193</span>                 :                : template &lt;&gt;</span>
+<span id="L194"><span class="lineNum">     194</span>                 :<a href="#L198" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          78 : std::vector&lt;variant&gt; variant::get() const</span></span>
+<span id="L195"><span class="lineNum">     195</span>                 :                : {</span>
+<span id="L196"><span class="lineNum">     196</span>         [<span class="tlaGNC"> <a href="#L207" title="GNC: Branch 0 was taken 78 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L201" title="UNC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<a href="#L207" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          78 :     if (type_ == type::vector)</span></span>
+<span id="L197"><span class="lineNum">     197</span>                 :                :     {</span>
+<span id="L198"><span class="lineNum">     198</span>                 :<a href="#L205" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          78 :         return vector_value_;</span></span>
+<span id="L199"><span class="lineNum">     199</span>                 :                :     }</span>
+<span id="L200"><span class="lineNum">     200</span>                 :                : </span>
+<span id="L201"><span class="lineNum">     201</span>            [<span class="tlaUNC"> <a href="#L207" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L209" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     throw xlnt::bad_variant_access(static_cast&lt;int&gt;(type::vector), static_cast&lt;int&gt;(type_));</span></span>
+<span id="L202"><span class="lineNum">     202</span>                 :                : }</span>
+<span id="L203"><span class="lineNum">     203</span>                 :                : </span>
+<span id="L204"><span class="lineNum">     204</span>                 :                : template&lt;typename T&gt;</span>
+<span id="L205"><span class="lineNum">     205</span>                 :<a href="#L213" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           4 : std::vector&lt;T&gt; variant::get_vector_internal() const</span></span>
+<span id="L206"><span class="lineNum">     206</span>                 :                : {</span>
+<span id="L207"><span class="lineNum">     207</span>         [<span class="tlaUNC"> <a href="#L209" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch 1 was taken 4 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           4 :     if (type_ != type::vector)</span></span>
+<span id="L208"><span class="lineNum">     208</span>                 :                :     {</span>
+<span id="L209"><span class="lineNum">     209</span>            [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::bad_variant_access(static_cast&lt;int&gt;(type::vector), static_cast&lt;int&gt;(type_));</span></span>
+<span id="L210"><span class="lineNum">     210</span>                 :                :     }</span>
+<span id="L211"><span class="lineNum">     211</span>                 :                : </span>
+<span id="L212"><span class="lineNum">     212</span>                 :                :     // According to the OOXML specification, &quot;Vector contents shall be of uniform type&quot;</span>
+<span id="L213"><span class="lineNum">     213</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           4 :     std::vector&lt;T&gt; vec;</span></span>
+<span id="L214"><span class="lineNum">     214</span>            [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              4 :     vec.reserve(vector_value_.size());</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 37 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.2-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
