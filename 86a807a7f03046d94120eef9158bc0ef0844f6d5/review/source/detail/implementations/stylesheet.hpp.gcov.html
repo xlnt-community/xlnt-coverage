@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/implementations/stylesheet.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/implementations/stylesheet.hpp</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadLBC" title="Lost Baseline Coverage (1 => 0):
+Unchanged code is no longer tested">LBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryMed">81.8&nbsp;%</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry"><a href="#L259" title="goto first LBC line">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L254" title="goto first CBC line">9</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-12-16 22:48:53</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">61.1&nbsp;%</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry"><a href="#L257" title="goto first LBC branch">14</a></td>
+            <td class="headerCovTableEntry"><a href="#L257" title="goto first CBC branch">22</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-12-16 22:48:47</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 253 ignored lines)</span>
+<span id="L254"><span class="lineNum">     254</span>                 :<a href="#L262" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          76 :             auto&amp; impl = *format_item;</span></span>
+<span id="L255"><span class="lineNum">     255</span>                 :<span class="tlaCBC">             76 :             impl.id = new_id++;</span></span>
+<span id="L256"><span class="lineNum">     256</span>                 :                : </span>
+<span id="L257"><span class="lineNum">     257</span>         [<span class="tlaLBC"> <a href="#L259" title="LBC: Branch 0 was not taken (previously taken 1 time)" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L262" title="CBC: Branch 1 was taken 76 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             76 :             if (impl.alignment_id.is_set())</span></span>
+<span id="L258"><span class="lineNum">     258</span>                 :                :             {</span>
+<span id="L259"><span class="lineNum">     259</span>         [<span class="tlaLBC"> <a href="#L333" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaLBC"> <a href="#L333" title="LBC: Branch &quot;2&quot; was not executed (previously taken 1 time)" class="branchTla">#</a> </span>]:<a href="#L335" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :                 alignment_reference_counts[impl.alignment_id.get()]++;</span></span>
+<span id="L260"><span class="lineNum">     260</span>                 :                :             }</span>
+<span id="L261"><span class="lineNum">     261</span>                 :                : </span>
+<span id="L262"><span class="lineNum">     262</span>         [<span class="tlaCBC"> <a href="#L264" title="CBC: Branch 0 was taken 35 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L264" title="CBC: Branch 1 was taken 41 times" class="branchTla">+</a> </span>]:<a href="#L338" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          76 :             if (impl.border_id.is_set())</span></span>
+<span id="L263"><span class="lineNum">     263</span>                 :                :             {</span>
+<span id="L264"><span class="lineNum">     264</span>         [<span class="tlaCBC"> <a href="#L333" title="CBC: Branch 0 was taken 35 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L333" title="CBC: Branch &quot;2&quot; was taken 35 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             35 :                 border_reference_counts[impl.border_id.get()]++;</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 65 ignored lines)</span>
+<span id="L330"><span class="lineNum">     330</span>                 :                :         {</span>
+<span id="L331"><span class="lineNum">     331</span>                 :<span class="tlaCBC">             76 :             auto&amp; impl = *format_item;</span></span>
+<span id="L332"><span class="lineNum">     332</span>                 :                : </span>
+<span id="L333"><span class="lineNum">     333</span>         [<span class="tlaLBC"> <a href="#L335" title="LBC: Branch 0 was not taken (previously taken 1 time)" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L338" title="CBC: Branch 1 was taken 76 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             76 :             if (impl.alignment_id.is_set())</span></span>
+<span id="L334"><span class="lineNum">     334</span>                 :                :             {</span>
+<span id="L335"><span class="lineNum">     335</span>      [<span class="tlaLBC"> <a href="#top" title="LBC: Branch 0 was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaLBC"> <a href="#top" title="LBC: Branch &quot;2&quot; was not executed (previously taken 1 time)" class="branchTla">#</a> </span><span class="tlaLBC"> <a href="#top" title="LBC: Branch &quot;4&quot; was not executed (previously taken 1 time)" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">         (1) :                 impl.alignment_id = alignment_id_map[impl.alignment_id.get()];</span></span>
+<span id="L336"><span class="lineNum">     336</span>                 :                :             }</span>
+<span id="L337"><span class="lineNum">     337</span>                 :                : </span>
+<span id="L338"><span class="lineNum">     338</span>         [<span class="tlaCBC"> <a href="#L340" title="CBC: Branch 0 was taken 35 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L340" title="CBC: Branch 1 was taken 41 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          76 :             if (impl.border_id.is_set())</span></span>
+<span id="L339"><span class="lineNum">     339</span>                 :                :             {</span>
+<span id="L340"><span class="lineNum">     340</span>      [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 35 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch &quot;2&quot; was taken 35 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch &quot;4&quot; was taken 35 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             35 :                 impl.border_id = border_id_map[impl.border_id.get()];</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 264 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
