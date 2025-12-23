@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/serialization/xlsx_consumer.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/serialization/xlsx_consumer.cpp</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">37.5&nbsp;%</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry"><a href="#L277" title="goto first UNC line">3</a></td>
+            <td class="headerCovTableEntry"><a href="#L363" title="goto first UBC line">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L281" title="goto first CBC line">3</a></td>
+            <td class="headerCovTableEntry">3</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2025-12-23 10:35:16</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">14.3&nbsp;%</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"><a href="#L277" title="goto first UNC branch">12</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L281" title="goto first CBC branch">2</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2025-12-23 10:35:11</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 271 ignored lines)</span>
+<span id="L272"><span class="lineNum">     272</span>                 :                :         case xml::parser::end_namespace_decl:</span>
+<span id="L273"><span class="lineNum">     273</span>                 :                :         case xml::parser::start_attribute:</span>
+<span id="L274"><span class="lineNum">     274</span>                 :                :         case xml::parser::end_attribute:</span>
+<span id="L275"><span class="lineNum">     275</span>                 :                :         case xml::parser::eof:</span>
+<span id="L276"><span class="lineNumWithDelete" title="removed line 277 from baseline version">     276</span>                 :                :         default: {</span>
+<span id="L277"><span class="lineNum">     277</span>         [<span class="tlaUNC"> <a href="#L358" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L358" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L358" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::exception(&quot;unexpected XML parsing event &quot; + std::to_string(e));</span></span>
+<span id="L278"><span class="lineNum">     278</span>                 :                :         }</span>
+<span id="L279"><span class="lineNum">     279</span>                 :                :         }</span>
+<span id="L280"><span class="lineNum">     280</span>                 :                :         // Prevents unhandled exceptions from being triggered.</span>
+<span id="L281"><span class="lineNum">     281</span>            [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 7376 times" class="branchTla">+</a> </span>]:<a href="#L362" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        7376 :         parser-&gt;attribute_map();</span></span>
+<span id="L282"><span class="lineNum">     282</span>                 :                :     }</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 70 ignored lines)</span>
+<span id="L353"><span class="lineNum">     353</span>                 :                :         case xml::parser::start_attribute:</span>
+<span id="L354"><span class="lineNum">     354</span>                 :                :         case xml::parser::end_namespace_decl:</span>
+<span id="L355"><span class="lineNum">     355</span>                 :                :         case xml::parser::end_attribute:</span>
+<span id="L356"><span class="lineNum">     356</span>                 :                :         case xml::parser::eof:</span>
+<span id="L357"><span class="lineNumWithDelete" title="removed line 358 from baseline version">     357</span>                 :                :         default: {</span>
+<span id="L358"><span class="lineNum">     358</span>         [<span class="tlaUNC"> <a href="#L396" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L396" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L396" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::exception(&quot;unexpected XML parsing event &quot; + std::to_string(e));</span></span>
+<span id="L359"><span class="lineNum">     359</span>                 :                :         }</span>
+<span id="L360"><span class="lineNum">     360</span>                 :                :         }</span>
+<span id="L361"><span class="lineNum">     361</span>                 :                :     }</span>
+<span id="L362"><span class="lineNum">     362</span>                 :<a href="#L400" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        2257 :     return props;</span></span>
+<span id="L363"><span class="lineNum">     363</span>                 :<a href="#L401" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : }</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 27 ignored lines)</span>
+<span id="L391"><span class="lineNum">     391</span>                 :                :         case xml::parser::start_attribute:</span>
+<span id="L392"><span class="lineNum">     392</span>                 :                :         case xml::parser::end_namespace_decl:</span>
+<span id="L393"><span class="lineNum">     393</span>                 :                :         case xml::parser::end_attribute:</span>
+<span id="L394"><span class="lineNum">     394</span>                 :                :         case xml::parser::eof:</span>
+<span id="L395"><span class="lineNumWithDelete" title="removed line 396 from baseline version">     395</span>                 :                :         default: {</span>
+<span id="L396"><span class="lineNum">     396</span>         [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::exception(&quot;unexpected XML parsing event &quot; + std::to_string(e));</span></span>
+<span id="L397"><span class="lineNum">     397</span>                 :                :         }</span>
+<span id="L398"><span class="lineNum">     398</span>                 :                :         }</span>
+<span id="L399"><span class="lineNum">     399</span>                 :                :     }</span>
+<span id="L400"><span class="lineNum">     400</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         125 :     return sheet_data;</span></span>
+<span id="L401"><span class="lineNum">     401</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : }</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 3210 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.2-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
