@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/workbook/workbook.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/workbook/workbook.cpp<span style="font-size: 80%;"> (source / <a href="workbook.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadGBC" title="Gained Baseline Coverage (0 => 1):
+Unchanged code is tested now">GBC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">52.9&nbsp;%</td>
+            <td class="headerCovTableEntry">68</td>
+            <td class="headerCovTableEntry">36</td>
+            <td class="headerCovTableEntry"><a href="#L198" title="goto first UNC line">10</a></td>
+            <td class="headerCovTableEntry"><a href="#L197" title="goto first UBC line">22</a></td>
+            <td class="headerCovTableEntry"><a href="#L195" title="goto first GBC line">6</a></td>
+            <td class="headerCovTableEntry"><a href="#L1448" title="goto first GNC line">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L193" title="goto first CBC line">26</a></td>
+            <td class="headerCovTableEntry">11</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-01-02 19:12:36</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryMed">81.0&nbsp;%</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">53.2&nbsp;%</td>
+            <td class="headerCovTableEntry">62</td>
+            <td class="headerCovTableEntry">33</td>
+            <td class="headerCovTableEntry"><a href="#L198" title="goto first UNC branch">38</a></td>
+            <td class="headerCovTableEntry"><a href="#L200" title="goto first UBC branch">20</a></td>
+            <td class="headerCovTableEntry"><a href="#L196" title="goto first GBC branch">8</a></td>
+            <td class="headerCovTableEntry"><a href="#L1448" title="goto first GNC branch">10</a></td>
+            <td class="headerCovTableEntry"><a href="#L194" title="goto first CBC branch">48</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-01-02 19:12:31</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 192 ignored lines)</span>
+<span id="L193"><span class="lineNum">     193</span>                 :<a href="#L205" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         334 :     case relationship_type::core_properties:</span></span>
+<span id="L194"><span class="lineNum">     194</span>            [<span class="tlaCBC"> <a href="#L206" title="CBC: Branch 0 was taken 334 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            668 :         return &quot;application/vnd.openxmlformats-package.core-properties+xml&quot;;</span></span>
+<span id="L195"><span class="lineNum">     195</span>                 :<a href="#L1446" class="tlaBgGBC"  title="Next GBC group">GBC</a><span class="tlaGBC tlaBgGBC">           1 :     case relationship_type::custom_properties:</span></span>
+<span id="L196"><span class="lineNum">     196</span>            [<span class="tlaGBC"> <a href="#L1705" title="GBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGBC">              2 :         return &quot;application/vnd.openxmlformats-officedocument.custom-properties+xml&quot;;</span></span>
+<span id="L197"><span class="lineNumWithDelete" title="removed line 197 from baseline version">     197</span>                 :<a href="#L199" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     case relationship_type::custom_property:</span></span>
+<span id="L198"><span class="lineNum">     198</span>            [<span class="tlaUNC"> <a href="#L210" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L210" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::unhandled_switch_case(&quot;xlnt::relationship_type::custom_property&quot;);</span></span>
+<span id="L199"><span class="lineNum">     199</span>                 :<a href="#L207" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     case relationship_type::custom_xml_mappings:</span></span>
+<span id="L200"><span class="lineNum">     200</span>            [<span class="tlaUBC"> <a href="#L202" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;application/xml&quot;;</span></span>
+<span id="L201"><span class="lineNum">     201</span>                 :<span class="tlaUBC">              0 :     case relationship_type::dialogsheet:</span></span>
+<span id="L202"><span class="lineNum">     202</span>            [<span class="tlaUBC"> <a href="#L208" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.dialogsheet+xml&quot;;</span></span>
+<span id="L203"><span class="lineNum">     203</span>                 :<span class="tlaUBC">              0 :     case relationship_type::drawings:</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 1 ignored lines)</span>
+<span id="L205"><span class="lineNum">     205</span>                 :<a href="#L213" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         334 :     case relationship_type::extended_properties:</span></span>
+<span id="L206"><span class="lineNum">     206</span>            [<span class="tlaCBC"> <a href="#L214" title="CBC: Branch 0 was taken 334 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            668 :         return &quot;application/vnd.openxmlformats-officedocument.extended-properties+xml&quot;;</span></span>
+<span id="L207"><span class="lineNum">     207</span>                 :<a href="#L211" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     case relationship_type::external_workbook_references:</span></span>
+<span id="L208"><span class="lineNum">     208</span>            [<span class="tlaUBC"> <a href="#L216" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.externalLink+xml&quot;;</span></span>
+<span id="L209"><span class="lineNumWithDelete" title="removed line 209 from baseline version">     209</span>                 :<span class="tlaUBC">              0 :     case relationship_type::hyperlink:</span></span>
+<span id="L210"><span class="lineNum">     210</span>            [<span class="tlaUNC"> <a href="#L212" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L212" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::unhandled_switch_case(&quot;xlnt::relationship_type::hyperlink&quot;);</span></span>
+<span id="L211"><span class="lineNumWithDelete" title="removed line 211 from baseline version">     211</span>                 :<a href="#L215" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     case relationship_type::image:</span></span>
+<span id="L212"><span class="lineNum">     212</span>            [<span class="tlaUNC"> <a href="#L230" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L230" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::unhandled_switch_case(&quot;xlnt::relationship_type::image&quot;);</span></span>
+<span id="L213"><span class="lineNum">     213</span>                 :<a href="#L227" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         334 :     case relationship_type::office_document:</span></span>
+<span id="L214"><span class="lineNum">     214</span>            [<span class="tlaCBC"> <a href="#L228" title="CBC: Branch 0 was taken 334 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            668 :         return &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml&quot;;</span></span>
+<span id="L215"><span class="lineNum">     215</span>                 :<a href="#L229" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     case relationship_type::pivot_table:</span></span>
+<span id="L216"><span class="lineNum">     216</span>            [<span class="tlaUBC"> <a href="#L226" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.pivotTable+xml&quot;;</span></span>
+<span id="L217"><span class="lineNum">     217</span>                 :<span class="tlaUBC">              0 :     case relationship_type::pivot_table_cache_definition:</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 7 ignored lines)</span>
+<span id="L225"><span class="lineNum">     225</span>                 :<span class="tlaUBC">              0 :     case relationship_type::revision_log:</span></span>
+<span id="L226"><span class="lineNum">     226</span>            [<span class="tlaUBC"> <a href="#L232" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.revisionLog+xml&quot;;</span></span>
+<span id="L227"><span class="lineNum">     227</span>                 :<a href="#L1033" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          57 :     case relationship_type::shared_string_table:</span></span>
+<span id="L228"><span class="lineNum">     228</span>            [<span class="tlaCBC"> <a href="#L1033" title="CBC: Branch 0 was taken 57 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            114 :         return &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sharedStrings+xml&quot;;</span></span>
+<span id="L229"><span class="lineNumWithDelete" title="removed line 229 from baseline version">     229</span>                 :<a href="#L231" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     case relationship_type::shared_workbook:</span></span>
+<span id="L230"><span class="lineNum">     230</span>            [<span class="tlaUNC"> <a href="#L1038" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L1038" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::unhandled_switch_case(&quot;xlnt::relationship_type::shared_workbook&quot;);</span></span>
+<span id="L231"><span class="lineNum">     231</span>                 :<a href="#L1436" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     case relationship_type::shared_workbook_revision_headers:</span></span>
+<span id="L232"><span class="lineNum">     232</span>            [<span class="tlaUBC"> <a href="#L234" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.revisionHeaders+xml&quot;;</span></span>
+<span id="L233"><span class="lineNum">     233</span>                 :<span class="tlaUBC">              0 :     case relationship_type::shared_workbook_user_data:</span></span>
+<span id="L234"><span class="lineNum">     234</span>            [<span class="tlaUBC"> <a href="#L1036" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :         return &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.userNames+xml&quot;;</span></span>
+<span id="L235"><span class="lineNum">     235</span>                 :<span class="tlaUBC">              0 :     case relationship_type::single_cell_table_definitions:</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 797 ignored lines)</span>
+<span id="L1033"><span class="lineNum">    1033</span>            [<span class="tlaCBC"> <a href="#L1034" title="CBC: Branch 0 was taken 16 times" class="branchTla">+</a> </span>]:<a href="#L1041" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          16 :     std::ifstream file_stream;</span></span>
+<span id="L1034"><span class="lineNum">    1034</span>         [<span class="tlaCBC"> <a href="#L1036" title="CBC: Branch 0 was taken 16 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1036" title="CBC: Branch &quot;2&quot; was taken 16 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             16 :     open_stream(file_stream, filename.string());</span></span>
+<span id="L1035"><span class="lineNum">    1035</span>                 :                : </span>
+<span id="L1036"><span class="lineNum">    1036</span>      [<span class="tlaCBC"> <a href="#L1041" title="CBC: Branch 0 was taken 16 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1259" title="UBC: Branch &quot;2&quot; was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1041" title="CBC: Branch &quot;3&quot; was taken 16 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             16 :     if (!file_stream.good())</span></span>
+<span id="L1037"><span class="lineNumWithDelete" title="removed line 1036 from baseline version">    1037</span>                 :                :     {</span>
+<span id="L1038"><span class="lineNum">    1038</span>         [<span class="tlaUNC"> <a href="#L1261" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1261" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L1261" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::invalid_file(filename.string());</span></span>
+<span id="L1039"><span class="lineNum">    1039</span>                 :                :     }</span>
+<span id="L1040"><span class="lineNum">    1040</span>                 :                : </span>
+<span id="L1041"><span class="lineNum">    1041</span>            [<span class="tlaCBC"> <a href="#L1256" title="CBC: Branch 0 was taken 8 times" class="branchTla">+</a> </span>]:<a href="#L1264" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          24 :     return load(file_stream, password);</span></span>
+<span id="L1042"><span class="lineNum">    1042</span>                 :<span class="tlaCBC">             16 : }</span></span>
+<span id="L1043"><span class="lineNum">    1043</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 212 ignored lines)</span>
+<span id="L1256"><span class="lineNum">    1256</span>            [<span class="tlaCBC"> <a href="#L1257" title="CBC: Branch 0 was taken 8 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              8 :     auto match_iter = std::find_if(d_-&gt;worksheets_.begin(), d_-&gt;worksheets_.end(),</span></span>
+<span id="L1257"><span class="lineNum">    1257</span>            [<span class="tlaCBC"> <a href="#L1259" title="CBC: Branch 0 was taken 8 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             23 :         [=](detail::worksheet_impl &amp;comp) { return &amp;comp == ws.d_; });</span></span>
+<span id="L1258"><span class="lineNum">    1258</span>                 :                : </span>
+<span id="L1259"><span class="lineNum">    1259</span>         [<span class="tlaUBC"> <a href="#L1787" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1264" title="CBC: Branch 1 was taken 8 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              8 :     if (match_iter == d_-&gt;worksheets_.end())</span></span>
+<span id="L1260"><span class="lineNumWithDelete" title="removed line 1259 from baseline version">    1260</span>                 :                :     {</span>
+<span id="L1261"><span class="lineNum">    1261</span>         [<span class="tlaUNC"> <a href="#L1437" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1437" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L1437" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw invalid_parameter(&quot;cannot remove worksheet: it does not exist in this workbook&quot;);</span></span>
+<span id="L1262"><span class="lineNum">    1262</span>                 :                :     }</span>
+<span id="L1263"><span class="lineNum">    1263</span>                 :                : </span>
+<span id="L1264"><span class="lineNum">    1264</span>      [<span class="tlaCBC"> <a href="#L1265" title="CBC: Branch 0 was taken 8 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1265" title="CBC: Branch &quot;2&quot; was taken 8 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1265" title="CBC: Branch &quot;4&quot; was taken 8 times" class="branchTla">+</a> </span>]:<a href="#L1441" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           8 :     auto ws_rel_id = d_-&gt;sheet_title_rel_id_map_.at(ws.title());</span></span>
+<span id="L1265"><span class="lineNum">    1265</span>      [<span class="tlaCBC"> <a href="#L1266" title="CBC: Branch 0 was taken 8 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1266" title="CBC: Branch &quot;2&quot; was taken 8 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1266" title="CBC: Branch &quot;4&quot; was taken 8 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             16 :     auto wb_rel = d_-&gt;manifest_.relationship(path(&quot;/&quot;), xlnt::relationship_type::office_document);</span></span>
+<span id="L1266"><span class="lineNum">    1266</span>      [<span class="tlaCBC"> <a href="#L1434" title="CBC: Branch 0 was taken 8 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1434" title="CBC: Branch &quot;2&quot; was taken 8 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1434" title="CBC: Branch &quot;4&quot; was taken 8 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              8 :     auto ws_rel = d_-&gt;manifest_.relationship(wb_rel.target().path(), ws_rel_id);</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 165 ignored lines)</span>
+<span id="L1432"><span class="lineNum">    1432</span>                 :<span class="tlaCBC">              1 :     case clone_method::shallow_copy:</span></span>
+<span id="L1433"><span class="lineNum">    1433</span>                 :                :     {</span>
+<span id="L1434"><span class="lineNum">    1434</span>            [<span class="tlaCBC"> <a href="#L1787" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaCBC">              1 :         return workbook(d_);</span></span>
+<span id="L1435"><span class="lineNum">    1435</span>                 :                :     }</span>
+<span id="L1436"><span class="lineNumWithDelete" title="removed line 1432 from baseline version">    1436</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     default:</span></span>
+<span id="L1437"><span class="lineNum">    1437</span>      [<span class="tlaUNC"> <a href="#L1448" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1448" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1448" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L1450" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::invalid_parameter(&quot;clone method &quot; + std::to_string(static_cast&lt;int&gt;(method)) + &quot; not supported&quot;);</span></span>
+<span id="L1438"><span class="lineNum">    1438</span>                 :                :     }</span>
+<span id="L1439"><span class="lineNum">    1439</span>                 :                : }</span>
+<span id="L1440"><span class="lineNum">    1440</span>                 :                : </span>
+<span id="L1441"><span class="lineNum">    1441</span>                 :<a href="#L1455" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           1 : bool workbook::has_theme() const</span></span>
+<span id="L1442"><span class="lineNum">    1442</span>                 :                : {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 2 ignored lines)</span>
+<span id="L1445"><span class="lineNum">    1445</span>                 :                : </span>
+<span id="L1446"><span class="lineNum">    1446</span>                 :<a href="#L1452" class="tlaBgGBC"  title="Next GBC group">GBC</a><span class="tlaGBC tlaBgGBC">           1 : const theme &amp;workbook::theme() const</span></span>
+<span id="L1447"><span class="lineNum">    1447</span>                 :                : {</span>
+<span id="L1448"><span class="lineNum">    1448</span>         [<span class="tlaUNC"> <a href="#L1450" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L1706" title="GNC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<a href="#L1706" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           1 :     if (!d_-&gt;theme_.is_set())</span></span>
+<span id="L1449"><span class="lineNum">    1449</span>                 :                :     {</span>
+<span id="L1450"><span class="lineNum">    1450</span>         [<span class="tlaUNC"> <a href="#L1708" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1708" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L1710" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::invalid_attribute(&quot;the workbook has no theme&quot;);</span></span>
+<span id="L1451"><span class="lineNum">    1451</span>                 :                :     }</span>
+<span id="L1452"><span class="lineNum">    1452</span>                 :<a href="#L1705" class="tlaBgGBC"  title="Next GBC group">GBC</a><span class="tlaGBC tlaBgGBC">           1 :     return d_-&gt;theme_.get();</span></span>
+<span id="L1453"><span class="lineNum">    1453</span>                 :                : }</span>
+<span id="L1454"><span class="lineNum">    1454</span>                 :                : </span>
+<span id="L1455"><span class="lineNum">    1455</span>                 :<a href="#L1785" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         408 : void workbook::theme(const class theme &amp;value)</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 249 ignored lines)</span>
+<span id="L1705"><span class="lineNumWithDelete" title="removed line 1691 from baseline version">    1705</span>      [<span class="tlaGBC"> <a href="#top" title="GBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGBC"> <a href="#top" title="GBC: Branch &quot;2&quot; was taken 1 time" class="branchTla">+</a> </span><span class="tlaGBC"> <a href="#top" title="GBC: Branch &quot;4&quot; was taken 1 time" class="branchTla">+</a> </span>]:<a href="#L1714" class="tlaBgGBC"  title="Next GBC group">GBC</a><span class="tlaGBC tlaBgGBC">           2 :     auto thumbnail_rel = d_-&gt;manifest_.relationship(path(&quot;/&quot;), relationship_type::thumbnail);</span></span>
+<span id="L1706"><span class="lineNum">    1706</span>      [<span class="tlaGNC"> <a href="#L1708" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L1708" title="GNC: Branch &quot;2&quot; was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L1708" title="GNC: Branch &quot;4&quot; was taken 1 time" class="branchTla">+</a> </span>]:<a href="#L1713" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           1 :     auto thumbnail = d_-&gt;images_.find(thumbnail_rel.target().to_string());</span></span>
+<span id="L1707"><span class="lineNum">    1707</span>                 :                : </span>
+<span id="L1708"><span class="lineNum">    1708</span>         [<span class="tlaUNC"> <a href="#L1710" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              1 :     if (thumbnail == d_-&gt;images_.end())</span></span>
+<span id="L1709"><span class="lineNum">    1709</span>                 :                :     {</span>
+<span id="L1710"><span class="lineNum">    1710</span>         [<span class="tlaUNC"> <a href="#L1789" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1789" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L1789" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::invalid_attribute(&quot;the workbook has no thumbnail&quot;);</span></span>
+<span id="L1711"><span class="lineNum">    1711</span>                 :                :     }</span>
+<span id="L1712"><span class="lineNum">    1712</span>                 :                : </span>
+<span id="L1713"><span class="lineNum">    1713</span>                 :<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           2 :     return thumbnail-&gt;second;</span></span>
+<span id="L1714"><span class="lineNum">    1714</span>                 :<a href="#top" class="tlaBgGBC"  title="Next GBC group">GBC</a><span class="tlaGBC tlaBgGBC">           1 : }</span></span>
+<span id="L1715"><span class="lineNum">    1715</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 68 ignored lines)</span>
+<span id="L1784"><span class="lineNum">    1784</span>                 :                : </span>
+<span id="L1785"><span class="lineNum">    1785</span>                 :<a href="#L1792" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          91 : workbook_view workbook::view() const</span></span>
+<span id="L1786"><span class="lineNum">    1786</span>                 :                : {</span>
+<span id="L1787"><span class="lineNum">    1787</span>         [<span class="tlaUBC"> <a href="#top" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch 1 was taken 91 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             91 :     if (!d_-&gt;view_.is_set())</span></span>
+<span id="L1788"><span class="lineNumWithDelete" title="removed line 1763 from baseline version">    1788</span>                 :                :     {</span>
+<span id="L1789"><span class="lineNum">    1789</span>         [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw invalid_attribute(&quot;the workbook has no view&quot;);</span></span>
+<span id="L1790"><span class="lineNum">    1790</span>                 :                :     }</span>
+<span id="L1791"><span class="lineNum">    1791</span>                 :                : </span>
+<span id="L1792"><span class="lineNum">    1792</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          91 :     return d_-&gt;view_.get();</span></span>
+<span id="L1793"><span class="lineNum">    1793</span>                 :                : }</span>
+<span id="L1794"><span class="lineNum">    1794</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 261 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.2-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
