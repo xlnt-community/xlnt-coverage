@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/serialization/zstream.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/serialization/zstream.cpp<span style="font-size: 80%;"> (source / <a href="zstream.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadGBC" title="Gained Baseline Coverage (0 => 1):
+Unchanged code is tested now">GBC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryMed">76.7&nbsp;%</td>
+            <td class="headerCovTableEntry">43</td>
+            <td class="headerCovTableEntry">33</td>
+            <td class="headerCovTableEntry"><a href="#L77" title="goto first UNC line">9</a></td>
+            <td class="headerCovTableEntry"><a href="#L216" title="goto first UBC line">1</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L73" title="goto first CBC line">33</a></td>
+            <td class="headerCovTableEntry">9</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-01-02 21:50:15</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">47.4&nbsp;%</td>
+            <td class="headerCovTableEntry">95</td>
+            <td class="headerCovTableEntry">45</td>
+            <td class="headerCovTableEntry"><a href="#L77" title="goto first UNC branch">64</a></td>
+            <td class="headerCovTableEntry"><a href="#L75" title="goto first UBC branch">36</a></td>
+            <td class="headerCovTableEntry"><a href="#L528" title="goto first GBC branch">6</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L73" title="goto first CBC branch">84</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-01-02 21:50:09</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 71 ignored lines)</span>
+<span id="L72"><span class="lineNum">      72</span>                 :                :     // read and check for local/global magic</span>
+<span id="L73"><span class="lineNum">      73</span>         [<span class="tlaCBC"> <a href="#L75" title="CBC: Branch 0 was taken 1359 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L75" title="CBC: Branch 1 was taken 1364 times" class="branchTla">+</a> </span>]:<a href="#L80" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        2723 :     if (global)</span></span>
+<span id="L74"><span class="lineNum">      74</span>                 :                :     {</span>
+<span id="L75"><span class="lineNum">      75</span>         [<span class="tlaUBC"> <a href="#L82" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L80" title="CBC: Branch 1 was taken 1359 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1359 :         if (sig != 0x02014b50)</span></span>
+<span id="L76"><span class="lineNumWithDelete" title="removed line 77 from baseline version">      76</span>                 :                :         {</span>
+<span id="L77"><span class="lineNum">      77</span>      [<span class="tlaUNC"> <a href="#L84" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L84" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L84" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L84" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::exception(&quot;missing global header signature (signature &quot; + std::to_string(sig) + &quot;)&quot;);</span></span>
+<span id="L78"><span class="lineNum">      78</span>                 :                :         }</span>
+<span id="L79"><span class="lineNum">      79</span>                 :                : </span>
+<span id="L80"><span class="lineNum">      80</span>            [<span class="tlaCBC"> <a href="#L82" title="CBC: Branch 0 was taken 1359 times" class="branchTla">+</a> </span>]:<a href="#L88" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        1359 :         header.version = read_int&lt;std::uint16_t&gt;(istream);</span></span>
+<span id="L81"><span class="lineNum">      81</span>                 :                :     }</span>
+<span id="L82"><span class="lineNum">      82</span>         [<span class="tlaUBC"> <a href="#L221" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L88" title="CBC: Branch 1 was taken 1364 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1364 :     else if (sig != 0x04034b50)</span></span>
+<span id="L83"><span class="lineNumWithDelete" title="removed line 84 from baseline version">      83</span>                 :                :     {</span>
+<span id="L84"><span class="lineNum">      84</span>      [<span class="tlaUNC"> <a href="#L217" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L217" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L217" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L217" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::exception(&quot;missing local header signature (signature &quot; + std::to_string(sig) + &quot;)&quot;);</span></span>
+<span id="L85"><span class="lineNum">      85</span>                 :                :     }</span>
+<span id="L86"><span class="lineNum">      86</span>                 :                : </span>
+<span id="L87"><span class="lineNum">      87</span>                 :                :     // Read rest of header</span>
+<span id="L88"><span class="lineNum">      88</span>            [<span class="tlaCBC"> <a href="#L89" title="CBC: Branch 0 was taken 2723 times" class="branchTla">+</a> </span>]:<a href="#L221" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        2723 :     header.version = read_int&lt;std::uint16_t&gt;(istream);</span></span>
+<span id="L89"><span class="lineNum">      89</span>            [<span class="tlaCBC"> <a href="#L221" title="CBC: Branch 0 was taken 2723 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           2723 :     header.flags = read_int&lt;std::uint16_t&gt;(istream);</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 122 ignored lines)</span>
+<span id="L212"><span class="lineNum">     212</span>                 :<span class="tlaCBC">             37 :             compressed_data = false;</span></span>
+<span id="L213"><span class="lineNum">     213</span>                 :                :         }</span>
+<span id="L214"><span class="lineNum">     214</span>                 :                :         else</span>
+<span id="L215"><span class="lineNum">     215</span>                 :                :         {</span>
+<span id="L216"><span class="lineNumWithDelete" title="removed line 217 from baseline version">     216</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :             compressed_data = false;</span></span>
+<span id="L217"><span class="lineNum">     217</span>      [<span class="tlaUNC"> <a href="#L230" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L230" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L230" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L230" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::exception(&quot;unsupported compression type &quot; + std::to_string(header.compression_type) + &quot;, should be DEFLATE or uncompressed&quot;);</span></span>
+<span id="L218"><span class="lineNum">     218</span>                 :                :         }</span>
+<span id="L219"><span class="lineNum">     219</span>                 :                : </span>
+<span id="L220"><span class="lineNum">     220</span>                 :                :         // initialize the inflate</span>
+<span id="L221"><span class="lineNum">     221</span>   [<span class="tlaCBC"> <a href="#L225" title="CBC: Branch 0 was taken 1327 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L225" title="CBC: Branch 1 was taken 37 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L225" title="CBC: Branch 2 was taken 1327 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L228" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span>]:<a href="#L234" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        1364 :         if (compressed_data &amp;&amp; valid)</span></span>
+<span id="L222"><span class="lineNum">     222</span>                 :                :         {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 2 ignored lines)</span>
+<span id="L225"><span class="lineNum">     225</span>            [<span class="tlaCBC"> <a href="#L228" title="CBC: Branch 0 was taken 1327 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1327 :             int result = inflateInit2(&amp;strm, -MAX_WBITS);</span></span>
+<span id="L226"><span class="lineNum">     226</span>                 :                : #pragma clang diagnostic pop</span>
+<span id="L227"><span class="lineNum">     227</span>                 :                : </span>
+<span id="L228"><span class="lineNum">     228</span>         [<span class="tlaUBC"> <a href="#L268" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L234" title="CBC: Branch 1 was taken 1327 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1327 :             if (result != Z_OK)</span></span>
+<span id="L229"><span class="lineNumWithDelete" title="removed line 230 from baseline version">     229</span>                 :                :             {</span>
+<span id="L230"><span class="lineNum">     230</span>      [<span class="tlaUNC"> <a href="#L270" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L270" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L270" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L270" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :                 throw xlnt::exception(&quot;couldn't inflate ZIP, possibly corrupted (error code &quot; + std::to_string(result) + &quot;)&quot;);</span></span>
+<span id="L231"><span class="lineNum">     231</span>                 :                :             }</span>
+<span id="L232"><span class="lineNum">     232</span>                 :                :         }</span>
+<span id="L233"><span class="lineNum">     233</span>                 :                : </span>
+<span id="L234"><span class="lineNum">     234</span>            [<span class="tlaCBC"> <a href="#L268" title="CBC: Branch 0 was taken 1364 times" class="branchTla">+</a> </span>]:<a href="#L273" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        1364 :         header = central_header;</span></span>
+<span id="L235"><span class="lineNum">     235</span>                 :<span class="tlaCBC">           1364 :     }</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 29 ignored lines)</span>
+<span id="L265"><span class="lineNum">     265</span>                 :                : </span>
+<span id="L266"><span class="lineNum">     266</span>                 :<span class="tlaCBC">          11436 :                 const auto ret = inflate(&amp;strm, Z_NO_FLUSH); // decompress</span></span>
+<span id="L267"><span class="lineNum">     267</span>                 :                : </span>
+<span id="L268"><span class="lineNum">     268</span>   [<span class="tlaCBC"> <a href="#L273" title="CBC: Branch 0 was taken 11436 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L521" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L273" title="CBC: Branch 2 was taken 11436 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L521" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">          11436 :                 if (ret == Z_STREAM_ERROR || ret == Z_NEED_DICT || ret == Z_DATA_ERROR || ret == Z_MEM_ERROR)</span></span>
+<span class="lineNum">        </span>    <span class="tlaCBC"> <a href="#L273" title="CBC: Branch 4 was taken 11436 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L521" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L521" title="UBC: Branch 6 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L273" title="CBC: Branch 7 was taken 11436 times" class="branchTla">+</a> </span>]
+<span id="L269"><span class="lineNumWithDelete" title="removed line 270 from baseline version">     269</span>                 :                :                 {</span>
+<span id="L270"><span class="lineNum">     270</span>      [<span class="tlaUNC"> <a href="#L523" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L523" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L523" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L523" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :                     throw xlnt::exception(&quot;couldn't inflate ZIP, possibly corrupted (error code &quot; + std::to_string(ret) + &quot;)&quot;);</span></span>
+<span id="L271"><span class="lineNum">     271</span>                 :                :                 }</span>
+<span id="L272"><span class="lineNum">     272</span>                 :                : </span>
+<span id="L273"><span class="lineNum">     273</span>         [<span class="tlaCBC"> <a href="#L518" title="CBC: Branch 0 was taken 2396 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L518" title="CBC: Branch 1 was taken 9040 times" class="branchTla">+</a> </span>]:<a href="#L526" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">       11436 :                 if (ret == Z_STREAM_END) break;</span></span>
+<span id="L274"><span class="lineNum">     274</span>                 :                :             }</span>
+<span id="L275"><span class="lineNum">     275</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 242 ignored lines)</span>
+<span id="L518"><span class="lineNum">     518</span>         [<span class="tlaCBC"> <a href="#L519" title="CBC: Branch 0 was taken 125 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L519" title="CBC: Branch &quot;2&quot; was taken 125 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            125 :     source_stream_.seekg(end_position - read_start);</span></span>
+<span id="L519"><span class="lineNum">     519</span>            [<span class="tlaCBC"> <a href="#L521" title="CBC: Branch 0 was taken 125 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            125 :     std::vector&lt;std::uint8_t&gt; buf(static_cast&lt;std::size_t&gt;(read_start), '\0');</span></span>
+<span id="L520"><span class="lineNum">     520</span>                 :                : </span>
+<span id="L521"><span class="lineNum">     521</span>         [<span class="tlaUBC"> <a href="#L528" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L526" title="CBC: Branch 1 was taken 125 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            125 :     if (read_start &lt;= 0)</span></span>
+<span id="L522"><span class="lineNumWithDelete" title="removed line 523 from baseline version">     522</span>                 :                :     {</span>
+<span id="L523"><span class="lineNum">     523</span>   [<span class="tlaUNC"> <a href="#L564" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L564" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L564" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L564" title="UNC: Branch &quot;6&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L564" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::exception(&quot;file is empty (read_start = &quot; + std::to_string(read_start) + &quot;)&quot;);</span></span>
+<span id="L524"><span class="lineNum">     524</span>                 :                :     }</span>
+<span id="L525"><span class="lineNum">     525</span>                 :                : </span>
+<span id="L526"><span class="lineNum">     526</span>            [<span class="tlaCBC"> <a href="#L559" title="CBC: Branch 0 was taken 125 times" class="branchTla">+</a> </span>]:<a href="#L567" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         125 :     source_stream_.read(reinterpret_cast&lt;char *&gt;(buf.data()), read_start);</span></span>
+<span id="L527"><span class="lineNum">     527</span>                 :                : </span>
+<span id="L528"><span class="lineNum">     528</span>   [<span class="tlaGBC"> <a href="#top" title="GBC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L562" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaGBC"> <a href="#top" title="GBC: Branch 2 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L562" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">            131 :     if (buf[0] == 0xd0 &amp;&amp; buf[1] == 0xcf &amp;&amp; buf[2] == 0x11 &amp;&amp; buf[3] == 0xe0</span></span>
+<span class="lineNum">        </span>          <span class="tlaGBC"> <a href="#top" title="GBC: Branch 4 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L562" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 30 ignored lines)</span>
+<span id="L559"><span class="lineNum">     559</span>            [<span class="tlaCBC"> <a href="#L560" title="CBC: Branch 0 was taken 119 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            119 :     auto disk_number1 = read_int&lt;std::uint16_t&gt;(source_stream_);</span></span>
+<span id="L560"><span class="lineNum">     560</span>            [<span class="tlaCBC"> <a href="#L562" title="CBC: Branch 0 was taken 119 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            119 :     auto disk_number2 = read_int&lt;std::uint16_t&gt;(source_stream_);</span></span>
+<span id="L561"><span class="lineNum">     561</span>                 :                : </span>
+<span id="L562"><span class="lineNum">     562</span>   [<span class="tlaCBC"> <a href="#L567" title="CBC: Branch 0 was taken 119 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L570" title="UBC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L570" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L567" title="CBC: Branch 3 was taken 119 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            119 :     if (disk_number1 != disk_number2 || disk_number1 != 0)</span></span>
+<span id="L563"><span class="lineNumWithDelete" title="removed line 564 from baseline version">     563</span>                 :                :     {</span>
+<span id="L564"><span class="lineNum">     564</span>   [<span class="tlaUNC"> <a href="#L572" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L572" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L572" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L572" title="UNC: Branch &quot;6&quot; was not executed" class="branchTla">#</a> </span> :<a href="#L572" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::exception(&quot;multiple disk zip files are not supported (disk_number1 = &quot; + std::to_string(disk_number1) + &quot;, disk_number2 = &quot; + std::to_string(disk_number2) + &quot;)&quot;);</span></span>
+<span class="lineNum">        </span>             <span class="tlaUNC"> <a href="#L572" title="UNC: Branch &quot;8&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L565"><span class="lineNum">     565</span>                 :                :     }</span>
+<span id="L566"><span class="lineNum">     566</span>                 :                : </span>
+<span id="L567"><span class="lineNum">     567</span>            [<span class="tlaCBC"> <a href="#L568" title="CBC: Branch 0 was taken 119 times" class="branchTla">+</a> </span>]:<a href="#L575" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         119 :     auto num_files = read_int&lt;std::uint16_t&gt;(source_stream_); // one entry in center in this disk</span></span>
+<span id="L568"><span class="lineNum">     568</span>            [<span class="tlaCBC"> <a href="#L570" title="CBC: Branch 0 was taken 119 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            119 :     auto num_files_this_disk = read_int&lt;std::uint16_t&gt;(source_stream_); // one entry in center</span></span>
+<span id="L569"><span class="lineNum">     569</span>                 :                : </span>
+<span id="L570"><span class="lineNum">     570</span>         [<span class="tlaUBC"> <a href="#L592" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L575" title="CBC: Branch 1 was taken 119 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            119 :     if (num_files != num_files_this_disk)</span></span>
+<span id="L571"><span class="lineNumWithDelete" title="removed line 572 from baseline version">     571</span>                 :                :     {</span>
+<span id="L572"><span class="lineNum">     572</span>   [<span class="tlaUNC"> <a href="#L594" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L594" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L594" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L594" title="UNC: Branch &quot;6&quot; was not executed" class="branchTla">#</a> </span> :<a href="#L594" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::exception(&quot;multi disk zip files are not supported (num_files = &quot; + std::to_string(num_files) + &quot;, num_files_this_disk = &quot; + std::to_string(num_files_this_disk) + &quot;)&quot;);</span></span>
+<span class="lineNum">        </span>             <span class="tlaUNC"> <a href="#L594" title="UNC: Branch &quot;8&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L573"><span class="lineNum">     573</span>                 :                :     }</span>
+<span id="L574"><span class="lineNum">     574</span>                 :                : </span>
+<span id="L575"><span class="lineNum">     575</span>            [<span class="tlaCBC"> <a href="#L576" title="CBC: Branch 0 was taken 119 times" class="branchTla">+</a> </span>]:<a href="#L597" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         119 :     /*auto size_of_header = */ read_int&lt;std::uint32_t&gt;(source_stream_); // size of header</span></span>
+<span id="L576"><span class="lineNum">     576</span>            [<span class="tlaCBC"> <a href="#L592" title="CBC: Branch 0 was taken 119 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            119 :     auto header_offset = read_int&lt;std::uint32_t&gt;(source_stream_); // offset to header</span></span>
+<span id="L577"><span class="lineNum">     577</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 11 ignored lines)</span>
+<span id="L589"><span class="lineNum">     589</span>                 :                : </span>
+<span id="L590"><span class="lineNum">     590</span>                 :<span class="tlaCBC">           1364 : std::unique_ptr&lt;std::streambuf&gt; izstream::open(const path &amp;filename) const</span></span>
+<span id="L591"><span class="lineNum">     591</span>                 :                : {</span>
+<span id="L592"><span class="lineNum">     592</span>      [<span class="tlaCBC"> <a href="#L597" title="CBC: Branch 0 was taken 1364 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L599" title="UBC: Branch &quot;2&quot; was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L597" title="CBC: Branch &quot;3&quot; was taken 1364 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1364 :     if (!has_file(filename))</span></span>
+<span id="L593"><span class="lineNumWithDelete" title="removed line 594 from baseline version">     593</span>                 :                :     {</span>
+<span id="L594"><span class="lineNum">     594</span>      [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::exception(&quot;file not found at path: &quot; + filename.string());</span></span>
+<span id="L595"><span class="lineNum">     595</span>                 :                :     }</span>
+<span id="L596"><span class="lineNum">     596</span>                 :                : </span>
+<span id="L597"><span class="lineNum">     597</span>      [<span class="tlaCBC"> <a href="#L598" title="CBC: Branch 0 was taken 1364 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L598" title="CBC: Branch &quot;2&quot; was taken 1364 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L598" title="CBC: Branch &quot;4&quot; was taken 1364 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">        1364 :     auto header = file_headers_.at(filename.string());</span></span>
+<span id="L598"><span class="lineNum">     598</span>            [<span class="tlaCBC"> <a href="#L599" title="CBC: Branch 0 was taken 1364 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1364 :     source_stream_.seekg(header.header_offset);</span></span>
+<span id="L599"><span class="lineNum">     599</span>   [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 1364 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch &quot;2&quot; was taken 1364 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch &quot;4&quot; was taken 1364 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;6&quot; was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">           1364 :     auto buffer = new zip_streambuf_decompress(source_stream_, header);</span></span>
+<span class="lineNum">        </span>             <span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;7&quot; was not taken" class="branchTla">-</a> </span>]
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 29 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.2-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
