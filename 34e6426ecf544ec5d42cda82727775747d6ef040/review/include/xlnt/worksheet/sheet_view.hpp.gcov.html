@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - include/xlnt/worksheet/sheet_view.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - include/xlnt/worksheet/sheet_view.hpp<span style="font-size: 80%;"> (source / <a href="sheet_view.hpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryMed">75.0&nbsp;%</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry"><a href="#L99" title="goto first UNC line">1</a></td>
+            <td class="headerCovTableEntry"><a href="#L97" title="goto first GNC line">1</a></td>
+            <td class="headerCovTableEntry"><a href="#L95" title="goto first CBC line">2</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-01-03 21:58:11</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">25.0&nbsp;%</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"><a href="#L97" title="goto first UNC branch">6</a></td>
+            <td class="headerCovTableEntry"><a href="#L97" title="goto first GNC branch">2</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-01-03 21:58:05</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 93 ignored lines)</span>
+<span id="L94"><span class="lineNum">      94</span>                 :                :     /// &lt;/summary&gt;</span>
+<span id="L95"><span class="lineNum">      95</span>                 :<a href="#L101" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           2 :     const struct pane &amp;pane() const</span></span>
+<span id="L96"><span class="lineNum">      96</span>                 :                :     {</span>
+<span id="L97"><span class="lineNum">      97</span>         [<span class="tlaUNC"> <a href="#L99" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch 1 was taken 2 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           2 :         if (!pane_.is_set())</span></span>
+<span id="L98"><span class="lineNum">      98</span>                 :                :         {</span>
+<span id="L99"><span class="lineNum">      99</span>         [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::invalid_attribute(&quot;sheet view has no pane&quot;);</span></span>
+<span id="L100"><span class="lineNum">     100</span>                 :                :         }</span>
+<span id="L101"><span class="lineNum">     101</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           2 :         return pane_.get();</span></span>
+<span id="L102"><span class="lineNum">     102</span>                 :                :     }</span>
+<span id="L103"><span class="lineNum">     103</span>                 :                : </span>
+<span id="L104"><span class="lineNum">     104</span>                 :                :     /// &lt;summary&gt;</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 221 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.2-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
