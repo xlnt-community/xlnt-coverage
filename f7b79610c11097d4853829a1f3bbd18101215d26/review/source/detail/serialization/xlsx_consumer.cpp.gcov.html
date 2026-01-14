@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/serialization/xlsx_consumer.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/serialization/xlsx_consumer.cpp</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">66.7&nbsp;%</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry"><a href="#L1503" title="goto first UNC line">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L1501" title="goto first GNC line">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L1498" title="goto first CBC line">2</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-01-14 16:42:32</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">61.1&nbsp;%</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry"><a href="#L1501" title="goto first UNC branch">14</a></td>
+            <td class="headerCovTableEntry"><a href="#L1501" title="goto first GNC branch">12</a></td>
+            <td class="headerCovTableEntry"><a href="#L1498" title="goto first CBC branch">10</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-01-14 16:42:27</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 1497 ignored lines)</span>
+<span id="L1498"><span class="lineNum">    1498</span>      [<span class="tlaCBC"> <a href="#L1512" title="CBC: Branch 0 was taken 35 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1512" title="CBC: Branch &quot;2&quot; was taken 35 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1512" title="CBC: Branch &quot;4&quot; was taken 35 times" class="branchTla">+</a> </span>]:<a href="#L1512" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         105 :             row_properties.spans = parser().attribute(&quot;spans&quot;);</span></span>
+<span id="L1499"><span class="lineNum">    1499</span>                 :                :         }</span>
+<span id="L1500"><span class="lineNum">    1500</span>                 :                :         </span>
+<span id="L1501"><span class="lineNum">    1501</span>   [<span class="tlaGNC"> <a href="#L1506" title="GNC: Branch 0 was taken 40 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L1506" title="GNC: Branch &quot;2&quot; was taken 40 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L1503" title="UNC: Branch &quot;4&quot; was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L1506" title="GNC: Branch &quot;5&quot; was taken 40 times" class="branchTla">+</a> </span>]:<a href="#L1506" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">         120 :         if (parser().attribute_present(&quot;outlineLevel&quot;))</span></span>
+<span id="L1502"><span class="lineNum">    1502</span>                 :                :         {</span>
+<span id="L1503"><span class="lineNum">    1503</span>         [<span class="tlaUNC"> <a href="#L1506" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1506" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L1508" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             row_properties.outline_level = parser().attribute&lt;int&gt;(&quot;outlineLevel&quot;);</span></span>
+<span id="L1504"><span class="lineNum">    1504</span>                 :                :         }</span>
+<span id="L1505"><span class="lineNum">    1505</span>                 :                : </span>
+<span id="L1506"><span class="lineNum">    1506</span>   [<span class="tlaGNC"> <a href="#top" title="GNC: Branch 0 was taken 40 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch &quot;2&quot; was taken 40 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L1508" title="UNC: Branch &quot;4&quot; was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch &quot;5&quot; was taken 40 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">         120 :         if (parser().attribute_present(&quot;collapsed&quot;))</span></span>
+<span id="L1507"><span class="lineNum">    1507</span>                 :                :         {</span>
+<span id="L1508"><span class="lineNum">    1508</span>      [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             row_properties.collapsed = is_true(parser().attribute(&quot;collapsed&quot;));</span></span>
+<span id="L1509"><span class="lineNum">    1509</span>                 :                :         }</span>
+<span id="L1510"><span class="lineNum">    1510</span>                 :                : </span>
+<span id="L1511"><span class="lineNum">    1511</span>                 :                : </span>
+<span id="L1512"><span class="lineNum">    1512</span>         [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 40 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch &quot;2&quot; was taken 40 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         120 :         skip_attributes({&quot;customFormat&quot;, &quot;s&quot;, &quot;customFont&quot;,</span></span>
+<span id="L1513"><span class="lineNum">    1513</span>                 :                :             &quot;thickTop&quot;, &quot;thickBot&quot;, &quot;ph&quot;});</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 2128 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
