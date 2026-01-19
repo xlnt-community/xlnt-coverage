@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/number_format/number_formatter.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/number_format/number_formatter.cpp<span style="font-size: 80%;"> (source / <a href="number_formatter.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+            <td width="5%" class="headerCovTableHeadDCB" title="Deleted Covered Baseline (1 => -):
+Previously tested code has been deleted">DCB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">62.5&nbsp;%</td>
+            <td class="headerCovTableEntry">56</td>
+            <td class="headerCovTableEntry">35</td>
+            <td class="headerCovTableEntry"><a href="#L698" title="goto first UNC line">11</a></td>
+            <td class="headerCovTableEntry"><a href="#L699" title="goto first UBC line">10</a></td>
+            <td class="headerCovTableEntry"><a href="#L1431" title="goto first GNC line">1</a></td>
+            <td class="headerCovTableEntry"><a href="#L694" title="goto first CBC line">34</a></td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-01-19 22:34:27</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">50.9&nbsp;%</td>
+            <td class="headerCovTableEntry">57</td>
+            <td class="headerCovTableEntry">29</td>
+            <td class="headerCovTableEntry"><a href="#L698" title="goto first UNC branch">10</a></td>
+            <td class="headerCovTableEntry"><a href="#L1373" title="goto first UBC branch">46</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L702" title="goto first CBC branch">58</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-01-19 22:34:21</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 692 ignored lines)</span>
+<span id="L693"><span class="lineNum">     693</span>                 :                :                 {</span>
+<span id="L694"><span class="lineNum">     694</span>                 :<a href="#L701" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           1 :                     part.type = template_part::template_type::elapsed_seconds;</span></span>
+<span id="L695"><span class="lineNum">     695</span>                 :<span class="tlaCBC">              1 :                     break;</span></span>
+<span id="L696"><span class="lineNum">     696</span>                 :                :                 }</span>
+<span id="L697"><span class="lineNumWithDelete" title="removed line 698 from baseline version">     697</span>                 :                : </span>
+<span id="L698"><span class="lineNum">     698</span>            [<span class="tlaUNC"> <a href="#L815" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L815" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :                 unhandled_case(true, token.string);</span></span>
+<span id="L699"><span class="lineNum">     699</span>                 :<a href="#L816" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                 break;</span></span>
+<span id="L700"><span class="lineNum">     700</span>                 :                : </span>
+<span id="L701"><span class="lineNum">     701</span>                 :<a href="#L823" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          95 :             case 'm':</span></span>
+<span id="L702"><span class="lineNum">     702</span>      [<span class="tlaCBC"> <a href="#L823" title="CBC: Branch 0 was taken 95 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L823" title="CBC: Branch &quot;2&quot; was taken 27 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L823" title="CBC: Branch &quot;3&quot; was taken 68 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             95 :                 if (token.string == &quot;m&quot;)</span></span>
+<span id="L703"><span class="lineNum">     703</span>                 :                :                 {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 106 ignored lines)</span>
+<span id="L810"><span class="lineNum">     810</span>                 :                :                 {</span>
+<span id="L811"><span class="lineNum">     811</span>                 :<span class="tlaCBC">              2 :                     part.type = template_part::template_type::a_p;</span></span>
+<span id="L812"><span class="lineNum">     812</span>                 :<span class="tlaCBC">              2 :                     break;</span></span>
+<span id="L813"><span class="lineNum">     813</span>                 :                :                 }</span>
+<span id="L814"><span class="lineNumWithDelete" title="removed line 815 from baseline version">     814</span>                 :                : </span>
+<span id="L815"><span class="lineNum">     815</span>            [<span class="tlaUNC"> <a href="#L819" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L819" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :                 unhandled_case(true, token.string);</span></span>
+<span id="L816"><span class="lineNum">     816</span>                 :<a href="#L820" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                 break;</span></span>
+<span id="L817"><span class="lineNum">     817</span>                 :                : </span>
+<span id="L818"><span class="lineNumWithDelete" title="removed line 819 from baseline version">     818</span>                 :<span class="tlaUBC">              0 :             default:</span></span>
+<span id="L819"><span class="lineNum">     819</span>            [<span class="tlaUNC"> <a href="#L1471" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L1369" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :                 unhandled_case(true, token.string);</span></span>
+<span id="L820"><span class="lineNum">     820</span>                 :<a href="#L1370" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                 break;</span></span>
+<span id="L821"><span class="lineNum">     821</span>                 :                :             }</span>
+<span id="L822"><span class="lineNum">     822</span>                 :                : </span>
+<span id="L823"><span class="lineNum">     823</span>            [<span class="tlaCBC"> <a href="#L1373" title="CBC: Branch 0 was taken 259 times" class="branchTla">+</a> </span>]:<a href="#L1372" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         259 :             section.parts.push_back(part);</span></span>
+<span id="L824"><span class="lineNum">     824</span>                 :<span class="tlaCBC">            259 :             part = template_part();</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 539 ignored lines)</span>
+<span id="L1364"><span class="lineNum">    1364</span>                 :                :             {</span>
+<span id="L1365"><span class="lineNum">    1365</span>                 :<span class="tlaCBC">              2 :                 return static_cast&lt;format_color&gt;(color_number);</span></span>
+<span id="L1366"><span class="lineNum">    1366</span>                 :                :             }</span>
+<span id="L1367"><span class="lineNum">    1367</span>                 :                :         }</span>
+<span id="L1368"><span class="lineNumWithDelete" title="removed line 1369 from baseline version">    1368</span>                 :                : </span>
+<span id="L1369"><span class="lineNum">    1369</span>                 :<a href="#L1382" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         unhandled_case(true, color);</span></span>
+<span id="L1370"><span class="lineNum">    1370</span>                 :<a href="#L1383" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         break;</span></span>
+<span id="L1371"><span class="lineNum">    1371</span>                 :                : </span>
+<span id="L1372"><span class="lineNum">    1372</span>                 :<a href="#L1385" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           6 :     case 'B':</span></span>
+<span id="L1373"><span class="lineNum">    1373</span>   [<span class="tlaCBC"> <a href="#L1377" title="CBC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1377" title="CBC: Branch 1 was taken 4 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1377" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1377" title="CBC: Branch 3 was taken 2 times" class="branchTla">+</a> </span> :<span class="tlaCBC">              6 :         if ((color == &quot;Black&quot;) || (color == &quot;BLACK&quot;))</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L1377" title="CBC: Branch 4 was taken 4 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1377" title="CBC: Branch 5 was taken 2 times" class="branchTla">+</a> </span>]
+<span id="L1374"><span class="lineNum">    1374</span>                 :                :         {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 2 ignored lines)</span>
+<span id="L1377"><span class="lineNum">    1377</span>   [<span class="tlaUBC"> <a href="#L1386" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1386" title="CBC: Branch 1 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1386" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L1386" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">              2 :         else if ((color == &quot;Blue&quot;) || (color == &quot;BLUE&quot;))</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L1386" title="CBC: Branch 4 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1386" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L1378"><span class="lineNum">    1378</span>                 :                :         {</span>
+<span id="L1379"><span class="lineNum">    1379</span>                 :<span class="tlaCBC">              2 :             return format_color::blue;</span></span>
+<span id="L1380"><span class="lineNum">    1380</span>                 :                :         }</span>
+<span id="L1381"><span class="lineNumWithDelete" title="removed line 1382 from baseline version">    1381</span>                 :                : </span>
+<span id="L1382"><span class="lineNum">    1382</span>                 :<a href="#L1391" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         unhandled_case(true, color);</span></span>
+<span id="L1383"><span class="lineNum">    1383</span>                 :<a href="#L1392" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         break;</span></span>
+<span id="L1384"><span class="lineNum">    1384</span>                 :                : </span>
+<span id="L1385"><span class="lineNum">    1385</span>                 :<a href="#L1394" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           9 :     case 'G':</span></span>
+<span id="L1386"><span class="lineNum">    1386</span>   [<span class="tlaUBC"> <a href="#L1395" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1395" title="CBC: Branch 1 was taken 9 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1395" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L1395" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">              9 :         if ((color == &quot;Green&quot;) || (color == &quot;GREEN&quot;))</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L1395" title="CBC: Branch 4 was taken 9 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1395" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L1387"><span class="lineNum">    1387</span>                 :                :         {</span>
+<span id="L1388"><span class="lineNum">    1388</span>                 :<span class="tlaCBC">              9 :             return format_color::green;</span></span>
+<span id="L1389"><span class="lineNum">    1389</span>                 :                :         }</span>
+<span id="L1390"><span class="lineNumWithDelete" title="removed line 1391 from baseline version">    1390</span>                 :                : </span>
+<span id="L1391"><span class="lineNum">    1391</span>                 :<a href="#L1400" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         unhandled_case(true, color);</span></span>
+<span id="L1392"><span class="lineNum">    1392</span>                 :<a href="#L1401" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         break;</span></span>
+<span id="L1393"><span class="lineNum">    1393</span>                 :                : </span>
+<span id="L1394"><span class="lineNum">    1394</span>                 :<a href="#L1403" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           2 :     case 'W':</span></span>
+<span id="L1395"><span class="lineNum">    1395</span>   [<span class="tlaUBC"> <a href="#L1404" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1404" title="CBC: Branch 1 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1404" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L1404" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">              2 :         if ((color == &quot;White&quot;) || (color == &quot;WHITE&quot;))</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L1404" title="CBC: Branch 4 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1404" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L1396"><span class="lineNum">    1396</span>                 :                :         {</span>
+<span id="L1397"><span class="lineNum">    1397</span>                 :<span class="tlaCBC">              2 :             return format_color::white;</span></span>
+<span id="L1398"><span class="lineNum">    1398</span>                 :                :         }</span>
+<span id="L1399"><span class="lineNumWithDelete" title="removed line 1400 from baseline version">    1399</span>                 :                : </span>
+<span id="L1400"><span class="lineNum">    1400</span>                 :<a href="#L1409" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         unhandled_case(true, color);</span></span>
+<span id="L1401"><span class="lineNum">    1401</span>                 :<a href="#L1410" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         break;</span></span>
+<span id="L1402"><span class="lineNum">    1402</span>                 :                : </span>
+<span id="L1403"><span class="lineNum">    1403</span>                 :<a href="#L1412" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           2 :     case 'M':</span></span>
+<span id="L1404"><span class="lineNum">    1404</span>   [<span class="tlaUBC"> <a href="#L1413" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1413" title="CBC: Branch 1 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1413" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L1413" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">              2 :         if ((color == &quot;Magenta&quot;) || (color == &quot;MAGENTA&quot;))</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L1413" title="CBC: Branch 4 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1413" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L1405"><span class="lineNum">    1405</span>                 :                :         {</span>
+<span id="L1406"><span class="lineNum">    1406</span>                 :<span class="tlaCBC">              2 :             return format_color::magenta;</span></span>
+<span id="L1407"><span class="lineNum">    1407</span>                 :                :         }</span>
+<span id="L1408"><span class="lineNumWithDelete" title="removed line 1409 from baseline version">    1408</span>                 :                : </span>
+<span id="L1409"><span class="lineNum">    1409</span>                 :<a href="#L1418" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         unhandled_case(true, color);</span></span>
+<span id="L1410"><span class="lineNum">    1410</span>                 :<a href="#L1419" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         break;</span></span>
+<span id="L1411"><span class="lineNum">    1411</span>                 :                : </span>
+<span id="L1412"><span class="lineNum">    1412</span>                 :<a href="#L1421" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           2 :     case 'Y':</span></span>
+<span id="L1413"><span class="lineNum">    1413</span>   [<span class="tlaUBC"> <a href="#L1422" title="UBC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1422" title="CBC: Branch 1 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1422" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L1422" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">              2 :         if ((color == &quot;Yellow&quot;) || (color == &quot;YELLOW&quot;))</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L1422" title="CBC: Branch 4 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1422" title="UBC: Branch 5 was not taken" class="branchTla">-</a> </span>]
+<span id="L1414"><span class="lineNum">    1414</span>                 :                :         {</span>
+<span id="L1415"><span class="lineNum">    1415</span>                 :<span class="tlaCBC">              2 :             return format_color::yellow;</span></span>
+<span id="L1416"><span class="lineNum">    1416</span>                 :                :         }</span>
+<span id="L1417"><span class="lineNumWithDelete" title="removed line 1418 from baseline version">    1417</span>                 :                : </span>
+<span id="L1418"><span class="lineNum">    1418</span>                 :<a href="#L1434" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         unhandled_case(true, color);</span></span>
+<span id="L1419"><span class="lineNum">    1419</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         break;</span></span>
+<span id="L1420"><span class="lineNum">    1420</span>                 :                : </span>
+<span id="L1421"><span class="lineNum">    1421</span>                 :<a href="#L1437" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          21 :     case 'R':</span></span>
+<span id="L1422"><span class="lineNum">    1422</span>   [<span class="tlaCBC"> <a href="#L1469" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1469" title="CBC: Branch 1 was taken 20 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1469" title="UBC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1469" title="CBC: Branch 3 was taken 1 time" class="branchTla">+</a> </span> :<span class="tlaCBC">             21 :         if ((color == &quot;Red&quot;) || (color == &quot;RED&quot;))</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L1469" title="CBC: Branch 4 was taken 20 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1469" title="CBC: Branch 5 was taken 1 time" class="branchTla">+</a> </span>]
+<span id="L1423"><span class="lineNum">    1423</span>                 :                :         {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 5 ignored lines)</span>
+<span id="L1429"><span class="lineNum">    1429</span>                 :                : </span>
+<span id="L1430"><span class="lineNumWithDelete" title="removed line 1431 from baseline version">    1430</span>                 :<span class="tlaCBC">              2 :     default:</span></span>
+<span id="L1431"><span class="lineNum">    1431</span>                 :<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           2 :         unhandled_case(true, color);</span></span>
+<span id="L1432"><span class="lineNum">    1432</span>                 :                :     }</span>
+<span id="L1433"><span class="lineNumWithDelete" title="removed line 1434 from baseline version">    1433</span>                 :                : </span>
+<span id="L1434"><span class="lineNum">    1434</span>                 :<a href="#L1471" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     unhandled_case_error(color);</span></span>
+<span id="L1435"><span class="lineNum">    1435</span>                 :                : }</span>
+<span id="L1436"><span class="lineNum">    1436</span>                 :                : </span>
+<span id="L1437"><span class="lineNum">    1437</span>                 :<a href="#L1473" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           7 : std::pair&lt;format_locale, std::string&gt; number_format_parser::locale_from_string(const std::string &amp;locale_string)</span></span>
+<span id="L1438"><span class="lineNum">    1438</span>                 :                : {</span>
+<span id="L1439"><span class="lineNum">    1439</span>                 :<span class="tlaCBC">              7 :     auto hyphen_index = locale_string.find('-');</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 26 ignored lines)</span>
+<span id="L1466"><span class="lineNum">    1466</span>                 :                :     }</span>
+<span id="L1467"><span class="lineNum">    1467</span>                 :                : </span>
+<span id="L1468"><span class="lineNum">    1468</span>                 :<span class="tlaCBC">              4 :     int country_code = -1;</span></span>
+<span id="L1469"><span class="lineNum">    1469</span>      [<span class="tlaCBC"> <a href="#L1475" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;2&quot; was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1475" title="CBC: Branch &quot;3&quot; was taken 4 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">              4 :     if (detail::parse(country_code_string, country_code, nullptr, 16) != std::errc())</span></span>
+<span id="L1470"><span class="lineNumWithDelete" title="removed line 1471 from baseline version">    1470</span>                 :                :     {</span>
+<span id="L1471"><span class="lineNum">    1471</span>         [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         throw xlnt::invalid_attribute(&quot;bad locale: &quot; + locale_string);</span></span>
+<span id="L1472"><span class="lineNum">    1472</span>                 :                :     }</span>
+<span id="L1473"><span class="lineNum">    1473</span>                 :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">           4 :     country_code &amp;= 0xFFFF;</span></span>
+<span id="L1474"><span class="lineNum">    1474</span>                 :                : </span>
+<span id="L1475"><span class="lineNum">    1475</span>      [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch &quot;2&quot; was taken 1195 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch &quot;3&quot; was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaCBC">           1196 :     for (const auto &amp;known_locale : known_locales())</span></span>
+<span id="L1476"><span class="lineNum">    1476</span>                 :                :     {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 623 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.2-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
