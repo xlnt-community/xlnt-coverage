@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/utils/error_helpers.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/utils/error_helpers.cpp</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">66.7&nbsp;%</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry"><a href="#L70" title="goto first UNC line">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L67" title="goto first GNC line">4</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-03-19 21:25:01</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">-</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"><a href="#L68" title="goto first UNC branch">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L68" title="goto first GNC branch">4</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-03-19 21:24:56</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 64 ignored lines)</span>
+<span id="L65"><span class="lineNum">      65</span>                 :                :     // This may be either a pointer to a string that the function stores in buf,</span>
+<span id="L66"><span class="lineNum">      66</span>                 :                :     // or a pointer to some (immutable) static string (in which case buf is unused).</span>
+<span id="L67"><span class="lineNum">      67</span>                 :<a href="#L74" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           7 :     const char *ret_buf = strerror_r(err_no, buffer, BUFF_SIZE);</span></span>
+<span id="L68"><span class="lineNum">      68</span>         [<span class="tlaUNC"> <a href="#L70" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L74" title="GNC: Branch 1 was taken 7 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              7 :     if (buffer[0] != '\0')</span></span>
+<span id="L69"><span class="lineNum">      69</span>                 :                :     {</span>
+<span id="L70"><span class="lineNum">      70</span>            [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L81" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         err_msg = buffer;</span></span>
+<span id="L71"><span class="lineNum">      71</span>                 :                :     }</span>
+<span id="L72"><span class="lineNum">      72</span>                 :                :     else</span>
+<span id="L73"><span class="lineNum">      73</span>                 :                :     {</span>
+<span id="L74"><span class="lineNum">      74</span>            [<span class="tlaGNC"> <a href="#top" title="GNC: Branch 0 was taken 7 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           7 :         err_msg = ret_buf;</span></span>
+<span id="L75"><span class="lineNum">      75</span>                 :                :     }</span>
+<span id="L76"><span class="lineNum">      76</span>                 :                : #else</span>
+<span id="L77"><span class="lineNum">      77</span>                 :                :     err_msg = strerror(err_no);</span>
+<span id="L78"><span class="lineNum">      78</span>                 :                : #endif</span>
+<span id="L79"><span class="lineNum">      79</span>                 :                : </span>
+<span id="L80"><span class="lineNum">      80</span>                 :<span class="tlaGNC">              7 :     return err_msg;</span></span>
+<span id="L81"><span class="lineNum">      81</span>                 :<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 : }</span></span>
+<span id="L82"><span class="lineNum">      82</span>                 :                : </span>
+<span id="L83"><span class="lineNum">      83</span>                 :                : } // namespace detail</span>
+<span id="L84"><span class="lineNum">      84</span>                 :                : } // namespace xlnt</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.4-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
