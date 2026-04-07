@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/workbook/workbook.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/workbook/workbook.cpp<span style="font-size: 80%;"> (source / <a href="workbook.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryMed">85.7&nbsp;%</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry"><a href="#L2146" title="goto first UNC line">1</a></td>
+            <td class="headerCovTableEntry"><a href="#L2144" title="goto first GNC line">1</a></td>
+            <td class="headerCovTableEntry"><a href="#L2141" title="goto first CBC line">5</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-04-07 20:09:37</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryMed">76.5&nbsp;%</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryMed">75.0&nbsp;%</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry"><a href="#L2144" title="goto first UNC branch">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L2144" title="goto first GNC branch">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L2141" title="goto first CBC branch">10</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-04-07 20:09:32</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 2140 ignored lines)</span>
+<span id="L2141"><span class="lineNum">    2141</span>            [<span class="tlaCBC"> <a href="#L2149" title="CBC: Branch 0 was taken 116 times" class="branchTla">+</a> </span>]:<a href="#L2149" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         116 :         auto rel_it = std::find_if(rel_copy.begin(), rel_copy.end(),</span></span>
+<span id="L2142"><span class="lineNum">    2142</span>                 :<span class="tlaCBC">            318 :             [&amp;](const relationship &amp;rel) { return rel.id() == worksheet_rel_ids[index]; });</span></span>
+<span id="L2143"><span class="lineNum">    2143</span>                 :                : </span>
+<span id="L2144"><span class="lineNum">    2144</span>         [<span class="tlaUNC"> <a href="#L2146" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch 1 was taken 116 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">         116 :         if (rel_it == rel_copy.end())</span></span>
+<span id="L2145"><span class="lineNum">    2145</span>                 :                :         {</span>
+<span id="L2146"><span class="lineNum">    2146</span>            [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::key_not_found(worksheet_rel_ids[index]);</span></span>
+<span id="L2147"><span class="lineNum">    2147</span>                 :                :         }</span>
+<span id="L2148"><span class="lineNum">    2148</span>                 :                : </span>
+<span id="L2149"><span class="lineNum">    2149</span>            [<span class="tlaCBC"> <a href="#L2150" title="CBC: Branch 0 was taken 116 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         116 :         std::string rel_id = new_id();</span></span>
+<span id="L2150"><span class="lineNum">    2150</span>         [<span class="tlaCBC"> <a href="#L2151" title="CBC: Branch 0 was taken 116 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L2151" title="CBC: Branch &quot;2&quot; was taken 116 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            116 :         d_-&gt;sheet_title_rel_id_map_.at(titles[index - 1]) = rel_id; // update title -&gt; relation mapping</span></span>
+<span id="L2151"><span class="lineNum">    2151</span>            [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 116 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            232 :         manifest().register_relationship(relationship(rel_id, rel_it-&gt;type(),</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 15 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.4-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

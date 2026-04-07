@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/packaging/ext_list.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/packaging/ext_list.cpp<span style="font-size: 80%;"> (source / <a href="ext_list.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry"><a href="#L127" title="goto first UNC line">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L122" title="goto first UBC line">5</a></td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-04-07 20:09:37</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry"><a href="#L127" title="goto first UNC branch">10</a></td>
+            <td class="headerCovTableEntry"><a href="#L122" title="goto first UBC branch">2</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-04-07 20:09:32</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 121 ignored lines)</span>
+<span id="L122"><span class="lineNum">     122</span>            [<span class="tlaUBC"> <a href="#top" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L128" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     return extensions_.end() != std::find_if(extensions_.begin(), extensions_.end(), [&amp;extension_uri](const ext &amp;ext) { return extension_uri == ext.extension_ID_; });</span></span>
+<span id="L123"><span class="lineNum">     123</span>                 :                : }</span>
+<span id="L124"><span class="lineNum">     124</span>                 :                : </span>
+<span id="L125"><span class="lineNum">     125</span>                 :<span class="tlaUBC">              0 : const ext_list::ext &amp;ext_list::extension(const uri &amp;extension_uri) const</span></span>
+<span id="L126"><span class="lineNumWithDelete" title="removed line 126 from baseline version">     126</span>                 :                : {</span>
+<span id="L127"><span class="lineNum">     127</span>            [<span class="tlaUNC"> <a href="#L129" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L129" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     auto it = std::find_if(extensions_.begin(), extensions_.end(),</span></span>
+<span id="L128"><span class="lineNum">     128</span>                 :<a href="#L136" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :         [&amp;extension_uri](const ext &amp;ext) { return extension_uri == ext.extension_ID_; });</span></span>
+<span id="L129"><span class="lineNum">     129</span>         [<span class="tlaUNC"> <a href="#L131" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L131" title="UNC: Branch 1 was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     if (it == extensions_.end())</span></span>
+<span id="L130"><span class="lineNum">     130</span>                 :                :     {</span>
+<span id="L131"><span class="lineNum">     131</span>         [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :         throw xlnt::key_not_found(extension_uri.to_string());</span></span>
+<span id="L132"><span class="lineNum">     132</span>                 :                :     }</span>
+<span id="L133"><span class="lineNum">     133</span>                 :<span class="tlaUNC">              0 :     return *it;</span></span>
+<span id="L134"><span class="lineNum">     134</span>                 :                : }</span>
+<span id="L135"><span class="lineNum">     135</span>                 :                : </span>
+<span id="L136"><span class="lineNum">     136</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : const std::vector&lt;ext_list::ext&gt; &amp;ext_list::extensions() const</span></span>
+<span id="L137"><span class="lineNum">     137</span>                 :                : {</span>
+<span id="L138"><span class="lineNum">     138</span>                 :<span class="tlaUBC">              0 :     return extensions_;</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 13 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.4-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
