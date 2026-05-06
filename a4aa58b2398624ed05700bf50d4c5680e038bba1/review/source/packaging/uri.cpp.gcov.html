@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/packaging/uri.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/packaging/uri.cpp<span style="font-size: 80%;"> (source / <a href="uri.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadDCB" title="Deleted Covered Baseline (1 => -):
+Previously tested code has been deleted">DCB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">73.2&nbsp;%</td>
+            <td class="headerCovTableEntry">71</td>
+            <td class="headerCovTableEntry">52</td>
+            <td class="headerCovTableEntry"><a href="#L91" title="goto first UNC line">19</a></td>
+            <td class="headerCovTableEntry"><a href="#L88" title="goto first GNC line">52</a></td>
+            <td class="headerCovTableEntry">6</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-05-06 12:33:02</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">3</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">67.9&nbsp;%</td>
+            <td class="headerCovTableEntry">78</td>
+            <td class="headerCovTableEntry">53</td>
+            <td class="headerCovTableEntry"><a href="#L89" title="goto first UNC branch">50</a></td>
+            <td class="headerCovTableEntry"><a href="#L89" title="goto first GNC branch">106</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-05-06 12:32:57</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 85 ignored lines)</span>
+<span id="L86"><span class="lineNum">      86</span>                 :                :         }</span>
+<span id="L87"><span class="lineNum">      87</span>                 :                : </span>
+<span id="L88"><span class="lineNum">      88</span>                 :<a href="#L94" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          13 :         const std::size_t digit = static_cast&lt;std::size_t&gt;(c - '0');</span></span>
+<span id="L89"><span class="lineNum">      89</span>         [<span class="tlaUNC"> <a href="#L163" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L199" title="GNC: Branch 1 was taken 13 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             13 :         if (value &gt; (std::numeric_limits&lt;std::size_t&gt;::max() - digit) / 10)</span></span>
+<span id="L90"><span class="lineNum">      90</span>                 :                :         {</span>
+<span id="L91"><span class="lineNum">      91</span>                 :<a href="#L163" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             return false;</span></span>
+<span id="L92"><span class="lineNum">      92</span>                 :                :         }</span>
+<span id="L93"><span class="lineNum">      93</span>                 :                : </span>
+<span id="L94"><span class="lineNum">      94</span>                 :<a href="#L168" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          13 :         value = value * 10 + digit;</span></span>
+<span id="L95"><span class="lineNum">      95</span>                 :                :     }</span>
+<span id="L96"><span class="lineNum">      96</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 61 ignored lines)</span>
+<span id="L158"><span class="lineNum">     158</span>                 :                :                 }</span>
+<span id="L159"><span class="lineNum">     159</span>                 :                :             }</span>
+<span id="L160"><span class="lineNum">     160</span>                 :                :         }</span>
+<span id="L161"><span class="lineNum">     161</span>                 :                :         else</span>
+<span id="L162"><span class="lineNum">     162</span>                 :                :         {</span>
+<span id="L163"><span class="lineNum">     163</span>            [<span class="tlaUNC"> <a href="#L201" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L203" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             result.host = hostport;</span></span>
+<span id="L164"><span class="lineNum">     164</span>                 :                :         }</span>
+<span id="L165"><span class="lineNum">     165</span>                 :                :     }</span>
+<span id="L166"><span class="lineNum">     166</span>                 :                :     else</span>
+<span id="L167"><span class="lineNum">     167</span>                 :                :     {</span>
+<span id="L168"><span class="lineNum">     168</span>                 :<a href="#L205" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          61 :         const std::size_t colon = hostport.rfind(':');</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 29 ignored lines)</span>
+<span id="L198"><span class="lineNum">     198</span>                 :                :         {</span>
+<span id="L199"><span class="lineNum">     199</span>            [<span class="tlaGNC"> <a href="#L201" title="GNC: Branch 0 was taken 106 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">            106 :             path.erase(0, 3);</span></span>
+<span id="L200"><span class="lineNum">     200</span>                 :                :         }</span>
+<span id="L201"><span class="lineNum">     201</span>      [<span class="tlaGNC"> <a href="#L205" title="GNC: Branch 0 was taken 18539 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L203" title="UNC: Branch &quot;2&quot; was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L205" title="GNC: Branch &quot;3&quot; was taken 18539 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">          18539 :         else if (path.compare(0, 2, &quot;./&quot;) == 0)</span></span>
+<span id="L202"><span class="lineNum">     202</span>                 :                :         {</span>
+<span id="L203"><span class="lineNum">     203</span>            [<span class="tlaUNC"> <a href="#L217" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<a href="#L220" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             path.erase(0, 2);</span></span>
+<span id="L204"><span class="lineNum">     204</span>                 :                :         }</span>
+<span id="L205"><span class="lineNum">     205</span>      [<span class="tlaGNC"> <a href="#L207" title="GNC: Branch 0 was taken 18539 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L207" title="GNC: Branch &quot;2&quot; was taken 2 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L207" title="GNC: Branch &quot;3&quot; was taken 18537 times" class="branchTla">+</a> </span>]:<a href="#L222" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">       18539 :         else if (path.compare(0, 3, &quot;/./&quot;) == 0)</span></span>
+<span id="L206"><span class="lineNum">     206</span>                 :                :         {</span>
+<span id="L207"><span class="lineNum">     207</span>            [<span class="tlaGNC"> <a href="#L215" title="GNC: Branch 0 was taken 2 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              2 :             path.replace(0, 3, &quot;/&quot;);</span></span>
+<span id="L208"><span class="lineNum">     208</span>                 :                :         }</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 6 ignored lines)</span>
+<span id="L215"><span class="lineNum">     215</span>            [<span class="tlaGNC"> <a href="#L217" title="GNC: Branch 0 was taken 6 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              6 :             path.replace(0, 4, &quot;/&quot;);</span></span>
+<span id="L216"><span class="lineNum">     216</span>                 :<span class="tlaGNC">              6 :             std::size_t slash = output.find_last_of('/');</span></span>
+<span id="L217"><span class="lineNum">     217</span>         [<span class="tlaGNC"> <a href="#L218" title="GNC: Branch 0 was taken 6 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L226" title="UNC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaGNC">              6 :             if (slash != std::string::npos)</span></span>
+<span id="L218"><span class="lineNum">     218</span>            [<span class="tlaGNC"> <a href="#L222" title="GNC: Branch 0 was taken 6 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              6 :                 output.erase(slash);</span></span>
+<span id="L219"><span class="lineNum">     219</span>                 :                :             else</span>
+<span id="L220"><span class="lineNum">     220</span>                 :<a href="#L229" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :                 output.clear();</span></span>
+<span id="L221"><span class="lineNum">     221</span>                 :                :         }</span>
+<span id="L222"><span class="lineNum">     222</span>      [<span class="tlaGNC"> <a href="#L224" title="GNC: Branch 0 was taken 18530 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L224" title="GNC: Branch &quot;2&quot; was taken 2 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L224" title="GNC: Branch &quot;3&quot; was taken 18528 times" class="branchTla">+</a> </span>]:<a href="#L231" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">       18530 :         else if (path == &quot;/..&quot;)</span></span>
+<span id="L223"><span class="lineNum">     223</span>                 :                :         {</span>
+<span id="L224"><span class="lineNum">     224</span>            [<span class="tlaGNC"> <a href="#L226" title="GNC: Branch 0 was taken 2 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              2 :             path = &quot;/&quot;;</span></span>
+<span id="L225"><span class="lineNum">     225</span>                 :<span class="tlaGNC">              2 :             std::size_t slash = output.find_last_of('/');</span></span>
+<span id="L226"><span class="lineNum">     226</span>         [<span class="tlaGNC"> <a href="#L227" title="GNC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L231" title="UNC: Branch 1 was not taken" class="branchTla">-</a> </span>]:<span class="tlaGNC">              2 :             if (slash != std::string::npos)</span></span>
+<span id="L227"><span class="lineNum">     227</span>            [<span class="tlaGNC"> <a href="#L231" title="GNC: Branch 0 was taken 2 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              2 :                 output.erase(slash);</span></span>
+<span id="L228"><span class="lineNum">     228</span>                 :                :             else</span>
+<span id="L229"><span class="lineNum">     229</span>                 :<a href="#L233" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :                 output.clear();</span></span>
+<span id="L230"><span class="lineNum">     230</span>                 :                :         }</span>
+<span id="L231"><span class="lineNum">     231</span>   [<span class="tlaGNC"> <a href="#L238" title="GNC: Branch 0 was taken 18528 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L238" title="GNC: Branch &quot;2&quot; was taken 18528 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L255" title="UNC: Branch &quot;3&quot; was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L238" title="GNC: Branch &quot;4&quot; was taken 18528 times" class="branchTla">+</a> </span> :<a href="#L237" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">       18528 :         else if (path == &quot;.&quot; || path == &quot;..&quot;)</span></span>
+<span class="lineNum">        </span>    <span class="tlaUNC"> <a href="#L255" title="UNC: Branch &quot;6&quot; was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L238" title="GNC: Branch &quot;7&quot; was taken 18528 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L255" title="UNC: Branch &quot;8&quot; was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L238" title="GNC: Branch &quot;9&quot; was taken 18528 times" class="branchTla">+</a> </span>]
+<span id="L232"><span class="lineNum">     232</span>                 :                :         {</span>
+<span id="L233"><span class="lineNum">     233</span>                 :<a href="#L251" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             path.clear();</span></span>
+<span id="L234"><span class="lineNum">     234</span>                 :                :         }</span>
+<span id="L235"><span class="lineNum">     235</span>                 :                :         else</span>
+<span id="L236"><span class="lineNum">     236</span>                 :                :         {</span>
+<span id="L237"><span class="lineNum">     237</span>                 :<a href="#L253" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">       18528 :             std::size_t next = path.find('/', 1);</span></span>
+<span id="L238"><span class="lineNum">     238</span>         [<span class="tlaGNC"> <a href="#L246" title="GNC: Branch 0 was taken 11784 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L246" title="GNC: Branch 1 was taken 6744 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">          18528 :             if (next == std::string::npos)</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 7 ignored lines)</span>
+<span id="L246"><span class="lineNum">     246</span>            [<span class="tlaGNC"> <a href="#L255" title="GNC: Branch 0 was taken 6744 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">           6744 :                 path.erase(0, next);</span></span>
+<span id="L247"><span class="lineNum">     247</span>                 :                :             }</span>
+<span id="L248"><span class="lineNum">     248</span>                 :                :         }</span>
+<span id="L249"><span class="lineNum">     249</span>                 :                :     }</span>
+<span id="L250"><span class="lineNum">     250</span>                 :<span class="tlaGNC">          11785 :     return output;</span></span>
+<span id="L251"><span class="lineNum">     251</span>                 :<a href="#L257" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 : }</span></span>
+<span id="L252"><span class="lineNum">     252</span>                 :                : </span>
+<span id="L253"><span class="lineNum">     253</span>                 :<a href="#L260" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          18 : std::string merge_paths(const std::string &amp;base_path, const std::string &amp;relative_path, bool base_has_authority)</span></span>
+<span id="L254"><span class="lineNum">     254</span>                 :                : {</span>
+<span id="L255"><span class="lineNum">     255</span>   [<span class="tlaGNC"> <a href="#L261" title="GNC: Branch 0 was taken 18 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#L261" title="UNC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaUNC"> <a href="#L261" title="UNC: Branch 2 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L261" title="GNC: Branch 3 was taken 18 times" class="branchTla">+</a> </span> :<span class="tlaGNC">             18 :     if (base_has_authority &amp;&amp; base_path.empty())</span></span>
+<span class="lineNum">        </span>          <span class="tlaUNC"> <a href="#L261" title="UNC: Branch 4 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L261" title="GNC: Branch 5 was taken 18 times" class="branchTla">+</a> </span>]
+<span id="L256"><span class="lineNum">     256</span>                 :                :     {</span>
+<span id="L257"><span class="lineNum">     257</span>                 :<a href="#L263" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         return &quot;/&quot; + relative_path;</span></span>
+<span id="L258"><span class="lineNum">     258</span>                 :                :     }</span>
+<span id="L259"><span class="lineNum">     259</span>                 :                : </span>
+<span id="L260"><span class="lineNum">     260</span>                 :<a href="#L266" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          18 :     const std::size_t slash = base_path.find_last_of('/');</span></span>
+<span id="L261"><span class="lineNum">     261</span>         [<span class="tlaUNC"> <a href="#L361" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L266" title="GNC: Branch 1 was taken 18 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             18 :     if (slash == std::string::npos)</span></span>
+<span id="L262"><span class="lineNum">     262</span>                 :                :     {</span>
+<span id="L263"><span class="lineNum">     263</span>                 :<a href="#L363" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         return relative_path;</span></span>
+<span id="L264"><span class="lineNum">     264</span>                 :                :     }</span>
+<span id="L265"><span class="lineNumWithDelete" title="removed line 5 from baseline version">     265</span>                 :                : </span>
+<span id="L266"><span class="lineNum">     266</span>         [<span class="tlaGNC"> <a href="#L360" title="GNC: Branch 0 was taken 18 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L360" title="GNC: Branch &quot;2&quot; was taken 18 times" class="branchTla">+</a> </span>]:<a href="#L368" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          18 :     return base_path.substr(0, slash + 1) + relative_path;</span></span>
+<span id="L267"><span class="lineNum">     267</span>                 :                : }</span>
+<span id="L268"><span class="lineNum">     268</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 89 ignored lines)</span>
+<span id="L358"><span class="lineNum">     358</span>                 :                :     }</span>
+<span id="L359"><span class="lineNum">     359</span>                 :                : </span>
+<span id="L360"><span class="lineNum">     360</span>            [<span class="tlaGNC"> <a href="#L361" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              1 :     std::string base_dir = base_path;</span></span>
+<span id="L361"><span class="lineNum">     361</span>         [<span class="tlaUNC"> <a href="#L363" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L368" title="GNC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              1 :     if (base_dir.empty())</span></span>
+<span id="L362"><span class="lineNum">     362</span>                 :                :     {</span>
+<span id="L363"><span class="lineNum">     363</span>         [<span class="tlaUNC"> <a href="#L365" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L365" title="UNC: Branch 1 was not executed" class="branchTla">#</a> </span>]:<a href="#L370" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         if (base_has_authority)</span></span>
+<span id="L364"><span class="lineNum">     364</span>                 :                :         {</span>
+<span id="L365"><span class="lineNum">     365</span>            [<span class="tlaUNC"> <a href="#L368" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :             base_dir = &quot;/&quot;;</span></span>
+<span id="L366"><span class="lineNum">     366</span>                 :                :         }</span>
+<span id="L367"><span class="lineNum">     367</span>                 :                :     }</span>
+<span id="L368"><span class="lineNum">     368</span>         [<span class="tlaUNC"> <a href="#L371" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L397" title="GNC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<a href="#L381" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           1 :     else if (base_dir.back() != '/')</span></span>
+<span id="L369"><span class="lineNum">     369</span>                 :                :     {</span>
+<span id="L370"><span class="lineNum">     370</span>                 :<a href="#L402" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :         const std::size_t slash = base_dir.find_last_of('/');</span></span>
+<span id="L371"><span class="lineNum">     371</span>         [<span class="tlaUNC"> <a href="#L373" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L373" title="UNC: Branch 1 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :         if (slash != std::string::npos)</span></span>
+<span id="L372"><span class="lineNum">     372</span>                 :                :         {</span>
+<span id="L373"><span class="lineNum">     373</span>            [<span class="tlaUNC"> <a href="#L419" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :             base_dir.erase(slash + 1);</span></span>
+<span id="L374"><span class="lineNum">     374</span>                 :                :         }</span>
+<span id="L375"><span class="lineNum">     375</span>                 :                :         else</span>
+<span id="L376"><span class="lineNum">     376</span>                 :                :         {</span>
+<span id="L377"><span class="lineNum">     377</span>                 :<span class="tlaUNC">              0 :             base_dir.clear();</span></span>
+<span id="L378"><span class="lineNum">     378</span>                 :                :         }</span>
+<span id="L379"><span class="lineNum">     379</span>                 :                :     }</span>
+<span id="L380"><span class="lineNum">     380</span>                 :                : </span>
+<span id="L381"><span class="lineNum">     381</span>                 :<a href="#L404" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           2 :     auto split = [](const std::string &amp;p)</span></span>
+<span id="L382"><span class="lineNum">     382</span>                 :                :     {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 14 ignored lines)</span>
+<span id="L397"><span class="lineNum">     397</span>         [<span class="tlaGNC"> <a href="#L404" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L404" title="GNC: Branch &quot;2&quot; was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              1 :                 out.push_back(&quot;&quot;);</span></span>
+<span id="L398"><span class="lineNum">     398</span>                 :<span class="tlaGNC">              1 :                 break;</span></span>
+<span id="L399"><span class="lineNum">     399</span>                 :                :             }</span>
+<span id="L400"><span class="lineNum">     400</span>                 :                :         }</span>
+<span id="L401"><span class="lineNum">     401</span>                 :<span class="tlaGNC">              2 :         return out;</span></span>
+<span id="L402"><span class="lineNum">     402</span>                 :<a href="#L421" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     };</span></span>
+<span id="L403"><span class="lineNum">     403</span>                 :                : </span>
+<span id="L404"><span class="lineNum">     404</span>            [<span class="tlaGNC"> <a href="#L405" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span>]:<a href="#L425" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           1 :     const std::vector&lt;std::string&gt; base_segments = split(base_dir);</span></span>
+<span id="L405"><span class="lineNum">     405</span>            [<span class="tlaGNC"> <a href="#L417" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              1 :     const std::vector&lt;std::string&gt; target_segments = split(target_path);</span></span>
+<span id="L406"><span class="lineNum">     406</span>                 :                : </span>
+<span id="L407"><span class="lineNum">     407</span>                 :<span class="tlaGNC">              1 :     std::size_t common = 0;</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 8 ignored lines)</span>
+<span id="L416"><span class="lineNum">     416</span>                 :                : </span>
+<span id="L417"><span class="lineNum">     417</span>         [<span class="tlaGNC"> <a href="#L419" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L419" title="GNC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              2 :     for (std::size_t i = common; i &lt; base_segments.size(); ++i)</span></span>
+<span id="L418"><span class="lineNum">     418</span>                 :                :     {</span>
+<span id="L419"><span class="lineNum">     419</span>         [<span class="tlaUNC"> <a href="#L421" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L425" title="GNC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              1 :         if (!base_segments[i].empty())</span></span>
+<span id="L420"><span class="lineNum">     420</span>                 :                :         {</span>
+<span id="L421"><span class="lineNum">     421</span>         [<span class="tlaUNC"> <a href="#L546" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L546" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#L549" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             result_segments.push_back(&quot;..&quot;);</span></span>
+<span id="L422"><span class="lineNum">     422</span>                 :                :         }</span>
+<span id="L423"><span class="lineNum">     423</span>                 :                :     }</span>
+<span id="L424"><span class="lineNum">     424</span>                 :                : </span>
+<span id="L425"><span class="lineNum">     425</span>         [<span class="tlaGNC"> <a href="#L546" title="GNC: Branch 0 was taken 2 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L546" title="GNC: Branch 1 was taken 1 time" class="branchTla">+</a> </span>]:<a href="#L551" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           3 :     for (std::size_t i = common; i &lt; target_segments.size(); ++i)</span></span>
+<span id="L426"><span class="lineNum">     426</span>                 :                :     {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 117 ignored lines)</span>
+<span id="L544"><span class="lineNum">     544</span>                 :<span class="tlaGNC">             20 :     }</span></span>
+<span id="L545"><span class="lineNum">     545</span>                 :                : </span>
+<span id="L546"><span class="lineNum">     546</span>   [<span class="tlaGNC"> <a href="#L548" title="GNC: Branch 0 was taken 24 times" class="branchTla">+</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch 1 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#L548" title="GNC: Branch 2 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L548" title="GNC: Branch 3 was taken 23 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             24 :     ipv6_ = has_authority_ ? (relative.has_authority_ ? relative.ipv6_ : base.ipv6_) : false;</span></span>
+<span id="L547"><span class="lineNum">     547</span>                 :<span class="tlaGNC">             24 :     has_fragment_ = relative.has_fragment_;</span></span>
+<span id="L548"><span class="lineNum">     548</span>            [<span class="tlaGNC"> <a href="#L551" title="GNC: Branch 0 was taken 24 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             24 :     fragment_ = relative.fragment_;</span></span>
+<span id="L549"><span class="lineNum">     549</span>                 :<a href="#L716" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 : }</span></span>
+<span id="L550"><span class="lineNum">     550</span>                 :                : </span>
+<span id="L551"><span class="lineNum">     551</span>            [<span class="tlaGNC"> <a href="#L553" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span>]:<a href="#L718" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           1 : uri::uri(const uri &amp;base, const xlnt::path &amp;relative)</span></span>
+<span id="L552"><span class="lineNum">     552</span>                 :                : {</span>
+<span id="L553"><span class="lineNum">     553</span>            [<span class="tlaGNC"> <a href="#L711" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              1 :     uri ref;</span></span>
+<span id="L554"><span class="lineNum">     554</span>                 :<span class="tlaGNC">              1 :     ref.absolute_ = false;</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 156 ignored lines)</span>
+<span id="L711"><span class="lineNum">     711</span>            [<span class="tlaGNC"> <a href="#L712" title="GNC: Branch 0 was taken 12 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             12 :         result += '#';</span></span>
+<span id="L712"><span class="lineNum">     712</span>            [<span class="tlaGNC"> <a href="#L720" title="GNC: Branch 0 was taken 12 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             12 :         result += fragment_;</span></span>
+<span id="L713"><span class="lineNum">     713</span>                 :                :     }</span>
+<span id="L714"><span class="lineNum">     714</span>                 :                : </span>
+<span id="L715"><span class="lineNum">     715</span>                 :<span class="tlaGNC">            888 :     return result;</span></span>
+<span id="L716"><span class="lineNum">     716</span>                 :<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 : }</span></span>
+<span id="L717"><span class="lineNum">     717</span>                 :                : </span>
+<span id="L718"><span class="lineNum">     718</span>                 :<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          24 : uri uri::make_absolute(const uri &amp;base)</span></span>
+<span id="L719"><span class="lineNum">     719</span>                 :                : {</span>
+<span id="L720"><span class="lineNum">     720</span>         [<span class="tlaGNC"> <a href="#top" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch 1 was taken 23 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             24 :     if (is_absolute())</span></span>
+<span id="L721"><span class="lineNum">     721</span>                 :                :     {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 68 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.4-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
