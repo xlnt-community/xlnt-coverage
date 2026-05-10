@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/packaging/uri.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/packaging/uri.cpp<span style="font-size: 80%;"> (source / <a href="uri.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadDCB" title="Deleted Covered Baseline (1 => -):
+Previously tested code has been deleted">DCB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryMed">84.6&nbsp;%</td>
+            <td class="headerCovTableEntry">26</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntry"><a href="#L251" title="goto first UNC line">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L246" title="goto first GNC line">22</a></td>
+            <td class="headerCovTableEntry">6</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-05-10 11:02:01</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">3</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L246" title="goto first GNC branch">44</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-05-10 11:01:56</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 245 ignored lines)</span>
+<span id="L246"><span class="lineNum">     246</span>            [<span class="tlaGNC"> <a href="#L255" title="GNC: Branch 0 was taken 6744 times" class="branchTla">+</a> </span>]:<a href="#L253" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">        6744 :                 path.erase(0, next);</span></span>
+<span id="L247"><span class="lineNum">     247</span>                 :                :             }</span>
+<span id="L248"><span class="lineNum">     248</span>                 :                :         }</span>
+<span id="L249"><span class="lineNum">     249</span>                 :                :     }</span>
+<span id="L250"><span class="lineNum">     250</span>                 :<span class="tlaGNC">          11795 :     return output;</span></span>
+<span id="L251"><span class="lineNum">     251</span>                 :<a href="#L402" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 : }</span></span>
+<span id="L252"><span class="lineNum">     252</span>                 :                : </span>
+<span id="L253"><span class="lineNum">     253</span>                 :<a href="#L404" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          24 : std::string merge_paths(const std::string &amp;base_path, const std::string &amp;relative_path, bool base_has_authority)</span></span>
+<span id="L254"><span class="lineNum">     254</span>                 :                : {</span>
+<span id="L255"><span class="lineNum">     255</span>   [<span class="tlaGNC"> <a href="#L397" title="GNC: Branch 0 was taken 19 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L397" title="GNC: Branch 1 was taken 5 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L397" title="GNC: Branch 2 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L397" title="GNC: Branch 3 was taken 18 times" class="branchTla">+</a> </span> :<span class="tlaGNC">             24 :     if (base_has_authority &amp;&amp; base_path.empty())</span></span>
+<span class="lineNum">        </span>          <span class="tlaGNC"> <a href="#L397" title="GNC: Branch 4 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L397" title="GNC: Branch 5 was taken 23 times" class="branchTla">+</a> </span>]
+<span id="L256"><span class="lineNum">     256</span>                 :                :     {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 140 ignored lines)</span>
+<span id="L397"><span class="lineNum">     397</span>         [<span class="tlaGNC"> <a href="#L404" title="GNC: Branch 0 was taken 4 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L404" title="GNC: Branch &quot;2&quot; was taken 4 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              4 :                 out.push_back(&quot;&quot;);</span></span>
+<span id="L398"><span class="lineNum">     398</span>                 :<span class="tlaGNC">              4 :                 break;</span></span>
+<span id="L399"><span class="lineNum">     399</span>                 :                :             }</span>
+<span id="L400"><span class="lineNum">     400</span>                 :                :         }</span>
+<span id="L401"><span class="lineNum">     401</span>                 :<span class="tlaGNC">             10 :         return out;</span></span>
+<span id="L402"><span class="lineNum">     402</span>                 :<a href="#L549" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     };</span></span>
+<span id="L403"><span class="lineNum">     403</span>                 :                : </span>
+<span id="L404"><span class="lineNum">     404</span>            [<span class="tlaGNC"> <a href="#L405" title="GNC: Branch 0 was taken 5 times" class="branchTla">+</a> </span>]:<a href="#L551" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           5 :     const std::vector&lt;std::string&gt; base_segments = split(base_dir);</span></span>
+<span id="L405"><span class="lineNum">     405</span>            [<span class="tlaGNC"> <a href="#L546" title="GNC: Branch 0 was taken 5 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">              5 :     const std::vector&lt;std::string&gt; target_segments = split(target_path);</span></span>
+<span id="L406"><span class="lineNum">     406</span>                 :                : </span>
+<span id="L407"><span class="lineNum">     407</span>                 :<span class="tlaGNC">              5 :     std::size_t common = 0;</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 136 ignored lines)</span>
+<span id="L544"><span class="lineNum">     544</span>                 :<span class="tlaGNC">             30 :     }</span></span>
+<span id="L545"><span class="lineNum">     545</span>                 :                : </span>
+<span id="L546"><span class="lineNum">     546</span>   [<span class="tlaGNC"> <a href="#L548" title="GNC: Branch 0 was taken 25 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L548" title="GNC: Branch 1 was taken 9 times" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L548" title="GNC: Branch 2 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#L548" title="GNC: Branch 3 was taken 24 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             34 :     ipv6_ = has_authority_ ? (relative.has_authority_ ? relative.ipv6_ : base.ipv6_) : false;</span></span>
+<span id="L547"><span class="lineNum">     547</span>                 :<span class="tlaGNC">             34 :     has_fragment_ = relative.has_fragment_;</span></span>
+<span id="L548"><span class="lineNum">     548</span>            [<span class="tlaGNC"> <a href="#L551" title="GNC: Branch 0 was taken 34 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             34 :     fragment_ = relative.fragment_;</span></span>
+<span id="L549"><span class="lineNum">     549</span>                 :<a href="#L716" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 : }</span></span>
+<span id="L550"><span class="lineNum">     550</span>                 :                : </span>
+<span id="L551"><span class="lineNum">     551</span>            [<span class="tlaGNC"> <a href="#L553" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span>]:<a href="#L718" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           1 : uri::uri(const uri &amp;base, const xlnt::path &amp;relative)</span></span>
+<span id="L552"><span class="lineNum">     552</span>                 :                : {</span>
+<span id="L553"><span class="lineNum">     553</span>            [<span class="tlaGNC"> <a href="#L711" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span>]:<span class="tlaGNC">              1 :     uri ref;</span></span>
+<span id="L554"><span class="lineNum">     554</span>                 :<span class="tlaGNC">              1 :     ref.absolute_ = false;</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 156 ignored lines)</span>
+<span id="L711"><span class="lineNum">     711</span>            [<span class="tlaGNC"> <a href="#L712" title="GNC: Branch 0 was taken 12 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             12 :         result += '#';</span></span>
+<span id="L712"><span class="lineNum">     712</span>            [<span class="tlaGNC"> <a href="#L720" title="GNC: Branch 0 was taken 12 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             12 :         result += fragment_;</span></span>
+<span id="L713"><span class="lineNum">     713</span>                 :                :     }</span>
+<span id="L714"><span class="lineNum">     714</span>                 :                : </span>
+<span id="L715"><span class="lineNum">     715</span>                 :<span class="tlaGNC">            902 :     return result;</span></span>
+<span id="L716"><span class="lineNum">     716</span>                 :<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 : }</span></span>
+<span id="L717"><span class="lineNum">     717</span>                 :                : </span>
+<span id="L718"><span class="lineNum">     718</span>                 :<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">          34 : uri uri::make_absolute(const uri &amp;base)</span></span>
+<span id="L719"><span class="lineNum">     719</span>                 :                : {</span>
+<span id="L720"><span class="lineNum">     720</span>         [<span class="tlaGNC"> <a href="#top" title="GNC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch 1 was taken 33 times" class="branchTla">+</a> </span>]:<span class="tlaGNC">             34 :     if (is_absolute())</span></span>
+<span id="L721"><span class="lineNum">     721</span>                 :                :     {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 68 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.4-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
