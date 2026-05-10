@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/serialization/xlsx_consumer.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/serialization/xlsx_consumer.cpp<span style="font-size: 80%;"> (source / <a href="xlsx_consumer.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadLBC" title="Lost Baseline Coverage (1 => 0):
+Unchanged code is no longer tested">LBC</td>
+            <td width="5%" class="headerCovTableHeadUIC" title="Uncovered Included Code (# => 0):
+Previously unused code is untested">UIC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadEUB" title="Excluded Uncovered Baseline (0 => #):
+Previously untested code is unused now">EUB</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">41.7&nbsp;%</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry"><a href="#L1281" title="goto first UNC line">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L839" title="goto first LBC line">2</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L844" title="goto first UBC line">8</a></td>
+            <td class="headerCovTableEntry"><a href="#L840" title="goto first CBC line">10</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">4</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-05-10 20:03:26</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">22.7&nbsp;%</td>
+            <td class="headerCovTableEntry">97</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntry"><a href="#L1281" title="goto first UNC branch">64</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L1284" title="goto first UIC branch">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L840" title="goto first UBC branch">82</a></td>
+            <td class="headerCovTableEntry"><a href="#L840" title="goto first CBC branch">44</a></td>
+            <td class="headerCovTableEntry"><a href="#L1283" title="goto first EUB branch">4</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-05-10 20:03:20</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 833 ignored lines)</span>
+<span id="L834"><span class="lineNum">     834</span>                 :                :                     throw xlnt::invalid_parameter(&quot;spreadsheetml invalid min/max (min \&quot;&quot; + parser().attribute(&quot;min&quot;) + &quot;\&quot;, max \&quot;&quot; + parser().attribute(&quot;max&quot;) + &quot;\&quot;)&quot;);</span>
+<span id="L835"><span class="lineNum">     835</span>                 :                :                 }</span>
+<span id="L836"><span class="lineNum">     836</span>                 :                : #endif</span>
+<span id="L837"><span class="lineNum">     837</span>                 :                : </span>
+<span id="L838"><span class="lineNum">     838</span>                 :                :                 // avoid uninitialised warnings in GCC by using a lambda to make the conditional initialisation</span>
+<span id="L839"><span class="lineNum">     839</span>                 :<a href="#L847" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">       (122) :                 optional&lt;double&gt; width = [this](xml::parser &amp;p) -&gt; xlnt::optional&lt;double&gt; {</span></span>
+<span id="L840"><span class="lineNum">     840</span>   [<span class="tlaCBC"> <a href="#L842" title="CBC: Branch 0 was taken 122 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L842" title="CBC: Branch &quot;2&quot; was taken 122 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L842" title="CBC: Branch &quot;4&quot; was taken 122 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1279" title="UBC: Branch &quot;5&quot; was not taken" class="branchTla">-</a> </span>]:<a href="#L845" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         366 :                     if (p.attribute_present(&quot;width&quot;))</span></span>
+<span id="L841"><span class="lineNum">     841</span>                 :                :                     {</span>
+<span id="L842"><span class="lineNum">     842</span>      [<span class="tlaCBC"> <a href="#L845" title="CBC: Branch 0 was taken 122 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L845" title="CBC: Branch &quot;2&quot; was taken 122 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L845" title="CBC: Branch &quot;4&quot; was taken 122 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            366 :                         return (xlnt::detail::deserialise(p.attribute(&quot;width&quot;)) * 7 - 5) / 7;</span></span>
+<span id="L843"><span class="lineNum">     843</span>                 :                :                     }</span>
+<span id="L844"><span class="lineNum">     844</span>                 :<a href="#L1283" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                     return xlnt::optional&lt;double&gt;();</span></span>
+<span id="L845"><span class="lineNum">     845</span>            [<span class="tlaCBC"> <a href="#L848" title="CBC: Branch 0 was taken 122 times" class="branchTla">+</a> </span>]:<a href="#L848" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         122 :                 }(parser());</span></span>
+<span id="L846"><span class="lineNum">     846</span>                 :                :                 // avoid uninitialised warnings in GCC by using a lambda to make the conditional initialisation</span>
+<span id="L847"><span class="lineNum">     847</span>                 :<a href="#top" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">       (122) :                 optional&lt;std::size_t&gt; column_style = [](xml::parser &amp;p) -&gt; xlnt::optional&lt;std::size_t&gt; {</span></span>
+<span id="L848"><span class="lineNum">     848</span>   [<span class="tlaCBC"> <a href="#L850" title="CBC: Branch 0 was taken 122 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L850" title="CBC: Branch &quot;2&quot; was taken 122 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L850" title="CBC: Branch &quot;4&quot; was taken 77 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L850" title="CBC: Branch &quot;5&quot; was taken 45 times" class="branchTla">+</a> </span>]:<a href="#L1305" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         366 :                     if (p.attribute_present(&quot;style&quot;))</span></span>
+<span id="L849"><span class="lineNum">     849</span>                 :                :                     {</span>
+<span id="L850"><span class="lineNum">     850</span>         [<span class="tlaCBC"> <a href="#L1277" title="CBC: Branch 0 was taken 77 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1277" title="CBC: Branch &quot;2&quot; was taken 77 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            231 :                         return p.attribute&lt;std::size_t&gt;(&quot;style&quot;);</span></span>
+<span id="L851"><span class="lineNum">     851</span>                 :                :                     }</span>
+<span id="L852"><span class="lineNum">     852</span>                 :<span class="tlaCBC">             45 :                     return xlnt::optional&lt;std::size_t&gt;();</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 423 ignored lines)</span>
+<span id="L1276"><span class="lineNum">    1276</span>                 :                : </span>
+<span id="L1277"><span class="lineNum">    1277</span>            [<span class="tlaCBC"> <a href="#L1279" title="CBC: Branch 0 was taken 28 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">             28 :             ws.header_footer(hf);</span></span>
+<span id="L1278"><span class="lineNum">    1278</span>                 :<span class="tlaCBC">             28 :         }</span></span>
+<span id="L1279"><span class="lineNum">    1279</span>   [<span class="tlaCBC"> <a href="#L1305" title="CBC: Branch 0 was taken 21 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1305" title="CBC: Branch &quot;2&quot; was taken 21 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1305" title="CBC: Branch &quot;4&quot; was taken 21 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1283" title="UBC: Branch &quot;6&quot; was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">            105 :         else if (current_worksheet_element == qn(&quot;spreadsheetml&quot;, &quot;rowBreaks&quot;)) // CT_PageBreak 0-1</span></span>
+<span class="lineNum">        </span>             <span class="tlaCBC"> <a href="#L1305" title="CBC: Branch &quot;7&quot; was taken 21 times" class="branchTla">+</a> </span>]
+<span id="L1280"><span class="lineNumWithDelete" title="removed lines [1281:1282] from baseline version">    1280</span>                 :                :         {</span>
+<span id="L1281"><span class="lineNum">    1281</span>   [<span class="tlaUNC"> <a href="#L1282" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;5&quot; was not executed" class="branchTla">#</a> </span> :<a href="#L1307" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             [[maybe_unused]] auto count = parser().attribute_present(&quot;count&quot;) ? parser().attribute&lt;std::size_t&gt;(&quot;count&quot;) : 0;</span></span>
+<span class="lineNum">        </span> <span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;6&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;8&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;10&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;11&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;12&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>    <span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;13&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;14&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;15&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;16&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaUNC"> <a href="#L1282" title="UNC: Branch &quot;17&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1282"><span class="lineNum">    1282</span>         [<span class="tlaUNC"> <a href="#L1307" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1307" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :             [[maybe_unused]] auto manual_break_count = parser().attribute_present(&quot;manualBreakCount&quot;)</span></span>
+<span id="L1283"><span class="lineNum">    1283</span>   [<span class="tlaUBC"> <a href="#L1284" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1284" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1284" title="UBC: Branch &quot;3&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1284" title="UBC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span> :<a href="#L1309" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                 ? parser().attribute&lt;std::size_t&gt;(&quot;manualBreakCount&quot;)</span></span>
+<span class="lineNum">        </span> <span class="tlaUBC"> <a href="#L1284" title="UBC: Branch &quot;5&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1284" title="UBC: Branch &quot;6&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1284" title="UBC: Branch &quot;7&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1284" title="UBC: Branch &quot;8&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1284" title="UBC: Branch &quot;9&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaEUB"> <a href="#L1309" title="EUB: Branch &quot;11&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1284"><span class="lineNum">    1284</span>      [<span class="tlaUBC"> <a href="#L1286" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1286" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1310" title="UIC: Branch 2 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :                 : 0;</span></span>
+<span id="L1285"><span class="lineNum">    1285</span>                 :                : </span>
+<span id="L1286"><span class="lineNum">    1286</span>   [<span class="tlaUBC"> <a href="#L1302" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1302" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1302" title="UBC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1302" title="UBC: Branch &quot;6&quot; was not executed" class="branchTla">#</a> </span> :<span class="tlaUBC">              0 :             while (in_element(qn(&quot;spreadsheetml&quot;, &quot;rowBreaks&quot;)))</span></span>
+<span class="lineNum">        </span>          <span class="tlaUBC"> <a href="#L1302" title="UBC: Branch &quot;8&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1302" title="UBC: Branch &quot;9&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1287"><span class="lineNum">    1287</span>                 :                :             {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 14 ignored lines)</span>
+<span id="L1302"><span class="lineNum">    1302</span>   [<span class="tlaUBC"> <a href="#L1305" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1305" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1305" title="UBC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1305" title="UBC: Branch &quot;6&quot; was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :                 expect_end_element(qn(&quot;spreadsheetml&quot;, &quot;brk&quot;));</span></span>
+<span id="L1303"><span class="lineNum">    1303</span>                 :                :             }</span>
+<span id="L1304"><span class="lineNum">    1304</span>                 :                :         }</span>
+<span id="L1305"><span class="lineNum">    1305</span>   [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 21 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch &quot;2&quot; was taken 21 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch &quot;4&quot; was taken 21 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1309" title="UBC: Branch &quot;6&quot; was not taken" class="branchTla">-</a> </span> :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         105 :         else if (current_worksheet_element == qn(&quot;spreadsheetml&quot;, &quot;colBreaks&quot;)) // CT_PageBreak 0-1</span></span>
+<span class="lineNum">        </span>             <span class="tlaCBC"> <a href="#top" title="CBC: Branch &quot;7&quot; was taken 21 times" class="branchTla">+</a> </span>]
+<span id="L1306"><span class="lineNumWithDelete" title="removed lines [1307:1308] from baseline version">    1306</span>                 :                :         {</span>
+<span id="L1307"><span class="lineNum">    1307</span>   [<span class="tlaUNC"> <a href="#L1308" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;5&quot; was not executed" class="branchTla">#</a> </span> :<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             [[maybe_unused]] auto count = parser().attribute_present(&quot;count&quot;) ? parser().attribute&lt;std::size_t&gt;(&quot;count&quot;) : 0;</span></span>
+<span class="lineNum">        </span> <span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;6&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;8&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;10&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;11&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;12&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>    <span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;13&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;14&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;15&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;16&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaUNC"> <a href="#L1308" title="UNC: Branch &quot;17&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1308"><span class="lineNum">    1308</span>         [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span>]:<span class="tlaUNC">              0 :             [[maybe_unused]] auto manual_break_count = parser().attribute_present(&quot;manualBreakCount&quot;)</span></span>
+<span id="L1309"><span class="lineNum">    1309</span>   [<span class="tlaUBC"> <a href="#L1310" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1310" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1310" title="UBC: Branch &quot;3&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1310" title="UBC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span> :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                 ? parser().attribute&lt;std::size_t&gt;(&quot;manualBreakCount&quot;)</span></span>
+<span class="lineNum">        </span> <span class="tlaUBC"> <a href="#L1310" title="UBC: Branch &quot;5&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1310" title="UBC: Branch &quot;6&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1310" title="UBC: Branch &quot;7&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1310" title="UBC: Branch &quot;8&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1310" title="UBC: Branch &quot;9&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaEUB"> <a href="#top" title="EUB: Branch &quot;11&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1310"><span class="lineNum">    1310</span>      [<span class="tlaUBC"> <a href="#L1312" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#L1312" title="UBC: Branch 1 was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#top" title="UIC: Branch 2 was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :                 : 0;</span></span>
+<span id="L1311"><span class="lineNum">    1311</span>                 :                : </span>
+<span id="L1312"><span class="lineNum">    1312</span>   [<span class="tlaUBC"> <a href="#top" title="UBC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;6&quot; was not executed" class="branchTla">#</a> </span> :<span class="tlaUBC">              0 :             while (in_element(qn(&quot;spreadsheetml&quot;, &quot;colBreaks&quot;)))</span></span>
+<span class="lineNum">        </span>          <span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;8&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;9&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1313"><span class="lineNum">    1313</span>                 :                :             {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 2337 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.4-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
