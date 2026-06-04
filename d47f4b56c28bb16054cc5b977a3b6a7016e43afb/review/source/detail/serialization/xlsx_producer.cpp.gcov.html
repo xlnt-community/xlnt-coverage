@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/serialization/xlsx_producer.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/serialization/xlsx_producer.cpp<span style="font-size: 80%;"> (source / <a href="xlsx_producer.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadDCB" title="Deleted Covered Baseline (1 => -):
+Previously tested code has been deleted">DCB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryMed">76.9&nbsp;%</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry"><a href="#L2290" title="goto first UNC line">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L2285" title="goto first UBC line">1</a></td>
+            <td class="headerCovTableEntry"><a href="#L2287" title="goto first GNC line">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L2292" title="goto first CBC line">6</a></td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-06-04 08:03:49</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">63.0&nbsp;%</td>
+            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry"><a href="#L3527" title="goto first UNC branch">8</a></td>
+            <td class="headerCovTableEntry"><a href="#L2294" title="goto first UBC branch">12</a></td>
+            <td class="headerCovTableEntry"><a href="#L3527" title="goto first GNC branch">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L2294" title="goto first CBC branch">32</a></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-06-04 08:03:42</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 2284 ignored lines)</span>
+<span id="L2285"><span class="lineNum">    2285</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : }</span></span>
+<span id="L2286"><span class="lineNum">    2286</span>                 :                : </span>
+<span id="L2287"><span class="lineNum">    2287</span>                 :<a href="#L3527" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">           1 : void xlsx_producer::write_worksheet_TEST(const relationship &amp;rel)</span></span>
+<span id="L2288"><span class="lineNum">    2288</span>                 :                : {</span>
+<span id="L2289"><span class="lineNum">    2289</span>                 :<span class="tlaGNC">              1 :     write_worksheet(rel);</span></span>
+<span id="L2290"><span class="lineNum">    2290</span>                 :<a href="#L3529" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 : }</span></span>
+<span id="L2291"><span class="lineNum">    2291</span>                 :                : </span>
+<span id="L2292"><span class="lineNum">    2292</span>                 :<a href="#L3533" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">          56 : void xlsx_producer::write_worksheet(const relationship &amp;rel)</span></span>
+<span id="L2293"><span class="lineNum">    2293</span>                 :                : {</span>
+<span id="L2294"><span class="lineNum">    2294</span>   [<span class="tlaCBC"> <a href="#L2295" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L2295" title="CBC: Branch 1 was taken 55 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L2295" title="CBC: Branch 2 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L2295" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">             58 :     static const auto &amp;xmlns = constants::ns(&quot;spreadsheetml&quot;);</span></span>
+<span class="lineNum">        </span>    <span class="tlaCBC"> <a href="#L2295" title="CBC: Branch 4 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L2295" title="CBC: Branch &quot;6&quot; was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L2295" title="UBC: Branch &quot;8&quot; was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#L2295" title="UBC: Branch &quot;9&quot; was not taken" class="branchTla">-</a> </span>]
+<span id="L2295"><span class="lineNum">    2295</span>   [<span class="tlaCBC"> <a href="#L3525" title="CBC: Branch 0 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L3525" title="CBC: Branch 1 was taken 55 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L3525" title="CBC: Branch 2 was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch 3 was not taken" class="branchTla">-</a> </span> :<span class="tlaCBC">             58 :     static const auto &amp;xmlns_r = constants::ns(&quot;r&quot;);</span></span>
+<span class="lineNum">        </span>    <span class="tlaCBC"> <a href="#L3525" title="CBC: Branch 4 was taken 1 time" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L3525" title="CBC: Branch &quot;6&quot; was taken 1 time" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;8&quot; was not taken" class="branchTla">-</a> </span><span class="tlaUBC"> <a href="#top" title="UBC: Branch &quot;9&quot; was not taken" class="branchTla">-</a> </span>]
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 1228 ignored lines)</span>
+<span id="L3524"><span class="lineNum">    3524</span>                 :                :     {</span>
+<span id="L3525"><span class="lineNum">    3525</span>            [<span class="tlaCBC"> <a href="#L3526" title="CBC: Branch 0 was taken 382 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            382 :         auto rel_iter = std::find_if(relationships.begin(), relationships.end(),</span></span>
+<span id="L3526"><span class="lineNumWithDelete" title="removed line 3517 from baseline version">    3526</span>      [<span class="tlaCBC"> <a href="#L3533" title="CBC: Branch 0 was taken 954 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L3533" title="CBC: Branch &quot;2&quot; was taken 954 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L3533" title="CBC: Branch &quot;4&quot; was taken 954 times" class="branchTla">+</a> </span>]:<span class="tlaCBC">            954 :             [&amp;i](const relationship &amp;r) { return r.id() == &quot;rId&quot; + std::to_string(i); });</span></span>
+<span id="L3527"><span class="lineNum">    3527</span>         [<span class="tlaUNC"> <a href="#L3529" title="UNC: Branch 0 was not taken" class="branchTla">-</a> </span><span class="tlaGNC"> <a href="#top" title="GNC: Branch 1 was taken 382 times" class="branchTla">+</a> </span>]:<a href="#L3531" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">         382 :         if (rel_iter == relationships.end())</span></span>
+<span id="L3528"><span class="lineNum">    3528</span>                 :                :         {</span>
+<span id="L3529"><span class="lineNum">    3529</span>      [<span class="tlaUNC"> <a href="#top" title="UNC: Branch 0 was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;2&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: Branch &quot;4&quot; was not executed" class="branchTla">#</a> </span>]:<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             throw xlnt::key_not_found(&quot;rId&quot; + std::to_string(i));</span></span>
+<span id="L3530"><span class="lineNum">    3530</span>                 :                :         }</span>
+<span id="L3531"><span class="lineNum">    3531</span>                 :<a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">         382 :         const auto &amp;relationship = *rel_iter;</span></span>
+<span id="L3532"><span class="lineNum">    3532</span>                 :                : </span>
+<span id="L3533"><span class="lineNum">    3533</span>         [<span class="tlaCBC"> <a href="#top" title="CBC: Branch 0 was taken 382 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: Branch &quot;2&quot; was taken 382 times" class="branchTla">+</a> </span>]:<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         382 :         write_start_element(xmlns, &quot;Relationship&quot;);</span></span>
+<span id="L3534"><span class="lineNum">    3534</span>                 :                : </span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 66 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.4-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
