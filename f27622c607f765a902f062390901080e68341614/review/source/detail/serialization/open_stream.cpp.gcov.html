@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/serialization/open_stream.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/serialization/open_stream.cpp<span style="font-size: 80%;"> (source / <a href="open_stream.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry"><a href="#L75" title="goto first UNC line">2</a></td>
+            <td class="headerCovTableEntry"><a href="#L70" title="goto first UBC line">4</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-08-02 13:48:36</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-08-02 13:48:31</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">           TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>              <span class="elidedSource">     (elided 69 ignored lines)</span>
+<span id="L70"><span class="lineNum">      70</span> <a href="#L76" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 : void open_stream(std::ifstream &amp;stream, std::u8string_view path)</span></span>
+<span id="L71"><span class="lineNum">      71</span>                 : {</span>
+<span id="L72"><span class="lineNum">      72</span>                 : #ifdef _MSC_VER</span>
+<span id="L73"><span class="lineNum">      73</span>                 :     open_stream(stream, xlnt::path(path).wstring());</span>
+<span id="L74"><span class="lineNum">      74</span>                 : #elif XLNT_HAS_FEATURE(FILESYSTEM)</span>
+<span id="L75"><span class="lineNum">      75</span> <a href="#L94" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     errno = 0;</span></span>
+<span id="L76"><span class="lineNum">      76</span> <a href="#L95" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     stream.open(std::filesystem::path(path), std::ios::binary);</span></span>
+<span id="L77"><span class="lineNum">      77</span>                 : #else</span>
+<span id="L78"><span class="lineNum">      78</span>                 :     // TODO: this cannot work if the user's locale is not UTF-8. In such cases we cannot ensure</span>
+<span id="L79"><span class="lineNum">      79</span>                 :     // that this always works - however, in such cases we can still attempt to do a conversion to</span>
+<span id="L80"><span class="lineNum">      80</span>                 :     // the locale encoding, which will still work if the string can be represented</span>
+  <span class="lineNumWithDelete">     ...</span>              <span class="elidedSource">     (elided 8 ignored lines)</span>
+<span id="L89"><span class="lineNum">      89</span> <span class="tlaUBC">              0 : void open_stream(std::ofstream &amp;stream, std::u8string_view path)</span></span>
+<span id="L90"><span class="lineNum">      90</span>                 : {</span>
+<span id="L91"><span class="lineNum">      91</span>                 : #ifdef _MSC_VER</span>
+<span id="L92"><span class="lineNum">      92</span>                 :     open_stream(stream, xlnt::path(path).wstring());</span>
+<span id="L93"><span class="lineNum">      93</span>                 : #elif XLNT_HAS_FEATURE(FILESYSTEM)</span>
+<span id="L94"><span class="lineNum">      94</span> <a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :     errno = 0;</span></span>
+<span id="L95"><span class="lineNum">      95</span> <a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     stream.open(std::filesystem::path(path), std::ios::binary);</span></span>
+<span id="L96"><span class="lineNum">      96</span>                 : #else</span>
+<span id="L97"><span class="lineNum">      97</span>                 :     // TODO: this cannot work if the user's locale is not UTF-8. In such cases we cannot ensure</span>
+<span id="L98"><span class="lineNum">      98</span>                 :     // that this always works - however, in such cases we can still attempt to do a conversion to</span>
+<span id="L99"><span class="lineNum">      99</span>                 :     // the locale encoding, which will still work if the string can be represented</span>
+  <span class="lineNumWithDelete">     ...</span>              <span class="elidedSource">     (elided 11 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com/linux-test-project/lcov" target="_parent">LCOV version 2.5-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
