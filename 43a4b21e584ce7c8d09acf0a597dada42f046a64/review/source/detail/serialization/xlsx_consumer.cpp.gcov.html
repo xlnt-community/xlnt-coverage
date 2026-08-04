@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/detail/serialization/xlsx_consumer.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - source/detail/serialization/xlsx_consumer.cpp<span style="font-size: 80%;"> (source / <a href="xlsx_consumer.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadLBC" title="Lost Baseline Coverage (1 => 0):
+Unchanged code is no longer tested">LBC</td>
+            <td width="5%" class="headerCovTableHeadUIC" title="Uncovered Included Code (# => 0):
+Previously unused code is untested">UIC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">41.7&nbsp;%</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry"><a href="#L1286" title="goto first UNC line">4</a></td>
+            <td class="headerCovTableEntry"><a href="#L844" title="goto first LBC line">2</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L849" title="goto first UBC line">8</a></td>
+            <td class="headerCovTableEntry"><a href="#L845" title="goto first CBC line">10</a></td>
+            <td class="headerCovTableEntry">4</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-08-04 18:31:17</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">9.6&nbsp;%</td>
+            <td class="headerCovTableEntry">52</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry"><a href="#L1286" title="goto first UNC branch">40</a></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"><a href="#L1288" title="goto first UIC branch">40</a></td>
+            <td class="headerCovTableEntry"><a href="#L845" title="goto first UBC branch">14</a></td>
+            <td class="headerCovTableEntry"><a href="#L845" title="goto first CBC branch">10</a></td>
+            <td class="headerCovTableEntry">64</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-08-04 18:31:12</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 838 ignored lines)</span>
+<span id="L839"><span class="lineNum">     839</span>                 :                :                     throw xlnt::invalid_parameter(&quot;spreadsheetml invalid min/max (min \&quot;&quot; + parser().attribute(&quot;min&quot;) + &quot;\&quot;, max \&quot;&quot; + parser().attribute(&quot;max&quot;) + &quot;\&quot;)&quot;);</span>
+<span id="L840"><span class="lineNum">     840</span>                 :                :                 }</span>
+<span id="L841"><span class="lineNum">     841</span>                 :                : #endif</span>
+<span id="L842"><span class="lineNum">     842</span>                 :                : </span>
+<span id="L843"><span class="lineNum">     843</span>                 :                :                 // avoid uninitialised warnings in GCC by using a lambda to make the conditional initialisation</span>
+<span id="L844"><span class="lineNum">     844</span>                 :<a href="#L852" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">       (122) :                 optional&lt;double&gt; width = [](xml::parser &amp;p) -&gt; xlnt::optional&lt;double&gt; {</span></span>
+<span id="L845"><span class="lineNum">     845</span>   [<span class="tlaECC" title="fallthrough branch &quot;4 -&gt; 5&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;4 -&gt; 22&quot; marked unreachable"> x </span><span class="tlaECC" title="fallthrough branch &quot;5 -&gt; 6&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;5 -&gt; 20&quot; marked unreachable"> x </span> :<a href="#L850" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         366 :                     if (p.attribute_present(&quot;width&quot;))</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L853" title="CBC: fallthrough branch &quot;8 -&gt; 9&quot; was taken 122 times" class="branchTla">+</a> </span><span class="tlaUBC"> <a href="#L1284" title="UBC: branch &quot;8 -&gt; 18&quot; was not taken" class="branchTla">-</a> </span>]
+<span id="L846"><span class="lineNum">     846</span>                 :                :                     {</span>
+<span id="L847"><span class="lineNum">     847</span>                 :<span class="tlaCBC">            366 :                         return (xlnt::detail::deserialise(p.attribute(&quot;width&quot;)) * 7 - 5) / 7;</span></span>
+<span id="L848"><span class="lineNum">     848</span>                 :                :                     }</span>
+<span id="L849"><span class="lineNum">     849</span>                 :<a href="#L1288" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                     return xlnt::optional&lt;double&gt;();</span></span>
+<span id="L850"><span class="lineNum">     850</span>                 :<a href="#L853" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         122 :                 }(parser());</span></span>
+<span id="L851"><span class="lineNum">     851</span>                 :                :                 // avoid uninitialised warnings in GCC by using a lambda to make the conditional initialisation</span>
+<span id="L852"><span class="lineNum">     852</span>                 :<a href="#top" class="tlaBgLBC"  title="Next LBC group">LBC</a><span class="tlaLBC tlaBgLBC">       (122) :                 optional&lt;std::size_t&gt; column_style = [](xml::parser &amp;p) -&gt; xlnt::optional&lt;std::size_t&gt; {</span></span>
+<span id="L853"><span class="lineNum">     853</span>   [<span class="tlaECC" title="fallthrough branch &quot;4 -&gt; 5&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;4 -&gt; 21&quot; marked unreachable"> x </span><span class="tlaECC" title="fallthrough branch &quot;5 -&gt; 6&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;5 -&gt; 19&quot; marked unreachable"> x </span> :<a href="#L1310" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         366 :                     if (p.attribute_present(&quot;style&quot;))</span></span>
+<span class="lineNum">        </span>          <span class="tlaCBC"> <a href="#L1284" title="CBC: fallthrough branch &quot;8 -&gt; 9&quot; was taken 77 times" class="branchTla">+</a> </span><span class="tlaCBC"> <a href="#L1284" title="CBC: branch &quot;8 -&gt; 17&quot; was taken 45 times" class="branchTla">+</a> </span>]
+<span id="L854"><span class="lineNum">     854</span>                 :                :                     {</span>
+<span id="L855"><span class="lineNum">     855</span>                 :<span class="tlaCBC">            231 :                         return p.attribute&lt;std::size_t&gt;(&quot;style&quot;);</span></span>
+<span id="L856"><span class="lineNum">     856</span>                 :                :                     }</span>
+<span id="L857"><span class="lineNum">     857</span>                 :<span class="tlaCBC">             45 :                     return xlnt::optional&lt;std::size_t&gt;();</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 423 ignored lines)</span>
+<span id="L1281"><span class="lineNum">    1281</span>                 :                : </span>
+<span id="L1282"><span class="lineNum">    1282</span>                 :<span class="tlaCBC">             28 :             ws.header_footer(hf);</span></span>
+<span id="L1283"><span class="lineNum">    1283</span>                 :<span class="tlaCBC">             28 :         }</span></span>
+<span id="L1284"><span class="lineNum">    1284</span>   [<span class="tlaECC" title="fallthrough branch &quot;1122 -&gt; 1123&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1122 -&gt; 2532&quot; marked unreachable"> x </span><span class="tlaECC" title="fallthrough branch &quot;1125 -&gt; 1126&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1125 -&gt; 2526&quot; marked unreachable"> x </span> :<span class="tlaCBC">            105 :         else if (current_worksheet_element == qn(&quot;spreadsheetml&quot;, &quot;rowBreaks&quot;)) // CT_PageBreak 0-1</span></span>
+<span class="lineNum">        </span>    <span class="tlaECC" title="fallthrough branch &quot;1126 -&gt; 1127&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1126 -&gt; 2524&quot; marked unreachable"> x </span><span class="tlaUBC"> <a href="#L1291" title="UBC: fallthrough branch &quot;1132 -&gt; 1133&quot; was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#L1310" title="CBC: branch &quot;1132 -&gt; 1263&quot; was taken 21 times" class="branchTla">+</a> </span>]
+<span id="L1285"><span class="lineNumWithDelete" title="removed 2 lines ([1286:1287] inclusive) from baseline version">    1285</span>                 :                :         {</span>
+<span id="L1286"><span class="lineNum">    1286</span>                 :<a href="#L1312" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             XLNT_UNUSED auto count = parser().attribute_present(&quot;count&quot;) ? parser().attribute&lt;std::size_t&gt;(&quot;count&quot;) : 0;</span></span>
+<span class="lineNum">        </span>   [<span class="tlaEUC" title="fallthrough branch &quot;1136 -&gt; 1137&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1136 -&gt; 2547&quot; marked unreachable"> x </span><span class="tlaEUC" title="fallthrough branch &quot;1137 -&gt; 1138&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1137 -&gt; 2545&quot; marked unreachable"> x </span> 
+<span class="lineNum">        </span> <span class="tlaUNC"> <a href="#L1312" title="UNC: fallthrough branch &quot;1138 -&gt; 1139&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1312" title="UNC: branch &quot;1138 -&gt; 1145&quot; was not executed" class="branchTla">#</a> </span><span class="tlaEUC" title="fallthrough branch &quot;1142 -&gt; 1143&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1142 -&gt; 2536&quot; marked unreachable"> x </span><span class="tlaEUC" title="fallthrough branch &quot;1143 -&gt; 1144&quot; marked unreachable"> x </span> 
+<span class="lineNum">        </span> <span class="tlaEUC" title="exception branch &quot;1143 -&gt; 2536&quot; marked unreachable"> x </span><span class="tlaUNC"> <a href="#L1312" title="UNC: fallthrough branch &quot;1146 -&gt; 1147&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1312" title="UNC: branch &quot;1146 -&gt; 1148&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1312" title="UNC: fallthrough branch &quot;1148 -&gt; 1149&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1312" title="UNC: branch &quot;1148 -&gt; 1151&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>    <span class="tlaUNC"> <a href="#L1312" title="UNC: fallthrough branch &quot;2536 -&gt; 2537&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1312" title="UNC: branch &quot;2536 -&gt; 2538&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1312" title="UNC: fallthrough branch &quot;2540 -&gt; 2541&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#L1312" title="UNC: branch &quot;2540 -&gt; 2543&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1287"><span class="lineNum">    1287</span>                 :<span class="tlaUNC">              0 :             XLNT_UNUSED auto manual_break_count = parser().attribute_present(&quot;manualBreakCount&quot;)</span></span>
+<span id="L1288"><span class="lineNum">    1288</span>   [<span class="tlaEUC" title="fallthrough branch &quot;1162 -&gt; 1163&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1162 -&gt; 2551&quot; marked unreachable"> x </span><span class="tlaUIC"> <a href="#L1289" title="UIC: fallthrough branch &quot;1166 -&gt; 1167&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1289" title="UIC: branch &quot;1166 -&gt; 1168&quot; was not executed" class="branchTla">#</a> </span> :<a href="#L1314" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                 ? parser().attribute&lt;std::size_t&gt;(&quot;manualBreakCount&quot;)</span></span>
+<span class="lineNum">        </span> <span class="tlaUIC"> <a href="#L1289" title="UIC: fallthrough branch &quot;1168 -&gt; 1169&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1289" title="UIC: branch &quot;1168 -&gt; 1171&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1289" title="UIC: fallthrough branch &quot;2551 -&gt; 2552&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1289" title="UIC: branch &quot;2551 -&gt; 2553&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1289" title="UIC: fallthrough branch &quot;2555 -&gt; 2556&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaUIC"> <a href="#L1289" title="UIC: branch &quot;2555 -&gt; 2558&quot; was not executed" class="branchTla">#</a> </span>]
+<span class="lineNum">        </span>   [<span class="tlaDUB"> <a href="#L1289" title="DUB: fallthrough branch &quot;1153 -&gt; 1154&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#L1289" title="DUB: branch &quot;1153 -&gt; 1160&quot; was not executed" class="branchTla">#</a> </span><span class="tlaEUC" title="fallthrough branch &quot;1157 -&gt; 1158&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1157 -&gt; 2546&quot; marked unreachable"> x </span> 
+<span class="lineNum">        </span> <span class="tlaEUC" title="fallthrough branch &quot;1158 -&gt; 1159&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1158 -&gt; 2546&quot; marked unreachable"> x </span><span class="tlaDUB"> <a href="#L1289" title="DUB: fallthrough branch &quot;1163 -&gt; 1164&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#L1289" title="DUB: branch &quot;1163 -&gt; 1166&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#L1289" title="DUB: fallthrough branch &quot;2546 -&gt; 2547&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>       <span class="tlaDUB"> <a href="#L1289" title="DUB: branch &quot;2546 -&gt; 2548&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#L1289" title="DUB: fallthrough branch &quot;2550 -&gt; 2551&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#L1289" title="DUB: branch &quot;2550 -&gt; 2553&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1289"><span class="lineNum">    1289</span>         [<span class="tlaDUB"> <a href="#L1314" title="DUB: fallthrough branch &quot;1161 -&gt; 1162&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#L1314" title="DUB: branch &quot;1161 -&gt; 1163&quot; was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :                 : 0;</span></span>
+<span class="lineNum">        </span>   [<span class="tlaUIC"> <a href="#L1314" title="UIC: fallthrough branch &quot;1158 -&gt; 1159&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1314" title="UIC: branch &quot;1158 -&gt; 1165&quot; was not executed" class="branchTla">#</a> </span><span class="tlaEUC" title="fallthrough branch &quot;1163 -&gt; 1164&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1163 -&gt; 2551&quot; marked unreachable"> x </span>]
+<span id="L1290"><span class="lineNum">    1290</span>                 :                : </span>
+<span id="L1291"><span class="lineNum">    1291</span>   [<span class="tlaEUC" title="fallthrough branch &quot;1252 -&gt; 1253&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1252 -&gt; 2635&quot; marked unreachable"> x </span><span class="tlaEUC" title="fallthrough branch &quot;1255 -&gt; 1256&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1255 -&gt; 2629&quot; marked unreachable"> x </span> :<span class="tlaUBC">              0 :             while (in_element(qn(&quot;spreadsheetml&quot;, &quot;rowBreaks&quot;)))</span></span>
+<span class="lineNum">        </span> <span class="tlaEUC" title="fallthrough branch &quot;1256 -&gt; 1257&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1256 -&gt; 2627&quot; marked unreachable"> x </span><span class="tlaEUC" title="fallthrough branch &quot;1257 -&gt; 1258&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1257 -&gt; 2627&quot; marked unreachable"> x </span><span class="tlaUBC"> <a href="#L1310" title="UBC: branch &quot;1262 -&gt; 1174&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaUBC"> <a href="#L1310" title="UBC: branch &quot;1262 -&gt; 1541&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1292"><span class="lineNum">    1292</span>                 :                :             {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 14 ignored lines)</span>
+<span id="L1307"><span class="lineNum">    1307</span>                 :<span class="tlaUBC">              0 :                 expect_end_element(qn(&quot;spreadsheetml&quot;, &quot;brk&quot;));</span></span>
+<span id="L1308"><span class="lineNum">    1308</span>                 :                :             }</span>
+<span id="L1309"><span class="lineNum">    1309</span>                 :                :         }</span>
+<span id="L1310"><span class="lineNum">    1310</span>   [<span class="tlaECC" title="fallthrough branch &quot;1265 -&gt; 1266&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1265 -&gt; 2647&quot; marked unreachable"> x </span><span class="tlaECC" title="fallthrough branch &quot;1268 -&gt; 1269&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1268 -&gt; 2641&quot; marked unreachable"> x </span> :<a href="#top" class="tlaBgCBC"  title="Next CBC group">CBC</a><span class="tlaCBC tlaBgCBC">         105 :         else if (current_worksheet_element == qn(&quot;spreadsheetml&quot;, &quot;colBreaks&quot;)) // CT_PageBreak 0-1</span></span>
+<span class="lineNum">        </span>    <span class="tlaECC" title="fallthrough branch &quot;1269 -&gt; 1270&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1269 -&gt; 2639&quot; marked unreachable"> x </span><span class="tlaUBC"> <a href="#L1317" title="UBC: fallthrough branch &quot;1275 -&gt; 1276&quot; was not taken" class="branchTla">-</a> </span><span class="tlaCBC"> <a href="#top" title="CBC: branch &quot;1275 -&gt; 1407&quot; was taken 21 times" class="branchTla">+</a> </span>]
+<span id="L1311"><span class="lineNumWithDelete" title="removed 2 lines ([1312:1313] inclusive) from baseline version">    1311</span>                 :                :         {</span>
+<span id="L1312"><span class="lineNum">    1312</span>                 :<a href="#top" class="tlaBgUNC"  title="Next UNC group">UNC</a><span class="tlaUNC tlaBgUNC">           0 :             XLNT_UNUSED auto count = parser().attribute_present(&quot;count&quot;) ? parser().attribute&lt;std::size_t&gt;(&quot;count&quot;) : 0;</span></span>
+<span class="lineNum">        </span>   [<span class="tlaEUC" title="fallthrough branch &quot;1279 -&gt; 1280&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1279 -&gt; 2662&quot; marked unreachable"> x </span><span class="tlaEUC" title="fallthrough branch &quot;1280 -&gt; 1281&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1280 -&gt; 2660&quot; marked unreachable"> x </span> 
+<span class="lineNum">        </span> <span class="tlaUNC"> <a href="#top" title="UNC: fallthrough branch &quot;1281 -&gt; 1282&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: branch &quot;1281 -&gt; 1288&quot; was not executed" class="branchTla">#</a> </span><span class="tlaEUC" title="fallthrough branch &quot;1285 -&gt; 1286&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1285 -&gt; 2651&quot; marked unreachable"> x </span><span class="tlaEUC" title="fallthrough branch &quot;1286 -&gt; 1287&quot; marked unreachable"> x </span> 
+<span class="lineNum">        </span> <span class="tlaEUC" title="exception branch &quot;1286 -&gt; 2651&quot; marked unreachable"> x </span><span class="tlaUNC"> <a href="#top" title="UNC: fallthrough branch &quot;1289 -&gt; 1290&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: branch &quot;1289 -&gt; 1291&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: fallthrough branch &quot;1291 -&gt; 1292&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: branch &quot;1291 -&gt; 1294&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>    <span class="tlaUNC"> <a href="#top" title="UNC: fallthrough branch &quot;2651 -&gt; 2652&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: branch &quot;2651 -&gt; 2653&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: fallthrough branch &quot;2655 -&gt; 2656&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUNC"> <a href="#top" title="UNC: branch &quot;2655 -&gt; 2658&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1313"><span class="lineNum">    1313</span>                 :<span class="tlaUNC">              0 :             XLNT_UNUSED auto manual_break_count = parser().attribute_present(&quot;manualBreakCount&quot;)</span></span>
+<span id="L1314"><span class="lineNum">    1314</span>   [<span class="tlaEUC" title="fallthrough branch &quot;1305 -&gt; 1306&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1305 -&gt; 2666&quot; marked unreachable"> x </span><span class="tlaUIC"> <a href="#L1315" title="UIC: fallthrough branch &quot;1309 -&gt; 1310&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1315" title="UIC: branch &quot;1309 -&gt; 1311&quot; was not executed" class="branchTla">#</a> </span> :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :                 ? parser().attribute&lt;std::size_t&gt;(&quot;manualBreakCount&quot;)</span></span>
+<span class="lineNum">        </span> <span class="tlaUIC"> <a href="#L1315" title="UIC: fallthrough branch &quot;1311 -&gt; 1312&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1315" title="UIC: branch &quot;1311 -&gt; 1314&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1315" title="UIC: fallthrough branch &quot;2666 -&gt; 2667&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1315" title="UIC: branch &quot;2666 -&gt; 2668&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#L1315" title="UIC: fallthrough branch &quot;2670 -&gt; 2671&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaUIC"> <a href="#L1315" title="UIC: branch &quot;2670 -&gt; 2673&quot; was not executed" class="branchTla">#</a> </span>]
+<span class="lineNum">        </span>   [<span class="tlaDUB"> <a href="#L1315" title="DUB: fallthrough branch &quot;1296 -&gt; 1297&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#L1315" title="DUB: branch &quot;1296 -&gt; 1303&quot; was not executed" class="branchTla">#</a> </span><span class="tlaEUC" title="fallthrough branch &quot;1300 -&gt; 1301&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1300 -&gt; 2661&quot; marked unreachable"> x </span> 
+<span class="lineNum">        </span> <span class="tlaEUC" title="fallthrough branch &quot;1301 -&gt; 1302&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1301 -&gt; 2661&quot; marked unreachable"> x </span><span class="tlaDUB"> <a href="#L1315" title="DUB: fallthrough branch &quot;1306 -&gt; 1307&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#L1315" title="DUB: branch &quot;1306 -&gt; 1309&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#L1315" title="DUB: fallthrough branch &quot;2661 -&gt; 2662&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>       <span class="tlaDUB"> <a href="#L1315" title="DUB: branch &quot;2661 -&gt; 2663&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#L1315" title="DUB: fallthrough branch &quot;2665 -&gt; 2666&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#L1315" title="DUB: branch &quot;2665 -&gt; 2668&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1315"><span class="lineNum">    1315</span>         [<span class="tlaDUB"> <a href="#top" title="DUB: fallthrough branch &quot;1304 -&gt; 1305&quot; was not executed" class="branchTla">#</a> </span><span class="tlaDUB"> <a href="#top" title="DUB: branch &quot;1304 -&gt; 1306&quot; was not executed" class="branchTla">#</a> </span>]:<span class="tlaUBC">              0 :                 : 0;</span></span>
+<span class="lineNum">        </span>   [<span class="tlaUIC"> <a href="#top" title="UIC: fallthrough branch &quot;1301 -&gt; 1302&quot; was not executed" class="branchTla">#</a> </span><span class="tlaUIC"> <a href="#top" title="UIC: branch &quot;1301 -&gt; 1308&quot; was not executed" class="branchTla">#</a> </span><span class="tlaEUC" title="fallthrough branch &quot;1306 -&gt; 1307&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1306 -&gt; 2666&quot; marked unreachable"> x </span>]
+<span id="L1316"><span class="lineNum">    1316</span>                 :                : </span>
+<span id="L1317"><span class="lineNum">    1317</span>   [<span class="tlaEUC" title="fallthrough branch &quot;1396 -&gt; 1397&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1396 -&gt; 2751&quot; marked unreachable"> x </span><span class="tlaEUC" title="fallthrough branch &quot;1399 -&gt; 1400&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1399 -&gt; 2745&quot; marked unreachable"> x </span> :<span class="tlaUBC">              0 :             while (in_element(qn(&quot;spreadsheetml&quot;, &quot;colBreaks&quot;)))</span></span>
+<span class="lineNum">        </span> <span class="tlaEUC" title="fallthrough branch &quot;1400 -&gt; 1401&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1400 -&gt; 2743&quot; marked unreachable"> x </span><span class="tlaEUC" title="fallthrough branch &quot;1401 -&gt; 1402&quot; marked unreachable"> x </span><span class="tlaEUC" title="exception branch &quot;1401 -&gt; 2743&quot; marked unreachable"> x </span><span class="tlaUBC"> <a href="#top" title="UBC: branch &quot;1406 -&gt; 1317&quot; was not executed" class="branchTla">#</a> </span> 
+<span class="lineNum">        </span>             <span class="tlaUBC"> <a href="#top" title="UBC: branch &quot;1406 -&gt; 1541&quot; was not executed" class="branchTla">#</a> </span>]
+<span id="L1318"><span class="lineNum">    1318</span>                 :                :             {</span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 2342 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com/linux-test-project/lcov" target="_parent">LCOV version 2.5-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/workbook/workbook.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">review summary</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - source/workbook/workbook.cpp</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUIC" title="Uncovered Included Code (# => 0):
+Previously unused code is untested">UIC</td>
+            <td width="5%" class="headerCovTableHeadUBC" title="Uncovered Baseline Code (0 => 0):
+Unchanged code was untested before, is untested now">UBC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry"><a href="#L1335" title="goto first UIC line">1</a></td>
+            <td class="headerCovTableEntry"><a href="#L1330" title="goto first UBC line">8</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-08-04 18:31:17</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryMed">75.0&nbsp;%</td>
+            <td class="headerCovTableEntry">16</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-08-04 18:31:12</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">             Branch data    TLA  Line data    Source code</pre>
+<pre class="source">
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 1329 ignored lines)</span>
+<span id="L1330"><span class="lineNum">    1330</span>                 :<a href="#L1336" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     d_-&gt;worksheets_.push_back(detail::worksheet_impl(this, sheet_id, title));</span></span>
+<span id="L1331"><span class="lineNum">    1331</span>                 :                : </span>
+<span id="L1332"><span class="lineNum">    1332</span>                 :<span class="tlaUBC">              0 :     auto workbook_rel = d_-&gt;manifest_.relationship(path(&quot;/&quot;), relationship_type::office_document);</span></span>
+<span id="L1333"><span class="lineNum">    1333</span>                 :<span class="tlaUBC">              0 :     auto sheet_absoulute_path = workbook_rel.target().path().parent().append(rel.target().path());</span></span>
+<span id="L1334"><span class="lineNum">    1334</span>                 :<span class="tlaUBC">              0 :     d_-&gt;manifest_.register_override_type(sheet_absoulute_path,</span></span>
+<span id="L1335"><span class="lineNum">    1335</span>                 :<a href="#top" class="tlaBgUIC"  title="Next UIC group">UIC</a><span class="tlaUIC tlaBgUIC">           0 :         &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml&quot;);</span></span>
+<span id="L1336"><span class="lineNum">    1336</span>                 :<a href="#top" class="tlaBgUBC"  title="Next UBC group">UBC</a><span class="tlaUBC tlaBgUBC">           0 :     auto ws_rel = d_-&gt;manifest_.register_relationship(workbook_rel.target(),</span></span>
+<span id="L1337"><span class="lineNum">    1337</span>                 :<span class="tlaUBC">              0 :         relationship_type::worksheet, rel.target(), target_mode::internal);</span></span>
+<span id="L1338"><span class="lineNum">    1338</span>                 :<span class="tlaUBC">              0 :     d_-&gt;sheet_title_rel_id_map_[title] = ws_rel;</span></span>
+<span id="L1339"><span class="lineNum">    1339</span>                 :                : </span>
+<span id="L1340"><span class="lineNum">    1340</span>                 :<span class="tlaUBC">              0 :     update_sheet_properties();</span></span>
+  <span class="lineNumWithDelete">     ...</span>                              <span class="elidedSource">     (elided 842 ignored lines)</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com/linux-test-project/lcov" target="_parent">LCOV version 2.5-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
