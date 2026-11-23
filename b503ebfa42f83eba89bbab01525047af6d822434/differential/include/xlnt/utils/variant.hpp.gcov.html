@@ -1,0 +1,855 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - include/xlnt/utils/variant.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory include/xlnt/utils">include/xlnt/utils</a> - variant.hpp<span style="font-size: 80%;"> (source / <a href="variant.hpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">63</td>
+            <td class="headerCovTableEntry">63</td>
+            <td class="headerCovTableEntry"><a href="#L334" title="goto first GNC line">63</a></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-11-23 20:48:04</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">63</td>
+            <td class="headerCovTableEntry">63</td>
+            <td class="headerCovTableEntry">63</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-11-23 20:48:04</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">           TLA  Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>                 : // Copyright (c) 2017-2022 Thomas Fussell</span>
+<span id="L2"><span class="lineNum">       2</span>                 : // Copyright (c) 2024-2026 xlnt-community</span>
+<span id="L3"><span class="lineNum">       3</span>                 : //</span>
+<span id="L4"><span class="lineNum">       4</span>                 : // Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span id="L5"><span class="lineNum">       5</span>                 : // of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span id="L6"><span class="lineNum">       6</span>                 : // in the Software without restriction, including without limitation the rights</span>
+<span id="L7"><span class="lineNum">       7</span>                 : // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span id="L8"><span class="lineNum">       8</span>                 : // copies of the Software, and to permit persons to whom the Software is</span>
+<span id="L9"><span class="lineNum">       9</span>                 : // furnished to do so, subject to the following conditions:</span>
+<span id="L10"><span class="lineNum">      10</span>                 : //</span>
+<span id="L11"><span class="lineNum">      11</span>                 : // The above copyright notice and this permission notice shall be included in</span>
+<span id="L12"><span class="lineNum">      12</span>                 : // all copies or substantial portions of the Software.</span>
+<span id="L13"><span class="lineNum">      13</span>                 : //</span>
+<span id="L14"><span class="lineNum">      14</span>                 : // THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span id="L15"><span class="lineNum">      15</span>                 : // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span id="L16"><span class="lineNum">      16</span>                 : // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span id="L17"><span class="lineNum">      17</span>                 : // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span id="L18"><span class="lineNum">      18</span>                 : // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span id="L19"><span class="lineNum">      19</span>                 : // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span id="L20"><span class="lineNum">      20</span>                 : // THE SOFTWARE</span>
+<span id="L21"><span class="lineNum">      21</span>                 : //</span>
+<span id="L22"><span class="lineNum">      22</span>                 : // @license: http://www.opensource.org/licenses/mit-license.php</span>
+<span id="L23"><span class="lineNum">      23</span>                 : // @author: see AUTHORS file</span>
+<span id="L24"><span class="lineNum">      24</span>                 : </span>
+<span id="L25"><span class="lineNum">      25</span>                 : #pragma once</span>
+<span id="L26"><span class="lineNum">      26</span>                 : </span>
+<span id="L27"><span class="lineNum">      27</span>                 : #include &lt;cstdint&gt;</span>
+<span id="L28"><span class="lineNum">      28</span>                 : #include &lt;string&gt;</span>
+<span id="L29"><span class="lineNum">      29</span>                 : #include &lt;vector&gt;</span>
+<span id="L30"><span class="lineNum">      30</span>                 : </span>
+<span id="L31"><span class="lineNum">      31</span>                 : #include &lt;xlnt/xlnt_config.hpp&gt;</span>
+<span id="L32"><span class="lineNum">      32</span>                 : #include &lt;xlnt/utils/datetime.hpp&gt;</span>
+<span id="L33"><span class="lineNum">      33</span>                 : </span>
+<span id="L34"><span class="lineNum">      34</span>                 : namespace xlnt {</span>
+<span id="L35"><span class="lineNum">      35</span>                 : </span>
+<span id="L36"><span class="lineNum">      36</span>                 : struct datetime;</span>
+<span id="L37"><span class="lineNum">      37</span>                 : class bad_variant_access;</span>
+<span id="L38"><span class="lineNum">      38</span>                 : </span>
+<span id="L39"><span class="lineNum">      39</span>                 : /// &lt;summary&gt;</span>
+<span id="L40"><span class="lineNum">      40</span>                 : /// Represents an object that can have variable type.</span>
+<span id="L41"><span class="lineNum">      41</span>                 : /// &lt;/summary&gt;</span>
+<span id="L42"><span class="lineNum">      42</span>                 : class XLNT_API variant</span>
+<span id="L43"><span class="lineNum">      43</span>                 : {</span>
+<span id="L44"><span class="lineNumWithDelete" title="removed line 43 from baseline version">      44</span>                 : public:</span>
+<span id="L45"><span class="lineNum">      45</span>                 :     friend class xlnt::bad_variant_access;</span>
+<span id="L46"><span class="lineNum">      46</span>                 : </span>
+<span id="L47"><span class="lineNum">      47</span>                 :     /// &lt;summary&gt;</span>
+<span id="L48"><span class="lineNum">      48</span>                 :     /// The possible types a variant can hold.</span>
+<span id="L49"><span class="lineNumWithDelete" title="removed line 48 from baseline version">      49</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L50"><span class="lineNum">      50</span>                 :     enum class type : unsigned char</span>
+<span id="L51"><span class="lineNumWithDelete" title="removed 34 lines ([50:83] inclusive) from baseline version">      51</span>                 :     {</span>
+<span id="L52"><span class="lineNum">      52</span>                 :         vector = 0,</span>
+<span id="L53"><span class="lineNum">      53</span>                 :         //array = 1,</span>
+<span id="L54"><span class="lineNum">      54</span>                 :         //blob = 2, // XSD type xsd:base64Binary</span>
+<span id="L55"><span class="lineNum">      55</span>                 :         //oblob = 3, // XSD type xsd:base64Binary</span>
+<span id="L56"><span class="lineNum">      56</span>                 :         empty = 4,</span>
+<span id="L57"><span class="lineNum">      57</span>                 :         null = 5,</span>
+<span id="L58"><span class="lineNum">      58</span>                 :         i1 = 6, // XSD type xsd:byte (8-bit signed integer)</span>
+<span id="L59"><span class="lineNum">      59</span>                 :         i2 = 7, // XSD type xsd:short (16-bit signed integer)</span>
+<span id="L60"><span class="lineNum">      60</span>                 :         i4 = 8, // XSD type xsd:int (32-bit signed integer)</span>
+<span id="L61"><span class="lineNum">      61</span>                 :         i8 = 9, // XSD type xsd:long (64-bit signed integer)</span>
+<span id="L62"><span class="lineNum">      62</span>                 :         integer = 10, // XSD type xsd:int (32-bit signed integer)</span>
+<span id="L63"><span class="lineNum">      63</span>                 :         ui1 = 11, // XSD type xsd:unsignedByte (8-bit unsigned integer)</span>
+<span id="L64"><span class="lineNum">      64</span>                 :         ui2 = 12, // XSD type xsd:unsignedShort (16-bit unsigned integer)</span>
+<span id="L65"><span class="lineNum">      65</span>                 :         ui4 = 13, // XSD type xsd:unsignedInt (32-bit unsigned integer)</span>
+<span id="L66"><span class="lineNum">      66</span>                 :         ui8 = 14, // XSD type xsd:unsignedLong (64-bit unsigned integer)</span>
+<span id="L67"><span class="lineNum">      67</span>                 :         uint = 15, // XSD type xsd:unsignedInt (32-bit unsigned integer)</span>
+<span id="L68"><span class="lineNum">      68</span>                 :         r4 = 16, // XSD type xsd:float (32-bit floating point number)</span>
+<span id="L69"><span class="lineNum">      69</span>                 :         r8 = 17, // XSD type xsd:double (64-bit floating point number)</span>
+<span id="L70"><span class="lineNum">      70</span>                 :         //decimal = 18, XSD type xsd:decimal</span>
+<span id="L71"><span class="lineNum">      71</span>                 :         lpstr = 19, // XSD type xsd:string. OOXML says: &quot;This element specifies a string variant type.&quot;</span>
+<span id="L72"><span class="lineNum">      72</span>                 :         lpwstr = 20, // XSD type xsd:string. OOXML says: &quot;This element specifies a string variant type.&quot;</span>
+<span id="L73"><span class="lineNum">      73</span>                 :         bstr = 21, // XSD type xsd:string. OOXML says: &quot;This element defines a binary basic string variant type, which can store any valid Unicode character.&quot;</span>
+<span id="L74"><span class="lineNum">      74</span>                 :         date = 22, // XSD type xsd:dateTime</span>
+<span id="L75"><span class="lineNum">      75</span>                 :         filetime = 23, // XSD type xsd:dateTime</span>
+<span id="L76"><span class="lineNum">      76</span>                 :         boolean = 24, // XSD type xsd:boolean (any of: 'true', 'false', '1', '0')</span>
+<span id="L77"><span class="lineNum">      77</span>                 :         //cy = 25,</span>
+<span id="L78"><span class="lineNum">      78</span>                 :         //error = 26,</span>
+<span id="L79"><span class="lineNum">      79</span>                 :         //stream = 27, // XSD type xsd:base64Binary</span>
+<span id="L80"><span class="lineNum">      80</span>                 :         //ostream = 28, // XSD type xsd:base64Binary</span>
+<span id="L81"><span class="lineNum">      81</span>                 :         //storage = 29, // XSD type xsd:base64Binary</span>
+<span id="L82"><span class="lineNum">      82</span>                 :         //ostorage = 30, // XSD type xsd:base64Binary</span>
+<span id="L83"><span class="lineNum">      83</span>                 :         //vstream = 31,</span>
+<span id="L84"><span class="lineNum">      84</span>                 :         //clsid = 32</span>
+<span id="L85"><span class="lineNum">      85</span>                 :     };</span>
+<span id="L86"><span class="lineNum">      86</span>                 : </span>
+<span id="L87"><span class="lineNum">      87</span>                 :     /// &lt;summary&gt;</span>
+<span id="L88"><span class="lineNum">      88</span>                 :     /// The possible base types for vectors and arrays.</span>
+<span id="L89"><span class="lineNum">      89</span>                 :     /// Note: vectors and arrays support slightly different types!</span>
+<span id="L90"><span class="lineNum">      90</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L91"><span class="lineNum">      91</span>                 :     enum class base_type : unsigned char</span>
+<span id="L92"><span class="lineNum">      92</span>                 :     {</span>
+<span id="L93"><span class="lineNum">      93</span>                 :         variant = 0,</span>
+<span id="L94"><span class="lineNum">      94</span>                 :         i1 = 1,</span>
+<span id="L95"><span class="lineNum">      95</span>                 :         i2 = 2,</span>
+<span id="L96"><span class="lineNum">      96</span>                 :         i4 = 3,</span>
+<span id="L97"><span class="lineNum">      97</span>                 :         i8 = 4,         // only for vectors</span>
+<span id="L98"><span class="lineNum">      98</span>                 :         //integer = 5,  // only for arrays</span>
+<span id="L99"><span class="lineNum">      99</span>                 :         ui1 = 6,</span>
+<span id="L100"><span class="lineNum">     100</span>                 :         ui2 = 7,</span>
+<span id="L101"><span class="lineNum">     101</span>                 :         ui4 = 8,</span>
+<span id="L102"><span class="lineNum">     102</span>                 :         ui8 = 9,        // only for vectors</span>
+<span id="L103"><span class="lineNum">     103</span>                 :         //uint = 10,    // only for arrays</span>
+<span id="L104"><span class="lineNum">     104</span>                 :         r4 = 11,</span>
+<span id="L105"><span class="lineNum">     105</span>                 :         r8 = 12,</span>
+<span id="L106"><span class="lineNum">     106</span>                 :         //decimal = 13, // only for arrays</span>
+<span id="L107"><span class="lineNum">     107</span>                 :         lpstr = 14,     // only for vectors</span>
+<span id="L108"><span class="lineNum">     108</span>                 :         lpwstr = 15,    // only for vectors</span>
+<span id="L109"><span class="lineNum">     109</span>                 :         bstr = 16,</span>
+<span id="L110"><span class="lineNum">     110</span>                 :         date = 17,</span>
+<span id="L111"><span class="lineNum">     111</span>                 :         filetime = 18,  // only for vectors</span>
+<span id="L112"><span class="lineNum">     112</span>                 :         boolean = 19,</span>
+<span id="L113"><span class="lineNum">     113</span>                 :         //cy = 20,</span>
+<span id="L114"><span class="lineNum">     114</span>                 :         //error = 21,</span>
+<span id="L115"><span class="lineNum">     115</span>                 :         //clsid = 22    // only for vectors</span>
+<span id="L116"><span class="lineNum">     116</span>                 :     };</span>
+<span id="L117"><span class="lineNum">     117</span>                 : </span>
+<span id="L118"><span class="lineNum">     118</span>                 :     /// &lt;summary&gt;</span>
+<span id="L119"><span class="lineNum">     119</span>                 :     /// Returns a displayable string for the specified type.</span>
+<span id="L120"><span class="lineNum">     120</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L121"><span class="lineNum">     121</span>                 :     static std::string get_type_string(type type);</span>
+<span id="L122"><span class="lineNum">     122</span>                 :     static std::string get_base_type_string(base_type type);</span>
+<span id="L123"><span class="lineNum">     123</span>                 : </span>
+<span id="L124"><span class="lineNumWithDelete" title="removed line 92 from baseline version">     124</span>                 :     /// &lt;summary&gt;</span>
+<span id="L125"><span class="lineNum">     125</span>                 :     /// Parse the string and return the specified type.</span>
+<span id="L126"><span class="lineNumWithDelete" title="removed line 94 from baseline version">     126</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L127"><span class="lineNum">     127</span>                 :     static type parse_type_string(const std::string &amp;str);</span>
+<span id="L128"><span class="lineNum">     128</span>                 :     static base_type parse_base_type_string(const std::string &amp;str);</span>
+<span id="L129"><span class="lineNum">     129</span>                 : </span>
+<span id="L130"><span class="lineNumWithDelete" title="removed line 97 from baseline version">     130</span>                 :     /// &lt;summary&gt;</span>
+<span id="L131"><span class="lineNum">     131</span>                 :     /// Default constructor. Creates a null-type or empty-type variant.</span>
+<span id="L132"><span class="lineNum">     132</span>                 :     /// The type must be either type::null or type::empty - if not,</span>
+<span id="L133"><span class="lineNum">     133</span>                 :     /// an xlnt::invalid_parameter exception will be thrown.</span>
+<span id="L134"><span class="lineNumWithDelete" title="removed line 99 from baseline version">     134</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L135"><span class="lineNum">     135</span>                 :     variant(type type = type::null);</span>
+<span id="L136"><span class="lineNum">     136</span>                 : </span>
+<span id="L137"><span class="lineNumWithDelete" title="removed line 102 from baseline version">     137</span>                 :     /// &lt;summary&gt;</span>
+<span id="L138"><span class="lineNum">     138</span>                 :     /// Creates a i1-type variant with the given value.</span>
+<span id="L139"><span class="lineNumWithDelete" title="removed line 104 from baseline version">     139</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L140"><span class="lineNum">     140</span>                 :     variant(std::int8_t value);</span>
+<span id="L141"><span class="lineNum">     141</span>                 : </span>
+<span id="L142"><span class="lineNumWithDelete" title="removed line 107 from baseline version">     142</span>                 :     /// &lt;summary&gt;</span>
+<span id="L143"><span class="lineNum">     143</span>                 :     /// Creates a vector_i1-type variant with the given value.</span>
+<span id="L144"><span class="lineNumWithDelete" title="removed line 109 from baseline version">     144</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L145"><span class="lineNum">     145</span>                 :     variant(const std::vector&lt;std::int8_t&gt; &amp;value);</span>
+<span id="L146"><span class="lineNum">     146</span>                 :     variant(std::vector&lt;std::int8_t&gt; &amp;&amp;value);</span>
+<span id="L147"><span class="lineNum">     147</span>                 :     variant(const std::initializer_list&lt;std::int8_t&gt; &amp;value);</span>
+<span id="L148"><span class="lineNum">     148</span>                 : </span>
+<span id="L149"><span class="lineNumWithDelete" title="removed line 112 from baseline version">     149</span>                 :     /// &lt;summary&gt;</span>
+<span id="L150"><span class="lineNum">     150</span>                 :     /// Creates a i2-type variant with the given value.</span>
+<span id="L151"><span class="lineNumWithDelete" title="removed line 114 from baseline version">     151</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L152"><span class="lineNum">     152</span>                 :     variant(std::int16_t value);</span>
+<span id="L153"><span class="lineNum">     153</span>                 : </span>
+<span id="L154"><span class="lineNumWithDelete" title="removed line 117 from baseline version">     154</span>                 :     /// &lt;summary&gt;</span>
+<span id="L155"><span class="lineNum">     155</span>                 :     /// Creates a vector_i2-type variant with the given value.</span>
+<span id="L156"><span class="lineNumWithDelete" title="removed line 119 from baseline version">     156</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L157"><span class="lineNum">     157</span>                 :     variant(const std::vector&lt;std::int16_t&gt; &amp;value);</span>
+<span id="L158"><span class="lineNum">     158</span>                 :     variant(std::vector&lt;std::int16_t&gt; &amp;&amp;value);</span>
+<span id="L159"><span class="lineNum">     159</span>                 :     variant(const std::initializer_list&lt;std::int16_t&gt; &amp;value);</span>
+<span id="L160"><span class="lineNum">     160</span>                 : </span>
+<span id="L161"><span class="lineNumWithDelete" title="removed line 122 from baseline version">     161</span>                 :     /// &lt;summary&gt;</span>
+<span id="L162"><span class="lineNum">     162</span>                 :     /// Creates a i4-type or int-type variant with the given value.</span>
+<span id="L163"><span class="lineNum">     163</span>                 :     /// The type must be either type::i4 or type::integer - if not,</span>
+<span id="L164"><span class="lineNum">     164</span>                 :     /// an xlnt::invalid_parameter exception will be thrown.</span>
+<span id="L165"><span class="lineNumWithDelete" title="removed line 124 from baseline version">     165</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L166"><span class="lineNum">     166</span>                 :     variant(std::int32_t value, type type = type::i4);</span>
+<span id="L167"><span class="lineNum">     167</span>                 : </span>
+<span id="L168"><span class="lineNum">     168</span>                 :     /// &lt;summary&gt;</span>
+<span id="L169"><span class="lineNum">     169</span>                 :     /// Creates a vector_i4-type variant with the given value.</span>
+<span id="L170"><span class="lineNum">     170</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L171"><span class="lineNum">     171</span>                 :     variant(const std::vector&lt;std::int32_t&gt; &amp;value);</span>
+<span id="L172"><span class="lineNum">     172</span>                 :     variant(std::vector&lt;std::int32_t&gt; &amp;&amp;value);</span>
+<span id="L173"><span class="lineNum">     173</span>                 :     variant(const std::initializer_list&lt;std::int32_t&gt; &amp;value);</span>
+<span id="L174"><span class="lineNum">     174</span>                 : </span>
+<span id="L175"><span class="lineNumWithDelete" title="removed line 132 from baseline version">     175</span>                 :     /// &lt;summary&gt;</span>
+<span id="L176"><span class="lineNum">     176</span>                 :     /// Creates a i8-type variant with the given value.</span>
+<span id="L177"><span class="lineNumWithDelete" title="removed line 134 from baseline version">     177</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L178"><span class="lineNum">     178</span>                 :     variant(std::int64_t value);</span>
+<span id="L179"><span class="lineNum">     179</span>                 : </span>
+<span id="L180"><span class="lineNumWithDelete" title="removed line 137 from baseline version">     180</span>                 :     /// &lt;summary&gt;</span>
+<span id="L181"><span class="lineNum">     181</span>                 :     /// Creates a vector_i8-type variant with the given value.</span>
+<span id="L182"><span class="lineNumWithDelete" title="removed line 139 from baseline version">     182</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L183"><span class="lineNum">     183</span>                 :     variant(const std::vector&lt;std::int64_t&gt; &amp;value);</span>
+<span id="L184"><span class="lineNum">     184</span>                 :     variant(std::vector&lt;std::int64_t&gt; &amp;&amp;value);</span>
+<span id="L185"><span class="lineNum">     185</span>                 :     variant(const std::initializer_list&lt;std::int64_t&gt; &amp;value);</span>
+<span id="L186"><span class="lineNum">     186</span>                 : </span>
+<span id="L187"><span class="lineNumWithDelete" title="removed line 142 from baseline version">     187</span>                 :     /// &lt;summary&gt;</span>
+<span id="L188"><span class="lineNum">     188</span>                 :     /// Creates a ui1-type variant with the given value.</span>
+<span id="L189"><span class="lineNumWithDelete" title="removed line 144 from baseline version">     189</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L190"><span class="lineNum">     190</span>                 :     variant(std::uint8_t value);</span>
+<span id="L191"><span class="lineNum">     191</span>                 : </span>
+<span id="L192"><span class="lineNumWithDelete" title="removed line 147 from baseline version">     192</span>                 :     /// &lt;summary&gt;</span>
+<span id="L193"><span class="lineNum">     193</span>                 :     /// Creates a vector_ui1-type variant with the given value.</span>
+<span id="L194"><span class="lineNumWithDelete" title="removed line 149 from baseline version">     194</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L195"><span class="lineNum">     195</span>                 :     variant(const std::vector&lt;std::uint8_t&gt; &amp;value);</span>
+<span id="L196"><span class="lineNum">     196</span>                 :     variant(std::vector&lt;std::uint8_t&gt; &amp;&amp;value);</span>
+<span id="L197"><span class="lineNum">     197</span>                 :     variant(const std::initializer_list&lt;std::uint8_t&gt; &amp;value);</span>
+<span id="L198"><span class="lineNum">     198</span>                 : </span>
+<span id="L199"><span class="lineNumWithDelete" title="removed line 152 from baseline version">     199</span>                 :     /// &lt;summary&gt;</span>
+<span id="L200"><span class="lineNum">     200</span>                 :     /// Creates a ui2-type variant with the given value.</span>
+<span id="L201"><span class="lineNumWithDelete" title="removed line 154 from baseline version">     201</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L202"><span class="lineNum">     202</span>                 :     variant(std::uint16_t value);</span>
+<span id="L203"><span class="lineNum">     203</span>                 : </span>
+<span id="L204"><span class="lineNumWithDelete" title="removed line 157 from baseline version">     204</span>                 :     /// &lt;summary&gt;</span>
+<span id="L205"><span class="lineNum">     205</span>                 :     /// Creates a vector_ui2-type variant with the given value.</span>
+<span id="L206"><span class="lineNumWithDelete" title="removed line 159 from baseline version">     206</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L207"><span class="lineNum">     207</span>                 :     variant(const std::vector&lt;std::uint16_t&gt; &amp;value);</span>
+<span id="L208"><span class="lineNum">     208</span>                 :     variant(std::vector&lt;std::uint16_t&gt; &amp;&amp;value);</span>
+<span id="L209"><span class="lineNum">     209</span>                 :     variant(const std::initializer_list&lt;std::uint16_t&gt; &amp;value);</span>
+<span id="L210"><span class="lineNum">     210</span>                 : </span>
+<span id="L211"><span class="lineNumWithDelete" title="removed line 162 from baseline version">     211</span>                 :     /// &lt;summary&gt;</span>
+<span id="L212"><span class="lineNum">     212</span>                 :     /// Creates a ui4-type or uint-type variant with the given value.</span>
+<span id="L213"><span class="lineNum">     213</span>                 :     /// The type must be either type::ui4 or type::uint - if not,</span>
+<span id="L214"><span class="lineNum">     214</span>                 :     /// an xlnt::invalid_parameter exception will be thrown.</span>
+<span id="L215"><span class="lineNum">     215</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L216"><span class="lineNum">     216</span>                 :     variant(std::uint32_t value, type type = type::ui4);</span>
+<span id="L217"><span class="lineNum">     217</span>                 : </span>
+<span id="L218"><span class="lineNum">     218</span>                 :     /// &lt;summary&gt;</span>
+<span id="L219"><span class="lineNum">     219</span>                 :     /// Creates a vector_ui4-type variant with the given value.</span>
+<span id="L220"><span class="lineNum">     220</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L221"><span class="lineNum">     221</span>                 :     variant(const std::vector&lt;std::uint32_t&gt; &amp;value);</span>
+<span id="L222"><span class="lineNum">     222</span>                 :     variant(std::vector&lt;std::uint32_t&gt; &amp;&amp;value);</span>
+<span id="L223"><span class="lineNum">     223</span>                 :     variant(const std::initializer_list&lt;std::uint32_t&gt; &amp;value);</span>
+<span id="L224"><span class="lineNum">     224</span>                 : </span>
+<span id="L225"><span class="lineNum">     225</span>                 :     /// &lt;summary&gt;</span>
+<span id="L226"><span class="lineNum">     226</span>                 :     /// Creates a ui8-type variant with the given value.</span>
+<span id="L227"><span class="lineNum">     227</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L228"><span class="lineNum">     228</span>                 :     variant(std::uint64_t value);</span>
+<span id="L229"><span class="lineNum">     229</span>                 : </span>
+<span id="L230"><span class="lineNum">     230</span>                 :     /// &lt;summary&gt;</span>
+<span id="L231"><span class="lineNum">     231</span>                 :     /// Creates a vector_ui8-type variant with the given value.</span>
+<span id="L232"><span class="lineNum">     232</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L233"><span class="lineNum">     233</span>                 :     variant(const std::vector&lt;std::uint64_t&gt; &amp;value);</span>
+<span id="L234"><span class="lineNum">     234</span>                 :     variant(std::vector&lt;std::uint64_t&gt; &amp;&amp;value);</span>
+<span id="L235"><span class="lineNum">     235</span>                 :     variant(const std::initializer_list&lt;std::uint64_t&gt; &amp;value);</span>
+<span id="L236"><span class="lineNum">     236</span>                 : </span>
+<span id="L237"><span class="lineNum">     237</span>                 :     /// &lt;summary&gt;</span>
+<span id="L238"><span class="lineNum">     238</span>                 :     /// Creates a r4-type variant with the given value.</span>
+<span id="L239"><span class="lineNum">     239</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L240"><span class="lineNum">     240</span>                 :     variant(float value);</span>
+<span id="L241"><span class="lineNum">     241</span>                 : </span>
+<span id="L242"><span class="lineNum">     242</span>                 :     /// &lt;summary&gt;</span>
+<span id="L243"><span class="lineNum">     243</span>                 :     /// Creates a vector_r4-type variant with the given value.</span>
+<span id="L244"><span class="lineNum">     244</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L245"><span class="lineNum">     245</span>                 :     variant(const std::vector&lt;float&gt; &amp;value);</span>
+<span id="L246"><span class="lineNum">     246</span>                 :     variant(std::vector&lt;float&gt; &amp;&amp;value);</span>
+<span id="L247"><span class="lineNum">     247</span>                 :     variant(const std::initializer_list&lt;float&gt; &amp;value);</span>
+<span id="L248"><span class="lineNum">     248</span>                 : </span>
+<span id="L249"><span class="lineNum">     249</span>                 :     /// &lt;summary&gt;</span>
+<span id="L250"><span class="lineNum">     250</span>                 :     /// Creates a r8-type variant with the given value.</span>
+<span id="L251"><span class="lineNum">     251</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L252"><span class="lineNum">     252</span>                 :     variant(double value);</span>
+<span id="L253"><span class="lineNum">     253</span>                 : </span>
+<span id="L254"><span class="lineNum">     254</span>                 :     /// &lt;summary&gt;</span>
+<span id="L255"><span class="lineNum">     255</span>                 :     /// Creates a vector_r8-type variant with the given value.</span>
+<span id="L256"><span class="lineNum">     256</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L257"><span class="lineNum">     257</span>                 :     variant(const std::vector&lt;double&gt; &amp;value);</span>
+<span id="L258"><span class="lineNum">     258</span>                 :     variant(std::vector&lt;double&gt; &amp;&amp;value);</span>
+<span id="L259"><span class="lineNum">     259</span>                 :     variant(const std::initializer_list&lt;double&gt; &amp;value);</span>
+<span id="L260"><span class="lineNum">     260</span>                 : </span>
+<span id="L261"><span class="lineNum">     261</span>                 :     /// &lt;summary&gt;</span>
+<span id="L262"><span class="lineNum">     262</span>                 :     /// Creates a string-type variant with the given value.</span>
+<span id="L263"><span class="lineNum">     263</span>                 :     /// The type must be either type::lpstr or type::lpwstr or type::bstr - if not,</span>
+<span id="L264"><span class="lineNum">     264</span>                 :     /// an xlnt::invalid_parameter exception will be thrown.</span>
+<span id="L265"><span class="lineNum">     265</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L266"><span class="lineNum">     266</span>                 :     variant(const std::string &amp;value, type type = type::lpstr);</span>
+<span id="L267"><span class="lineNum">     267</span>                 :     variant(std::string &amp;&amp;value, type type = type::lpstr);</span>
+<span id="L268"><span class="lineNum">     268</span>                 :     variant(const char *value, type type = type::lpstr);</span>
+<span id="L269"><span class="lineNum">     269</span>                 : </span>
+<span id="L270"><span class="lineNum">     270</span>                 :     /// &lt;summary&gt;</span>
+<span id="L271"><span class="lineNum">     271</span>                 :     /// Creates a vector_string-type variant with the given value.</span>
+<span id="L272"><span class="lineNum">     272</span>                 :     /// The base type must be either base_type::lpstr or base_type::lpwstr or base_type::bstr - if not,</span>
+<span id="L273"><span class="lineNum">     273</span>                 :     /// an xlnt::invalid_parameter exception will be thrown.</span>
+<span id="L274"><span class="lineNum">     274</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L275"><span class="lineNum">     275</span>                 :     variant(const std::vector&lt;std::string&gt; &amp;value, base_type base_type = base_type::lpstr);</span>
+<span id="L276"><span class="lineNum">     276</span>                 :     variant(std::vector&lt;std::string&gt; &amp;&amp;value, base_type base_type = base_type::lpstr);</span>
+<span id="L277"><span class="lineNum">     277</span>                 :     variant(const std::vector&lt;const char *&gt; &amp;value, base_type base_type = base_type::lpstr);</span>
+<span id="L278"><span class="lineNum">     278</span>                 :     variant(const std::initializer_list&lt;std::string&gt; &amp;value, base_type base_type = base_type::lpstr);</span>
+<span id="L279"><span class="lineNum">     279</span>                 :     variant(const std::initializer_list&lt;const char *&gt; &amp;value, base_type base_type = base_type::lpstr);</span>
+<span id="L280"><span class="lineNum">     280</span>                 : </span>
+<span id="L281"><span class="lineNum">     281</span>                 :     /// &lt;summary&gt;</span>
+<span id="L282"><span class="lineNum">     282</span>                 :     /// Creates a datetime-type variant with the given value.</span>
+<span id="L283"><span class="lineNum">     283</span>                 :     /// The type must be either type::date or type::filetime - if not,</span>
+<span id="L284"><span class="lineNum">     284</span>                 :     /// an xlnt::invalid_parameter exception will be thrown.</span>
+<span id="L285"><span class="lineNumWithDelete" title="removed line 164 from baseline version">     285</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L286"><span class="lineNum">     286</span>                 :     variant(const datetime &amp;value, type type = type::date);</span>
+<span id="L287"><span class="lineNum">     287</span>                 :     variant(datetime &amp;&amp;value, type type = type::date);</span>
+<span id="L288"><span class="lineNum">     288</span>                 : </span>
+<span id="L289"><span class="lineNum">     289</span>                 :     /// &lt;summary&gt;</span>
+<span id="L290"><span class="lineNum">     290</span>                 :     /// Creates a vector_datetime-type variant with the given value.</span>
+<span id="L291"><span class="lineNum">     291</span>                 :     /// The base type must be either base_type::date or base_type::filetime - if not,</span>
+<span id="L292"><span class="lineNum">     292</span>                 :     /// an xlnt::invalid_parameter exception will be thrown.</span>
+<span id="L293"><span class="lineNumWithDelete" title="removed line 169 from baseline version">     293</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L294"><span class="lineNum">     294</span>                 :     variant(const std::vector&lt;datetime&gt; &amp;value, base_type base_type = base_type::date);</span>
+<span id="L295"><span class="lineNum">     295</span>                 :     variant(std::vector&lt;datetime&gt; &amp;&amp;value, base_type base_type = base_type::date);</span>
+<span id="L296"><span class="lineNum">     296</span>                 :     variant(const std::initializer_list&lt;datetime&gt; &amp;value, base_type base_type = base_type::date);</span>
+<span id="L297"><span class="lineNum">     297</span>                 : </span>
+<span id="L298"><span class="lineNumWithDelete" title="removed line 172 from baseline version">     298</span>                 :     /// &lt;summary&gt;</span>
+<span id="L299"><span class="lineNum">     299</span>                 :     /// Creates a bool-type variant with the given value.</span>
+<span id="L300"><span class="lineNumWithDelete" title="removed line 174 from baseline version">     300</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L301"><span class="lineNum">     301</span>                 :     variant(bool value);</span>
+<span id="L302"><span class="lineNum">     302</span>                 : </span>
+<span id="L303"><span class="lineNum">     303</span>                 :     /// &lt;summary&gt;</span>
+<span id="L304"><span class="lineNum">     304</span>                 :     /// Creates a vector_bool-type variant with the given value.</span>
+<span id="L305"><span class="lineNum">     305</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L306"><span class="lineNum">     306</span>                 :     variant(const std::vector&lt;bool&gt; &amp;value);</span>
+<span id="L307"><span class="lineNum">     307</span>                 :     variant(std::vector&lt;bool&gt; &amp;&amp;value);</span>
+<span id="L308"><span class="lineNum">     308</span>                 :     variant(const std::initializer_list&lt;bool&gt; &amp;value);</span>
+<span id="L309"><span class="lineNum">     309</span>                 : </span>
+<span id="L310"><span class="lineNum">     310</span>                 :     /// &lt;summary&gt;</span>
+<span id="L311"><span class="lineNum">     311</span>                 :     /// Creates a vector_variant-type variant with the given value.</span>
+<span id="L312"><span class="lineNum">     312</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L313"><span class="lineNum">     313</span>                 :     variant(const std::vector&lt;variant&gt; &amp;value);</span>
+<span id="L314"><span class="lineNum">     314</span>                 :     variant(std::vector&lt;variant&gt; &amp;&amp;value);</span>
+<span id="L315"><span class="lineNum">     315</span>                 :     variant(const std::initializer_list&lt;variant&gt; &amp;value);</span>
+<span id="L316"><span class="lineNum">     316</span>                 : </span>
+<span id="L317"><span class="lineNum">     317</span>                 :     /// &lt;summary&gt;</span>
+<span id="L318"><span class="lineNum">     318</span>                 :     /// Returns true if this variant is of type t.</span>
+<span id="L319"><span class="lineNum">     319</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L320"><span class="lineNum">     320</span>                 :     bool is(type t) const;</span>
+<span id="L321"><span class="lineNum">     321</span>                 : </span>
+<span id="L322"><span class="lineNum">     322</span>                 :     /// &lt;summary&gt;</span>
+<span id="L323"><span class="lineNum">     323</span>                 :     /// Returns the value of this variant as type T.</span>
+<span id="L324"><span class="lineNum">     324</span>                 :     /// Assumes that the variant is of type T (please call is() or value_type() to check). For details</span>
+<span id="L325"><span class="lineNum">     325</span>                 :     /// on each type, please see the documentation for each get&lt;T&gt; function below.</span>
+<span id="L326"><span class="lineNum">     326</span>                 :     /// An xlnt::bad_variant_access exception will be thrown if the types are not convertible.</span>
+<span id="L327"><span class="lineNum">     327</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L328"><span class="lineNum">     328</span>                 :     template &lt;typename T&gt;</span>
+<span id="L329"><span class="lineNum">     329</span>                 :     T get() const;</span>
+<span id="L330"><span class="lineNum">     330</span>                 : </span>
+<span id="L331"><span class="lineNum">     331</span>                 :     /// &lt;summary&gt;</span>
+<span id="L332"><span class="lineNum">     332</span>                 :     /// Returns the type of this variant.</span>
+<span id="L333"><span class="lineNumWithDelete" title="removed line 198 from baseline version">     333</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L334"><span class="lineNum">     334</span> <a href="#top" class="tlaBgGNC"  title="Next GNC group">GNC</a><span class="tlaGNC tlaBgGNC">        4485 :     type value_type() const { return type_; }</span></span>
+<span id="L335"><span class="lineNum">     335</span>                 : </span>
+<span id="L336"><span class="lineNum">     336</span>                 :     /// &lt;summary&gt;</span>
+<span id="L337"><span class="lineNum">     337</span>                 :     /// Returns the type of this variant. Only relevant</span>
+<span id="L338"><span class="lineNum">     338</span>                 :     /// for vector and array types.</span>
+<span id="L339"><span class="lineNum">     339</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L340"><span class="lineNum">     340</span> <span class="tlaGNC">           1253 :     base_type value_base_type() const { return base_type_; }</span></span>
+<span id="L341"><span class="lineNum">     341</span>                 : </span>
+<span id="L342"><span class="lineNum">     342</span>                 :     /// &lt;summary&gt;</span>
+<span id="L343"><span class="lineNum">     343</span>                 :     /// Returns the number of elements encapsulated by this variant.</span>
+<span id="L344"><span class="lineNum">     344</span>                 :     /// &lt;/summary&gt;</span>
+<span id="L345"><span class="lineNum">     345</span> <span class="tlaGNC">            149 :     std::size_t num_elements() const { return value_.num_elements(); }</span></span>
+<span id="L346"><span class="lineNum">     346</span>                 : </span>
+<span id="L347"><span class="lineNum">     347</span>                 :     bool operator==(const variant &amp;rhs) const;</span>
+<span id="L348"><span class="lineNum">     348</span>                 : </span>
+<span id="L349"><span class="lineNum">     349</span>                 :     bool operator!=(const variant &amp;rhs) const;</span>
+<span id="L350"><span class="lineNum">     350</span>                 : </span>
+<span id="L351"><span class="lineNumWithDelete" title="removed 2 lines ([205:206] inclusive) from baseline version">     351</span>                 : private:</span>
+<span id="L352"><span class="lineNum">     352</span>                 : </span>
+<span id="L353"><span class="lineNum">     353</span>                 :     enum class internal_type : unsigned char</span>
+<span id="L354"><span class="lineNum">     354</span>                 :     {</span>
+<span id="L355"><span class="lineNum">     355</span>                 :         none, // none of the union members are active</span>
+<span id="L356"><span class="lineNum">     356</span>                 :         vec_variant, // std::vector&lt;xlnt::variant&gt;</span>
+<span id="L357"><span class="lineNum">     357</span>                 :         i1, // std::int8_t</span>
+<span id="L358"><span class="lineNum">     358</span>                 :         vec_i1, // std::vector&lt;std::int8_t&gt;</span>
+<span id="L359"><span class="lineNum">     359</span>                 :         i2, // std::int16_t</span>
+<span id="L360"><span class="lineNum">     360</span>                 :         vec_i2, // std::vector&lt;std::int16_t&gt;</span>
+<span id="L361"><span class="lineNum">     361</span>                 :         i4, // std::int32_t</span>
+<span id="L362"><span class="lineNum">     362</span>                 :         vec_i4, // std::vector&lt;std::int32_t&gt;</span>
+<span id="L363"><span class="lineNum">     363</span>                 :         i8, // std::int64_t</span>
+<span id="L364"><span class="lineNum">     364</span>                 :         vec_i8, // std::vector&lt;std::int64_t&gt;</span>
+<span id="L365"><span class="lineNum">     365</span>                 :         ui1, // std::uint8_t</span>
+<span id="L366"><span class="lineNum">     366</span>                 :         vec_ui1, // std::vector&lt;std::uint8_t&gt;</span>
+<span id="L367"><span class="lineNum">     367</span>                 :         ui2, // std::uint16_t</span>
+<span id="L368"><span class="lineNum">     368</span>                 :         vec_ui2, // std::vector&lt;std::uint16_t&gt;</span>
+<span id="L369"><span class="lineNum">     369</span>                 :         ui4, // std::uint32_t</span>
+<span id="L370"><span class="lineNum">     370</span>                 :         vec_ui4, // std::vector&lt;std::uint32_t&gt;</span>
+<span id="L371"><span class="lineNum">     371</span>                 :         ui8, // std::uint64_t</span>
+<span id="L372"><span class="lineNum">     372</span>                 :         vec_ui8, // std::vector&lt;std::uint64_t&gt;</span>
+<span id="L373"><span class="lineNum">     373</span>                 :         r4, // float</span>
+<span id="L374"><span class="lineNum">     374</span>                 :         vec_r4, // std::vector&lt;float&gt;</span>
+<span id="L375"><span class="lineNum">     375</span>                 :         r8, // double</span>
+<span id="L376"><span class="lineNum">     376</span>                 :         vec_r8, // std::vector&lt;double&gt;</span>
+<span id="L377"><span class="lineNum">     377</span>                 :         str, // std::string</span>
+<span id="L378"><span class="lineNum">     378</span>                 :         vec_str, // std::vector&lt;std::string&gt;</span>
+<span id="L379"><span class="lineNum">     379</span>                 :         datetime, // xlnt::datetime</span>
+<span id="L380"><span class="lineNum">     380</span>                 :         vec_datetime, // std::vector&lt;xlnt::datetime&gt;</span>
+<span id="L381"><span class="lineNum">     381</span>                 :         boolean, // bool</span>
+<span id="L382"><span class="lineNum">     382</span>                 :         vec_boolean, // std::vector&lt;bool&gt;</span>
+<span id="L383"><span class="lineNum">     383</span>                 :     };</span>
+<span id="L384"><span class="lineNum">     384</span>                 : </span>
+<span id="L385"><span class="lineNum">     385</span>                 :     static std::string get_internal_type_string(internal_type type);</span>
+<span id="L386"><span class="lineNum">     386</span>                 : </span>
+<span id="L387"><span class="lineNum">     387</span>                 :     struct value</span>
+<span id="L388"><span class="lineNum">     388</span>                 :     {</span>
+<span id="L389"><span class="lineNum">     389</span>                 :     public:</span>
+<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">             30 :         value() {}</span></span>
+<span id="L391"><span class="lineNum">     391</span>                 : </span>
+<span id="L392"><span class="lineNum">     392</span> <span class="tlaGNC">              3 :         explicit value(const std::vector&lt;variant&gt; &amp;vec_variant) : vec_variant_(vec_variant), internal_type_(internal_type::vec_variant) {}</span></span>
+<span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">           1690 :         explicit value(std::vector&lt;variant&gt; &amp;&amp;vec_variant) : vec_variant_(std::move(vec_variant)), internal_type_(internal_type::vec_variant) {}</span></span>
+<span id="L394"><span class="lineNum">     394</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;variant&gt; &amp;list_variant) : vec_variant_(list_variant), internal_type_(internal_type::vec_variant) {}</span></span>
+<span id="L395"><span class="lineNum">     395</span>                 : </span>
+<span id="L396"><span class="lineNum">     396</span> <span class="tlaGNC">              6 :         explicit value(std::int8_t i1) : i1_(i1), internal_type_(internal_type::i1) {}</span></span>
+<span id="L397"><span class="lineNum">     397</span> <span class="tlaGNC">              6 :         explicit value(const std::vector&lt;std::int8_t&gt; &amp;vec_i1) : vec_i1_(vec_i1), internal_type_(internal_type::vec_i1) {}</span></span>
+<span id="L398"><span class="lineNum">     398</span> <span class="tlaGNC">              4 :         explicit value(std::vector&lt;std::int8_t&gt; &amp;&amp;vec_i1) : vec_i1_(std::move(vec_i1)), internal_type_(internal_type::vec_i1) {}</span></span>
+<span id="L399"><span class="lineNum">     399</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;std::int8_t&gt; &amp;list_i1) : vec_i1_(list_i1), internal_type_(internal_type::vec_i1) {}</span></span>
+<span id="L400"><span class="lineNum">     400</span>                 : </span>
+<span id="L401"><span class="lineNum">     401</span> <span class="tlaGNC">              6 :         explicit value(std::int16_t i2) : i2_(i2), internal_type_(internal_type::i2) {}</span></span>
+<span id="L402"><span class="lineNum">     402</span> <span class="tlaGNC">              6 :         explicit value(const std::vector&lt;std::int16_t&gt; &amp;vec_i2) : vec_i2_(vec_i2), internal_type_(internal_type::vec_i2) {}</span></span>
+<span id="L403"><span class="lineNum">     403</span> <span class="tlaGNC">              4 :         explicit value(std::vector&lt;std::int16_t&gt; &amp;&amp;vec_i2) : vec_i2_(std::move(vec_i2)), internal_type_(internal_type::vec_i2) {}</span></span>
+<span id="L404"><span class="lineNum">     404</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;std::int16_t&gt; &amp;list_i2) : vec_i2_(list_i2), internal_type_(internal_type::vec_i2) {}</span></span>
+<span id="L405"><span class="lineNum">     405</span>                 : </span>
+<span id="L406"><span class="lineNum">     406</span> <span class="tlaGNC">           1229 :         explicit value(std::int32_t i4) : i4_(i4), internal_type_(internal_type::i4) {}</span></span>
+<span id="L407"><span class="lineNum">     407</span> <span class="tlaGNC">              3 :         explicit value(const std::vector&lt;std::int32_t&gt; &amp;vec_i4) : vec_i4_(vec_i4), internal_type_(internal_type::vec_i4) {}</span></span>
+<span id="L408"><span class="lineNum">     408</span> <span class="tlaGNC">              4 :         explicit value(std::vector&lt;std::int32_t&gt; &amp;&amp;vec_i4) : vec_i4_(std::move(vec_i4)), internal_type_(internal_type::vec_i4) {}</span></span>
+<span id="L409"><span class="lineNum">     409</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;std::int32_t&gt; &amp;list_i4) : vec_i4_(list_i4), internal_type_(internal_type::vec_i4) {}</span></span>
+<span id="L410"><span class="lineNum">     410</span>                 : </span>
+<span id="L411"><span class="lineNum">     411</span> <span class="tlaGNC">              4 :         explicit value(std::int64_t i8) : i8_(i8), internal_type_(internal_type::i8) {}</span></span>
+<span id="L412"><span class="lineNum">     412</span> <span class="tlaGNC">              3 :         explicit value(const std::vector&lt;std::int64_t&gt; &amp;vec_i8) : vec_i8_(vec_i8), internal_type_(internal_type::vec_i8) {}</span></span>
+<span id="L413"><span class="lineNum">     413</span> <span class="tlaGNC">              4 :         explicit value(std::vector&lt;std::int64_t&gt; &amp;&amp;vec_i8) : vec_i8_(std::move(vec_i8)), internal_type_(internal_type::vec_i8) {}</span></span>
+<span id="L414"><span class="lineNum">     414</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;std::int64_t&gt; &amp;list_i8) : vec_i8_(list_i8), internal_type_(internal_type::vec_i8) {}</span></span>
+<span id="L415"><span class="lineNum">     415</span>                 : </span>
+<span id="L416"><span class="lineNum">     416</span> <span class="tlaGNC">              4 :         explicit value(std::uint8_t ui1) : ui1_(ui1), internal_type_(internal_type::ui1) {}</span></span>
+<span id="L417"><span class="lineNum">     417</span> <span class="tlaGNC">              3 :         explicit value(const std::vector&lt;std::uint8_t&gt; &amp;vec_ui1) : vec_ui1_(vec_ui1), internal_type_(internal_type::vec_ui1) {}</span></span>
+<span id="L418"><span class="lineNum">     418</span> <span class="tlaGNC">              4 :         explicit value(std::vector&lt;std::uint8_t&gt; &amp;&amp;vec_ui1) : vec_ui1_(std::move(vec_ui1)), internal_type_(internal_type::vec_ui1) {}</span></span>
+<span id="L419"><span class="lineNum">     419</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;std::uint8_t&gt; &amp;list_ui1) : vec_ui1_(list_ui1), internal_type_(internal_type::vec_ui1) {}</span></span>
+<span id="L420"><span class="lineNum">     420</span>                 : </span>
+<span id="L421"><span class="lineNum">     421</span> <span class="tlaGNC">              4 :         explicit value(std::uint16_t ui2) : ui2_(ui2), internal_type_(internal_type::ui2) {}</span></span>
+<span id="L422"><span class="lineNum">     422</span> <span class="tlaGNC">              3 :         explicit value(const std::vector&lt;std::uint16_t&gt; &amp;vec_ui2) : vec_ui2_(vec_ui2), internal_type_(internal_type::vec_ui2) {}</span></span>
+<span id="L423"><span class="lineNum">     423</span> <span class="tlaGNC">              4 :         explicit value(std::vector&lt;std::uint16_t&gt; &amp;&amp;vec_ui2) : vec_ui2_(std::move(vec_ui2)), internal_type_(internal_type::vec_ui2) {}</span></span>
+<span id="L424"><span class="lineNum">     424</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;std::uint16_t&gt; &amp;list_ui2) : vec_ui2_(list_ui2), internal_type_(internal_type::vec_ui2) {}</span></span>
+<span id="L425"><span class="lineNum">     425</span>                 : </span>
+<span id="L426"><span class="lineNum">     426</span> <span class="tlaGNC">             29 :         explicit value(std::uint32_t ui4) : ui4_(ui4), internal_type_(internal_type::ui4) {}</span></span>
+<span id="L427"><span class="lineNum">     427</span> <span class="tlaGNC">              3 :         explicit value(const std::vector&lt;std::uint32_t&gt; &amp;vec_ui4) : vec_ui4_(vec_ui4), internal_type_(internal_type::vec_ui4) {}</span></span>
+<span id="L428"><span class="lineNum">     428</span> <span class="tlaGNC">              4 :         explicit value(std::vector&lt;std::uint32_t&gt; &amp;&amp;vec_ui4) : vec_ui4_(std::move(vec_ui4)), internal_type_(internal_type::vec_ui4) {}</span></span>
+<span id="L429"><span class="lineNum">     429</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;std::uint32_t&gt; &amp;list_ui4) : vec_ui4_(list_ui4), internal_type_(internal_type::vec_ui4) {}</span></span>
+<span id="L430"><span class="lineNum">     430</span>                 : </span>
+<span id="L431"><span class="lineNum">     431</span> <span class="tlaGNC">              4 :         explicit value(std::uint64_t ui8) : ui8_(ui8), internal_type_(internal_type::ui8) {}</span></span>
+<span id="L432"><span class="lineNum">     432</span> <span class="tlaGNC">              3 :         explicit value(const std::vector&lt;std::uint64_t&gt; &amp;vec_ui8) : vec_ui8_(vec_ui8), internal_type_(internal_type::vec_ui8) {}</span></span>
+<span id="L433"><span class="lineNum">     433</span> <span class="tlaGNC">              4 :         explicit value(std::vector&lt;std::uint64_t&gt; &amp;&amp;vec_ui8) : vec_ui8_(std::move(vec_ui8)), internal_type_(internal_type::vec_ui8) {}</span></span>
+<span id="L434"><span class="lineNum">     434</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;std::uint64_t&gt; &amp;list_ui8) : vec_ui8_(list_ui8), internal_type_(internal_type::vec_ui8) {}</span></span>
+<span id="L435"><span class="lineNum">     435</span>                 : </span>
+<span id="L436"><span class="lineNum">     436</span> <span class="tlaGNC">              4 :         explicit value(float r4) : r4_(r4), internal_type_(internal_type::r4) {}</span></span>
+<span id="L437"><span class="lineNum">     437</span> <span class="tlaGNC">              3 :         explicit value(const std::vector&lt;float&gt; &amp;vec_r4) : vec_r4_(vec_r4), internal_type_(internal_type::vec_r4) {}</span></span>
+<span id="L438"><span class="lineNum">     438</span> <span class="tlaGNC">              4 :         explicit value(std::vector&lt;float&gt; &amp;&amp;vec_r4) : vec_r4_(std::move(vec_r4)), internal_type_(internal_type::vec_r4) {}</span></span>
+<span id="L439"><span class="lineNum">     439</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;float&gt; &amp;list_r4) : vec_r4_(list_r4), internal_type_(internal_type::vec_r4) {}</span></span>
+<span id="L440"><span class="lineNum">     440</span>                 : </span>
+<span id="L441"><span class="lineNum">     441</span> <span class="tlaGNC">              4 :         explicit value(double r8) : r8_(r8), internal_type_(internal_type::r8) {}</span></span>
+<span id="L442"><span class="lineNum">     442</span> <span class="tlaGNC">              3 :         explicit value(const std::vector&lt;double&gt; &amp;vec_r8) : vec_r8_(vec_r8), internal_type_(internal_type::vec_r8) {}</span></span>
+<span id="L443"><span class="lineNum">     443</span> <span class="tlaGNC">              4 :         explicit value(std::vector&lt;double&gt; &amp;&amp;vec_r8) : vec_r8_(std::move(vec_r8)), internal_type_(internal_type::vec_r8) {}</span></span>
+<span id="L444"><span class="lineNum">     444</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;double&gt; &amp;list_r8) : vec_r8_(list_r8), internal_type_(internal_type::vec_r8) {}</span></span>
+<span id="L445"><span class="lineNum">     445</span>                 : </span>
+<span id="L446"><span class="lineNum">     446</span> <span class="tlaGNC">            960 :         explicit value(const std::string &amp;str) : str_(str), internal_type_(internal_type::str) {}</span></span>
+<span id="L447"><span class="lineNum">     447</span> <span class="tlaGNC">           1050 :         explicit value(std::string &amp;&amp;str) : str_(std::move(str)), internal_type_(internal_type::str) {}</span></span>
+<span id="L448"><span class="lineNum">     448</span> <span class="tlaGNC">           7617 :         explicit value(const char *str) : str_(str), internal_type_(internal_type::str) {}</span></span>
+<span id="L449"><span class="lineNum">     449</span> <span class="tlaGNC">             32 :         explicit value(const std::vector&lt;std::string&gt; &amp;vec_str) : vec_str_(vec_str), internal_type_(internal_type::vec_str) {}</span></span>
+<span id="L450"><span class="lineNum">     450</span> <span class="tlaGNC">           1004 :         explicit value(std::vector&lt;std::string&gt; &amp;&amp;vec_str) : vec_str_(std::move(vec_str)), internal_type_(internal_type::vec_str) {}</span></span>
+<span id="L451"><span class="lineNum">     451</span>                 :         explicit value(const std::vector&lt;const char *&gt; &amp;vec_str);</span>
+<span id="L452"><span class="lineNum">     452</span> <span class="tlaGNC">             27 :         explicit value(const std::initializer_list&lt;std::string&gt; &amp;list_str) : vec_str_(list_str), internal_type_(internal_type::vec_str) {}</span></span>
+<span id="L453"><span class="lineNum">     453</span>                 :         explicit value(const std::initializer_list&lt;const char *&gt; &amp;list_str);</span>
+<span id="L454"><span class="lineNum">     454</span>                 : </span>
+<span id="L455"><span class="lineNum">     455</span> <span class="tlaGNC">             25 :         explicit value(const xlnt::datetime &amp;datetime) : datetime_(datetime), internal_type_(internal_type::datetime) {}</span></span>
+<span id="L456"><span class="lineNum">     456</span> <span class="tlaGNC">            702 :         explicit value(xlnt::datetime &amp;&amp;datetime) : datetime_(std::move(datetime)), internal_type_(internal_type::datetime) {}</span></span>
+<span id="L457"><span class="lineNum">     457</span> <span class="tlaGNC">             23 :         explicit value(const std::vector&lt;xlnt::datetime&gt; &amp;vec_datetime) : vec_datetime_(vec_datetime), internal_type_(internal_type::vec_datetime) {}</span></span>
+<span id="L458"><span class="lineNum">     458</span> <span class="tlaGNC">              8 :         explicit value(std::vector&lt;xlnt::datetime&gt; &amp;&amp;vec_datetime) : vec_datetime_(std::move(vec_datetime)), internal_type_(internal_type::vec_datetime) {}</span></span>
+<span id="L459"><span class="lineNum">     459</span> <span class="tlaGNC">             18 :         explicit value(const std::initializer_list&lt;xlnt::datetime&gt; &amp;list_datetime) : vec_datetime_(list_datetime), internal_type_(internal_type::vec_datetime) {}</span></span>
+<span id="L460"><span class="lineNum">     460</span>                 : </span>
+<span id="L461"><span class="lineNum">     461</span> <span class="tlaGNC">           1400 :         explicit value(bool boolean) : boolean_(boolean), internal_type_(internal_type::boolean) {}</span></span>
+<span id="L462"><span class="lineNum">     462</span> <span class="tlaGNC">              3 :         explicit value(const std::vector&lt;bool&gt; &amp;vec_boolean) : vec_boolean_(vec_boolean), internal_type_(internal_type::vec_boolean) {}</span></span>
+<span id="L463"><span class="lineNum">     463</span> <span class="tlaGNC">              4 :         explicit value(std::vector&lt;bool&gt; &amp;&amp;vec_boolean) : vec_boolean_(std::move(vec_boolean)), internal_type_(internal_type::vec_boolean) {}</span></span>
+<span id="L464"><span class="lineNum">     464</span> <span class="tlaGNC">              9 :         explicit value(const std::initializer_list&lt;bool&gt; &amp;list_boolean) : vec_boolean_(list_boolean), internal_type_(internal_type::vec_boolean) {}</span></span>
+<span id="L465"><span class="lineNum">     465</span>                 : </span>
+<span id="L466"><span class="lineNum">     466</span>                 :         value(const value &amp;other);</span>
+<span id="L467"><span class="lineNum">     467</span>                 :         value(value &amp;&amp;other) noexcept;</span>
+<span id="L468"><span class="lineNum">     468</span>                 :         value &amp;operator=(const value &amp;other);</span>
+<span id="L469"><span class="lineNum">     469</span>                 :         value &amp;operator=(value &amp;&amp;other) noexcept;</span>
+<span id="L470"><span class="lineNum">     470</span>                 :         ~value();</span>
+<span id="L471"><span class="lineNum">     471</span>                 : </span>
+<span id="L472"><span class="lineNum">     472</span>                 :         bool operator==(const value &amp;other) const;</span>
+<span id="L473"><span class="lineNum">     473</span>                 :         bool operator!=(const value &amp;other) const;</span>
+<span id="L474"><span class="lineNum">     474</span>                 : </span>
+<span id="L475"><span class="lineNumWithDelete" title="removed line 209 from baseline version">     475</span>                 :         template&lt;typename T&gt;</span>
+<span id="L476"><span class="lineNum">     476</span>                 :         const T &amp;get() const;</span>
+<span id="L477"><span class="lineNum">     477</span>                 : </span>
+<span id="L478"><span class="lineNum">     478</span> <span class="tlaGNC">           1614 :         internal_type get_internal_type() const { return internal_type_; }</span></span>
+<span id="L479"><span class="lineNum">     479</span>                 : </span>
+<span id="L480"><span class="lineNum">     480</span>                 :         std::size_t num_elements() const;</span>
+<span id="L481"><span class="lineNum">     481</span>                 : </span>
+<span id="L482"><span class="lineNum">     482</span>                 :     private:</span>
+<span id="L483"><span class="lineNum">     483</span>                 :         void copy(const value &amp;other);</span>
+<span id="L484"><span class="lineNum">     484</span>                 :         void move(value &amp;&amp;other) noexcept;</span>
+<span id="L485"><span class="lineNum">     485</span>                 :         void destroy();</span>
+<span id="L486"><span class="lineNum">     486</span>                 : </span>
+<span id="L487"><span class="lineNum">     487</span>                 :         union</span>
+<span id="L488"><span class="lineNum">     488</span>                 :         {</span>
+<span id="L489"><span class="lineNum">     489</span>                 :             std::vector&lt;variant&gt; vec_variant_;</span>
+<span id="L490"><span class="lineNum">     490</span>                 :             std::int8_t i1_;</span>
+<span id="L491"><span class="lineNum">     491</span>                 :             std::vector&lt;std::int8_t&gt; vec_i1_;</span>
+<span id="L492"><span class="lineNum">     492</span>                 :             std::int16_t i2_;</span>
+<span id="L493"><span class="lineNum">     493</span>                 :             std::vector&lt;std::int16_t&gt; vec_i2_;</span>
+<span id="L494"><span class="lineNum">     494</span>                 :             std::int32_t i4_;</span>
+<span id="L495"><span class="lineNum">     495</span>                 :             std::vector&lt;std::int32_t&gt; vec_i4_;</span>
+<span id="L496"><span class="lineNum">     496</span>                 :             std::int64_t i8_;</span>
+<span id="L497"><span class="lineNum">     497</span>                 :             std::vector&lt;std::int64_t&gt; vec_i8_;</span>
+<span id="L498"><span class="lineNum">     498</span>                 :             std::uint8_t ui1_;</span>
+<span id="L499"><span class="lineNum">     499</span>                 :             std::vector&lt;std::uint8_t&gt; vec_ui1_;</span>
+<span id="L500"><span class="lineNum">     500</span>                 :             std::uint16_t ui2_;</span>
+<span id="L501"><span class="lineNum">     501</span>                 :             std::vector&lt;std::uint16_t&gt; vec_ui2_;</span>
+<span id="L502"><span class="lineNum">     502</span>                 :             std::uint32_t ui4_;</span>
+<span id="L503"><span class="lineNum">     503</span>                 :             std::vector&lt;std::uint32_t&gt; vec_ui4_;</span>
+<span id="L504"><span class="lineNum">     504</span>                 :             std::uint64_t ui8_;</span>
+<span id="L505"><span class="lineNum">     505</span>                 :             std::vector&lt;std::uint64_t&gt; vec_ui8_;</span>
+<span id="L506"><span class="lineNum">     506</span>                 :             float r4_;</span>
+<span id="L507"><span class="lineNum">     507</span>                 :             std::vector&lt;float&gt; vec_r4_;</span>
+<span id="L508"><span class="lineNum">     508</span>                 :             double r8_;</span>
+<span id="L509"><span class="lineNum">     509</span>                 :             std::vector&lt;double&gt; vec_r8_;</span>
+<span id="L510"><span class="lineNum">     510</span>                 :             std::string str_;</span>
+<span id="L511"><span class="lineNum">     511</span>                 :             std::vector&lt;std::string&gt; vec_str_;</span>
+<span id="L512"><span class="lineNum">     512</span>                 :             xlnt::datetime datetime_;</span>
+<span id="L513"><span class="lineNum">     513</span>                 :             std::vector&lt;xlnt::datetime&gt; vec_datetime_;</span>
+<span id="L514"><span class="lineNum">     514</span>                 :             bool boolean_;</span>
+<span id="L515"><span class="lineNum">     515</span>                 :             std::vector&lt;bool&gt; vec_boolean_;</span>
+<span id="L516"><span class="lineNum">     516</span>                 :         };</span>
+<span id="L517"><span class="lineNum">     517</span>                 :         internal_type internal_type_ = internal_type::none;</span>
+<span id="L518"><span class="lineNum">     518</span>                 :     };</span>
+<span id="L519"><span class="lineNum">     519</span>                 : </span>
+<span id="L520"><span class="lineNum">     520</span>                 :     value value_;</span>
+<span id="L521"><span class="lineNumWithDelete" title="removed 3 lines ([212:214] inclusive) from baseline version">     521</span>                 :     type type_;</span>
+<span id="L522"><span class="lineNum">     522</span>                 :     base_type base_type_; // relevant for vectors and arrays</span>
+<span id="L523"><span class="lineNum">     523</span>                 : };</span>
+<span id="L524"><span class="lineNum">     524</span>                 : </span>
+<span id="L525"><span class="lineNumWithDelete" title="removed 2 lines ([218:219] inclusive) from baseline version">     525</span>                 : /// &lt;summary&gt;</span>
+<span id="L526"><span class="lineNum">     526</span>                 : /// Returns the value of this variant as type std::int8_t.</span>
+<span id="L527"><span class="lineNum">     527</span>                 : /// Assumes that the variant is of type::i1 (please call is() or value_type() to check).</span>
+<span id="L528"><span class="lineNum">     528</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L529"><span class="lineNum">     529</span>                 : /// &lt;/summary&gt;</span>
+<span id="L530"><span class="lineNumWithDelete" title="removed line 223 from baseline version">     530</span>                 : template &lt;&gt;</span>
+<span id="L531"><span class="lineNum">     531</span>                 : XLNT_API std::int8_t variant::get() const;</span>
+<span id="L532"><span class="lineNum">     532</span>                 : </span>
+<span id="L533"><span class="lineNum">     533</span>                 : /// &lt;summary&gt;</span>
+<span id="L534"><span class="lineNum">     534</span>                 : /// Returns the value of this variant as type std::vector&lt;std::int8_t&gt;.</span>
+<span id="L535"><span class="lineNum">     535</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L536"><span class="lineNum">     536</span>                 : /// containing elements of base_type::i1 (please call value_base_type() to check).</span>
+<span id="L537"><span class="lineNum">     537</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L538"><span class="lineNum">     538</span>                 : /// &lt;/summary&gt;</span>
+<span id="L539"><span class="lineNum">     539</span>                 : template &lt;&gt;</span>
+<span id="L540"><span class="lineNum">     540</span>                 : XLNT_API std::vector&lt;std::int8_t&gt; variant::get() const;</span>
+<span id="L541"><span class="lineNum">     541</span>                 : </span>
+<span id="L542"><span class="lineNum">     542</span>                 : /// &lt;summary&gt;</span>
+<span id="L543"><span class="lineNum">     543</span>                 : /// Returns the value of this variant as type std::int16_t.</span>
+<span id="L544"><span class="lineNum">     544</span>                 : /// Assumes that the variant is of type::i2 (please call is() or value_type() to check).</span>
+<span id="L545"><span class="lineNum">     545</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L546"><span class="lineNum">     546</span>                 : /// &lt;/summary&gt;</span>
+<span id="L547"><span class="lineNum">     547</span>                 : template &lt;&gt;</span>
+<span id="L548"><span class="lineNum">     548</span>                 : XLNT_API std::int16_t variant::get() const;</span>
+<span id="L549"><span class="lineNum">     549</span>                 : </span>
+<span id="L550"><span class="lineNum">     550</span>                 : /// &lt;summary&gt;</span>
+<span id="L551"><span class="lineNum">     551</span>                 : /// Returns the value of this variant as type std::vector&lt;std::int16_t&gt;.</span>
+<span id="L552"><span class="lineNum">     552</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L553"><span class="lineNum">     553</span>                 : /// containing elements of base_type::i2 (please call value_base_type() to check).</span>
+<span id="L554"><span class="lineNum">     554</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L555"><span class="lineNum">     555</span>                 : /// &lt;/summary&gt;</span>
+<span id="L556"><span class="lineNum">     556</span>                 : template &lt;&gt;</span>
+<span id="L557"><span class="lineNum">     557</span>                 : XLNT_API std::vector&lt;std::int16_t&gt; variant::get() const;</span>
+<span id="L558"><span class="lineNum">     558</span>                 : </span>
+<span id="L559"><span class="lineNum">     559</span>                 : /// &lt;summary&gt;</span>
+<span id="L560"><span class="lineNumWithDelete" title="removed line 227 from baseline version">     560</span>                 : /// Returns the value of this variant as type std::int32_t.</span>
+<span id="L561"><span class="lineNum">     561</span>                 : /// Assumes that the variant is of type::i4 or type::integer (please call is() or value_type() to check).</span>
+<span id="L562"><span class="lineNum">     562</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L563"><span class="lineNum">     563</span>                 : /// &lt;/summary&gt;</span>
+<span id="L564"><span class="lineNum">     564</span>                 : template &lt;&gt;</span>
+<span id="L565"><span class="lineNum">     565</span>                 : XLNT_API std::int32_t variant::get() const;</span>
+<span id="L566"><span class="lineNum">     566</span>                 : </span>
+<span id="L567"><span class="lineNumWithDelete" title="removed 4 lines ([234:237] inclusive) from baseline version">     567</span>                 : /// &lt;summary&gt;</span>
+<span id="L568"><span class="lineNum">     568</span>                 : /// Returns the value of this variant as type std::vector&lt;std::int32_t&gt;.</span>
+<span id="L569"><span class="lineNum">     569</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L570"><span class="lineNum">     570</span>                 : /// containing elements of base_type::i4 (please call value_base_type() to check).</span>
+<span id="L571"><span class="lineNum">     571</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L572"><span class="lineNum">     572</span>                 : /// &lt;/summary&gt;</span>
+<span id="L573"><span class="lineNumWithDelete" title="removed line 241 from baseline version">     573</span>                 : template &lt;&gt;</span>
+<span id="L574"><span class="lineNum">     574</span>                 : XLNT_API std::vector&lt;std::int32_t&gt; variant::get() const;</span>
+<span id="L575"><span class="lineNum">     575</span>                 : </span>
+<span id="L576"><span class="lineNumWithDelete" title="removed 2 lines ([244:245] inclusive) from baseline version">     576</span>                 : /// &lt;summary&gt;</span>
+<span id="L577"><span class="lineNum">     577</span>                 : /// Returns the value of this variant as type std::int64_t.</span>
+<span id="L578"><span class="lineNum">     578</span>                 : /// Assumes that the variant is of type::i8 (please call is() or value_type() to check).</span>
+<span id="L579"><span class="lineNum">     579</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L580"><span class="lineNum">     580</span>                 : /// &lt;/summary&gt;</span>
+<span id="L581"><span class="lineNumWithDelete" title="removed line 249 from baseline version">     581</span>                 : template &lt;&gt;</span>
+<span id="L582"><span class="lineNum">     582</span>                 : XLNT_API std::int64_t variant::get() const;</span>
+<span id="L583"><span class="lineNum">     583</span>                 : </span>
+<span id="L584"><span class="lineNumWithDelete" title="removed 4 lines ([252:255] inclusive) from baseline version">     584</span>                 : /// &lt;summary&gt;</span>
+<span id="L585"><span class="lineNum">     585</span>                 : /// Returns the value of this variant as type std::vector&lt;std::int64_t&gt;.</span>
+<span id="L586"><span class="lineNum">     586</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L587"><span class="lineNum">     587</span>                 : /// containing elements of base_type::i8 (please call value_base_type() to check).</span>
+<span id="L588"><span class="lineNum">     588</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L589"><span class="lineNum">     589</span>                 : /// &lt;/summary&gt;</span>
+<span id="L590"><span class="lineNumWithDelete" title="removed line 259 from baseline version">     590</span>                 : template &lt;&gt;</span>
+<span id="L591"><span class="lineNum">     591</span>                 : XLNT_API std::vector&lt;std::int64_t&gt; variant::get() const;</span>
+<span id="L592"><span class="lineNum">     592</span>                 : </span>
+<span id="L593"><span class="lineNumWithDelete" title="removed line 262 from baseline version">     593</span>                 : /// &lt;summary&gt;</span>
+<span id="L594"><span class="lineNum">     594</span>                 : /// Returns the value of this variant as type std::uint8_t.</span>
+<span id="L595"><span class="lineNum">     595</span>                 : /// Assumes that the variant is of type::ui1 (please call is() or value_type() to check).</span>
+<span id="L596"><span class="lineNum">     596</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L597"><span class="lineNum">     597</span>                 : /// &lt;/summary&gt;</span>
+<span id="L598"><span class="lineNum">     598</span>                 : template &lt;&gt;</span>
+<span id="L599"><span class="lineNum">     599</span>                 : XLNT_API std::uint8_t variant::get() const;</span>
+<span id="L600"><span class="lineNum">     600</span>                 : </span>
+<span id="L601"><span class="lineNum">     601</span>                 : /// &lt;summary&gt;</span>
+<span id="L602"><span class="lineNum">     602</span>                 : /// Returns the value of this variant as type std::vector&lt;std::uint8_t&gt;.</span>
+<span id="L603"><span class="lineNumWithDelete" title="removed line 264 from baseline version">     603</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L604"><span class="lineNum">     604</span>                 : /// containing elements of base_type::ui1 (please call value_base_type() to check).</span>
+<span id="L605"><span class="lineNum">     605</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L606"><span class="lineNum">     606</span>                 : /// &lt;/summary&gt;</span>
+<span id="L607"><span class="lineNumWithDelete" title="removed line 268 from baseline version">     607</span>                 : template &lt;&gt;</span>
+<span id="L608"><span class="lineNum">     608</span>                 : XLNT_API std::vector&lt;std::uint8_t&gt; variant::get() const;</span>
+<span id="L609"><span class="lineNum">     609</span>                 : </span>
+<span id="L610"><span class="lineNumWithDelete" title="removed line 271 from baseline version">     610</span>                 : /// &lt;summary&gt;</span>
+<span id="L611"><span class="lineNum">     611</span>                 : /// Returns the value of this variant as type std::uint16_t.</span>
+<span id="L612"><span class="lineNum">     612</span>                 : /// Assumes that the variant is of type::ui2 (please call is() or value_type() to check).</span>
+<span id="L613"><span class="lineNum">     613</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L614"><span class="lineNum">     614</span>                 : /// &lt;/summary&gt;</span>
+<span id="L615"><span class="lineNum">     615</span>                 : template &lt;&gt;</span>
+<span id="L616"><span class="lineNum">     616</span>                 : XLNT_API std::uint16_t variant::get() const;</span>
+<span id="L617"><span class="lineNum">     617</span>                 : </span>
+<span id="L618"><span class="lineNum">     618</span>                 : /// &lt;summary&gt;</span>
+<span id="L619"><span class="lineNum">     619</span>                 : /// Returns the value of this variant as type std::vector&lt;std::uint16_t&gt;.</span>
+<span id="L620"><span class="lineNumWithDelete" title="removed line 273 from baseline version">     620</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L621"><span class="lineNum">     621</span>                 : /// containing elements of base_type::ui2 (please call value_base_type() to check).</span>
+<span id="L622"><span class="lineNum">     622</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L623"><span class="lineNum">     623</span>                 : /// &lt;/summary&gt;</span>
+<span id="L624"><span class="lineNumWithDelete" title="removed line 277 from baseline version">     624</span>                 : template &lt;&gt;</span>
+<span id="L625"><span class="lineNum">     625</span>                 : XLNT_API std::vector&lt;std::uint16_t&gt; variant::get() const;</span>
+<span id="L626"><span class="lineNum">     626</span>                 : </span>
+<span id="L627"><span class="lineNumWithDelete" title="removed line 280 from baseline version">     627</span>                 : /// &lt;summary&gt;</span>
+<span id="L628"><span class="lineNum">     628</span>                 : /// Returns the value of this variant as type std::uint32_t.</span>
+<span id="L629"><span class="lineNum">     629</span>                 : /// Assumes that the variant is of type::ui4 or type::uint (please call is() or value_type() to check).</span>
+<span id="L630"><span class="lineNum">     630</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L631"><span class="lineNum">     631</span>                 : /// &lt;/summary&gt;</span>
+<span id="L632"><span class="lineNum">     632</span>                 : template &lt;&gt;</span>
+<span id="L633"><span class="lineNum">     633</span>                 : XLNT_API std::uint32_t variant::get() const;</span>
+<span id="L634"><span class="lineNum">     634</span>                 : </span>
+<span id="L635"><span class="lineNum">     635</span>                 : /// &lt;summary&gt;</span>
+<span id="L636"><span class="lineNum">     636</span>                 : /// Returns the value of this variant as type std::vector&lt;std::uint32_t&gt;.</span>
+<span id="L637"><span class="lineNum">     637</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L638"><span class="lineNum">     638</span>                 : /// containing elements of base_type::ui4 (please call value_base_type() to check).</span>
+<span id="L639"><span class="lineNum">     639</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L640"><span class="lineNum">     640</span>                 : /// &lt;/summary&gt;</span>
+<span id="L641"><span class="lineNum">     641</span>                 : template &lt;&gt;</span>
+<span id="L642"><span class="lineNum">     642</span>                 : XLNT_API std::vector&lt;std::uint32_t&gt; variant::get() const;</span>
+<span id="L643"><span class="lineNum">     643</span>                 : </span>
+<span id="L644"><span class="lineNum">     644</span>                 : /// &lt;summary&gt;</span>
+<span id="L645"><span class="lineNum">     645</span>                 : /// Returns the value of this variant as type std::uint64_t.</span>
+<span id="L646"><span class="lineNum">     646</span>                 : /// Assumes that the variant is of type::ui8 (please call is() or value_type() to check).</span>
+<span id="L647"><span class="lineNum">     647</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L648"><span class="lineNum">     648</span>                 : /// &lt;/summary&gt;</span>
+<span id="L649"><span class="lineNum">     649</span>                 : template &lt;&gt;</span>
+<span id="L650"><span class="lineNum">     650</span>                 : XLNT_API std::uint64_t variant::get() const;</span>
+<span id="L651"><span class="lineNum">     651</span>                 : </span>
+<span id="L652"><span class="lineNum">     652</span>                 : /// &lt;summary&gt;</span>
+<span id="L653"><span class="lineNum">     653</span>                 : /// Returns the value of this variant as type std::vector&lt;std::uint64_t&gt;.</span>
+<span id="L654"><span class="lineNumWithDelete" title="removed line 282 from baseline version">     654</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L655"><span class="lineNum">     655</span>                 : /// containing elements of base_type::ui8 (please call value_base_type() to check).</span>
+<span id="L656"><span class="lineNum">     656</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L657"><span class="lineNum">     657</span>                 : /// &lt;/summary&gt;</span>
+<span id="L658"><span class="lineNum">     658</span>                 : template &lt;&gt;</span>
+<span id="L659"><span class="lineNum">     659</span>                 : XLNT_API std::vector&lt;std::uint64_t&gt; variant::get() const;</span>
+<span id="L660"><span class="lineNum">     660</span>                 : </span>
+<span id="L661"><span class="lineNum">     661</span>                 : /// &lt;summary&gt;</span>
+<span id="L662"><span class="lineNum">     662</span>                 : /// Returns the value of this variant as type float.</span>
+<span id="L663"><span class="lineNum">     663</span>                 : /// Assumes that the variant is of type::r4 (please call is() or value_type() to check).</span>
+<span id="L664"><span class="lineNum">     664</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L665"><span class="lineNum">     665</span>                 : /// &lt;/summary&gt;</span>
+<span id="L666"><span class="lineNum">     666</span>                 : template &lt;&gt;</span>
+<span id="L667"><span class="lineNum">     667</span>                 : XLNT_API float variant::get() const;</span>
+<span id="L668"><span class="lineNum">     668</span>                 : </span>
+<span id="L669"><span class="lineNum">     669</span>                 : /// &lt;summary&gt;</span>
+<span id="L670"><span class="lineNum">     670</span>                 : /// Returns the value of this variant as type std::vector&lt;float&gt;.</span>
+<span id="L671"><span class="lineNum">     671</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L672"><span class="lineNum">     672</span>                 : /// containing elements of base_type::r4 (please call value_base_type() to check).</span>
+<span id="L673"><span class="lineNum">     673</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L674"><span class="lineNum">     674</span>                 : /// &lt;/summary&gt;</span>
+<span id="L675"><span class="lineNum">     675</span>                 : template &lt;&gt;</span>
+<span id="L676"><span class="lineNum">     676</span>                 : XLNT_API std::vector&lt;float&gt; variant::get() const;</span>
+<span id="L677"><span class="lineNum">     677</span>                 : </span>
+<span id="L678"><span class="lineNum">     678</span>                 : /// &lt;summary&gt;</span>
+<span id="L679"><span class="lineNum">     679</span>                 : /// Returns the value of this variant as type double.</span>
+<span id="L680"><span class="lineNum">     680</span>                 : /// Assumes that the variant is of type::r8 (please call is() or value_type() to check).</span>
+<span id="L681"><span class="lineNum">     681</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L682"><span class="lineNum">     682</span>                 : /// &lt;/summary&gt;</span>
+<span id="L683"><span class="lineNum">     683</span>                 : template &lt;&gt;</span>
+<span id="L684"><span class="lineNum">     684</span>                 : XLNT_API double variant::get() const;</span>
+<span id="L685"><span class="lineNum">     685</span>                 : </span>
+<span id="L686"><span class="lineNum">     686</span>                 : /// &lt;summary&gt;</span>
+<span id="L687"><span class="lineNum">     687</span>                 : /// Returns the value of this variant as type std::vector&lt;float&gt;.</span>
+<span id="L688"><span class="lineNum">     688</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L689"><span class="lineNum">     689</span>                 : /// containing elements of base_type::r8 (please call value_base_type() to check).</span>
+<span id="L690"><span class="lineNum">     690</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L691"><span class="lineNum">     691</span>                 : /// &lt;/summary&gt;</span>
+<span id="L692"><span class="lineNum">     692</span>                 : template &lt;&gt;</span>
+<span id="L693"><span class="lineNum">     693</span>                 : XLNT_API std::vector&lt;double&gt; variant::get() const;</span>
+<span id="L694"><span class="lineNum">     694</span>                 : </span>
+<span id="L695"><span class="lineNum">     695</span>                 : /// &lt;summary&gt;</span>
+<span id="L696"><span class="lineNum">     696</span>                 : /// Returns the value of this variant as type std::string.</span>
+<span id="L697"><span class="lineNum">     697</span>                 : /// Please call is() or value_type() to check the type. The following types are compatible:</span>
+<span id="L698"><span class="lineNum">     698</span>                 : /// - type::lpstr</span>
+<span id="L699"><span class="lineNum">     699</span>                 : /// - type::lpwstr</span>
+<span id="L700"><span class="lineNum">     700</span>                 : /// - type::bstr</span>
+<span id="L701"><span class="lineNum">     701</span>                 : /// - type::date (DEPRECATED, will no longer be allowed in a future major version)</span>
+<span id="L702"><span class="lineNum">     702</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L703"><span class="lineNum">     703</span>                 : /// &lt;/summary&gt;</span>
+<span id="L704"><span class="lineNum">     704</span>                 : template &lt;&gt;</span>
+<span id="L705"><span class="lineNum">     705</span>                 : XLNT_API std::string variant::get() const;</span>
+<span id="L706"><span class="lineNum">     706</span>                 : </span>
+<span id="L707"><span class="lineNum">     707</span>                 : /// &lt;summary&gt;</span>
+<span id="L708"><span class="lineNum">     708</span>                 : /// Returns the value of this variant as type std::vector&lt;std::string&gt;.</span>
+<span id="L709"><span class="lineNum">     709</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L710"><span class="lineNum">     710</span>                 : /// containing elements of base_type (please call value_base_type() to check):</span>
+<span id="L711"><span class="lineNum">     711</span>                 : /// - base_type::lpstr</span>
+<span id="L712"><span class="lineNum">     712</span>                 : /// - base_type::lpwstr</span>
+<span id="L713"><span class="lineNum">     713</span>                 : /// - base_type::bstr</span>
+<span id="L714"><span class="lineNum">     714</span>                 : /// - base_type::date (DEPRECATED, will no longer be allowed in a future major version)</span>
+<span id="L715"><span class="lineNum">     715</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L716"><span class="lineNum">     716</span>                 : /// &lt;/summary&gt;</span>
+<span id="L717"><span class="lineNum">     717</span>                 : template &lt;&gt;</span>
+<span id="L718"><span class="lineNum">     718</span>                 : XLNT_API std::vector&lt;std::string&gt; variant::get() const;</span>
+<span id="L719"><span class="lineNum">     719</span>                 : </span>
+<span id="L720"><span class="lineNum">     720</span>                 : /// &lt;summary&gt;</span>
+<span id="L721"><span class="lineNum">     721</span>                 : /// Returns the value of this variant as type xlnt::datetime.</span>
+<span id="L722"><span class="lineNum">     722</span>                 : /// Assumes that the variant is of type::date or type::filetime (please call is() or value_type() to check).</span>
+<span id="L723"><span class="lineNum">     723</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L724"><span class="lineNum">     724</span>                 : /// &lt;/summary&gt;</span>
+<span id="L725"><span class="lineNum">     725</span>                 : template &lt;&gt;</span>
+<span id="L726"><span class="lineNum">     726</span>                 : XLNT_API datetime variant::get() const;</span>
+<span id="L727"><span class="lineNum">     727</span>                 : </span>
+<span id="L728"><span class="lineNum">     728</span>                 : /// &lt;summary&gt;</span>
+<span id="L729"><span class="lineNum">     729</span>                 : /// Returns the value of this variant as type std::vector&lt;xlnt::datetime&gt;.</span>
+<span id="L730"><span class="lineNumWithDelete" title="removed line 293 from baseline version">     730</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L731"><span class="lineNum">     731</span>                 : /// containing elements of base_type::date or base_type::filetime (please call value_base_type() to check).</span>
+<span id="L732"><span class="lineNum">     732</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L733"><span class="lineNum">     733</span>                 : /// &lt;/summary&gt;</span>
+<span id="L734"><span class="lineNum">     734</span>                 : template &lt;&gt;</span>
+<span id="L735"><span class="lineNum">     735</span>                 : XLNT_API std::vector&lt;datetime&gt; variant::get() const;</span>
+<span id="L736"><span class="lineNum">     736</span>                 : </span>
+<span id="L737"><span class="lineNum">     737</span>                 : /// &lt;summary&gt;</span>
+<span id="L738"><span class="lineNum">     738</span>                 : /// Returns the value of this variant as type bool.</span>
+<span id="L739"><span class="lineNum">     739</span>                 : /// Assumes that the variant is of type::boolean (please call is() or value_type() to check).</span>
+<span id="L740"><span class="lineNum">     740</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L741"><span class="lineNum">     741</span>                 : /// &lt;/summary&gt;</span>
+<span id="L742"><span class="lineNum">     742</span>                 : template &lt;&gt;</span>
+<span id="L743"><span class="lineNum">     743</span>                 : XLNT_API bool variant::get() const;</span>
+<span id="L744"><span class="lineNum">     744</span>                 : </span>
+<span id="L745"><span class="lineNum">     745</span>                 : /// &lt;summary&gt;</span>
+<span id="L746"><span class="lineNum">     746</span>                 : /// Returns the value of this variant as type std::vector&lt;bool&gt;.</span>
+<span id="L747"><span class="lineNum">     747</span>                 : /// Assumes that the variant is of type::vector (please call is() or value_type() to check)</span>
+<span id="L748"><span class="lineNum">     748</span>                 : /// containing elements of base_type::boolean (please call value_base_type() to check).</span>
+<span id="L749"><span class="lineNum">     749</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L750"><span class="lineNum">     750</span>                 : /// &lt;/summary&gt;</span>
+<span id="L751"><span class="lineNum">     751</span>                 : template &lt;&gt;</span>
+<span id="L752"><span class="lineNum">     752</span>                 : XLNT_API std::vector&lt;bool&gt; variant::get() const;</span>
+<span id="L753"><span class="lineNum">     753</span>                 : </span>
+<span id="L754"><span class="lineNum">     754</span>                 : /// &lt;summary&gt;</span>
+<span id="L755"><span class="lineNum">     755</span>                 : /// Returns the value of this variant as type std::vector&lt;xlnt::variant&gt;.</span>
+<span id="L756"><span class="lineNum">     756</span>                 : /// Please call is() or value_type() to check the type, and value_base_type() to check the base type.</span>
+<span id="L757"><span class="lineNum">     757</span>                 : /// The following types are compatible:</span>
+<span id="L758"><span class="lineNum">     758</span>                 : /// - type::vector containing elements of base_type::variant</span>
+<span id="L759"><span class="lineNum">     759</span>                 : /// - type::vector containing elements of types: std::int32_t, std::string, xlnt::datetime, bool (DEPRECATED, will no longer be allowed in a future major version)</span>
+<span id="L760"><span class="lineNum">     760</span>                 : /// An xlnt::bad_variant_access exception will be thrown if the types are not compatible.</span>
+<span id="L761"><span class="lineNum">     761</span>                 : /// &lt;/summary&gt;</span>
+<span id="L762"><span class="lineNum">     762</span>                 : template &lt;&gt;</span>
+<span id="L763"><span class="lineNum">     763</span>                 : XLNT_API std::vector&lt;variant&gt; variant::get() const;</span>
+<span id="L764"><span class="lineNum">     764</span>                 : </span>
+<span id="L765"><span class="lineNum">     765</span>                 : } // namespace xlnt</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com/linux-test-project/lcov" target="_parent">LCOV version 2.5-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
