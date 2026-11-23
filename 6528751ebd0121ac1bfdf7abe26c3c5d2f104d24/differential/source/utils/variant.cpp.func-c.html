@@ -1,0 +1,1181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - source/utils/variant.cpp - functions</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">differential code coverage report with master</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory source/utils">source/utils</a> - variant.cpp<span style="font-size: 80%;"> (<a href="variant.cpp.gcov.html" title="Click to go to source detail">source</a> / functions)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code (not including EUB, ECB, DUB, DCB categories)">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only (CBC + GBC + GNC + GIC)">Hit</td>
+            <td width="5%" class="headerCovTableHeadUNC" title="Uncovered New Code (+ => 0):
+Newly added code is not tested">UNC</td>
+            <td width="5%" class="headerCovTableHeadGIC" title="Gained Included Coverage (# => 1):
+Previously unused code is tested now">GIC</td>
+            <td width="5%" class="headerCovTableHeadGNC" title="Gained New Coverage (+ => 1):
+Newly added code is tested">GNC</td>
+            <td width="5%" class="headerCovTableHeadCBC" title="Covered Baseline Code (1 => 1):
+Unchanged code was tested before and is still tested">CBC</td>
+            <td width="5%" class="headerCovTableHeadECB" title="Excluded Covered Baseline (1 => #):
+Previously tested code is unused now">ECB</td>
+            <td width="5%" class="headerCovTableHeadDUB" title="Deleted Uncovered Baseline (0 => -):
+Previously untested code has been deleted">DUB</td>
+            <td width="5%" class="headerCovTableHeadDCB" title="Deleted Covered Baseline (1 => -):
+Previously tested code has been deleted">DCB</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryMed">83.4&nbsp;%</td>
+            <td class="headerCovTableEntry">1250</td>
+            <td class="headerCovTableEntry">1043</td>
+            <td class="headerCovTableEntry">207</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1020</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">113</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Current Date:</td>
+            <td class="headerValue">2026-11-23 20:25:57</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">96.5&nbsp;%</td>
+            <td class="headerCovTableEntry">144</td>
+            <td class="headerCovTableEntry">139</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">139</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">43</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline:</td>
+            <td class="headerValue">coverage_master.info</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntryLo">71.1&nbsp;%</td>
+            <td class="headerCovTableEntry">561</td>
+            <td class="headerCovTableEntry">399</td>
+            <td class="headerCovTableEntry">324</td>
+            <td class="headerCovTableEntry">44</td>
+            <td class="headerCovTableEntry">754</td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry"></td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">37</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Baseline Date:</td>
+            <td class="headerValue">2026-11-23 20:25:56</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <center>
+          <table cellpadding=1 cellspacing=1 border=0>
+            <tr><td><br></td></tr>
+            <tr>
+              <td class="tableHead">Function Name <span  title="Click to sort table by function name" class="tableHeadSort"><a href="variant.cpp.func.html"><img src="../../updown.png" width=10 height=14 alt="Sort by function name" title="Click to sort table by function name" border=0></a></span></td>
+              <td width="10%" class="tableHead">TLA</td>
+              <td class="tableHead">Hit count <span  title="Click to sort table by function hit count" class="tableHeadSort"><img src="../../glass.png" width=10 height=14 alt="Sort by function hit count" title="Click to sort table by function hit count" border=0></span></td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1439">_ZN4xlnt29vector_convert_to_variant_vecIbEESt6vectorINS_7variantESaIS2_EERKS1_IT_SaIS5_EE</a></td>
+              <td class="tlaUNC">UNC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="variant.cpp.gcov.html#L1439">_ZN4xlnt29vector_convert_to_variant_vecINS_8datetimeEEESt6vectorINS_7variantESaIS3_EERKS2_IT_SaIS6_EE</a></td>
+              <td class="tlaUNC">UNC</td>
+              <td class="coverFnAliasLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="variant.cpp.gcov.html#L1439">_ZN4xlnt29vector_convert_to_variant_vecINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESt6vectorINS_7variantESaIS8_EERKS7_IT_SaISB_EE</a></td>
+              <td class="tlaUNC">UNC</td>
+              <td class="coverFnAliasLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="variant.cpp.gcov.html#L1439">_ZN4xlnt29vector_convert_to_variant_vecIbEESt6vectorINS_7variantESaIS2_EERKS1_IT_SaIS5_EE</a></td>
+              <td class="tlaUNC">UNC</td>
+              <td class="coverFnAliasLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFnAlias"><a href="variant.cpp.gcov.html#L1439">_ZN4xlnt29vector_convert_to_variant_vecIiEESt6vectorINS_7variantESaIS2_EERKS1_IT_SaIS5_EE</a></td>
+              <td class="tlaUNC">UNC</td>
+              <td class="coverFnAliasLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L2016">_ZNK4xlnt7variant5valueneERKS1_</a></td>
+              <td class="tlaUNC">UNC</td>
+              <td class="coverFnLo">0</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L44">_ZNK4xlnt7variant5value3getIaEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L278">_ZNK4xlnt7variant5value3getIdEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L252">_ZNK4xlnt7variant5value3getIfEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L148">_ZNK4xlnt7variant5value3getIhEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L122">_ZNK4xlnt7variant5value3getIlEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L226">_ZNK4xlnt7variant5value3getImEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L70">_ZNK4xlnt7variant5value3getIsEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L174">_ZNK4xlnt7variant5value3getItEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">1</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L630">_ZN4xlnt7variantC2EOSt6vectorIaSaIaEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1081">_ZN4xlnt7variantC2EOSt6vectorIbSaIbEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L896">_ZN4xlnt7variantC2EOSt6vectorIdSaIdEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L868">_ZN4xlnt7variantC2EOSt6vectorIfSaIfEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L749">_ZN4xlnt7variantC2EOSt6vectorIhSaIhEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L693">_ZN4xlnt7variantC2EOSt6vectorIiSaIiEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L812">_ZN4xlnt7variantC2EOSt6vectorIjSaIjEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L721">_ZN4xlnt7variantC2EOSt6vectorIlSaIlEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L840">_ZN4xlnt7variantC2EOSt6vectorImSaImEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L658">_ZN4xlnt7variantC2EOSt6vectorIsSaIsEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L777">_ZN4xlnt7variantC2EOSt6vectorItSaItEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L57">_ZNK4xlnt7variant5value3getISt6vectorIaSaIaEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L369">_ZNK4xlnt7variant5value3getISt6vectorIbSaIbEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L291">_ZNK4xlnt7variant5value3getISt6vectorIdSaIdEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L265">_ZNK4xlnt7variant5value3getISt6vectorIfSaIfEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L161">_ZNK4xlnt7variant5value3getISt6vectorIhSaIhEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L109">_ZNK4xlnt7variant5value3getISt6vectorIiSaIiEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L213">_ZNK4xlnt7variant5value3getISt6vectorIjSaIjEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L135">_ZNK4xlnt7variant5value3getISt6vectorIlSaIlEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L239">_ZNK4xlnt7variant5value3getISt6vectorImSaImEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L83">_ZNK4xlnt7variant5value3getISt6vectorIsSaIsEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L187">_ZNK4xlnt7variant5value3getISt6vectorItSaItEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L200">_ZNK4xlnt7variant5value3getIjEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L637">_ZN4xlnt7variantC2ERKSt16initializer_listIaE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L903">_ZN4xlnt7variantC2ERKSt16initializer_listIdE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L875">_ZN4xlnt7variantC2ERKSt16initializer_listIfE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L756">_ZN4xlnt7variantC2ERKSt16initializer_listIhE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L819">_ZN4xlnt7variantC2ERKSt16initializer_listIjE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L728">_ZN4xlnt7variantC2ERKSt16initializer_listIlE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L847">_ZN4xlnt7variantC2ERKSt16initializer_listImE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L665">_ZN4xlnt7variantC2ERKSt16initializer_listIsE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L784">_ZN4xlnt7variantC2ERKSt16initializer_listItE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1095">_ZN4xlnt7variantC2ERKSt6vectorIS0_SaIS0_EE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L889">_ZN4xlnt7variantC2ERKSt6vectorIdSaIdEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L861">_ZN4xlnt7variantC2ERKSt6vectorIfSaIfEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L742">_ZN4xlnt7variantC2ERKSt6vectorIhSaIhEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L805">_ZN4xlnt7variantC2ERKSt6vectorIjSaIjEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L714">_ZN4xlnt7variantC2ERKSt6vectorIlSaIlEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L833">_ZN4xlnt7variantC2ERKSt6vectorImSaImEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L770">_ZN4xlnt7variantC2ERKSt6vectorItSaItEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1051">_ZN4xlnt7variantC2EOSt6vectorINS_8datetimeESaIS2_EENS0_9base_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L882">_ZN4xlnt7variantC2Ed</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L854">_ZN4xlnt7variantC2Ef</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L735">_ZN4xlnt7variantC2Eh</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L707">_ZN4xlnt7variantC2El</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L826">_ZN4xlnt7variantC2Em</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L763">_ZN4xlnt7variantC2Et</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L343">_ZNK4xlnt7variant5value3getISt6vectorINS_8datetimeESaIS4_EEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">4</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1059">_ZN4xlnt7variantC2ERKSt16initializer_listINS_8datetimeEENS0_9base_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">6</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L623">_ZN4xlnt7variantC2ERKSt6vectorIaSaIaEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">6</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L651">_ZN4xlnt7variantC2ERKSt6vectorIsSaIsEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">6</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L616">_ZN4xlnt7variantC2Ea</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">6</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L644">_ZN4xlnt7variantC2Es</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">6</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1548">_ZN4xlnt7variant5valueC2ERKSt6vectorIPKcSaIS4_EE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">9</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L989">_ZN4xlnt7variantC2ERKSt16initializer_listINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENS0_9base_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">9</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L981">_ZN4xlnt7variantC2ERKSt6vectorIPKcSaIS3_EENS0_9base_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">9</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1043">_ZN4xlnt7variantC2ERKSt6vectorINS_8datetimeESaIS2_EENS0_9base_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">23</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1027">_ZN4xlnt7variantC2ERKNS_8datetimeENS0_4typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">25</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L791">_ZN4xlnt7variantC2EjNS0_4typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">29</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L603">_ZN4xlnt7variantC2ENS0_4typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">30</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L330">_ZNK4xlnt7variant5value3getINS_8datetimeEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">30</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L965">_ZN4xlnt7variantC2ERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EENS0_9base_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">32</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1016">_ZN4xlnt34throw_on_invalid_datetime_vec_typeENS_7variant9base_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">33</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L519">_ZN4xlnt7variant17parse_type_stringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">34</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L31">_ZNK4xlnt7variant5value3getISt6vectorIS0_SaIS0_EEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">45</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L317">_ZNK4xlnt7variant5value3getISt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS9_EEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">55</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1405">_ZNK4xlnt7variant3getISt6vectorINS_8datetimeESaIS3_EEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1143">_ZNK4xlnt7variant3getISt6vectorIaSaIaEEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1341">_ZNK4xlnt7variant3getISt6vectorIdSaIdEEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1319">_ZNK4xlnt7variant3getISt6vectorIfSaIfEEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1231">_ZNK4xlnt7variant3getISt6vectorIhSaIhEEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1187">_ZNK4xlnt7variant3getISt6vectorIiSaIiEEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1275">_ZNK4xlnt7variant3getISt6vectorIjSaIjEEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1209">_ZNK4xlnt7variant3getISt6vectorIlSaIlEEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1297">_ZNK4xlnt7variant3getISt6vectorImSaImEEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1165">_ZNK4xlnt7variant3getISt6vectorIsSaIsEEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1253">_ZNK4xlnt7variant3getISt6vectorItSaItEEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1132">_ZNK4xlnt7variant3getIaEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1330">_ZNK4xlnt7variant3getIdEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1308">_ZNK4xlnt7variant3getIfEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1220">_ZNK4xlnt7variant3getIhEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1264">_ZNK4xlnt7variant3getIjEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1198">_ZNK4xlnt7variant3getIlEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1286">_ZNK4xlnt7variant3getImEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1154">_ZNK4xlnt7variant3getIsEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1242">_ZNK4xlnt7variant3getItEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">63</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L96">_ZNK4xlnt7variant5value3getIiEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">64</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L356">_ZNK4xlnt7variant5value3getIbEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">73</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1452">_ZNK4xlnt7variant3getISt6vectorIS0_SaIS0_EEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">86</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1368">_ZNK4xlnt7variant3getISt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS8_EEEET_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">102</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1601">_ZNK4xlnt7variant5value12num_elementsEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">149</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L566">_ZN4xlnt7variant22parse_base_type_stringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">168</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1587">_ZN4xlnt7variant5valueaSEOS1_</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">303</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1558">_ZN4xlnt7variant5valueC2ERKSt16initializer_listIPKcE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">358</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L997">_ZN4xlnt7variantC2ERKSt16initializer_listIPKcENS0_9base_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">358</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L304">_ZNK4xlnt7variant5value3getINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEERKT_v</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">482</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L973">_ZN4xlnt7variantC2EOSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EENS0_9base_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">502</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L944">_ZN4xlnt7variantC2EONSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENS0_4typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">525</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1917">_ZNK4xlnt7variant5valueeqERKS1_</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">605</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1035">_ZN4xlnt7variantC2EONS_8datetimeENS0_4typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">702</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1005">_ZN4xlnt30throw_on_invalid_datetime_typeENS_7variant4typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">727</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1109">_ZN4xlnt7variantC2EOSt6vectorIS0_SaIS0_EE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">845</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1578">_ZN4xlnt7variant5valueaSERKS1_</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">868</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L922">_ZN4xlnt29throw_on_invalid_str_vec_typeENS_7variant9base_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">910</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L934">_ZN4xlnt7variantC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENS0_4typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">960</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L460">_ZN4xlnt7variant20get_base_type_stringB5cxx11ENS0_9base_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">1141</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L672">_ZN4xlnt7variantC2EiNS0_4typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">1229</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1067">_ZN4xlnt7variantC2Eb</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">1400</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L954">_ZN4xlnt7variantC2EPKcNS0_4typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">2539</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L381">_ZN4xlnt7variant15get_type_stringB5cxx11ENS0_4typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3027</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1482">_ZN4xlnt7variant24get_internal_type_stringB5cxx11ENS0_13internal_typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">3228</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L910">_ZN4xlnt25throw_on_invalid_str_typeENS_7variant4typeE</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">4024</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1573">_ZN4xlnt7variant5valueC2EOS1_</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">12758</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1749">_ZN4xlnt7variant5value4moveEOS1_</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">13061</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1568">_ZN4xlnt7variant5valueC2ERKS1_</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">14334</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1655">_ZN4xlnt7variant5value4copyERKS1_</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">15202</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1596">_ZN4xlnt7variant5valueD2Ev</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">36455</td>
+              
+              
+              
+            </tr>
+            <tr>
+              <td class="coverFn"><a href="variant.cpp.gcov.html#L1843">_ZN4xlnt7variant5value7destroyEv</a></td>
+              <td class="tlaGNC">GNC</td>
+              <td class="coverFnHi">64718</td>
+              
+              
+              
+            </tr>
+          </table>
+          <br>
+          </center>
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com/linux-test-project/lcov" target="_parent">LCOV version 2.5-beta</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
